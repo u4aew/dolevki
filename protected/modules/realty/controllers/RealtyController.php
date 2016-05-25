@@ -1,14 +1,14 @@
 <?php
 /**
-* RealtyController контроллер для realty на публичной части сайта
-*
-* @author yupe team <team@yupe.ru>
-* @link http://yupe.ru
-* @copyright 2009-2016 amyLabs && Yupe! team
-* @package yupe.modules.realty.controllers
-* @since 0.1
-*
-*/
+ * RealtyController контроллер для realty на публичной части сайта
+ *
+ * @author yupe team <team@yupe.ru>
+ * @link http://yupe.ru
+ * @copyright 2009-2016 amyLabs && Yupe! team
+ * @package yupe.modules.realty.controllers
+ * @since 0.1
+ *
+ */
 
 class RealtyController extends \yupe\components\controllers\FrontController
 {
@@ -21,7 +21,7 @@ class RealtyController extends \yupe\components\controllers\FrontController
     {
         $this->render('index');
     }
-    
+
     public function actionSearch()
     {
         $criteria = new CDbCriteria();
@@ -35,18 +35,19 @@ class RealtyController extends \yupe\components\controllers\FrontController
                     'pageSize' => (int)Yii::app()->getModule('realty')->itemsPerPage,
                     'pageVar' => 'page',
                 ],
-/*                'sort' => [
-                    'sortVar' => 'sort',
-                    'defaultOrder' => 't.position'
-                ],
-  */          ]
+                /*                'sort' => [
+                                    'sortVar' => 'sort',
+                                    'defaultOrder' => 't.position'
+                                ],
+                  */          ]
         );
-          $this->render("index",["dataProvider" => $data]);
+        $this->render("index",["dataProvider" => $data]);
     }
-    
-   public function actionViewApartment($id)
+
+    public function actionViewApartment($id)
     {
         $model = Apartment::model()->findByPk($id);
         $this->render("viewApartment",["data" => $model]);
     }
+
 }
