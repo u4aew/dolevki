@@ -26,11 +26,16 @@
     <?php
 
     $form = $this->beginWidget(
-        'bootstrap.widgets.TbActiveForm', [
-            'id'                     => 'building-form',
-            'enableAjaxValidation'   => false,
+        '\yupe\widgets\ActiveForm',
+        [
+            'id' => 'product-form',
+            'enableAjaxValidation' => false,
             'enableClientValidation' => true,
+            'type' => 'vertical',
             'htmlOptions' => ['enctype' => 'multipart/form-data', 'class' => 'well'],
+            'clientOptions' => [
+                'validateOnSubmit' => true,
+            ],
         ]
     );
     ?>
@@ -99,6 +104,14 @@
             ]); ?>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-sm-7">
+            <?= $form->slugFieldGroup($model, 'slug', ['sourceAttribute' => 'adres']); ?>
+        </div>
+    </div>
+
+
     <div class="row">
         <div class="col-sm-7">
             <?=  $form->textFieldGroup($model, 'longitude', [

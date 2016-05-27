@@ -14,8 +14,16 @@ return [
         'class' => 'application.modules.realty.RealtyModule',
     ],
     'import'    => [],
-    'component' => [],
+    'component' => [
+        'realty' => [
+            'class' => 'application.modules.realty.components.Realty',
+        ],
+    ],
     'rules'     => [
         '/realty' => 'realty/realty/index',
+        '/search' => 'realty/realty/search',
+        '/viewApartment/<id>' => 'realty/realty/viewApartment',
+        '/view/<name>' => 'realty/realty/view',
     ],
+
 ];
