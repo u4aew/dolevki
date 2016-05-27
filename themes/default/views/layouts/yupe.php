@@ -114,8 +114,7 @@
     <div class="find-form">
         <p align="center" style="margin:0px;font-size:20px;font-weight:bold;padding-top:10px">Поиск по параметрам</p>
         <hr style="margin:5px 20px 10px 20px;">
-        <form id="searchForm" action="/search" method="get"
-              oninput="areaoutput.value=areacount.value;priceoutput.value=pricecount.value">
+        <form id="searchForm" action="/search" method="get">
             <div style="width:90%;margin:0px auto;">
                 <p align="center" style="font-size:18px;font-weigth:bold">Количество комнат </p>
                 <div style="width:25%;float:left;">
@@ -177,7 +176,7 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" class="nav__find"> Найти квартиры</button>
+            <button type="submit" class="nav__find" onclick="sendFilter(); return false;"> Найти квартиры </button>
         </form>
     </div>
 </div>
