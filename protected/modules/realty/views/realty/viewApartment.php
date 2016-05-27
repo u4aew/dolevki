@@ -13,10 +13,10 @@ $images = $data->getImages();
                 <?php foreach ($images as $item): ?>
                     <li>
                         <a href="#" style="background-image: url('<?= $item->getImageUrl(100, 100, false); ?>');">
-                            <div
-                                onclick="document.getElementById('bigimg').style.backgroundImage = url('123.jpg')"></div>
+                            <div id="qwertyclick" ></div>
                         </a>
                     </li>
+
                 <?php endforeach; ?>
             </ul>
         </div>
