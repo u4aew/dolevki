@@ -41,13 +41,72 @@
 </head>
 <body>
 <script>
-    function search()
+    window.params =
     {
-        $.ajax({
-            url: "/search",
-            data: {}
-        })
+        currentMinCost: <?=Yii::app()->request->getParam("minimalCost",Yii::app()->realty->getMinimumAvailableCost()); ?>,
+        currentMaxCost: <?=Yii::app()->request->getParam("maximalCost",Yii::app()->realty->getMaximumAvailableCost()); ?>,
+        currentMinSize: <?=Yii::app()->request->getParam("minimalSize",Yii::app()->realty->getMinimumAvailableSize()); ?>,
+        currentMaxSize: <?=Yii::app()->request->getParam("maximalSize",Yii::app()->realty->getMaximumAvailableSize()); ?>,
+        minimalAvailableCost: <?=Yii::app()->realty->getMinimumAvailableCost(); ?>,
+        maximalAvailableCost: <?=Yii::app()->realty->getMaximumAvailableCost(); ?>,
+        minimalAvailableSize: <?=Yii::app()->realty->getMinimumAvailableSize(); ?>,
+        maximalAvailableSize: <?=Yii::app()->realty->getMaximumAvailableSize(); ?>,
     }
+    function getParams()
+    {
+        return window.params;
+    }
+    function sendFilter()
+    {
+        var rooms = "";
+        $("input[name=rooms]:checked").each(function()
+        {
+            if (rooms != "")
+                rooms += ","
+            rooms += $(this).val();
+        });
+        var minimalCost = getParams().minimalAvailableCost;
+        $(".amount_two").each(function()
+        {
+            var currentVal = $(this).val();
+            minimalCost = Math.max(minimalCost,currentVal);
+        });
+        var maximalCost = getParams().maximalAvailableCost;
+        $(".amount1_two").each(function()
+        {
+            var currentVal = $(this).val();
+            maximalCost = Math.min(maximalCost,currentVal);
+        });
+        var minimalSize = getParams().minimalAvailableSize;
+        $(".amount").each(function()
+        {
+            var currentVal = $(this).val();
+            minimalSize = Math.max(minimalSize,currentVal);
+        });
+        var maximalSize = getParams().maximalAvailableSize;
+        $(".amount1").each(function()
+        {
+            var currentVal = $(this).val();
+            maximalSize = Math.min(maximalSize,currentVal);
+        });
+        var url = "/search?";
+        if (rooms != "")
+            url += "rooms="+rooms + "&";
+        if (minimalCost > getParams().minimalAvailableCost)
+            url += "minimalCost="+minimalCost + "&";
+        if (maximalCost < getParams().maximalAvailableCost)
+            url += "maximalCost="+maximalCost + "&";
+        if (minimalSize > getParams().minimalAvailableSize)
+            url += "minimalSize="+minimalSize + "&";
+        if (maximalSize < getParams().maximalAvailableSize)
+            url += "maximalSize="+maximalSize + "&";
+        if (url.substr(url.length - 1, 1) == "&")
+            url = url.substr(0,url.length - 1);
+        if (url.substr(url.length - 1, 1) == "?")
+            url = url.substr(0,url.length - 1);
+        window.location = url;
+    }
+
 </script>
 <div class="navigation">
     <img class="image-logo" src="/uploads/image/3a3de38f91509e3c02ac8f27c74dad74.jpg" alt="logo">
@@ -58,23 +117,23 @@
             <div style="width:90%;margin:0px auto;">
                 <p align="center" style="font-size:18px;font-weigth:bold">Количество комнат </p>
                 <div style="width:25%;float:left;">
-                    <input type="checkbox" id="one-room" name="one-room" value="1" />
+                    <input type="checkbox" id="one-room" name="rooms" value="1" />
                     <label for="one-room">1</label>
                 </div>
                 <div style="width:25%;float:left;">
-                    <input type="checkbox" id="two-room" name="two-room" value="2" />
+                    <input type="checkbox" id="two-room" name="rooms" value="2" />
                     <label for="two-room">2</label>
                 </div>
                 <div style="width:25%;float:left;">
-                    <input type="checkbox" id="three-room" name="three-room" value="3" />
+                    <input type="checkbox" id="three-room" name="rooms" value="3" />
                     <label for="three-room">3</label>
                 </div>
                 <div style="width:25%;float:left;">
-                    <input type="checkbox" id="four-room" name="four-room" value="4" />
+                    <input type="checkbox" id="four-room" name="rooms" value="4" />
                     <label for="four-room">4</label>
                 </div>
                 <div style="float:left;margin-top:10px;margin-bottom:5px">
-                    <input type="checkbox" id="studio-room" name="four-room" value="studio" />
+                    <input type="checkbox" id="studio-room" name="rooms" value="studio" />
                     <label for="studio-room">Студия</label>
                 </div>
                 <div style="clear:both">
@@ -102,21 +161,19 @@
                         <div style="clear:both"> </div>
                         <div id="slider-range"></div>
                     </div>
-                    <hr style="margin:5px 20px 10px 20px;" </div>
-                <div>
-                    <p align="center" style="font-size:18px;font-weigth:bold">Срок сдачи </p>
-                    <div>
-                        <input type="checkbox" id="one" name="one" value="4 квартал 2016" />
-                        <label for="one">4 квартал 2016</label>
-                    </div>
-                    <div style="margin-top:10px">
-                        <input type="checkbox" id="two" name="two" value="4" />
-                        <label for="two">1 квартал 2017</label>
-                        <hr style="margin:5px 20px 10px 20px;">
-                    </div>
+                    <hr style="margin:5px 20px 10px 20px;">
                 </div>
-            </div>
-            <button type="submit" class="nav__find"> Найти квартиры </button>
+                <p align="center" style="font-size:18px;font-weigth:bold">Срок сдачи </p>
+                <div>
+                    <input type="checkbox" id="one" name="one" value="4 квартал 2016" />
+                    <label for="one">4 квартал 2016</label>
+                </div>
+                <div style="margin-top:10px">
+                    <input type="checkbox" id="two" name="two" value="4" />
+                    <label for="two">1 квартал 2017</label>
+                    <hr style="margin:5px 20px 10px 20px;">
+                </div>
+                <button type="submit" class="nav__find" onclick="sendFilter(); return false;"> Найти квартиры </button>
         </form>
     </div>
 </div>
@@ -158,73 +215,6 @@
     <div class="find-form visible-sm visible-xs" style="margin-bottom:15px">
         <p align="center" style="margin:0px;font-size:20px;font-weight:bold;padding-top:10px">Поиск по параметрам</p>
         <hr style="margin:5px 20px 10px 20px;">
-        <form oninput="areaoutput.value=areacount.value;priceoutput.value=pricecount.value">
-            <div style="width:90%;margin:0px auto;">
-                <p align="center" style="font-size:18px;font-weigth:bold">Количество комнат </p>
-                <div style="width:25%;float:left;">
-                    <input type="checkbox" id="one-room_mobile" name="one-room" value="1" />
-                    <label for="one-room_mobile">1</label>
-                </div>
-                <div style="width:25%;float:left;">
-                    <input type="checkbox" id="two-room_mobile" name="two-room" value="2" />
-                    <label for="two-room_mobile">2</label>
-                </div>
-                <div style="width:25%;float:left;">
-                    <input type="checkbox" id="three-room_mobile" name="three-room" value="3" />
-                    <label for="three-room_mobile">3</label>
-                </div>
-                <div style="width:25%;float:left;">
-                    <input type="checkbox" id="four-room_mobile" name="four-room" value="4" />
-                    <label for="four-room_mobile">4</label>
-                </div>
-                <div style="float:left;margin-top:10px;margin-bottom:5px">
-                    <input type="checkbox" id="studio-room_mobile" name="four-room" value="studio" />
-                    <label for="studio-room_mobile">Студия</label>
-                </div>
-                <div style="clear:both">
-                </div>
-                <hr style="margin:5px 20px 10px 20px;">
-                <div>
-                    <p align="center" style="font-size:18px;font-weigth:bold">Стоимость, РУБ </p>
-                    <div style="width:80%;margin:0px auto;">
-                        <b>ОТ</b>
-                        <input type="text" id="amount_two_mobile" class="amount_two">
-                        <b>ДО</b>
-                        <input type="text" id="amount_1_two_mobile" class="amount1_two">
-                    </div>
-                    <div style="clear:both"> </div>
-                    <div id="slider-range_two_mobile"></div>
-                    <hr style="margin:5px 20px 10px 20px;">
-                    <div>
-                        <p align="center" style="font-size:18px;font-weigth:bold">ПЛОЩАДЬ от, <sup>М 2</sup> </p>
-                        <div style="width:80%;margin:0px auto;">
-                            <b>ОТ</b>
-                            <input type="text" id="amount_mobile" class="amount">
-                            <b>ДО</b>
-                            <input type="text" id="amount_1_mobile" class="amount1">
-                        </div>
-                        <div style="clear:both"> </div>
-                        <div id="slider-range_mobile"></div>
-                    </div>
-                    <hr style="margin:5px 20px 10px 20px;" </div>
-                <div>
-                    <p align="center" style="font-size:18px;font-weigth:bold">Срок сдачи </p>
-                    <div>
-                        <input type="checkbox" id="one_mobile" name="one" value="4 квартал 2016" />
-                        <label for="one_mobile">4 квартал 2016</label>
-                    </div>
-                    <div style="margin-top:10px">
-                        <input type="checkbox" id="two_mobile" name="two" value="4" />
-                        <label for="two_mobile">1 квартал 2017</label>
-                        <hr style="margin:5px 20px 10px 20px;">
-                    </div>
-                </div>
-
-
-            </div>
-    </div>
-    <button class="nav__find"> Найти квартиры </button>
-    </form>
     </div>
     <section class="container-fluid wrapper">
         <div class="row" style="background-color:white;">

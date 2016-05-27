@@ -10,6 +10,7 @@ define("STATUS_RESELL",3);
  * @property integer $id
  * @property string $image
  * @property string $adres
+ * @property string $slug
  * @property string $longitude
  * @property string $latitude
  * @property integer $idDistrict
@@ -35,13 +36,12 @@ class Building extends yupe\models\YModel
 
     public static function getReadyTimes()
     {
+        $criteria = new CDbCriteria();
+        $readyTimes = ReadyTime::model()->findAll();
         $result = [];
-        $quartals = ["Первый","Второй","Третий","Четвертый"];
-        $years = [2016,2017,2018];
-        $result[0] = "------";
-        for ($i = 1; $i<13; $i++)
+        foreach ($readyTimes as $item)
         {
-            $result[] = $quartals[($i-1) % 4]." квартал ".$years[($i-1)/4];
+            $result[$item->id] = $item->text;
         }
         return $result;
     }
@@ -90,13 +90,13 @@ class Building extends yupe\models\YModel
 		// will receive user inputs.
 		return array(
 			array('idDistrict, idBuilder, isPublished, isShowedOnMap, status', 'numerical', 'integerOnly'=>true),
-			array('image, adres', 'length', 'max'=>200),
+			array('slug, image, adres', 'length', 'max'=>200),
 			array('longitude, latitude', 'length', 'max'=>14),
 			array('readyTime', 'length', 'max'=>45),
 			array('shortDescription, longDescription', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, image, adres, longitude, latitude, idDistrict, idBuilder, isPublished, isShowedOnMap, shortDescription, longDescription, status, readyTime', 'safe', 'on'=>'search'),
+			array('slug, id, image, adres, longitude, latitude, idDistrict, idBuilder, isPublished, isShowedOnMap, shortDescription, longDescription, status, readyTime', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -110,6 +110,7 @@ class Building extends yupe\models\YModel
 		return array(
             'apartments'=>array(self::HAS_MANY, 'Apartment', 'idBuilding'),
             'district'=>array(self::BELONGS_TO, 'District', 'idDistrict'),
+            'readyTimeObj'=>array(self::BELONGS_TO, 'ReadyTime', 'readyTime'),
             'builder'=>array(self::BELONGS_TO, 'Builder', 'idBuilder'),
 		);
 	}
@@ -132,6 +133,7 @@ class Building extends yupe\models\YModel
 			'id' => 'ID',
 			'image' => 'Изображение',
 			'adres' => 'Адрес',
+            'slug' => 'Адрес URL-страницы',
 			'longitude' => 'Долгота',
 			'latitude' => 'Широта',
 			'idDistrict' => 'Квартал',
@@ -192,4 +194,9 @@ class Building extends yupe\models\YModel
 	{
 		return parent::model($className);
 	}
+
+    public function getUrl()
+    {
+        return "/view/".$this->slug;
+    }
 }

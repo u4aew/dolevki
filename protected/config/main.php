@@ -132,7 +132,7 @@ return [
             'cacheID' => 'cache',
             'useStrictParsing' => true,
             'rules' => [ // Main rules
-                '/' => '/site/index',
+                '/' => '/realty/realty/index',
                 // For correct work of installer
                 '/install/default/<action:\w+>' => '/install/default/<action>',
                 '/backend' => '/yupe/backend/index',

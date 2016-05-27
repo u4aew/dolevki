@@ -19,7 +19,25 @@ class RealtyController extends \yupe\components\controllers\FrontController
      */
     public function actionIndex()
     {
-        $this->render('index');
+        $criteria = new CDbCriteria();
+        $criteria->select = 't.*';
+        $criteria->compare("isPublished",1);
+
+        $data = new CActiveDataProvider(
+            'Building',
+            [
+                'criteria' => $criteria,
+                'pagination' => [
+                    'pageSize' => (int)Yii::app()->getModule('realty')->itemsPerPage,
+                    'pageVar' => 'page',
+                ],
+                /*                'sort' => [
+                                    'sortVar' => 'sort',
+                                    'defaultOrder' => 't.position'
+                                ],
+                  */          ]
+        );
+        $this->render("/building/list",["dataProvider" => $data]);
     }
 
     public function actionSearch()
@@ -41,13 +59,20 @@ class RealtyController extends \yupe\components\controllers\FrontController
                                 ],
                   */          ]
         );
-        $this->render("index",["dataProvider" => $data]);
+        $this->render("/apartment/list",["dataProvider" => $data]);
     }
+
+    public function actionView($name)
+    {
+        $model = Building::model()->find("slug = :slug",[":slug" => $name]);
+        $this->render("/building/view",["data" => $model]);
+    }
+
 
     public function actionViewApartment($id)
     {
         $model = Apartment::model()->findByPk($id);
-        $this->render("viewApartment",["data" => $model]);
+        $this->render("/apartment/view",["data" => $model]);
     }
 
 }

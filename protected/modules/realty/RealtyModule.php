@@ -160,6 +160,23 @@ class RealtyModule  extends yupe\components\WebModule
                 ],
             ],
             [
+                'icon' => 'fa fa-fw fa-calendar',
+                'label' => Yii::t('RealtyModule.realty', 'ReadyTimes'),
+                'url' => ['/backend/realty/readyTime/index'],
+                'items' => [
+                    [
+                        'icon' => 'fa fa-fw fa-list-alt',
+                        'label' => Yii::t('RealtyModule.realty', 'ReadyTimes list'),
+                        'url' => ['/backend/realty/readyTime/index'],
+                    ],
+                    [
+                        'icon' => 'fa fa-fw fa-plus-square',
+                        'label' => Yii::t('RealtyModule.realty', 'Create readyTime'),
+                        'url' => ['/backend/realty/readyTime/create'],
+                    ],
+                ],
+            ],
+            [
                 'icon' => 'fa fa-fw fa-home',
                 'label' => Yii::t('RealtyModule.realty', 'Buildings'),
                 'url' => ['/backend/realty/building/index'],
