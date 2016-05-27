@@ -16,9 +16,6 @@ body {
     .mobile-menu {
         display: block !important;
     }
-    .main {
-        margin: 0px !important;
-    }
 }
 
 @media screen and (max-width:768px) {

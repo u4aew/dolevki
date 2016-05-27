@@ -1,6 +1,6 @@
 $(window).on('load resize', windowSize);
 function windowSize() {
-    if ($(window).width() <= '1280') {
+    if ($(window).width() <= '900') {
         $("#nav_js").removeClass("navigation");
         $(".main").css('margin-left',0);
 
