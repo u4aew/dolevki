@@ -40,6 +40,13 @@ class RealtyController extends \yupe\components\controllers\FrontController
         $this->render("/building/list",["dataProvider" => $data]);
     }
 
+    public function actionGetBuildingsForMap()
+    {
+        $arr = Building::model()->findAll();
+        echo Yii::app()->realty->getYandexMapJson($arr);
+    }
+
+
     public function actionSearch()
     {
         $criteria = new CDbCriteria();

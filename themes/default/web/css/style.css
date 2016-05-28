@@ -74,13 +74,13 @@ body {
 }
 
 .navigation-relative {
-    
+
 }
 
 
 .navigation-fixed {
     position:fixed;
-} 
+}
 
 
 .sales {
@@ -91,7 +91,7 @@ body {
     margin-bottom: 20px;
     min-height:120xp;
     box-shadow: 0px 0px 1px gray;
-} 
+}
 .footer {
     padding: 0px;
     min-height: 100px;
@@ -796,7 +796,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 
-/* Стилизация ползунков 
+/* Стилизация ползунков
 ----------------------------------*/
 
 .ui-state-default,
@@ -876,12 +876,21 @@ input[type=range]:focus::-ms-fill-upper {
     width: 80px;
     margin-left: 5px;
     padding-left: 3px;
-    
+
 }
 
 #slider-range {
     width: 80%;
     margin: 10px auto;
+}
+.map__button
+{
+    padding: 20px;
+    border: 2px solid black;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    cursor: pointer;
 }
 
 #slider-range_two {

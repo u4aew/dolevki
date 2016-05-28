@@ -4,9 +4,8 @@ $mainAssets = Yii::app()->getTheme()->getAssetsUrl();
 Yii::app()->getClientScript()->registerCssFile($mainAssets . '/css/store-frontend.css');
 Yii::app()->getClientScript()->registerScriptFile($mainAssets . '/js/store.js');
 
+$this->renderPartial("/map/view",["url" => "/realty/realty/getBuildingsForMap"]);
 ?>
-
-
 
 <div class="row">
     <div class="col-lg-12">

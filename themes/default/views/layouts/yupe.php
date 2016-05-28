@@ -15,8 +15,6 @@
             'defaultKeywords' => $this->yupe->siteKeyWords,
         ]
     ); ?>
-    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <?php
 
     Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/style.css');
@@ -24,7 +22,7 @@
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/bootstrap-notify.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.li-translit.js');
 
-    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery-ui-1.10.3.custom.min');
+    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery-ui-1.10.3.custom.min.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/slide.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/sidebar.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/mobile-siderbar.js');
@@ -259,6 +257,6 @@
 
 
 </main>
-<script src="js/bootstrap.js"></script>
-</body>
+<!--<script src="js/bootstrap.js"></script>
+--></body>
 </html>
