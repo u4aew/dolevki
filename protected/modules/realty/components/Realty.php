@@ -5,6 +5,31 @@
  */
 class Realty extends CApplicationComponent
 {
+
+
+    public function getYandexMapJson($objects)
+    {
+        $arr = array("type" => "FeatureCollection", "features" => array());
+        foreach ($objects as $item)
+        {
+            $elem = array();
+            $elem["type"] = "Feature";
+            $elem["id"] = $item->id;
+                $elem["geometry"] = array(
+                    "type" => "Point",
+                    "coordinates" => array($item->latitude,$item->longitude)
+                );
+                $elem["properties"] = array(
+                    "balloonContent" => "asdasdasdasd",
+//                "clusterCaption"=> "ggh",
+                    "hintContent"=> $item->adres,
+                );
+                $arr["features"][] = $elem;
+        }
+        return json_encode($arr,JSON_NUMERIC_CHECK);
+    }
+
+
     public function getMinimumAvailableCost()
     {
         $criteria = new CDbCriteria();
