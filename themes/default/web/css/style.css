@@ -60,7 +60,7 @@ body {
     background-color: #fff;
     position: relative;
     top: -40px;
-    box-shadow: 0px 0px 1px gray;
+    box-shadow: 0 0 1px gray;
 }
 
 .navigation {
@@ -89,13 +89,13 @@ body {
 .sale {
     background: white;
     margin-bottom: 20px;
-    min-height:120xp;
-    box-shadow: 0px 0px 1px gray;
+    min-height:120px;
+    box-shadow: 0 0 1px gray;
 }
 .footer {
     padding: 0px;
     min-height: 100px;
-    padding-top: 40px;
+    padding: 40px 0 0;
     background-color: #fff;
 }
 
@@ -106,7 +106,7 @@ body {
 
 .nav-iteam-list {
     list-style: none;
-    padding: 0px;
+    padding: 0;
 }
 
 
@@ -128,7 +128,6 @@ body {
 }
 
 .product-box {
-    background: white;
     background-color: transparent;
     padding: 10px !important;
 }
@@ -171,7 +170,7 @@ body {
     width: 103%;
     top: -3px;
     left: -5px;
-    box-shadow: 0px 0px 10px gray;
+    box-shadow: 0 0 10px gray;
 }
 
 .nav__find {
@@ -190,7 +189,7 @@ body {
 }
 
 .infoblock {
-    margin: 0px !important;
+    margin: 0 !important;
     min-height: 450px;
     background: #E1E1E1;
 }
@@ -212,7 +211,7 @@ body {
 
 .room-find-list {
     list-style: none;
-    padding: 0px;
+    padding: 0;
 }
 
 .room-find-list li {
@@ -284,7 +283,6 @@ input[type="checkbox"]:checked ~ label::before {
 .slider {
     width: 220px;
     height: 9px;
-    background: url(../img/fon2.png);
     position: relative;
     margin: 0 auto;
 }
@@ -296,11 +294,9 @@ input[type="checkbox"]:checked ~ label::before {
     top: -7px;
     margin-left: -12px;
     z-index: 200;
-    background: url(../img/polz2.png);
 }
 
 .ui-widget-header {
-    background: url(../img/linefon2.png) no-repeat left;
     height: 7px;
     left: 1px;
     top: 1px;
@@ -318,7 +314,7 @@ input[type="checkbox"]:checked ~ label::before {
     height: 250px;
     background-color: white;
     margin-bottom: 20px;
-    box-shadow: 0px 0px 2px gray;
+    box-shadow: 0 0 2px gray;
     margin-top: 10px;
 }
 
@@ -447,7 +443,7 @@ input[type=range]:focus::-ms-fill-upper {
 .title-iteam-product {
     background: rgba(23, 126, 137, .7);
     color: white;
-    margin: 0px;
+    margin: 0;
     height: 30px;
     position: relative;
     bottom: 30px;
@@ -468,7 +464,7 @@ input[type=range]:focus::-ms-fill-upper {
 .link-next-product {
     display: block;
     width: 70%;
-    margin: 0px auto;
+    margin: 0 auto;
     background: #7db500;
     color: white;
     height: 38px;
@@ -511,7 +507,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .product-image {
     height: 250px;
-    margin: 0px;
+    margin: 0;
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: 50%;
@@ -554,7 +550,7 @@ input[type=range]:focus::-ms-fill-upper {
     padding: 8px;
     text-align: center;
     width: 70%;
-    margin: 0px auto;
+    margin: 0 auto;
 }
 
 .mini-preview {
@@ -565,7 +561,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .image-list {
     list-style: none;
-    margin:0px auto;
+    margin:0 auto;
 }
 
 .image-list li {
@@ -581,7 +577,7 @@ input[type=range]:focus::-ms-fill-upper {
     background-size: cover;
     background-position-x: 50%;
     background-position-y: 50%;
-    margin: 0px 5px 0px 5px;
+    margin: 0 5px 0 5px;
 }
 
 .image-list li a div {
@@ -664,7 +660,6 @@ input[type=range]:focus::-ms-fill-upper {
     z-index: 2;
     width: 15px;
     height: 25px;
-    cursor: default;
     -ms-touch-action: none;
     touch-action: none;
     cursor: pointer;
@@ -866,7 +861,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .amount1_two {
     color: black !important;
-    width: 80px;
+    width: 90px;
     margin-left: 5px;
     padding-left: 3px;
 }
@@ -876,6 +871,7 @@ input[type=range]:focus::-ms-fill-upper {
     width: 80px;
     margin-left: 5px;
     padding-left: 3px;
+
 
 }
 
