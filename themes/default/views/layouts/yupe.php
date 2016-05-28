@@ -269,6 +269,11 @@
         thumbItem: 9
     });
 </script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".fancybox").fancybox();
+    });
+</script>
 <script src="js/bootstrap.js"></script>
 </body>
 </html>

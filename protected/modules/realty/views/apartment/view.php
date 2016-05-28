@@ -1,18 +1,9 @@
-<script type="text/javascript">
-    $(document).ready(function() {
-        $(".fancybox").fancybox();
-    });
-</script>
-
-
-
 <?php
 $images = $data->getImages();
 ?>
-
 <div class="row" style="padding-top:10px ">
     <div class="col-lg-8">
-        <h1 style="font-size:20px;font-weigth:bold;text-transform:uppercase;"><?=$data->getRoomsAsString()?> </h1>
+        <h1 style="font-size:20px;font-weight:bold;text-transform:uppercase;"><?=$data->getRoomsAsString()?> </h1>
         <div class="demo">
             <ul id="lightSlider">
                 <li data-thumb="<?= $data->getImageUrl(100,100,false); ?>">
