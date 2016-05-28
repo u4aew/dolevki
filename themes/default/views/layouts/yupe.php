@@ -15,19 +15,21 @@
             'defaultKeywords' => $this->yupe->siteKeyWords,
         ]
     ); ?>
-    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <?php
-
     Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/style.css');
+    Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/lightslider.css');
+    Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/jquery.fancybox.css');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/blog.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/bootstrap-notify.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.li-translit.js');
-
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery-ui-1.10.3.custom.min');
+    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/lightslider.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/slide.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/sidebar.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/mobile-siderbar.js');
+    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.fancybox.js');
+    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.fancybox.pack.js');
     ?>
     <script type="text/javascript">
         var yupeTokenName = '<?= Yii::app()->getRequest()->csrfTokenName;?>';
@@ -38,79 +40,74 @@
     <![endif]-->
     <link rel="stylesheet" href="http://yandex.st/highlightjs/8.2/styles/github.min.css">
     <script src="http://yastatic.net/highlightjs/8.2/highlight.min.js"></script>
-    <?php \yupe\components\TemplateEvent::fire(DefautThemeEvents::HEAD_END);?>
+    <?php \yupe\components\TemplateEvent::fire(DefautThemeEvents::HEAD_END); ?>
 </head>
 <body>
 <script>
     window.params =
     {
-        currentMinCost: <?=Yii::app()->request->getParam("minimalCost",Yii::app()->realty->getMinimumAvailableCost()); ?>,
-        currentMaxCost: <?=Yii::app()->request->getParam("maximalCost",Yii::app()->realty->getMaximumAvailableCost()); ?>,
-        currentMinSize: <?=Yii::app()->request->getParam("minimalSize",Yii::app()->realty->getMinimumAvailableSize()); ?>,
-        currentMaxSize: <?=Yii::app()->request->getParam("maximalSize",Yii::app()->realty->getMaximumAvailableSize()); ?>,
+        currentMinCost: <?=Yii::app()->request->getParam("minimalCost", Yii::app()->realty->getMinimumAvailableCost()); ?>,
+        currentMaxCost: <?=Yii::app()->request->getParam("maximalCost", Yii::app()->realty->getMaximumAvailableCost()); ?>,
+        currentMinSize: <?=Yii::app()->request->getParam("minimalSize", Yii::app()->realty->getMinimumAvailableSize()); ?>,
+        currentMaxSize: <?=Yii::app()->request->getParam("maximalSize", Yii::app()->realty->getMaximumAvailableSize()); ?>,
         minimalAvailableCost: <?=Yii::app()->realty->getMinimumAvailableCost(); ?>,
         maximalAvailableCost: <?=Yii::app()->realty->getMaximumAvailableCost(); ?>,
         minimalAvailableSize: <?=Yii::app()->realty->getMinimumAvailableSize(); ?>,
         maximalAvailableSize: <?=Yii::app()->realty->getMaximumAvailableSize(); ?>,
     }
-    function getParams()
-    {
+    function getParams() {
         return window.params;
     }
-    function sendFilter()
-    {
+    function sendFilter() {
         var rooms = "";
-        $("input[name=rooms]:checked").each(function()
-        {
+        $("input[name=rooms]:checked").each(function () {
             if (rooms != "")
                 rooms += ","
             rooms += $(this).val();
         });
         var minimalCost = getParams().minimalAvailableCost;
-        $(".amount_two").each(function()
-        {
+        $(".amount_two").each(function () {
             var currentVal = $(this).val();
-            minimalCost = Math.max(minimalCost,currentVal);
+            minimalCost = Math.max(minimalCost, currentVal);
         });
         var maximalCost = getParams().maximalAvailableCost;
-        $(".amount1_two").each(function()
-        {
+        $(".amount1_two").each(function () {
             var currentVal = $(this).val();
-            maximalCost = Math.min(maximalCost,currentVal);
+            maximalCost = Math.min(maximalCost, currentVal);
         });
         var minimalSize = getParams().minimalAvailableSize;
-        $(".amount").each(function()
-        {
+        $(".amount").each(function () {
             var currentVal = $(this).val();
-            minimalSize = Math.max(minimalSize,currentVal);
+            minimalSize = Math.max(minimalSize, currentVal);
         });
         var maximalSize = getParams().maximalAvailableSize;
-        $(".amount1").each(function()
-        {
+        $(".amount1").each(function () {
             var currentVal = $(this).val();
-            maximalSize = Math.min(maximalSize,currentVal);
+            maximalSize = Math.min(maximalSize, currentVal);
         });
         var url = "/search?";
         if (rooms != "")
-            url += "rooms="+rooms + "&";
+            url += "rooms=" + rooms + "&";
         if (minimalCost > getParams().minimalAvailableCost)
-            url += "minimalCost="+minimalCost + "&";
+            url += "minimalCost=" + minimalCost + "&";
         if (maximalCost < getParams().maximalAvailableCost)
-            url += "maximalCost="+maximalCost + "&";
+            url += "maximalCost=" + maximalCost + "&";
         if (minimalSize > getParams().minimalAvailableSize)
-            url += "minimalSize="+minimalSize + "&";
+            url += "minimalSize=" + minimalSize + "&";
         if (maximalSize < getParams().maximalAvailableSize)
-            url += "maximalSize="+maximalSize + "&";
+            url += "maximalSize=" + maximalSize + "&";
         if (url.substr(url.length - 1, 1) == "&")
-            url = url.substr(0,url.length - 1);
+            url = url.substr(0, url.length - 1);
         if (url.substr(url.length - 1, 1) == "?")
-            url = url.substr(0,url.length - 1);
+            url = url.substr(0, url.length - 1);
         window.location = url;
     }
 
 </script>
 <div id="nav_js" class="navigation">
-    <img class="image-logo" style="display:block; margin: 0 auto" src="/uploads/image/3a3de38f91509e3c02ac8f27c74dad74.jpg" alt="logo">
+    <a href="/">
+    <img class="image-logo" style="display:block; margin: 0 auto;max-width: 250px"
+         src="/uploads/image/3a3de38f91509e3c02ac8f27c74dad74.jpg" alt="logo"></a>
     <div class="find-form">
         <p align="center" style="margin:0px;font-size:20px;font-weight:bold;padding-top:10px">Поиск по параметрам</p>
         <hr style="margin:5px 20px 10px 20px;">
@@ -142,10 +139,12 @@
                 <hr style="margin:5px 20px 10px 20px;">
                 <div>
                     <p align="center" style="font-size:18px;font-weigth:bold">Стоимость, РУБ </p>
-                    <div style="width:80%;margin:0px auto;">
-                        <div style="margin:0px;float: left"><b>ОТ</b><input type="text" id="amount_two" class="amount_two"></div>
+                    <div style="width:95%;margin:0px auto;">
+                        <div style="margin:0px;float: left"><b>ОТ</b><input type="text" id="amount_two"
+                                                                            class="amount_two"></div>
 
-                        <div style="margin:0px;float: right"><b>ДО</b><input type="text" id="amount_1_two" class="amount1_two"></div>
+                        <div style="margin:0px;float: right"><b>ДО</b><input type="text" id="amount_1_two"
+                                                                             class="amount1_two"></div>
                         <div class="clearfix"></div>
                     </div>
                     <div style="clear:both"></div>
@@ -154,11 +153,13 @@
                     <div>
                         <p align="center" style="font-size:18px;font-weigth:bold">ПЛОЩАДЬ от, <sup>М 2</sup></p>
                         <div style="width:80%;margin:0px auto;">
-                            <div style="margin:0px;float: left"><b>ОТ</b> <input type="text" id="amount" class="amount"></div>
-                            <div style="margin:0px;float: right" ><b>ДО</b> <input type="text" id="amount_1" class="amount1"></div>
+                            <div style="margin:0px;float: left"><b>ОТ</b> <input type="text" id="amount" class="amount">
+                            </div>
+                            <div style="margin:0px;float: right"><b>ДО</b> <input type="text" id="amount_1"
+                                                                                  class="amount1"></div>
                             <div class="clearfix"></div>
                         </div>
-                        <div style="clear:both"> </div>
+                        <div style="clear:both"></div>
                         <div id="slider-range"></div>
                     </div>
                     <hr style="margin:5px 20px 10px 20px;"
@@ -176,7 +177,7 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" class="nav__find" onclick="sendFilter(); return false;"> Найти квартиры </button>
+            <button type="submit" class="nav__find" onclick="sendFilter(); return false;"> Найти квартиры</button>
         </form>
     </div>
 </div>
@@ -259,6 +260,15 @@
 
 
 </main>
+<script>
+    $('#lightSlider').lightSlider({
+        gallery: true,
+        item: 1,
+        loop:true,
+        slideMargin: 0,
+        thumbItem: 9
+    });
+</script>
 <script src="js/bootstrap.js"></script>
 </body>
 </html>
