@@ -28,6 +28,23 @@ define("STATUS_RESELL",3);
 class Building extends yupe\models\YModel
 {
 
+    public function getMapInfo()
+    {
+        $elem = array();
+        $elem["type"] = "Feature";
+        $elem["id"] = $this->id;
+        $elem["geometry"] = array(
+            "type" => "Point",
+            "coordinates" => array($this->latitude,$this->longitude)
+        );
+        $elem["properties"] = array(
+            "balloonContent" => "asdasdasdasd",
+//                "clusterCaption"=> "ggh",
+            "hintContent"=> $this->adres,
+        );
+        return $elem;
+    }
+
     public static function getStatuses()
     {
         return [0 => "-------",STATUS_IN_PROGRESS => "Ведется строительство", STATUS_READY => "Сдан", STATUS_RESELL => "Вторичное"];
@@ -197,6 +214,6 @@ class Building extends yupe\models\YModel
 
     public function getUrl()
     {
-        return "/view/".$this->slug;
+        return "/building/view/".$this->slug;
     }
 }

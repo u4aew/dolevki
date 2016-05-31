@@ -132,12 +132,10 @@ return [
             'cacheID' => 'cache',
             'useStrictParsing' => true,
             'rules' => [ // Main rules
-                '/' => '/realty/realty/index',
                 // For correct work of installer
                 '/install/default/<action:\w+>' => '/install/default/<action>',
                 '/backend' => '/yupe/backend/index',
                 '/backend/login' => '/user/account/backendlogin',
-                '/<module:\w+>/<controller:\w+>/<action:\w+>' => '/<module>/<controller>/<action>',
                 '/backend/<action:\w+>' => '/yupe/backend/<action>',
                 '/backend/<module:\w+>/<controller:\w+>' => '/<module>/<controller>Backend/index',
                 '/backend/<module:\w+>/<controller:\w+>/<action:\w+>/<id:\d+>' => '/<module>/<controller>Backend/<action>',

@@ -6,6 +6,7 @@
  * The followings are the available columns in table 'builders':
  * @property integer $id
  * @property string $name
+ * @property string $slug
  * @property string $shortDescription
  */
 class Builder extends \yupe\models\YModel
@@ -38,11 +39,11 @@ class Builder extends \yupe\models\YModel
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name', 'length', 'max'=>100),
+			array('name,slug', 'length', 'max'=>100),
 			array('shortDescription', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name, shortDescription', 'safe', 'on'=>'search'),
+			array('id,slug, name, shortDescription', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -68,6 +69,12 @@ class Builder extends \yupe\models\YModel
 			'shortDescription' => 'Описание',
 		);
 	}
+
+    public function getUrl()
+    {
+        return "/builder/view/".$this->slug;
+    }
+
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.

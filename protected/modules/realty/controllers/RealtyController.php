@@ -42,8 +42,11 @@ class RealtyController extends \yupe\components\controllers\FrontController
 
     public function actionGetBuildingsForMap()
     {
-        $arr = Building::model()->findAll();
-        echo Yii::app()->realty->getYandexMapJson($arr);
+        $result = [];
+        $buildings = Building::model()->findAll();
+        $districts = District::model()->findAll();
+        $result = array_merge($buildings,$districts);
+        echo Yii::app()->realty->getYandexMapJson($result);
     }
 
 
@@ -69,12 +72,23 @@ class RealtyController extends \yupe\components\controllers\FrontController
         $this->render("/apartment/list",["dataProvider" => $data]);
     }
 
-    public function actionView($name)
+    public function actionViewBuilding($name)
     {
         $model = Building::model()->find("slug = :slug",[":slug" => $name]);
         $this->render("/building/view",["data" => $model]);
     }
 
+    public function actionViewDistrict($name)
+    {
+        $model = District::model()->find("slug = :slug",[":slug" => $name]);
+        $this->render("/district/view",["data" => $model]);
+    }
+
+    public function actionViewBuilder($name)
+    {
+        $model = Builder::model()->find("slug = :slug",[":slug" => $name]);
+        $this->render("/builder/view",["data" => $model]);
+    }
 
     public function actionViewApartment($id)
     {

@@ -1,11 +1,12 @@
 $(window).scroll(function()
 {
-
-        if (window.scrollY > 160)
-	{
-		$(".navigation").addClass("navigation-fixed").css('top',-160);
-	} else
-{
- $(".navigation").removeClass("navigation-fixed").css('top',0);
-}
-;})
+    var changeMenuStyleConst = 928 - window.innerHeight;
+    if (window.scrollY > changeMenuStyleConst)
+    {
+        $(".navigation").addClass("navigation-fixed").css('top',-changeMenuStyleConst);
+    } else
+    {
+        $(".navigation").removeClass("navigation-fixed").css('top',0);
+    }
+    ;
+})
