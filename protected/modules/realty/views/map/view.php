@@ -20,8 +20,8 @@
             // Использовать кластеризацию.
             clusterize: true
         });
-        objectManager.objects.options.set('preset', 'islands#greenDotIcon');
-        objectManager.clusters.options.set('preset', 'islands#greenClusterIcons');
+//        objectManager.objects.options.set('preset', 'islands#greenDotIcon');
+//        objectManager.clusters.options.set('preset', 'islands#greenClusterIcons');
         myMap.geoObjects.add(objectManager);
 
         jQuery.getJSON('<?= $url; ?>', function (json) {

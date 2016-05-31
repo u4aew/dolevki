@@ -22,8 +22,12 @@ return [
     'rules'     => [
         '/realty' => 'realty/realty/index',
         '/search' => 'realty/realty/search',
-        '/viewApartment/<id>' => 'realty/realty/viewApartment',
-        '/view/<name>' => 'realty/realty/view',
+        '/apartment/view/<id>' => 'realty/realty/viewApartment',
+        '/building/view/<name>' => 'realty/realty/viewBuilding',
+        '/district/view/<name>' => 'realty/realty/viewDistrict',
+        '/builder/view/<name>' => 'realty/realty/viewBuilder',
+        '/' => '/realty/realty/index',
+        '/<module:\w+>/<controller:\w+>/<action:\w+>' => '/<module>/<controller>/<action>',
     ],
 
 ];

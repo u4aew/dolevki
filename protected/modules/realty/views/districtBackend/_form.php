@@ -24,7 +24,8 @@
 
     <?php
     $form = $this->beginWidget(
-        'bootstrap.widgets.TbActiveForm', [
+        '\yupe\widgets\ActiveForm',
+        [
             'id'                     => 'district-form',
             'enableAjaxValidation'   => false,
             'enableClientValidation' => true,
@@ -54,6 +55,13 @@
             ]); ?>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-sm-7">
+            <?= $form->slugFieldGroup($model, 'slug', ['sourceAttribute' => 'name']); ?>
+        </div>
+    </div>
+
 
     <div class='row'>
         <div class="col-sm-7">
@@ -125,7 +133,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-12 <?= $model->hasErrors('shortDescription') ? 'has-error' : ''; ?>">
+        <div class="col-sm-12 <?= $model->hasErrors('shortDescription') ? 'has-error' : ''; ?>" style="width: 400px">
             <?= $form->labelEx($model, 'shortDescription'); ?>
             <?php $this->widget(
                 $this->module->getVisualEditor(),

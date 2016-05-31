@@ -153,7 +153,7 @@ class Apartment extends yupe\models\YModel
     
     public function getUrl()
     {
-        return "/viewApartment/".$this->id;
+        return "/apartment/view/".$this->id;
     }
     
     public function getImages()
