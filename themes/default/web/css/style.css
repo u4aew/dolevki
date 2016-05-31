@@ -2,29 +2,31 @@ body {
     background-color: #FAFAFA;
 }
 
-
-@media screen and (max-width:1400px) {
+@media screen and (max-width: 1400px) {
     .product {
         padding: 50px !important;
     }
+
     .iteam-product-page {
         padding: 30px !important;
     }
 }
 
-@media screen and (max-width:980px) {
+@media screen and (max-width: 980px) {
     .mobile-menu {
         display: block !important;
     }
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width: 768px) {
     .header-logo {
         display: none;
     }
+
     .iteam-product {
         height: 550px !important;
     }
+
     .title-iteam-product:hover {
         height: 30px !important;
         bottom: 30px !important;
@@ -43,7 +45,7 @@ body {
 .header {
     padding-top: 20px !important;
     margin-bottom: 20px;
-    background-color: white;
+    background-color: transparent;
     min-height: 80px;
 }
 
@@ -52,7 +54,7 @@ body {
 }
 
 .content {
-    background-color: #FAFAFA;
+    background-color: #212d53;
 }
 
 .content-page {
@@ -64,36 +66,34 @@ body {
 }
 
 .navigation {
-    background: white;
     padding-top: 20px;
     text-align: center;
     border-right: 2px solid #f1f1f1;
     background-color: #FAFAFA;
-    width:300px;
-    position:absolute;
+    width: 300px;
+    position: absolute;
 }
 
 .navigation-relative {
 
 }
 
-
 .navigation-fixed {
-    position:fixed;
+    position: fixed;
 }
-
 
 .sales {
     background-color: #FAFAFA;
 }
+
 .sale {
     background: white;
     margin-bottom: 20px;
-    min-height:120px;
+    min-height: 120px;
     box-shadow: 0 0 1px gray;
 }
+
 .footer {
-    padding: 0px;
     min-height: 100px;
     padding: 40px 0 0;
     background-color: #fff;
@@ -108,7 +108,6 @@ body {
     list-style: none;
     padding: 0;
 }
-
 
 .nav-iteam-list li {
     text-align: center;
@@ -140,14 +139,12 @@ body {
     text-align: center;
 }
 
-
 .image-product {
-    width:100%;
-    height:auto;
-    max-height:220px;
+    width: 100%;
+    height: auto;
+    max-height: 220px;
     outline: 1px solid gray;
 }
-
 
 .product-box__info {
     text-align: center;
@@ -176,7 +173,7 @@ body {
 .nav__find {
     padding: 10px;
     width: 100%;
-    background: #F05D5E;
+    background: #4caf50;
     height: 60px;
     border: none;
     color: white;
@@ -185,7 +182,7 @@ body {
 }
 
 .nav__find:hover {
-    background: #8B0000
+    background: #2E7D32
 }
 
 .infoblock {
@@ -206,7 +203,7 @@ body {
 
 .find-form {
     color: black;
-    background:  #FAFAFA;
+    background: #FAFAFA;
 }
 
 .room-find-list {
@@ -465,18 +462,18 @@ input[type=range]:focus::-ms-fill-upper {
     display: block;
     width: 70%;
     margin: 0 auto;
-    background: #7db500;
-    color: white;
+    background: #4caf50;
+    color: white !important;
     height: 38px;
     padding-top: 10px;
     text-align: center;
     transition: .3s;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .link-next-product:hover {
-    color: white;
-    text-decoration: none;
+    background-color: #2E7D32;
 }
 
 .next-list-iteam {
@@ -524,7 +521,6 @@ input[type=range]:focus::-ms-fill-upper {
     background-position-y: 50%;
 }
 
-
 .hover-title {
     height: 250px;
     opacity: 0;
@@ -561,7 +557,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .image-list {
     list-style: none;
-    margin:0 auto;
+    margin: 0 auto;
 }
 
 .image-list li {
@@ -651,7 +647,6 @@ input[type=range]:focus::-ms-fill-upper {
     text-align: left;
 }
 
-
 /* Ширина, высота и позиционирование для ползунков
 ----------------------------------*/
 
@@ -672,8 +667,8 @@ input[type=range]:focus::-ms-fill-upper {
     display: block;
     border: 0;
     background-position: 0 0;
+    background-color: #fafafa !important;
 }
-
 
 /* support: IE8 - See #6727 */
 
@@ -681,7 +676,6 @@ input[type=range]:focus::-ms-fill-upper {
 .ui-slider.ui-state-disabled .ui-slider-range {
     filter: inherit;
 }
-
 
 /* Высота горизонтальной полоски
 ----------------------------------*/
@@ -707,7 +701,6 @@ input[type=range]:focus::-ms-fill-upper {
 .ui-slider-horizontal .ui-slider-range-max {
     right: 0;
 }
-
 
 /* Ширина вертикальной полоски
 ----------------------------------*/
@@ -736,7 +729,6 @@ input[type=range]:focus::-ms-fill-upper {
     top: 0;
 }
 
-
 /* Указание шрифта и размера текста
 ----------------------------------*/
 
@@ -757,7 +749,6 @@ input[type=range]:focus::-ms-fill-upper {
     font-size: 1em;
 }
 
-
 /* Стилизация полоски
 ----------------------------------*/
 
@@ -776,7 +767,6 @@ input[type=range]:focus::-ms-fill-upper {
     color: #222222;
 }
 
-
 /* Стилизация промижудка между ползунками
 ----------------------------------*/
 
@@ -789,7 +779,6 @@ input[type=range]:focus::-ms-fill-upper {
 .ui-widget-header a {
     color: #222222;
 }
-
 
 /* Стилизация ползунков
 ----------------------------------*/
@@ -815,7 +804,7 @@ input[type=range]:focus::-ms-fill-upper {
     /* IE10+ */
     background: linear-gradient(to bottom, #fafafa 0%, #f2f0f1 39%, #e8e8e8 100%);
     /* W3C */
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#e8e8e8', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa', endColorstr='#e8e8e8', GradientType=0);
     /* IE6-9 */
     -webkit-box-shadow: 0 1px 0 #ccc, inset 0 1px 0 #fff;
     -moz-box-shadow: 0 1px 0 #ccc, inset 0 1px 0 #fff;
@@ -831,7 +820,6 @@ input[type=range]:focus::-ms-fill-upper {
     text-decoration: none;
 }
 
-
 /* Стилизация ползунка при наведении и фокусе
 ----------------------------------*/
 
@@ -842,7 +830,7 @@ input[type=range]:focus::-ms-fill-upper {
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
     border: 1px solid #fff;
-    background: #65ABD0;
+    background: #FAFAFA;
     font-weight: normal;
     color: #212121;
 }
@@ -872,24 +860,135 @@ input[type=range]:focus::-ms-fill-upper {
     margin-left: 5px;
     padding-left: 3px;
 
-
 }
 
 #slider-range {
     width: 80%;
     margin: 10px auto;
 }
-.map__button
-{
+
+.map__button {
     padding: 20px;
-    border: 2px solid black;
     text-align: center;
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 25px;
     cursor: pointer;
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+    transition: .1s;
+    transition-timing-function: ease-in-out;
+}
+
+.map__button:hover {
+
+    background-color: #2E7D32;
 }
 
 #slider-range_two {
     width: 80%;
     margin: 10px auto;
+}
+
+.prew {
+    width: 100%;
+}
+
+.prew ul {
+    list-style: none outside none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.prew ul li {
+    display: block;
+    float: left;
+    margin-right: 6px;
+    cursor: pointer;
+}
+
+.prew ul li img {
+    display: block;
+    max-height: 300px;
+    max-width: 100%;
+    margin: 5px auto;
+    padding-right: 1px;
+}
+
+.building {
+    height: 250px;
+    box-shadow: 0 1px 3px 0 rgba(42, 48, 60, .19);
+    transition: .1s;
+    transition-timing-function: ease-in-out;
+    overflow: hidden;
+}
+
+.building:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 9px 19px 0 rgba(110, 127, 134, .44)
+}
+
+.building-description {
+    height: 32px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    transition: .2s;
+    background-color: yellow;
+    position: relative;
+    top: 0px;
+    z-index: 1;
+}
+
+.building-click:hover .building-description {
+    top: -50px;
+}
+
+.building-img {
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: 50%;
+    background-position-y: 50%;
+}
+
+.next-building {
+    transition: .2s;
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+    color: white !important;
+    background-color: #4caf50;
+    cursor: pointer;
+    text-decoration: none !important;
+    padding: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.next-building:hover {
+    background: #2E7D32;
+}
+
+.building-click {
+    margin-bottom: 20px;
+}
+
+.it-op {
+    transition: .2s;
+    opacity: 0.1;
+}
+
+.description-building {
+    transition: .5s;
+    transition-timing-function: ease-in-out;
+    position: relative;
+    height: 170px;
+    top: 0;
+    background-color: white;
+    padding: 14px 5px 0px 5px;
+}
+
+.building-click:hover .description-building {
+    top: -150px;
+
 }

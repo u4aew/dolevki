@@ -107,7 +107,7 @@
 <div id="nav_js" class="navigation">
     <a href="/">
     <img class="image-logo" style="display:block; margin: 0 auto;max-width: 250px"
-         src="/uploads/image/3a3de38f91509e3c02ac8f27c74dad74.jpg" alt="logo"></a>
+         src="/uploads/image/3a3de38f91509e3c02ac8f27c74dad74.PNG" alt="logo"></a>
     <div class="find-form">
         <p align="center" style="margin:0px;font-size:20px;font-weight:bold;padding-top:10px">Поиск по параметрам</p>
         <hr style="margin:5px 20px 10px 20px;">
@@ -152,7 +152,7 @@
                     <hr style="margin:5px 20px 10px 20px;">
                     <div>
                         <p align="center" style="font-size:18px;font-weigth:bold">ПЛОЩАДЬ от, <sup>М 2</sup></p>
-                        <div style="width:80%;margin:0px auto;">
+                        <div style="width:95%;margin:0px auto;">
                             <div style="margin:0px;float: left"><b>ОТ</b> <input type="text" id="amount" class="amount">
                             </div>
                             <div style="margin:0px;float: right"><b>ДО</b> <input type="text" id="amount_1"
@@ -164,17 +164,20 @@
                     </div>
                     <hr style="margin:5px 20px 10px 20px;"
                 </div>
-                <div>
+                <div style="width: 90%;margin: 0 auto 20px auto" >
                     <p align="center" style="font-size:18px;font-weigth:bold">Срок сдачи </p>
-                    <div>
-                        <input type="checkbox" id="one" name="one" value="4 квартал 2016"/>
-                        <label for="one">4 квартал 2016</label>
+                    <div style="width:95%;margin:0px auto;">
+                        <div style="margin:0px;float: left"><b>C</b><input type="text" id="amount_three"
+                                                                            class="amount_two"></div>
+
+                        <div style="margin:0px;float: right"><b>ПО</b><input type="text" id="amount_1_three"
+                                                                             class="amount1_two"></div>
+                        <div class="clearfix"></div>
+                        <div id="slider-range_three"></div>
                     </div>
-                    <div style="margin-top:10px">
-                        <input type="checkbox" id="two" name="two" value="4"/>
-                        <label for="two">1 квартал 2017</label>
-                        <hr style="margin:5px 20px 10px 20px;">
-                    </div>
+
+                    <div style="clear:both"></div>
+
                 </div>
             </div>
             <button type="submit" class="nav__find" onclick="sendFilter(); return false;"> Найти квартиры</button>
@@ -193,10 +196,10 @@
 </div>
 <main class="main">
     <section class="container-fluid wrapper">
-        <div class="row" style="background-color:white;">
+        <div class="row" style="background-color:#e5e5e5;">
             <div class="col-lg-10 col-lg-offset-1">
                 <header class="row header">
-                    <div style="text-align:center;font-size:20px;font-weight:bold;"> 8 800 35 35</div>
+                    <div style="text-align:center;font-size:30px;font-weight:bold;"> 8 800 5555 35 35</div>
                 </header>
             </div>
         </div>
@@ -208,7 +211,7 @@
         </div>
 
         <div class="row sales">
-            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 sale">
+            <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 sale" style="margin-top: 10px">
                 <div class="row">
                     <h2 style="text-align:center"> Акции и предложения </h2>
                     <hr>
@@ -252,13 +255,9 @@
                 <div class="col-lg-3 col-md-3 col-sm-3"> Разработка</div>
 
             </div>
-
-
     </section>
     </div>
     </div>
-
-
 </main>
 <script>
     $('#lightSlider').lightSlider({
