@@ -6,7 +6,7 @@
 ?>
                        <div class="row" style="padding-top:10px ">
                         <div class="col-lg-8">
-                            <h1 style="font-size:20px;font-weigth:bold;text-transform:uppercase;"><?=$data->getRoomsAsString()?> </h1>
+                            <h1 style="font-size:20px;font-weigth:bold;text-transform:uppercase;"><?=$data->adres?> </h1>
                             <div class="preview">
                                 <div class="product-image-iteam" id="bigimg"  style="background-image: url(<?= $data->getImageUrl(1000, 1000, false); ?>);"> </div>
                             </div>
@@ -24,21 +24,11 @@
                         <div class="col-lg-4">
                             <h3 style="text-align:center">ПАРАМЕТРЫ </h3>
                             <p style="text-align:center;font-weight:bold"> Название района</p>
-                            <p style="text-align:center;font-weight:bold"> <?=$data->building->adres?></p>
+                            <p style="text-align:center;font-weight:bold"> <?=$data->adres?></p>
                             <hr>
                             <div class="row">
-                                <div class="col-lg-6 col-sm-6">
-                                    <p>  <?=$data->getRoomsAsString()?></p>
-                                    <p> Площадь: <?=$data->size?> м <sup>2 </sup></p>
-
-                                </div>
-                                <div class="col-lg-6 col-sm-6">
-                                    <p> Этаж: <?=$data->floor?> </p>
-                                    <p> <?=$data->building->getReadyTimes()[$data->building->readyTime]?></p>
-                                </div>   
                             </div>
                             <hr>
-                            <div class="price-page"> <?=$data->cost?> &#8381; </div>
                             <hr>
                             <div style="text-align:center">
                             </div>

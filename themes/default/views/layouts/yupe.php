@@ -23,7 +23,7 @@
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/blog.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/bootstrap-notify.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.li-translit.js');
-    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery-ui-1.10.3.custom.min');
+    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery-ui-1.10.3.custom.min.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/lightslider.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/slide.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/sidebar.js');
@@ -107,7 +107,7 @@
 <div id="nav_js" class="navigation">
     <a href="/">
     <img class="image-logo" style="display:block; margin: 0 auto;max-width: 250px"
-         src="/uploads/image/3a3de38f91509e3c02ac8f27c74dad74.PNG" alt="logo"></a>
+         src="<?=$this->mainAssets?>/images/site_logo.png" alt="logo"></a>
     <div class="find-form">
         <p align="center" style="margin:0px;font-size:20px;font-weight:bold;padding-top:10px">Поиск по параметрам</p>
         <hr style="margin:5px 20px 10px 20px;">
@@ -273,6 +273,5 @@
         $(".fancybox").fancybox();
     });
 </script>
-<script src="js/bootstrap.js"></script>
 </body>
 </html>

@@ -47,9 +47,14 @@ class Building extends yupe\models\YModel
 
     public static function getStatuses()
     {
-        return [0 => "-------",STATUS_IN_PROGRESS => "Ведется строительство", STATUS_READY => "Сдан", STATUS_RESELL => "Вторичное"];
-
+        return [0 => "-------",STATUS_IN_PROGRESS => "Ведется строительство", STATUS_READY => "Сдано в эксплуатацию", STATUS_RESELL => "Вторичное жилье"];
     }
+
+    public function getStatusAsString()
+    {
+        return Building::getStatuses()[$this->status];
+    }
+
 
     public static function getReadyTimes()
     {
@@ -134,6 +139,7 @@ class Building extends yupe\models\YModel
 
     public function getImages()
     {
+
         $criteria = new CDbCriteria();
         $criteria->compare("idRecord",$this->id);
         $criteria->compare("idTable",RealtyImage::$TABLE_BUILDING);
@@ -211,6 +217,8 @@ class Building extends yupe\models\YModel
 	{
 		return parent::model($className);
 	}
+
+
 
     public function getUrl()
     {

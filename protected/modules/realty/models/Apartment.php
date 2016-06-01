@@ -32,6 +32,12 @@ class Apartment extends yupe\models\YModel
         ];
     }
 
+    public function getPriceAsString()
+    {
+        return number_format($this->cost,0,","," ").'<span class="rubl"> руб.</span>';
+    }
+
+
     public function behaviors()
     {
         return [
@@ -163,6 +169,12 @@ class Apartment extends yupe\models\YModel
         $criteria->compare("idRecord",$this->id);
         $images = RealtyImage::model()->findAll($criteria);
         return $images;
-        
     }
+
+    public function getTitle()
+    {
+        return $this->getRoomsAsString()." на ".$this->floor." этаже по адресу ".$this->building->adres;
+    }
+
+
 }

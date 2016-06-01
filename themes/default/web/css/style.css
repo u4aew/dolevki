@@ -990,5 +990,16 @@ input[type=range]:focus::-ms-fill-upper {
 
 .building-click:hover .description-building {
     top: -150px;
-
+}
+.view__small-info
+{
+    text-align:center;
+}
+.view__small-info .main-info
+{
+    font-weight: bold;
+}
+.rubl
+{
+    font-family: u2000;
 }
