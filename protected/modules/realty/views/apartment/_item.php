@@ -23,14 +23,14 @@
                                         <p style="margin:0px"> <?=$data->getRoomsAsString()?> </p>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6">
-                                        <p style="margin:0px"> Площать: <?=$data->size?> М<sup>2</sup> </p>
+                                        <p style="margin:0px"> Площадь: <?=$data->size?> М<sup>2</sup> </p>
                                         <p style="margin:0px"> Срок сдачи: <p style="margin:0px;"> <?=$data->building->getReadyTimes()[$data->building->readyTime]?></p> </p>     
                                     </div>
 
                                 </div>
                                 <div class="row" style="margin-top:20px">
                                     <div class="col-lg-12">
-                                        <div class="price-page"><?=number_format($data->cost,0,","," ");?></div>
+                                        <div class="price-page"><?=$data->getPriceAsString(); ?></div>
                                     </div>
 
                                 </div>

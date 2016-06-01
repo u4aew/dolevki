@@ -1,9 +1,16 @@
 <?php
+/***
+ * @var Apartment $data
+ */
 $images = $data->getImages();
 ?>
+<div class="row">
+    <div class="col-lg-12">
+        <h1 style="font-size:24px;font-weight:bold;text-transform:uppercase;"><?= $data->getTitle() ?> </h1>
+    </div>
+</div>
 <div class="row" style="padding-top:10px ">
     <div class="col-lg-8">
-        <h1 style="font-size:24px;font-weight:bold;text-transform:uppercase;"><?= $data->getRoomsAsString() ?> </h1>
         <div class="walp" style="background: #F5F5F5">
             <div class="prew">
                 <ul id="lightSlider">
@@ -22,23 +29,19 @@ $images = $data->getImages();
         </div>
     </div>
     <div class="col-lg-4">
-        <h3 style="text-align:center">ПАРАМЕТРЫ </h3>
-        <p style="text-align:center;font-weight:bold"> Название района</p>
-        <p style="text-align:center;font-weight:bold"> <?= $data->building->adres ?></p>
+        <?php if ($data->building->idDistrict > 0):?>
+            <p class="view__small-info">Квартал:<span class = "main-info"><?= $data->building->district->name?></span></p>
+        <?php endif; ?>
+        <?php if ($data->building->idBuilder > 0):?>
+            <p class="view__small-info">Застройщик:<span class = "main-info"><?= $data->building->builder->name?></span></p>
+        <?php endif; ?>
+        <p class="view__small-info">Площадь:<span class = "main-info"><?= $data->size?> м<sup>2</sup></span></p>
+        <p class="view__small-info"><?=$data->building->getStatusAsString();?></span></p>
+        <?php if ($data->building->status == STATUS_IN_PROGRESS):?>
+            <p class="view__small-info">Срок сдачи:<span class = "main-info"><?= $data->building->getReadyTimes()[$data->building->readyTime] ?></sup></span></p>
+        <?php endif; ?>
         <hr>
-        <div class="row">
-            <div class="col-lg-6 col-sm-6">
-                <p>  <?= $data->getRoomsAsString() ?></p>
-                <p> Площадь: <?= $data->size ?> м <sup>2 </sup></p>
-
-            </div>
-            <div class="col-lg-6 col-sm-6">
-                <p> Этаж: <?= $data->floor ?> </p>
-                <p> <?= $data->building->getReadyTimes()[$data->building->readyTime] ?></p>
-            </div>
-        </div>
-        <hr>
-        <div class="price-page"> <?= $data->cost ?> &#8381; </div>
+        <div class="price-page"><?=$data->getPriceAsString(); ?></div>
         <hr>
         <div style="text-align:center">
         </div>

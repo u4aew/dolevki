@@ -11,6 +11,7 @@
 /**
  * @link    http://www.yiiframework.ru/doc/guide/ru/basics.entry
  */
+set_time_limit(1000);
 if (!ini_get('date.timezone')) {
     date_default_timezone_set('Europe/Moscow');
 }

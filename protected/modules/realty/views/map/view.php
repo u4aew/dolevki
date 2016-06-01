@@ -31,7 +31,16 @@
      });
     function showMap()
     {
-        $("#map").slideToggle(400,function(){myMap.container.fitToViewport();});
+        $("#map").slideToggle(400,function(){
+            if ($("#map").css("display") == "none")
+                $(".map__button").html("Показать объекты на карте");
+            else
+                $(".map__button").html("Скрыть карту");
+
+
+
+            myMap.container.fitToViewport();
+        });
     }
 </script>
 <div class="row map__container">
@@ -39,7 +48,7 @@
 
     </div>
     <div class="map__button" onclick="showMap();">
-        Показать карту
+        Показать объекты на карте
     </div>
 </div>
 
