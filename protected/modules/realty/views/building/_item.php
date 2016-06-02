@@ -16,6 +16,7 @@
                 <a class="next-building" href="<?= $data->getUrl(); ?>"> Подробнее </a>
             </div>
         </div>
+
     </div>
 </div>
 

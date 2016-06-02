@@ -11,7 +11,7 @@ $(document).ready(function () {
             $(this).toggleClass("select-room-click-cheked");
         }
     )
-
+    $('.testselect2').SumoSelect();
 })
 
 $(window).scroll(function () {

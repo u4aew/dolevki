@@ -20,6 +20,7 @@
     Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/style.css');
     Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/lightslider.css');
     Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/jquery.fancybox.css');
+    Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/sumoselect.css');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/blog.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/bootstrap-notify.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.li-translit.js');
@@ -30,6 +31,7 @@
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/mobile-siderbar.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.fancybox.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.fancybox.pack.js');
+    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.sumoselect.js');
     ?>
     <script type="text/javascript">
         var yupeTokenName = '<?= Yii::app()->getRequest()->csrfTokenName;?>';
@@ -154,14 +156,19 @@
                 </div>
                 <div style="width: 90%;margin: 0 auto 20px auto" >
                     <p align="center" style="font-size:18px;font-weigth:bold">Срок сдачи </p>
-                    <div style="width:95%;margin:0px auto;">
-                        <div style="margin:0px;float: left"><b>C</b><input type="text" id="amount_three"
-                                                                            class="amount_two"></div>
+                    <select multiple class="testselect2" name="" id="">
+                        <option value=""> 1 квартра 2016</option>
+                        <option value=""> 1 квартра 2017</option>
+                        <option value=""> 1 квартра 2018</option>
+                        <option value=""> 1 квартра 2019</option>
 
-                        <div style="margin:0px;float: right"><b>ПО</b><input type="text" id="amount_1_three"
-                                                                             class="amount1_two"></div>
-                        <div class="clearfix"></div>
-                        <div id="slider-range_three"></div>
+                    </select>
+
+
+                    <div style="width:95%;margin:0px auto;">
+
+
+
                     </div>
 
                     <div style="clear:both"></div>
