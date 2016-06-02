@@ -1001,5 +1001,31 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .rubl
 {
-    font-family: u2000;
+    font-family: u2000, serif;
 }
+.select-room {
+    list-style: none;
+    padding: 0px;
+    cursor: pointer;
+    text-align: center;
+}
+.select-room-click {
+    display: inline-block;
+    border: 2px solid rgba(0, 0, 0, 0.11);
+    padding: 4px;
+    min-width: 30px;
+    cursor: pointer;
+    transition: .2s;
+    transition-timing-function: ease-out;
+}
+.select-room-click:hover {
+    border: 2px solid darkgray;
+}
+.select-room-click-cheked {
+    color: white;
+    background-color: #038AD6;
+}
+
+
+
+

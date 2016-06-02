@@ -114,26 +114,14 @@
         <form id="searchForm" action="/search" method="get">
             <div style="width:90%;margin:0px auto;">
                 <p align="center" style="font-size:18px;font-weigth:bold">Количество комнат </p>
-                <div style="width:25%;float:left;">
-                    <input type="checkbox" id="one-room" name="one-room" value="1"/>
-                    <label for="one-room">1</label>
-                </div>
-                <div style="width:25%;float:left;">
-                    <input type="checkbox" id="two-room" name="two-room" value="2"/>
-                    <label for="two-room">2</label>
-                </div>
-                <div style="width:25%;float:left;">
-                    <input type="checkbox" id="three-room" name="three-room" value="3"/>
-                    <label for="three-room">3</label>
-                </div>
-                <div style="width:25%;float:left;">
-                    <input type="checkbox" id="four-room" name="four-room" value="4"/>
-                    <label for="four-room">4</label>
-                </div>
-                <div style="float:left;margin-top:10px;margin-bottom:5px">
-                    <input type="checkbox" id="studio-room" name="four-room" value="studio"/>
-                    <label for="studio-room">Студия</label>
-                </div>
+               <ul class="select-room">
+                   <li class="select-room-click">Студия</li>
+                   <li class="select-room-click">1</li>
+                   <li class="select-room-click">2</li>
+                   <li class="select-room-click">3</li>
+                   <li class="select-room-click">4</li>
+                   <li class="select-room-click">5+</li>
+               </ul>
                 <div style="clear:both">
                 </div>
                 <hr style="margin:5px 20px 10px 20px;">
