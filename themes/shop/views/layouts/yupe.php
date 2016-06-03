@@ -18,7 +18,7 @@
                 'cleartype' => 'on',
                 'HandheldFriendly' => 'True',
                 'format-detection' => 'telephone=no',
-                'format-detection' => 'address=no',
+                'foпrmat-detection' => 'address=no',
                 'apple-mobile-web-app-capable' => 'yes',
                 'apple-mobile-web-app-status-bar-style' => 'black-translucent',
             ],

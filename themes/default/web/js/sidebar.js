@@ -11,7 +11,36 @@ $(document).ready(function () {
             $(this).toggleClass("select-room-click-cheked");
         }
     )
-    $('.testselect2').SumoSelect();
+    $('.sumoSelect').each(function()
+    {
+        $(this).SumoSelect({
+            placeholder: $(this).data("placeholder"),
+        });
+    });
+    $("#status")
+        .change(function(){
+            var flag = false;
+            flag = flag || $("#inProgress").is(':selected');
+            var totalChecked = 0;
+            $(this).find("option").each(function()
+            {
+                if ($(this).is(':selected'))
+                {
+                    totalChecked++;
+                    return;
+                }
+            });
+            flag = flag || totalChecked == 0;
+            if (flag)
+            {
+                $("#readyTime__container").slideDown();
+            } else
+            {
+                $("#readyTime__container").slideUp();
+            }
+        })
+        .change();
+
 })
 
 $(window).scroll(function () {

@@ -155,24 +155,23 @@
                     <hr style="margin:5px 20px 10px 20px;"
                 </div>
                 <div style="width: 90%;margin: 0 auto 20px auto" >
-                    <p align="center" style="font-size:18px;font-weigth:bold">Срок сдачи </p>
-                    <select multiple class="testselect2" name="" id="">
-                        <option value=""> 1 квартра 2016</option>
-                        <option value=""> 1 квартра 2017</option>
-                        <option value=""> 1 квартра 2018</option>
-                        <option value=""> 1 квартра 2019</option>
-
+                    <p align="center" style="font-size:18px;font-weigth:bold">Тип жилья</p>
+                    <select multiple class="sumoSelect" name="" id="status" data-placeholder = "Тип искомого жилья">
+                        <option id = "inProgress" value="<?=STATUS_IN_PROGRESS?>">Строящееся жилье</option>
+                        <option value="<?=STATUS_READY?>">Готовые новостройки</option>
+                        <option value="<?=STATUS_RESELL?>">Вторичная продажа</option>
                     </select>
-
-
-                    <div style="width:95%;margin:0px auto;">
-
-
-
-                    </div>
-
-                    <div style="clear:both"></div>
-
+                </div>
+                <div style="width: 90%;margin: 0 auto 20px auto" id = "readyTime__container">
+                    <p align="center" style="font-size:18px;font-weigth:bold">Срок сдачи </p>
+                    <select multiple class="sumoSelect" name="" id="readyTime" data-placeholder = "Интересующее время готовности жилья">
+                        <?php
+                            $times = ReadyTime::model()->findAll();
+                        ?>
+                        <?php foreach ($times as $item):?>
+                            <option value="<?=$item->id;?>"><?=$item->text;?></option>
+                        <?php endforeach; ?>
+                    </select>
                 </div>
             </div>
             <button type="submit" class="nav__find" onclick="sendFilter(); return false;"> Найти квартиры</button>

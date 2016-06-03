@@ -3,31 +3,7 @@
 $mainAssets = Yii::app()->getTheme()->getAssetsUrl();
 
 $this->renderPartial("/map/view",["url" => "/realty/realty/getBuildingsForMap"]);
+
+$this->renderPartial("/building/list",["dataProvider" => $dataProvider]);
+
 ?>
-
-<div class="row">
-    <div class="col-lg-12">
-        <section>
-            <div class="grid">
-                <?php $this->widget(
-                    'bootstrap.widgets.TbListView',
-                    [
-                        'dataProvider' => $dataProvider,
-                        'itemView' => '/building/_item',
-                        'summaryText' => '',
-                        'enableHistory' => true,
-                        'cssFile' => false,
-                        'itemsCssClass' => 'row items',
-                     /*   'sortableAttributes' => [
-                            'sku',
-                            'name',
-                            'price',
-                            'update_time'
-                        ],*/
-                    ]
-                ); ?>
-            </div>
-        </section>
-    </div>
-</div>
-

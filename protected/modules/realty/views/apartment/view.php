@@ -4,23 +4,6 @@
  */
 $images = $data->getImages();
 ?>
-<div class="modal fade" id="basicModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button class="close" type="button" data-dismiss="modal">x</button>
-                <h4 class="modal-title" id="myModalLabel">Обратный звонок</h4>
-            </div>
-            <div class="modal-body">
-                <h3>Введите номер телефона</h3>
-                <input  type="text" name="phone" class="form-control" placeholder="+7 XXX XXX XX XX">
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" data-dismiss="modal" type="button">Заказать</button>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="row">
     <div class="col-lg-12">
         <h1 style="font-size:24px;font-weight:bold;text-transform:uppercase;"><?= $data->getTitle() ?> </h1>
@@ -66,7 +49,7 @@ $images = $data->getImages();
         <div class="price-page"><?= $data->getPriceAsString(); ?></div>
         <hr>
         <div>
-            <button data-toggle="modal" data-target="#basicModal" class="callback"> Обратный звонок</button>
+            <?php $this->widget('application.modules.callback.widgets.CallbackWidget'); ?>
         </div>
         <hr>
         <div style="text-align:center">
