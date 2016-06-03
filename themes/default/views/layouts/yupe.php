@@ -111,18 +111,18 @@
     <img class="image-logo" style="display:block; margin: 0 auto;max-width: 250px"
          src="<?=$this->mainAssets?>/images/site_logo.png" alt="logo"></a>
     <div class="find-form">
-        <p align="center" style="margin:0px;font-size:20px;font-weight:bold;padding-top:10px">Поиск по параметрам</p>
+        <p align="center" style="margin:0px;font-size:20px;font-weight:bold;padding-top:10px">Подбор квартиры</p>
         <hr style="margin:5px 20px 10px 20px;">
         <form id="searchForm" action="/search" method="get">
             <div style="width:90%;margin:0px auto;">
                 <p align="center" style="font-size:18px;font-weigth:bold">Количество комнат </p>
                <ul class="select-room">
-                   <li class="select-room-click">Студия</li>
-                   <li class="select-room-click">1</li>
-                   <li class="select-room-click">2</li>
-                   <li class="select-room-click">3</li>
-                   <li class="select-room-click">4</li>
-                   <li class="select-room-click">5+</li>
+                   <?php
+                        $rooms = [0 => "Студия", "1", "2", "3", "4+"];
+                   ?>
+                   <?php foreach ($rooms as $key => $value):?>
+                       <li class="select-room-click" data-val = "<?=$key;?>"><?=$value; ?></li>
+                   <?php endforeach; ?>
                </ul>
                 <div style="clear:both">
                 </div>
@@ -190,14 +190,12 @@
 </div>
 <main class="main">
     <section class="container-fluid wrapper">
-        <div class="row" style="background-color:#e5e5e5;">
+        <div class="row content">
             <div class="col-lg-10 col-lg-offset-1">
                 <header class="row header">
-                    <div style="text-align:center;font-size:30px;font-weight:bold;"> 8 800 5555 35 35</div>
+                    <div style="color: white; text-align:center;font-size:30px;font-weight:bold;"> 8 800 5555 35 35</div>
                 </header>
             </div>
-        </div>
-        <div class="row content">
             <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 content-page">
                 <?= $content; ?>
             </div>
