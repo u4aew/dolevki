@@ -20,6 +20,7 @@
     Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/style.css');
     Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/lightslider.css');
     Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/jquery.fancybox.css');
+    Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/sumoselect.css');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/blog.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/bootstrap-notify.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.li-translit.js');
@@ -30,6 +31,7 @@
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/mobile-siderbar.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.fancybox.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.fancybox.pack.js');
+    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.sumoselect.js');
     ?>
     <script type="text/javascript">
         var yupeTokenName = '<?= Yii::app()->getRequest()->csrfTokenName;?>';
@@ -114,26 +116,14 @@
         <form id="searchForm" action="/search" method="get">
             <div style="width:90%;margin:0px auto;">
                 <p align="center" style="font-size:18px;font-weigth:bold">Количество комнат </p>
-                <div style="width:25%;float:left;">
-                    <input type="checkbox" id="one-room" name="one-room" value="1"/>
-                    <label for="one-room">1</label>
-                </div>
-                <div style="width:25%;float:left;">
-                    <input type="checkbox" id="two-room" name="two-room" value="2"/>
-                    <label for="two-room">2</label>
-                </div>
-                <div style="width:25%;float:left;">
-                    <input type="checkbox" id="three-room" name="three-room" value="3"/>
-                    <label for="three-room">3</label>
-                </div>
-                <div style="width:25%;float:left;">
-                    <input type="checkbox" id="four-room" name="four-room" value="4"/>
-                    <label for="four-room">4</label>
-                </div>
-                <div style="float:left;margin-top:10px;margin-bottom:5px">
-                    <input type="checkbox" id="studio-room" name="four-room" value="studio"/>
-                    <label for="studio-room">Студия</label>
-                </div>
+               <ul class="select-room">
+                   <li class="select-room-click">Студия</li>
+                   <li class="select-room-click">1</li>
+                   <li class="select-room-click">2</li>
+                   <li class="select-room-click">3</li>
+                   <li class="select-room-click">4</li>
+                   <li class="select-room-click">5+</li>
+               </ul>
                 <div style="clear:both">
                 </div>
                 <hr style="margin:5px 20px 10px 20px;">
@@ -166,14 +156,19 @@
                 </div>
                 <div style="width: 90%;margin: 0 auto 20px auto" >
                     <p align="center" style="font-size:18px;font-weigth:bold">Срок сдачи </p>
-                    <div style="width:95%;margin:0px auto;">
-                        <div style="margin:0px;float: left"><b>C</b><input type="text" id="amount_three"
-                                                                            class="amount_two"></div>
+                    <select multiple class="testselect2" name="" id="">
+                        <option value=""> 1 квартра 2016</option>
+                        <option value=""> 1 квартра 2017</option>
+                        <option value=""> 1 квартра 2018</option>
+                        <option value=""> 1 квартра 2019</option>
 
-                        <div style="margin:0px;float: right"><b>ПО</b><input type="text" id="amount_1_three"
-                                                                             class="amount1_two"></div>
-                        <div class="clearfix"></div>
-                        <div id="slider-range_three"></div>
+                    </select>
+
+
+                    <div style="width:95%;margin:0px auto;">
+
+
+
                     </div>
 
                     <div style="clear:both"></div>

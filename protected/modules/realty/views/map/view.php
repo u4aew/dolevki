@@ -36,10 +36,8 @@
                 $(".map__button").html("Показать объекты на карте");
             else
                 $(".map__button").html("Скрыть карту");
-
-
-
-            window.myMap.container.fitToViewport();
+            
+            myMap.container.fitToViewport();
         });
     }
 </script>

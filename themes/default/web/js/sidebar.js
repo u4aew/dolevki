@@ -5,6 +5,13 @@ $(document).ready(function () {
     }
     else {
     }
+
+    $(".select-room-click").click(
+        function () {
+            $(this).toggleClass("select-room-click-cheked");
+        }
+    )
+    $('.testselect2').SumoSelect();
 })
 
 $(window).scroll(function () {
