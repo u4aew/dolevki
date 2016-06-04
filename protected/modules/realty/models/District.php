@@ -21,7 +21,7 @@ class District extends yupe\models\YModel
     {
         $elem = array();
         $elem["type"] = "Feature";
-        $elem["id"] = $this->id;
+        $elem["id"] = $this->id+1000;
         $elem["geometry"] = array(
             "type" => "Point",
             "coordinates" => array($this->latitude,$this->longitude)
@@ -29,12 +29,13 @@ class District extends yupe\models\YModel
         $elem["options"] = array(
             "iconLayout" =>  'default#image',
             // Своё изображение иконки метки.
+            "iconImageHref" => "https://sandbox.api.maps.yandex.net/examples/ru/2.1/icon_customImage/images/myIcon.gif",
             "iconImageHref" => $this->getImageUrl(MAP_ICON_SIZE,MAP_ICON_SIZE),
             // Размеры метки.
             "iconImageSize" => array(MAP_ICON_SIZE,MAP_ICON_SIZE),
             // Смещение левого верхнего угла иконки относительно
             // её "ножки" (точки привязки).
-            "iconImageOffset" => [-MAP_ICON_SIZE/2,-MAP_ICON_SIZE/2]
+//            "iconImageOffset" => [-MAP_ICON_SIZE/2,-MAP_ICON_SIZE/2]
         );
         $elem["properties"] = array(
             "balloonContent" => $this->shortDescription.Yii::app()->realty->getLinkOnMe($this),

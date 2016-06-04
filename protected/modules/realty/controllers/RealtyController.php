@@ -37,7 +37,7 @@ class RealtyController extends \yupe\components\controllers\FrontController
                                 ],
                   */          ]
         );
-        $this->render("/building/list",["dataProvider" => $data]);
+        $this->render("/building/index",["dataProvider" => $data]);
     }
 
     public function actionGetBuildingsForMap()

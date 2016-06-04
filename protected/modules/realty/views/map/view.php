@@ -11,7 +11,7 @@
 <script type="text/javascript">
     var myMap;
     ymaps.ready(function () {
-        myMap = new ymaps.Map("map", {
+        window.myMap = new ymaps.Map("map", {
             center: [53.354058, 83.73335],
             zoom: 10.5
         });
@@ -22,7 +22,7 @@
         });
 //        objectManager.objects.options.set('preset', 'islands#greenDotIcon');
 //        objectManager.clusters.options.set('preset', 'islands#greenClusterIcons');
-        myMap.geoObjects.add(objectManager);
+        window.myMap.geoObjects.add(objectManager);
 
         jQuery.getJSON('<?= $url; ?>', function (json) {
             objectManager.add(json);

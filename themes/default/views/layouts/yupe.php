@@ -111,18 +111,18 @@
     <img class="image-logo" style="display:block; margin: 0 auto;max-width: 250px"
          src="<?=$this->mainAssets?>/images/site_logo.png" alt="logo"></a>
     <div class="find-form">
-        <p align="center" style="margin:0px;font-size:20px;font-weight:bold;padding-top:10px">Поиск по параметрам</p>
+        <p align="center" style="margin:0px;font-size:20px;font-weight:bold;padding-top:10px">Подбор квартиры</p>
         <hr style="margin:5px 20px 10px 20px;">
         <form id="searchForm" action="/search" method="get">
             <div style="width:90%;margin:0px auto;">
                 <p align="center" style="font-size:18px;font-weigth:bold">Количество комнат </p>
                <ul class="select-room">
-                   <li class="select-room-click">Студия</li>
-                   <li class="select-room-click">1</li>
-                   <li class="select-room-click">2</li>
-                   <li class="select-room-click">3</li>
-                   <li class="select-room-click">4</li>
-                   <li class="select-room-click">5+</li>
+                   <?php
+                        $rooms = [0 => "Студия", "1", "2", "3", "4+"];
+                   ?>
+                   <?php foreach ($rooms as $key => $value):?>
+                       <li class="select-room-click" data-val = "<?=$key;?>"><?=$value; ?></li>
+                   <?php endforeach; ?>
                </ul>
                 <div style="clear:both">
                 </div>
@@ -155,24 +155,23 @@
                     <hr style="margin:5px 20px 10px 20px;"
                 </div>
                 <div style="width: 90%;margin: 0 auto 20px auto" >
-                    <p align="center" style="font-size:18px;font-weigth:bold">Срок сдачи </p>
-                    <select multiple class="testselect2" name="" id="">
-                        <option value=""> 1 квартра 2016</option>
-                        <option value=""> 1 квартра 2017</option>
-                        <option value=""> 1 квартра 2018</option>
-                        <option value=""> 1 квартра 2019</option>
-
+                    <p align="center" style="font-size:18px;font-weigth:bold">Тип жилья</p>
+                    <select multiple class="sumoSelect" name="" id="status" data-placeholder = "Тип искомого жилья">
+                        <option id = "inProgress" value="<?=STATUS_IN_PROGRESS?>">Строящееся жилье</option>
+                        <option value="<?=STATUS_READY?>">Готовые новостройки</option>
+                        <option value="<?=STATUS_RESELL?>">Вторичная продажа</option>
                     </select>
-
-
-                    <div style="width:95%;margin:0px auto;">
-
-
-
-                    </div>
-
-                    <div style="clear:both"></div>
-
+                </div>
+                <div style="width: 90%;margin: 0 auto 20px auto" id = "readyTime__container">
+                    <p align="center" style="font-size:18px;font-weigth:bold">Срок сдачи </p>
+                    <select multiple class="sumoSelect" name="" id="readyTime" data-placeholder = "Интересующее время готовности жилья">
+                        <?php
+                            $times = ReadyTime::model()->findAll();
+                        ?>
+                        <?php foreach ($times as $item):?>
+                            <option value="<?=$item->id;?>"><?=$item->text;?></option>
+                        <?php endforeach; ?>
+                    </select>
                 </div>
             </div>
             <button type="submit" class="nav__find" onclick="sendFilter(); return false;"> Найти квартиры</button>
@@ -191,14 +190,12 @@
 </div>
 <main class="main">
     <section class="container-fluid wrapper">
-        <div class="row" style="background-color:#e5e5e5;">
+        <div class="row content">
             <div class="col-lg-10 col-lg-offset-1">
                 <header class="row header">
-                    <div style="text-align:center;font-size:30px;font-weight:bold;"> 8 800 5555 35 35</div>
+                    <div style="color: white; text-align:center;font-size:30px;font-weight:bold;"> 8 800 5555 35 35</div>
                 </header>
             </div>
-        </div>
-        <div class="row content">
             <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 content-page">
                 <?= $content; ?>
             </div>

@@ -1,3 +1,17 @@
+@font-face {
+    font-family: 'PT Sans Ruble';
+    src: url(../fonts/pt-sans-ruble-400.woff) format('woff');
+    font-style: normal;
+    font-weight: 400
+}
+
+@font-face {
+    font-family: 'PT Sans Ruble';
+    src: url(../fonts/pt-sans-ruble-700.woff) format('woff');
+    font-style: normal;
+    font-weight: 700
+}
+
 html{
     overflow-y: scroll;
     overflow-x: auto;
@@ -660,6 +674,8 @@ input[type=range]:focus::-ms-fill-upper {
 .ui-slider-horizontal .ui-slider-range {
     top: 0;
     height: 100%;
+    background-image: none;
+    background-color: #212D53 !important;
 }
 
 .ui-slider-horizontal .ui-slider-range-min {
@@ -969,7 +985,8 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .rubl
 {
-    font-family: u2000, serif;
+    font-family: 'PT Sans Ruble';
+    text-transform: lowercase
 }
 .select-room {
     list-style: none;
@@ -991,7 +1008,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .select-room-click-cheked {
     color: white;
-    background-color: #038AD6;
+    background-color: #212D53;
 }
 .callback {
     display: block;

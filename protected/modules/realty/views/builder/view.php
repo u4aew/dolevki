@@ -1,9 +1,38 @@
 <?php
 /** @var Building $data */
 ?>
-<div class="row" style="margin: 10px; border: 2px solid rgba(231, 231, 231, 0.77)">
-    <div class="col-lg-12" style="text-align: center;font-weight: bold;"><h1> <?= $data->name ?> </h1></div>
-    <div class="col-lg-12">  <?= $data->shortDescription ?>  </div>
+<div class="row">
+    <div class="col-lg-12">
+        <h1 style="font-size:20px;font-weigth:bold;text-transform:uppercase;"><?=$data->name?> </h1>
+        <hr>
+        <div class="description">
+            <?=$data->shortDescription?>
+            <hr>
+            <?php
+            $criteria = new CDbCriteria();
+            $criteria->select = 't.*';
+            $criteria->compare("isPublished",1);
+            $criteria->compare("idBuilder",$data->id);
+
+            $data = new CActiveDataProvider(
+                'Building',
+                [
+                    'criteria' => $criteria,
+                    'pagination' => [
+                        'pageSize' => (int)Yii::app()->getModule('realty')->itemsPerPage,
+                        'pageVar' => 'page',
+                    ],
+                    /*                'sort' => [
+                                        'sortVar' => 'sort',
+                                        'defaultOrder' => 't.position'
+                                    ],
+                      */          ]
+            );
+            $this->renderPartial("/building/list",["dataProvider" => $data]);
+            ?>
+
+        </div>
+
+    </div>
 </div>
-<p style="color:red; font-size:30px; text-align:center"> тут выводить дома которые принадлежат застройщику !!! Карточки
-    из главной</p>
+
