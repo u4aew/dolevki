@@ -1,7 +1,6 @@
 <?php
 /** @var Building $data */
 ?>
-
                        <div class="row" style="padding-top:10px ">
                         <div class="col-lg-8">
                             <h1 style="font-size:20px;font-weigth:bold;text-transform:uppercase;"><?=$data->adres?> </h1>

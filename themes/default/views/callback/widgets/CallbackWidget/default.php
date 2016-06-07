@@ -5,12 +5,11 @@
  * @var TbActiveForm $form
  */
 ?>
-
 <div class="row">
     <div class="col-sm-12">
-        <button class="btn btn-info" data-toggle="modal" data-target="#callbackModal">
+        <button class="callback" data-toggle="modal" data-target="#callbackModal">
             <i class="fa fa-fw fa-phone"></i>
-            <?= Yii::t('CallbackModule.callback', 'Request a call back') ?>
+            <?= Yii::t('CallbackModule.callback', 'Заказать звонок') ?>
         </button>
     </div>
 </div>

@@ -42,6 +42,7 @@
     <![endif]-->
     <link rel="stylesheet" href="http://yandex.st/highlightjs/8.2/styles/github.min.css">
     <script src="http://yastatic.net/highlightjs/8.2/highlight.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
     <?php \yupe\components\TemplateEvent::fire(DefautThemeEvents::HEAD_END); ?>
 </head>
 <body>
