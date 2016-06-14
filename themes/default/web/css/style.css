@@ -37,6 +37,12 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+    .map__map {
+        height:300px !important;
+        padding:30px 0 30px 0!important;
+    }
+
+
     .header-logo {
         display: none;
     }
@@ -401,7 +407,7 @@ input[type=range]:focus::-ms-fill-upper {
 .preview {
     height: 360px;
     background: #E6E6E6;
-    padding: 15px 60px 15px 60px;
+    padding: 15px 10px 15px 10px;
 }
 
 .preview-gallery {
@@ -840,7 +846,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .amount_two {
     color: black !important;
-    width: 80px;
+    width: 90px;
     margin-left: 5px;
     padding-left: 3px;
 
