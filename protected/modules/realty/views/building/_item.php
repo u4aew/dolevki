@@ -6,11 +6,11 @@
         <div class="building-img" style="background-image: url('<?= $data->getImageUrl(500, 500, false); ?>');">
         </div>
         <div>
-            <div class="description-building" style="text-align: center"><p style="font-weight: bold;font-size: 20px">
-                    <?= $data->adres ?> </p>
+            <div class="description-building" style="text-align: center">
+                  <div class="building-heid" >  <?= $data->adres ?> </div>
                 <hr style="margin: 10px auto 5px auto; width: 80%">
                 <div style="height: 83px;overflow: hidden">
-                    <?= $data->shortDescription ?>
+                    <div style="margin: auto"><?= $data->shortDescription ?></div>
                 </div>
                 <hr style="margin: 5px auto 5px auto; width: 80%">
                 <a class="next-building" href="<?= $data->getUrl(); ?>"> Подробнее </a>

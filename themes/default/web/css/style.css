@@ -12,10 +12,11 @@
     font-weight: 700
 }
 
-html{
+html {
     overflow-y: scroll;
     overflow-x: auto;
 }
+
 body {
     background-color: #FAFAFA;
 }
@@ -28,20 +29,37 @@ body {
     .iteam-product-page {
         padding: 30px !important;
     }
+
+    .building_apartment_p {
+        text-align: center !important;
+    }
+
+    .building_apartment_pr {
+        text-align: center;
+    }
+
+    .mini-pic-apart {
+        max-width: 400px !important;
+    }
+
+    .next-apartment {
+        display: block;
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 980px) {
     .mobile-menu {
         display: block !important;
     }
+
 }
 
 @media screen and (max-width: 768px) {
     .map__map {
-        height:300px !important;
-        padding:30px 0 30px 0!important;
+        height: 300px !important;
+        padding: 30px 0 30px 0 !important;
     }
-
 
     .header-logo {
         display: none;
@@ -934,7 +952,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .building-img {
-    height: 200px;
+    height: 180px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: 50%;
@@ -972,34 +990,36 @@ input[type=range]:focus::-ms-fill-upper {
     transition: .5s;
     transition-timing-function: ease-in-out;
     position: relative;
-    height: 170px;
+    height: 200px;
     top: 0;
     background-color: white;
     padding: 14px 5px 0px 5px;
 }
 
 .building-click:hover .description-building {
-    top: -150px;
+    top: -170px;
 }
-.view__small-info
-{
-    text-align:center;
+
+.view__small-info {
+    text-align: center;
 }
-.view__small-info .main-info
-{
+
+.view__small-info .main-info {
     font-weight: bold;
 }
-.rubl
-{
+
+.rubl {
     font-family: 'PT Sans Ruble';
     text-transform: lowercase
 }
+
 .select-room {
     list-style: none;
     padding: 0px;
     cursor: pointer;
     text-align: center;
 }
+
 .select-room-click {
     display: inline-block;
     border: 2px solid rgba(0, 0, 0, 0.11);
@@ -1009,13 +1029,16 @@ input[type=range]:focus::-ms-fill-upper {
     transition: .2s;
     transition-timing-function: ease-out;
 }
+
 .select-room-click:hover {
     border: 2px solid darkgray;
 }
+
 .select-room-click-cheked {
     color: white;
     background-color: #212D53;
 }
+
 .callback {
     display: block;
     margin: 0 auto;
@@ -1028,8 +1051,27 @@ input[type=range]:focus::-ms-fill-upper {
     font-weight: bold;
     color: white;
     font-size: 20px;
-    transition-timing-function: ;
 }
 
+.building-heid {
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    background-color: white;
+    height: 55px;
+    overflow: hidden;
+}
 
+.next-apartment {
+    color: #4caf50;
+    font-weight: bold;;
+    font-size: 20px;
+    text-decoration: underline;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.next-apartment:hover {
+    color: #2E7D32;
+}
 
