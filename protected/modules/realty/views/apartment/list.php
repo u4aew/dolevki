@@ -1,8 +1,6 @@
 <?php
 
 $mainAssets = Yii::app()->getTheme()->getAssetsUrl();
-Yii::app()->getClientScript()->registerCssFile($mainAssets . '/css/store-frontend.css');
-Yii::app()->getClientScript()->registerScriptFile($mainAssets . '/js/store.js');
 
 ?>
 
