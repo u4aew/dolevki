@@ -260,10 +260,10 @@
     <section class="containet-fluid footer">
         <div class="row" style="margin:0px">
             <div class="col-lg-8 col-lg-offset-2" style="text-align:center">
-                <div class="col-lg-3 col-md-3 col-sm-3"> © название, 2016</div>
-                <div class="col-lg-3 col-md-3 col-sm-3"><a href="#"> Ссылка 1</a></div>
-                <div class="col-lg-3 col-md-3 col-sm-3"><a href="#"> Ссылка 2 </a></div>
-                <div class="col-lg-3 col-md-3 col-sm-3"> Разработка</div>
+                <div class="col-lg-3 col-md-3 col-sm-3"> © Долёвки22, 2016</div>
+                <div class="col-lg-3 col-md-3 col-sm-3"><a href="http://vk.com/dolevki22"> Вконтакте</a></div>
+                <div class="col-lg-3 col-md-3 col-sm-3"><a href=""> О нас</a>  </div>
+                <div class="col-lg-3 col-md-3 col-sm-3" style="padding-bottom: 10px"> <a href=""> Ссылка 2</a> </div>
 
             </div>
     </section>
