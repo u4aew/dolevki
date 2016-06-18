@@ -88,6 +88,18 @@
             maximalSize = Math.min(maximalSize, currentVal);
         });
         var url = "/search?";
+        $(".select-room-click-cheked").each(function()
+        {
+            url += "rooms[]="+$(this).data("val")+"&";
+        });
+        $("#status :selected").each(function(){
+            url+= "status[]="+$(this).val()+"&";
+        });
+        $("#readyTime :selected").each(function(){
+            url+= "time[]="+$(this).val()+"&";
+        });
+
+
         if (rooms != "")
             url += "rooms=" + rooms + "&";
         if (minimalCost > getParams().minimalAvailableCost)
@@ -103,6 +115,7 @@
         if (url.substr(url.length - 1, 1) == "?")
             url = url.substr(0, url.length - 1);
         window.location = url;
+        return false;
     }
 
 </script>
@@ -118,10 +131,16 @@
                 <p align="center" style="font-size:18px;font-weigth:bold">Количество комнат </p>
                 <ul class="select-room">
                     <?php
+                    if (!isset($_GET["rooms"]))
+                        $_GET["rooms"] = [];
                     $rooms = [0 => "Студия", "1", "2", "3", "4+"];
                     ?>
                     <?php foreach ($rooms as $key => $value):?>
-                        <li class="select-room-click" data-val = "<?=$key;?>"><?=$value; ?></li>
+                        <?php
+
+                        $flag = array_search($key,$_GET["rooms"]);
+                        ?>
+                        <li class="select-room-click <?= ($flag !== false) ? "select-room-click-cheked" : "" ?>" data-val = "<?=$key;?>"><?=$value; ?></li>
                     <?php endforeach; ?>
                 </ul>
                 <div style="clear:both">
@@ -157,9 +176,9 @@
                 <div style="width: 90%;margin: 0 auto 20px auto" >
                     <p align="center" style="font-size:18px;font-weigth:bold">Тип жилья</p>
                     <select multiple class="sumoSelect" name="" id="status" data-placeholder = "Тип искомого жилья">
-                        <option id = "inProgress" value="<?=STATUS_IN_PROGRESS?>">Строящееся жилье</option>
-                        <option value="<?=STATUS_READY?>">Готовые новостройки</option>
-                        <option value="<?=STATUS_RESELL?>">Вторичная продажа</option>
+                        <option id = "inProgress" value="<?=STATUS_IN_PROGRESS?>"   <?php if (isset($_GET["status"]) && array_search(STATUS_IN_PROGRESS,$_GET["status"])!==false) echo "selected" ?>>Строящееся жилье</option>
+                        <option value="<?=STATUS_READY?>"  <?php if (isset($_GET["status"]) && array_search(STATUS_READY,$_GET["status"])!==false) echo "selected" ?> >Готовые новостройки</option>
+                        <option value="<?=STATUS_RESELL?>" <?php if (isset($_GET["status"]) && array_search(STATUS_RESELL,$_GET["status"])!==false) echo "selected" ?> >Вторичная продажа</option>
                     </select>
                 </div>
                 <div style="width: 90%;margin: 0 auto 20px auto" id = "readyTime__container">
@@ -169,7 +188,7 @@
                         $times = ReadyTime::model()->findAll();
                         ?>
                         <?php foreach ($times as $item):?>
-                            <option value="<?=$item->id;?>"><?=$item->text;?></option>
+                            <option value="<?=$item->id;?>"  <?php if (isset($_GET["time"]) && array_search($item->id,$_GET["time"])!==false) echo "selected" ?>><?=$item->text;?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
