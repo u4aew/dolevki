@@ -16,7 +16,7 @@ $mainAssets = Yii::app()->getTheme()->getAssetsUrl();
                         // ключи, которые были описаны $sort->attributes
                         // если не описывать $sort->attributes, можно использовать атрибуты модели
                         // настройки CSort перекрывают настройки sortableAttributes
-                        'sortableAttributes'=>array('cost', 'floor'),
+                        'sortableAttributes'=>array('cost', 'floor', 'rooms'),
 
                         'dataProvider' => $dataProvider,
                         'itemView' => isset($itemPath) ? '/apartment/'.$itemPath : '/apartment/_item',
