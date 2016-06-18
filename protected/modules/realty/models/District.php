@@ -17,6 +17,23 @@
 define("MAP_ICON_SIZE", 21);
 class District extends yupe\models\YModel
 {
+
+    public function getPageTitle()
+    {
+        return $this->name;
+    }
+
+    public function getPageDescription()
+    {
+        return "";
+    }
+
+    public function getPageKeywords()
+    {
+        return "";
+    }
+
+
     public function getMapInfo()
     {
         $elem = array();

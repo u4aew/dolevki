@@ -12,6 +12,21 @@
 class Builder extends \yupe\models\YModel
 {
 
+    public function getPageTitle()
+    {
+        return $this->name;
+    }
+
+    public function getPageDescription()
+    {
+        return "";
+    }
+
+    public function getPageKeywords()
+    {
+        return "";
+    }
+
     static public function getForDropdown()
     {
         $dists = Builder::model()->findAll();

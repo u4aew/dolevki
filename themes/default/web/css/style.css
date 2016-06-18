@@ -1074,4 +1074,41 @@ input[type=range]:focus::-ms-fill-upper {
 .next-apartment:hover {
     color: #2E7D32;
 }
+.building__mini-cart
+{
+    background: #fafafa;
+    border: 2px solid #eeeeee;
+    margin: 3px 25px;
+    min-height: 100px;
+    border-radius: 3px;
+}
+.building__mini-cart_short-description
+{
+    max-height: 90px;
+    overflow: hidden;
+}
+.view__title
+{
+    font-size:20px;
+    font-weigth:bold;
+    text-transform:uppercase;
+}
+.notifications {
+    display: none;
+    position: fixed
+}
 
+.notifications.top-right {
+    right: 0;
+    top: 25%
+}
+
+.notifications > div {
+    position: relative;
+    z-index: 9999;
+    background-color: #212d53;
+    color: #fff;
+    padding: 10px 15px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px
+}

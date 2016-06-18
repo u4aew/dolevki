@@ -12,7 +12,7 @@ $mainAssets = Yii::app()->getTheme()->getAssetsUrl();
                     'bootstrap.widgets.TbListView',
                     [
                         'dataProvider' => $dataProvider,
-                        'itemView' => '/apartment/_item_for_building',
+                        'itemView' => isset($itemPath) ? '/apartment/'.$itemPath : '/apartment/_item',
                         'summaryText' => '',
                         'enableHistory' => true,
                         'cssFile' => false,

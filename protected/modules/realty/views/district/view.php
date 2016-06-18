@@ -1,9 +1,14 @@
 <?php
 /** @var Building $data */
+
+$this->title = $data->getPageTitle();
+$this->description = $data->getPageDescription();
+$this->keywords = $data->getPageKeywords();
+
 ?>
 <div class="row">
     <div class="col-lg-12">
-        <h1 style="font-size:20px;font-weigth:bold;text-transform:uppercase;"><?=$data->name?> </h1>
+        <h1 class="view__title"><?=$data->name?> </h1>
         <hr>
         <div class="description">
             <?=$data->longDescription?>

@@ -1,10 +1,15 @@
 <?php
 /** @var Building $data */
+
+$this->title = $data->getPageTitle();
+$this->description = $data->getPageDescription();
+$this->keywords = $data->getPageKeywords();
+
 ?>
 
 <div class="row" style="padding-top:10px ">
     <div class="col-lg-8">
-        <h1 style="font-size:20px;font-weigth:bold;text-transform:uppercase;"><?=$data->adres?> </h1>
+        <h1 class="view__title"><?=$data->adres?> </h1>
         <div class="preview" style="background-color: white">
             <div class="product-image-iteam" id="bigimg"  style="background-image: url(<?= $data->getImageUrl(1000, 1000, false); ?>);"> </div>
         </div>
@@ -47,7 +52,7 @@
                                         ],
                           */          ]
                 );
-                $this->renderPartial("/apartment/list",["dataProvider" => $data]);
+                $this->renderPartial("/apartment/list",["dataProvider" => $data, "itemPath" => "_item_for_building"]);
                 ?>
             </div>
         </div>

@@ -20,6 +20,23 @@
 class Apartment extends yupe\models\YModel
 {
 
+    public function getPageTitle()
+    {
+        return $this->getTitle();
+    }
+
+    public function getPageDescription()
+    {
+        return "";
+    }
+
+    public function getPageKeywords()
+    {
+        return "";
+    }
+
+
+
     static public function getRoomsArray()
     {
         return [

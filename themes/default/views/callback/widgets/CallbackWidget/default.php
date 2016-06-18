@@ -50,6 +50,9 @@
                             </div>
                         </div>
 
+                        <?php $model->comment = $otherText; ?>
+                        <?= $form->hiddenField($model,"comment"); ?>
+
                         <div class="row">
                             <div class="col-lg-8">
                                 <?= $form->maskedTextFieldGroup($model, 'phone', [
