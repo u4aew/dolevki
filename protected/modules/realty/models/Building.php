@@ -28,6 +28,21 @@ define("STATUS_RESELL",3);
 class Building extends yupe\models\YModel
 {
 
+    public function getPageTitle()
+    {
+        return $this->adres;
+    }
+
+    public function getPageDescription()
+    {
+        return "";
+    }
+
+    public function getPageKeywords()
+    {
+        return "";
+    }
+
     public function getMapInfo()
     {
         $elem = array();

@@ -1,19 +1,18 @@
-<div style="background: #fafafa;border: 2px solid #eeeeee;margin: 3px 25px;min-height: 100px;border-radius: 3px"
-     class="row">
+<div class="row building__mini-cart">
     <div class="col-lg-2">
         <a href="<?= $data->getImageUrl(1000, 1000, false); ?>" class="fancybox"> <img class="mini-pic-apart"
                 src="<?= $data->getImageUrl(1000, 1000, false); ?>" style="margin:15px auto;display: block;width: 100%;max-width: 100px"> </a>
     </div>
     <div class="col-lg-5" style="padding-top: 15px">
-        <div style="max-height: 60px;overflow: hidden">
-            <?= $data->building->shortDescription ?>
+        <div class = "building__mini-cart_short-description">
+            <?= $data->shortDescription ?>
         </div>
     </div>
     <div class="col-lg-5">
         <div class="row">
             <div class="col-lg-6" style="padding: 0px">
         <div class="building_apartment_p" style="padding: 15px 0 10px 0">
-            <p style="margin: 0;font-weight: bold">  <?= $data->getRoomsAsString() ?>  <?= $data->size ?> м<sup>2</sup></p>
+            <p style="margin: 0;font-weight: bold">  <?= $data->getRoomsAsString() ?>, <?= $data->size ?> м<sup>2</sup></p>
             <p style="margin: 0">Этаж: <?= $data->floor ?> </p>
         </div>
             </div>

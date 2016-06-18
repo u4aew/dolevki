@@ -5,6 +5,8 @@ Yii::import('application.modules.callback.models.*');
 class CallbackWidget extends \yupe\widgets\YWidget
 {
     public $view = 'default';
+    public $otherText = "";
+
 
     public function init()
     {
@@ -22,6 +24,7 @@ class CallbackWidget extends \yupe\widgets\YWidget
         $this->render($this->view, [
             'model' => Callback::model(),
             'phoneMask' => $module->phoneMask,
+            'otherText' => $this->otherText,
         ]);
     }
 }

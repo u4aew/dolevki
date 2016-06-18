@@ -15,7 +15,6 @@
             'defaultKeywords' => $this->yupe->siteKeyWords,
         ]
     ); ?>
-    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <?php
     Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/style.css');
     Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/lightslider.css');
@@ -109,22 +108,22 @@
 </script>
 <div id="nav_js" class="navigation">
     <a href="/">
-    <img class="image-logo" style="display:block; margin: 0 auto;max-width: 250px"
-         src="<?=$this->mainAssets?>/images/site_logo.png" alt="logo"></a>
+        <img class="image-logo" style="display:block; margin: 0 auto;max-width: 250px"
+             src="<?=$this->mainAssets?>/images/site_logo.png" alt="logo"></a>
     <div class="find-form">
         <p align="center" style="margin:0px;font-size:20px;font-weight:bold;padding-top:10px">Подбор квартиры</p>
         <hr style="margin:5px 20px 10px 20px;">
         <form id="searchForm" action="/search" method="get">
             <div style="width:90%;margin:0px auto;">
                 <p align="center" style="font-size:18px;font-weigth:bold">Количество комнат </p>
-               <ul class="select-room">
-                   <?php
-                        $rooms = [0 => "Студия", "1", "2", "3", "4+"];
-                   ?>
-                   <?php foreach ($rooms as $key => $value):?>
-                       <li class="select-room-click" data-val = "<?=$key;?>"><?=$value; ?></li>
-                   <?php endforeach; ?>
-               </ul>
+                <ul class="select-room">
+                    <?php
+                    $rooms = [0 => "Студия", "1", "2", "3", "4+"];
+                    ?>
+                    <?php foreach ($rooms as $key => $value):?>
+                        <li class="select-room-click" data-val = "<?=$key;?>"><?=$value; ?></li>
+                    <?php endforeach; ?>
+                </ul>
                 <div style="clear:both">
                 </div>
                 <hr style="margin:5px 20px 10px 20px;">
@@ -167,7 +166,7 @@
                     <p align="center" style="font-size:18px;font-weigth:bold">Срок сдачи </p>
                     <select multiple class="sumoSelect" name="" id="readyTime" data-placeholder = "Интересующее время готовности жилья">
                         <?php
-                            $times = ReadyTime::model()->findAll();
+                        $times = ReadyTime::model()->findAll();
                         ?>
                         <?php foreach ($times as $item):?>
                             <option value="<?=$item->id;?>"><?=$item->text;?></option>
@@ -249,22 +248,20 @@
 
             </div>
     </section>
-    </div>
-    </div>
 </main>
 <script>
-    $('#lightSlider').lightSlider({
-        gallery: true,
-        item: 1,
-        loop:true,
-        slideMargin: 0,
-        thumbItem: 9
-    });
-</script>
-<script type="text/javascript">
     $(document).ready(function() {
         $(".fancybox").fancybox();
+        $('#lightSlider').lightSlider({
+            gallery: true,
+            item: 1,
+            loop:true,
+            slideMargin: 0,
+            thumbItem: 9
+        });
     });
 </script>
+<div class='notifications top-right' id="notifications"></div>
+
 </body>
 </html>

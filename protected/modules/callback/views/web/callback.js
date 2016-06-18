@@ -10,6 +10,7 @@ function callbackSendForm(form, data, hasError) {
                 document.getElementById("callback-form").reset();
             }
             $('#callback-link').click();
+            $("#callbackModal").modal("hide");
             $('#notifications').html('<div>' + response.data + '</div>').fadeIn().delay(3000).fadeOut();
         },
         error: function () {

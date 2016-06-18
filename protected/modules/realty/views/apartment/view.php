@@ -3,10 +3,16 @@
  * @var Apartment $data
  */
 $images = $data->getImages();
+
+$this->title = $data->getPageTitle();
+$this->description = $data->getPageDescription();
+$this->keywords = $data->getPageKeywords();
+
+
 ?>
 <div class="row">
     <div class="col-lg-12">
-        <h1 style="font-size:24px;font-weight:bold;text-transform:uppercase;"><?= $data->getTitle() ?> </h1>
+        <h1 class="view__title"><?= $data->getTitle() ?> </h1>
     </div>
 </div>
 <div class="row" style="padding-top:10px ">
@@ -29,6 +35,8 @@ $images = $data->getImages();
         </div>
     </div>
     <div class="col-lg-4">
+        <p class="view__small-info">Дом:<span class="main-info"> <a href="<?= $data->building->getUrl() ?>"> <?= $data->building->adres ?> </a></span>
+        </p>
         <?php if ($data->building->idDistrict > 0): ?>
             <p class="view__small-info">Квартал:<span class="main-info"> <a href="<?= $data->building->district->getUrl() ?>"> <?= $data->building->district->name ?> </a></span>
             </p>
@@ -49,7 +57,8 @@ $images = $data->getImages();
         <div class="price-page"><?= $data->getPriceAsString(); ?></div>
         <hr>
         <div>
-            <?php $this->widget('application.modules.callback.widgets.CallbackWidget'); ?>
+            <?php $otherText = "assdsd"; ?>
+            <?php $this->widget('application.modules.callback.widgets.CallbackWidget',["otherText" => $data->getTitle()]); ?>
         </div>
         <hr>
         <div style="text-align:center">
