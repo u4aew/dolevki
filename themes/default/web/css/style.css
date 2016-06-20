@@ -1121,3 +1121,49 @@ input[type=range]:focus::-ms-fill-upper {
 .sorter {
     padding-right:15px;
 }
+
+.js-box-company__description {
+    padding-top: 10px;
+}
+
+.js-box-company{
+    display: none;
+}
+.js-box-Motivation {
+    display: none;
+}
+
+.js-box-Motivation__one {
+    text-align: center;
+    display: none;
+}
+
+.js-box-Motivation__two {
+    text-align: center;
+    display: none;
+}
+
+.js-box-Motivation__three {
+    text-align: center;
+    display: none;
+}
+
+.js-box-work {
+    display: none;
+}
+
+.js-box-work__one {
+    display: block;
+}
+
+
+.js-box-contacts-company {
+    display: none;
+}
+
+.js-box-contacts-company__one {
+    display: none;
+}
+.js-box-contacts-company__map {
+    display: none;
+}

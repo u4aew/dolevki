@@ -1,3 +1,6 @@
+<?php
+Yii::import("application.modules.realty.models.*");
+?>
 <!DOCTYPE html>
 <html lang="<?= Yii::app()->language; ?>">
 <head>
@@ -199,7 +202,7 @@
 </div>
 <div class="nav-list">
     <ul class="nav-iteam-list">
-        <li><a href="#"> Пункт 1 </a></li>
+        <li><a href="/pages/o-nas"> о компании </a></li>
         <li><a href="#"> Пункт 2 </a></li>
         <li><a href="#"> Пункт 3 </a></li>
         <li><a href="#"> Пункт 4 </a></li>
