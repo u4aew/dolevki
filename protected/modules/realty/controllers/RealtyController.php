@@ -42,7 +42,6 @@ class RealtyController extends \yupe\components\controllers\FrontController
 
     public function actionGetBuildingsForMap()
     {
-        $result = [];
         $buildings = Building::model()->findAll();
         $districts = District::model()->findAll();
         $result = array_merge($buildings,$districts);

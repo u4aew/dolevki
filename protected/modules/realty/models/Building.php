@@ -30,7 +30,7 @@ class Building extends yupe\models\YModel
 
     public function getPageTitle()
     {
-        return $this->adres;
+        return [$this->adres, Yii::app()->getModule('yupe')->siteName];
     }
 
     public function getPageDescription()

@@ -20,7 +20,7 @@ class District extends yupe\models\YModel
 
     public function getPageTitle()
     {
-        return $this->name;
+        return [$this->name, Yii::app()->getModule('yupe')->siteName];
     }
 
     public function getPageDescription()

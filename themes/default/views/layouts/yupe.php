@@ -226,30 +226,15 @@
                 <div class="row">
                     <h2 style="text-align:center"> Акции и предложения </h2>
                     <hr>
-                    <div class="col-lg-6" style="border-top:3px solid gray;padding:10px;">
-                        <b>Lorem ipsum dolor </b>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed imperdiet pellentesque urna. In
-                            placerat mi et consectetur viverra. Phasellus fermentum dictum dui eu luctus. Curabitur
-                            venenatis velit ligula, consectetur ullamcorper nisi efficitur ac. Integer nulla nibh,
-                            sagittis quis viverra eget, accumsan blandit eros. Vivamus et lobortis lorem. Etiam arcu
-                            sapien, efficitur a erat at, luctus eleifend dui. In at ante ultrices, vulputate purus nec,
-                            iaculis urna. Fusce fringilla id dui sit amet sodales. Nunc ultricies auctor dignissim.
-                            Curabitur nulla ante, vestibulum eu lacinia a, varius non odio. Phasellus efficitur vel
-                            dolor nec cursus. Ut tincidunt nisi dolor, ut tempus justo lacinia bibendum.
-                        </p>
-                    </div>
-                    <div class="col-lg-6" style="border-bottom:3px solid gray;padding:10px;">
-                        <b>Lorem ipsum dolor </b>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed imperdiet pellentesque urna. In
-                            placerat mi et consectetur viverra. Phasellus fermentum dictum dui eu luctus. Curabitur
-                            venenatis velit ligula, consectetur ullamcorper nisi efficitur ac. Integer nulla nibh,
-                            sagittis quis viverra eget, accumsan blandit eros. Vivamus et lobortis lorem. Etiam arcu
-                            sapien, efficitur a erat at, luctus eleifend dui. In at ante ultrices, vulputate purus nec,
-                            iaculis urna. Fusce fringilla id dui sit amet sodales. Nunc ultricies auctor dignissim.
-                            Curabitur nulla ante, vestibulum eu lacinia a, varius non odio. Phasellus efficitur vel
-                            dolor nec cursus. Ut tincidunt nisi dolor, ut tempus justo lacinia bibendum.</p>
-                    </div>
-
+                    <div class="widget last-posts-widget">
+                        <!--               <?php /*if($this->beginCache('application.modules.blog.widgets.LastPostsWidget', ['duration' => $this->yupe->coreCacheTime])):*/?>
+         -->                   <?php $this->widget(
+                            'application.modules.blog.widgets.LastPostsWidget',
+                            ["view" => "lastposts", 'cacheTime' => $this->yupe->coreCacheTime, "limit" => 2]
+                        ); ?>
+                        <!--               <?php /*$this->endCache();*/?>
+                        <?php /*endif;*/?>
+             -->       </div>
                 </div>
                 <hr>
             </div>

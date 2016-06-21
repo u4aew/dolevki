@@ -1,23 +1,16 @@
 <?php
-$this->beginWidget(
-    'bootstrap.widgets.TbPanel',
-    [
-        'title' => Yii::t('BlogModule.blog', 'Latest posts'),
-    ]
-);
+    /**
+     *@var Post $model */
 ?>
-<ul class="list-unstyled">
-    <?php foreach ($models as $model): ?>
-        <li>
+<?php foreach ($models as $model): ?>
+    <div class="col-lg-6" style="border-top:3px solid gray;padding:10px;">
+        <b>
             <?= CHtml::link(
                 CHtml::encode($model->title),
                 $model->getUrl()
             ); ?>
-            <nobr>
-                <i class="glyphicon glyphicon-comment"></i> <?= $model->getCommentCount(); ?>
-            </nobr>
-            <hr/>
-        </li>
-    <?php endforeach; ?>
-</ul>
-<?php $this->endWidget(); ?>
+        </b>
+        <p><?=$model->content; ?>
+        </p>
+    </div>
+<?php endforeach; ?>

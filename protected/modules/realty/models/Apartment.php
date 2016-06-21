@@ -22,7 +22,7 @@ class Apartment extends yupe\models\YModel
 
     public function getPageTitle()
     {
-        return $this->getTitle();
+        return [$this->getTitle(), Yii::app()->getModule('yupe')->siteName];
     }
 
     public function getPageDescription()
