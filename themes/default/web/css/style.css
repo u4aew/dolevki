@@ -1043,7 +1043,7 @@ input[type=range]:focus::-ms-fill-upper {
     display: block;
     margin: 0 auto;
     width: 90%;
-    height: 50px;
+    min-height: 50px;
     border: none;
     border-radius: 5px;
     background-color: #4CAF50;
@@ -1084,13 +1084,13 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .building__mini-cart_short-description
 {
-    max-height: 90px;
+    max-height: 80px;
     overflow: hidden;
 }
 .view__title
 {
     font-size:20px;
-    font-weigth:bold;
+    font-weight: bold;
     text-transform:uppercase;
 }
 .notifications {
@@ -1111,4 +1111,59 @@ input[type=range]:focus::-ms-fill-upper {
     padding: 10px 15px;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px
+}
+
+.SumoUnder {
+    height: 0px !important;
+}
+
+
+.sorter {
+    padding-right:15px;
+}
+
+.js-box-company__description {
+    padding-top: 10px;
+}
+
+.js-box-company{
+    display: none;
+}
+.js-box-Motivation {
+    display: none;
+}
+
+.js-box-Motivation__one {
+    text-align: center;
+    display: none;
+}
+
+.js-box-Motivation__two {
+    text-align: center;
+    display: none;
+}
+
+.js-box-Motivation__three {
+    text-align: center;
+    display: none;
+}
+
+.js-box-work {
+    display: none;
+}
+
+.js-box-work__one {
+    display: block;
+}
+
+
+.js-box-contacts-company {
+    display: none;
+}
+
+.js-box-contacts-company__one {
+    display: none;
+}
+.js-box-contacts-company__map {
+    display: none;
 }
