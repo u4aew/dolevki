@@ -9,9 +9,10 @@ $this->keywords = $data->getPageKeywords();
 
 <div class="row" style="padding-top:10px ">
     <div class="col-lg-8">
-        <h1 class="view__title" ><?=$data->adres?> </h1>
+        <h1 class="view__title"><?= $data->adres ?> </h1>
         <div class="preview" style="background-color: white">
-            <div class="product-image-iteam" id="bigimg"  style="background-image: url(<?= $data->getImageUrl(1000, 1000, false); ?>);"> </div>
+            <div class="product-image-iteam" id="bigimg"
+                 style="background-image: url(<?= $data->getImageUrl(1000, 1000, false); ?>);"></div>
         </div>
     </div>
     <div class="col-lg-4" style="padding-top: 50px">
@@ -21,7 +22,8 @@ $this->keywords = $data->getPageKeywords();
             </p>
         <?php endif; ?>
         <?php if (!is_null($data->district)): ?>
-            <p class="view__small-info"> Район: <span class="main-info"> <a href="<?= $data->district->getUrl() ?>"> <?= $data->district->name ?> </a> </span> </p>
+            <p class="view__small-info"> Район: <span class="main-info"> <a
+                        href="<?= $data->district->getUrl() ?>"> <?= $data->district->name ?> </a> </span></p>
         <?php endif; ?>
     </div>
 </div>
@@ -29,14 +31,14 @@ $this->keywords = $data->getPageKeywords();
     <div class="col-lg-12">
         <hr>
         <div class="description">
-            <p> <b>ОПИСАНИЕ </b></p>
-            <?=$data->longDescription?>
+            <p><b>ОПИСАНИЕ </b></p>
+            <?= $data->longDescription ?>
             <hr>
             <div class="row">
                 <?php
                 $criteria = new CDbCriteria();
                 $criteria->select = 't.*';
-                $criteria->compare("idBuilding",$data->id);
+                $criteria->compare("idBuilding", $data->id);
 
                 $data = new CActiveDataProvider(
                     'Apartment',
@@ -50,9 +52,9 @@ $this->keywords = $data->getPageKeywords();
                                             'sortVar' => 'sort',
                                             'defaultOrder' => 't.position'
                                         ],
-                          */          ]
+                          */]
                 );
-                $this->renderPartial("/apartment/list",["dataProvider" => $data, "itemPath" => "_item_for_building"]);
+                $this->renderPartial("/apartment/list", ["dataProvider" => $data, "itemPath" => "_item_for_building"]);
                 ?>
             </div>
         </div>

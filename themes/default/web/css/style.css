@@ -1207,3 +1207,51 @@ a.asc, a.desc
     background-color: #4caf50 !important;
     color: white;
 }
+
+.box-sorting-apartment {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.menu-list-sorting-apartement {
+    display: inline;
+    list-style: none;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 5px;
+    padding: 5px;
+    transition: .2s;
+
+}
+
+.menu-list-sorting-apartement__item {
+    display: inline-block;
+}
+
+.list-parameter-apartement {
+    display: none;
+    list-style: none;
+    padding: 10px 0;
+    position: absolute;
+    z-index: 1;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, .1);
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .4);
+    margin-top: 6px;
+    text-align: left;
+    min-width: 120px;
+}
+
+.list-parameter-apartement__item {
+    padding: 0 10px;
+    transition: .1s;
+    cursor: pointer;
+}
+
+.list-parameter-apartement__item:hover {
+    background-color: #4caf50;
+    color: white;
+}
+
+#js-name-select-sort-apartment-parameter {
+    cursor: pointer;
+}
