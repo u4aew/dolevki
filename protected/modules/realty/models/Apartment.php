@@ -122,7 +122,7 @@ class Apartment extends yupe\models\YModel
 			'id' => 'ID',
 			'idBuilding' => 'Id Building',
 			'floor' => 'Этаж',
-			'rooms' => 'Комнатность',
+			'rooms' => 'Количество комнат',
 			'size' => 'Площадь',
 			'cost' => 'Стоимость',
 			'shortDescription' => 'Короткое описание',

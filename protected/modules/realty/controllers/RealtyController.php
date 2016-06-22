@@ -53,6 +53,37 @@ class RealtyController extends \yupe\components\controllers\FrontController
     {
         $criteria = new CDbCriteria();
         $criteria->select = 't.*';
+        $criteria->with = [
+            "building"
+        ];
+        if (Yii::app()->request->getParam("rooms") != null)
+        {
+            $criteria->addInCondition("rooms",Yii::app()->request->getParam("rooms"));
+        }
+        if (Yii::app()->request->getParam("minimalCost") != null)
+        {
+            $criteria->addCondition("cost >= ".Yii::app()->request->getParam("minimalCost"));
+        }
+        if (Yii::app()->request->getParam("maximalCost") != null)
+        {
+            $criteria->addCondition("cost <= ".Yii::app()->request->getParam("maximalCost"));
+        }
+        if (Yii::app()->request->getParam("minimalSize") != null)
+        {
+            $criteria->addCondition("size >= ".Yii::app()->request->getParam("minimalSize"));
+        }
+        if (Yii::app()->request->getParam("maximalSize") != null)
+        {
+            $criteria->addCondition("size <= ".Yii::app()->request->getParam("maximalSize"));
+        }
+        if (Yii::app()->request->getParam("status") != null)
+        {
+            $criteria->addInCondition("building.status",Yii::app()->request->getParam("status"));
+        }
+        if (Yii::app()->request->getParam("time") != null)
+        {
+            $criteria->addInCondition("building.readyTime",Yii::app()->request->getParam("time"));
+        }
 
         $data = new CActiveDataProvider(
             'Apartment',

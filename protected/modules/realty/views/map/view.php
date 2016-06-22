@@ -25,6 +25,7 @@
         window.myMap.geoObjects.add(objectManager);
 
         jQuery.getJSON('<?= $url; ?>', function (json) {
+            console.log(json);
             objectManager.add(json);
             isLoaded = true;
         });
