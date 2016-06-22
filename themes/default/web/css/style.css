@@ -1190,3 +1190,20 @@ a.asc, a.desc
 {
     border-radius: 0px !important;
 }
+
+.pagination__my {
+    width: 100%;
+    text-align: center;
+}
+.pagination {
+    margin: 0 auto !important;
+}
+.pagination li a {
+    color: #4caf50;
+}
+
+
+.active a {
+    background-color: #4caf50 !important;
+    color: white;
+}
