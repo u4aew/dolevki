@@ -74,6 +74,9 @@ body {
         bottom: 30px !important;
         background: rgba(23, 126, 137, .95);
     }
+    .box-sorting-apartment {
+        text-align: center !important;
+    }
 }
 
 .mobile-menu {
@@ -1074,25 +1077,26 @@ input[type=range]:focus::-ms-fill-upper {
 .next-apartment:hover {
     color: #2E7D32;
 }
-.building__mini-cart
-{
+
+.building__mini-cart {
     background: #fafafa;
     border: 2px solid #eeeeee;
     margin: 3px 25px;
     min-height: 100px;
     border-radius: 3px;
 }
-.building__mini-cart_short-description
-{
+
+.building__mini-cart_short-description {
     max-height: 80px;
     overflow: hidden;
 }
-.view__title
-{
-    font-size:20px;
+
+.view__title {
+    font-size: 20px;
     font-weight: bold;
-    text-transform:uppercase;
+    text-transform: uppercase;
 }
+
 .notifications {
     display: none;
     position: fixed
@@ -1117,18 +1121,18 @@ input[type=range]:focus::-ms-fill-upper {
     height: 0px !important;
 }
 
-
 .sorter {
-    padding-right:15px;
+    padding-right: 15px;
 }
 
 .js-box-company__description {
     padding-top: 10px;
 }
 
-.js-box-company{
+.js-box-company {
     display: none;
 }
+
 .js-box-Motivation {
     display: none;
 }
@@ -1156,7 +1160,6 @@ input[type=range]:focus::-ms-fill-upper {
     display: block;
 }
 
-
 .js-box-contacts-company {
     display: none;
 }
@@ -1164,6 +1167,7 @@ input[type=range]:focus::-ms-fill-upper {
 .js-box-contacts-company__one {
     display: none;
 }
+
 .js-box-contacts-company__map {
     display: none;
 }
@@ -1172,15 +1176,64 @@ input[type=range]:focus::-ms-fill-upper {
     width: 100%;
     text-align: center;
 }
+
 .pagination {
     margin: 0 auto !important;
 }
+
 .pagination li a {
     color: #4caf50;
 }
 
-
 .active a {
     background-color: #4caf50 !important;
     color: white;
+}
+
+.box-sorting-apartment {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.menu-list-sorting-apartement {
+    display: inline;
+    list-style: none;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 5px;
+    padding: 5px;
+    transition: .2s;
+
+}
+
+.menu-list-sorting-apartement__item {
+    display: inline-block;
+}
+
+.list-parameter-apartement {
+    display: none;
+    list-style: none;
+    padding: 10px 0;
+    position: absolute;
+    z-index: 1;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, .1);
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .4);
+    margin-top: 6px;
+    text-align: left;
+    min-width: 120px;
+}
+
+.list-parameter-apartement__item {
+    padding: 0 10px;
+    transition: .1s;
+    cursor: pointer;
+}
+
+.list-parameter-apartement__item:hover {
+    background-color: #4caf50;
+    color: white;
+}
+
+#js-name-select-sort-apartment-parameter {
+    cursor: pointer;
 }
