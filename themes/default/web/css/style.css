@@ -636,7 +636,6 @@ input[type=range]:focus::-ms-fill-upper {
 
 .description {
     min-height: 300px;
-    padding: 10px;
 }
 
 .masonry {
@@ -1216,8 +1215,8 @@ a.asc, a.desc
     display: inline;
     list-style: none;
     border: 1px solid rgba(0, 0, 0, .1);
-    border-radius: 5px;
-    padding: 5px;
+    padding: 10px 20px ;
+    font-size: 16px;
     transition: .2s;
     background-color: white;
 
@@ -1255,7 +1254,8 @@ a.asc, a.desc
 #js-name-select-sort-apartment-parameter {
     cursor: pointer;
 }
-.sorter
+
+.grid hr
 {
-    background-color: white;
+    display: none;
 }

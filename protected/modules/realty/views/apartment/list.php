@@ -11,14 +11,16 @@ function getUrl($sortAttribute)
     {
         if ($key == "Apartment_sort")
             unset($getParams[$key]);
+        if ($key == "name")
+            unset($getParams[$key]);
     }
     $requestString = http_build_query($getParams);
+    $path = Yii::app()->request->pathInfo;
 
-    return "http://www.newdolevki.ru/search?".$requestString."&Apartment_sort=".$sortAttribute;
+    return "http://www.newdolevki.ru/".$path."?".$requestString."&Apartment_sort=".$sortAttribute;
 }
 
 ?>
-
 <div class="content-page__main">
     <div class="row">
         <div class="col-lg-12">
