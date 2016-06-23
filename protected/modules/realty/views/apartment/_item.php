@@ -1,5 +1,5 @@
 <div class="col-lg-10 col-lg-offset-1 col-xs-12 iteam-product">
-                        <div class="row" style="padding:0px">
+                        <div class="row" style="padding:10px">
 
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding:0px">
                                 <div class="product-image" style="background-image: url('<?= $data->getImageUrl(500, 500, false); ?>');">
