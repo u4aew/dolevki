@@ -46,7 +46,8 @@ Yii::import("application.modules.realty.models.*");
     <![endif]-->
     <link rel="stylesheet" href="http://yandex.st/highlightjs/8.2/styles/github.min.css">
     <script src="http://yastatic.net/highlightjs/8.2/highlight.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript"
+            src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
     <?php \yupe\components\TemplateEvent::fire(DefautThemeEvents::HEAD_END); ?>
 </head>
 <body>
@@ -93,15 +94,14 @@ Yii::import("application.modules.realty.models.*");
             maximalSize = Math.min(maximalSize, currentVal);
         });
         var url = "/search?";
-        $(".select-room-click-cheked").each(function()
-        {
-            url += "rooms[]="+$(this).data("val")+"&";
+        $(".select-room-click-cheked").each(function () {
+            url += "rooms[]=" + $(this).data("val") + "&";
         });
-        $("#status :selected").each(function(){
-            url+= "status[]="+$(this).val()+"&";
+        $("#status :selected").each(function () {
+            url += "status[]=" + $(this).val() + "&";
         });
-        $("#readyTime :selected").each(function(){
-            url+= "time[]="+$(this).val()+"&";
+        $("#readyTime :selected").each(function () {
+            url += "time[]=" + $(this).val() + "&";
         });
 
 
@@ -124,10 +124,22 @@ Yii::import("application.modules.realty.models.*");
     }
 
 </script>
+<script>
+    $(document).ready(
+        function () {
+            $(".button__show-mobile-filter").click(
+                function () {
+                    $(".find-form").toggle();
+                }
+            )
+        }
+    )
+</script>
 <div id="nav_js" class="navigation">
     <a href="/">
         <img class="image-logo" style="display:block; margin: 0 auto;max-width: 250px"
-             src="<?=$this->mainAssets?>/images/site_logo.png" alt="logo"></a>
+             src="<?= $this->mainAssets ?>/images/site_logo.png" alt="logo"></a>
+    <button class="button__show-mobile-filter"> Поиск квартиры</button>
     <div class="find-form">
         <p align="center" style="margin:0px;font-size:20px;font-weight:bold;padding-top:10px">Подбор квартиры</p>
         <hr style="margin:5px 20px 10px 20px;">
@@ -140,12 +152,13 @@ Yii::import("application.modules.realty.models.*");
                         $_GET["rooms"] = [];
                     $rooms = [0 => "Студия", "1", "2", "3", "4+"];
                     ?>
-                    <?php foreach ($rooms as $key => $value):?>
+                    <?php foreach ($rooms as $key => $value): ?>
                         <?php
 
-                        $flag = array_search($key,$_GET["rooms"]);
+                        $flag = array_search($key, $_GET["rooms"]);
                         ?>
-                        <li class="select-room-click <?= ($flag !== false) ? "select-room-click-cheked" : "" ?>" data-val = "<?=$key;?>"><?=$value; ?></li>
+                        <li class="select-room-click <?= ($flag !== false) ? "select-room-click-cheked" : "" ?>"
+                            data-val="<?= $key; ?>"><?= $value; ?></li>
                     <?php endforeach; ?>
                 </ul>
                 <div style="clear:both">
@@ -178,22 +191,33 @@ Yii::import("application.modules.realty.models.*");
                     </div>
                     <hr style="margin:5px 20px 10px 20px;"
                 </div>
-                <div style="width: 90%;margin: 0 auto 20px auto" >
+                <div style="width: 90%;margin: 0 auto 20px auto">
                     <p align="center" style="font-size:18px;font-weigth:bold">Тип жилья</p>
-                    <select multiple class="sumoSelect" name="" id="status" data-placeholder = "Тип искомого жилья">
-                        <option id = "inProgress" value="<?=STATUS_IN_PROGRESS?>"   <?php if (isset($_GET["status"]) && array_search(STATUS_IN_PROGRESS,$_GET["status"])!==false) echo "selected" ?>>Строящееся жилье</option>
-                        <option value="<?=STATUS_READY?>"  <?php if (isset($_GET["status"]) && array_search(STATUS_READY,$_GET["status"])!==false) echo "selected" ?> >Готовые новостройки</option>
-                        <option value="<?=STATUS_RESELL?>" <?php if (isset($_GET["status"]) && array_search(STATUS_RESELL,$_GET["status"])!==false) echo "selected" ?> >Вторичная продажа</option>
+                    <select multiple class="sumoSelect" name="" id="status" data-placeholder="Тип искомого жилья">
+                        <option id="inProgress"
+                                value="<?= STATUS_IN_PROGRESS ?>" <?php if (isset($_GET["status"]) && array_search(STATUS_IN_PROGRESS, $_GET["status"]) !== false) echo "selected" ?>>
+                            Строящееся жилье
+                        </option>
+                        <option
+                            value="<?= STATUS_READY ?>" <?php if (isset($_GET["status"]) && array_search(STATUS_READY, $_GET["status"]) !== false) echo "selected" ?> >
+                            Готовые новостройки
+                        </option>
+                        <option
+                            value="<?= STATUS_RESELL ?>" <?php if (isset($_GET["status"]) && array_search(STATUS_RESELL, $_GET["status"]) !== false) echo "selected" ?> >
+                            Вторичная продажа
+                        </option>
                     </select>
                 </div>
-                <div style="width: 90%;margin: 0 auto 20px auto" id = "readyTime__container">
+                <div style="width: 90%;margin: 0 auto 20px auto" id="readyTime__container">
                     <p align="center" style="font-size:18px;font-weigth:bold">Срок сдачи </p>
-                    <select multiple class="sumoSelect" name="" id="readyTime" data-placeholder = "Интересующее время готовности жилья">
+                    <select multiple class="sumoSelect" name="" id="readyTime"
+                            data-placeholder="Интересующее время готовности жилья">
                         <?php
                         $times = ReadyTime::model()->findAll();
                         ?>
-                        <?php foreach ($times as $item):?>
-                            <option value="<?=$item->id;?>"  <?php if (isset($_GET["time"]) && array_search($item->id,$_GET["time"])!==false) echo "selected" ?>><?=$item->text;?></option>
+                        <?php foreach ($times as $item): ?>
+                            <option
+                                value="<?= $item->id; ?>" <?php if (isset($_GET["time"]) && array_search($item->id, $_GET["time"]) !== false) echo "selected" ?>><?= $item->text; ?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
@@ -217,7 +241,8 @@ Yii::import("application.modules.realty.models.*");
         <div class="row content">
             <div class="col-lg-10 col-lg-offset-1">
                 <header class="row header">
-                    <div style="color: white; text-align:center;font-size:30px;font-weight:bold;"> 8 800 5555 35 35</div>
+                    <div style="color: white; text-align:center;font-size:30px;font-weight:bold;"> 8 800 5555 35 35
+                    </div>
                 </header>
             </div>
             <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 content-page">
@@ -232,13 +257,13 @@ Yii::import("application.modules.realty.models.*");
                     <h2 style="text-align:center"> Акции и предложения </h2>
                     <hr>
                     <div class="widget last-posts-widget">
-                        <!--               <?php /*if($this->beginCache('application.modules.blog.widgets.LastPostsWidget', ['duration' => $this->yupe->coreCacheTime])):*/?>
-         -->                   <?php $this->widget(
+                        <!--               <?php /*if($this->beginCache('application.modules.blog.widgets.LastPostsWidget', ['duration' => $this->yupe->coreCacheTime])):*/ ?>
+         --> <?php $this->widget(
                             'application.modules.blog.widgets.LastPostsWidget',
                             ["view" => "lastposts", 'cacheTime' => $this->yupe->coreCacheTime, "limit" => 2]
                         ); ?>
-                        <!--               <?php /*$this->endCache();*/?>
-                        <?php /*endif;*/?>
+                        <!--               <?php /*$this->endCache();*/ ?>
+                        <?php /*endif;*/ ?>
              -->       </div>
                 </div>
                 <hr>
@@ -252,19 +277,19 @@ Yii::import("application.modules.realty.models.*");
             <div class="col-lg-8 col-lg-offset-2" style="text-align:center">
                 <div class="col-lg-3 col-md-3 col-sm-3"> © Долёвки22, 2016</div>
                 <div class="col-lg-3 col-md-3 col-sm-3"><a href="http://vk.com/dolevki22"> Вконтакте</a></div>
-                <div class="col-lg-3 col-md-3 col-sm-3"><a href=""> О нас</a>  </div>
-                <div class="col-lg-3 col-md-3 col-sm-3" style="padding-bottom: 10px"> <a href=""> Ссылка 2</a> </div>
+                <div class="col-lg-3 col-md-3 col-sm-3"><a href=""> О нас</a></div>
+                <div class="col-lg-3 col-md-3 col-sm-3" style="padding-bottom: 10px"><a href=""> Ссылка 2</a></div>
 
             </div>
     </section>
 </main>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         $(".fancybox").fancybox();
         $('#lightSlider').lightSlider({
             gallery: true,
             item: 1,
-            loop:true,
+            loop: true,
             slideMargin: 0,
             thumbItem: 9
         });
