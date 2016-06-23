@@ -319,7 +319,6 @@ body {
 }
 
 .iteam-product {
-    height: 250px;
     background-color: white;
     margin-bottom: 20px;
     box-shadow: 0 0 2px gray;
@@ -1220,6 +1219,7 @@ a.asc, a.desc
     border-radius: 5px;
     padding: 5px;
     transition: .2s;
+    background-color: white;
 
 }
 
@@ -1254,4 +1254,8 @@ a.asc, a.desc
 
 #js-name-select-sort-apartment-parameter {
     cursor: pointer;
+}
+.sorter
+{
+    background-color: white;
 }
