@@ -58,7 +58,13 @@ class RealtyController extends \yupe\components\controllers\FrontController
         ];
         if (Yii::app()->request->getParam("rooms") != null)
         {
-            $criteria->addInCondition("rooms",Yii::app()->request->getParam("rooms"));
+            $rooms = Yii::app()->request->getParam("rooms");
+            if (array_search("4",$rooms) !== false)
+            {
+                $rooms[] = "5";
+                $rooms[] = "6";
+            }
+            $criteria->addInCondition("rooms",$rooms);
         }
         if (Yii::app()->request->getParam("minimalCost") != null)
         {
