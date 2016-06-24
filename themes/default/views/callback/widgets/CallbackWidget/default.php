@@ -7,7 +7,7 @@
 ?>
 <div class="row">
     <div class="col-sm-12">
-        <button class="callback" data-toggle="modal" data-target="#callbackModal">
+        <button class="nav__find" data-toggle="modal" data-target="#callbackModal">
             <i class="fa fa-fw fa-phone"></i>
             <?= Yii::t('CallbackModule.callback', 'Заказать звонок') ?>
         </button>
@@ -22,7 +22,7 @@
                         aria-label="<?= Yii::t('CallbackModule.callback', 'Close') ?>">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title"><?= Yii::t('CallbackModule.callback', 'Callback') ?></h4>
+                <h4 class="modal-title">Заказать обратный звонок</h4>
             </div>
             <?php $form = $this->beginWidget(
                 'bootstrap.widgets.TbActiveForm',
@@ -39,6 +39,14 @@
             ); ?>
 
             <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8">
+                    Укажите свое имя, номер телефона, время, когда вам будет удобно принять наш звонок, и наш консультант сам вам перезвонит
+                    </div>
+                    <div class="col-lg-2"></div>
+                </div>
+                <br>
                 <div class="row">
                     <div class="col-lg-2"></div>
                     <div class="col-lg-8">

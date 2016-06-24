@@ -21,15 +21,20 @@ function getUrl($sortAttribute)
 }
 
 ?>
-    <div class="row box-find-background">
+<div class="content-page__main">
+    <div class="row">
         <div class="col-lg-12">
+
             <section>
-                <div class="grid" >
+                <div class="grid">
                     <div class="box-sorting-apartment" style="text-align: right;margin-top: 15px">
+                        <span class="apartments-header">
+                            <?=$headerText; ?>
+                        </span>
                         <ul class="menu-list-sorting-apartement">
                             <li class="menu-list-sorting-apartement__item">Сортировать по :</li>
                             <li class="menu-list-sorting-apartement__item"><span id="js-name-select-sort-apartment-parameter"><?= (isset($_GET["Apartment_sort"])) ? $sortKeys[$_GET["Apartment_sort"]] : "Стоимости"?></span>
-                                <span class="caret"> </span>
+                                <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
                                 <ul class="list-parameter-apartement">
                                     <?php foreach ($sortKeys as $key => $item):?>
                                         <a href = "<?=getUrl($key); ?>">
@@ -71,3 +76,5 @@ function getUrl($sortAttribute)
             </section>
         </div>
     </div>
+
+</div>

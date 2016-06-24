@@ -10,12 +10,12 @@ $this->keywords = $data->getPageKeywords();
 
 
 ?>
-<div class="row" style="background-color: white ">
+<div class="row">
     <div class="col-lg-12">
         <h1 class="view__title"><?= $data->getTitle() ?> </h1>
     </div>
 </div>
-<div class="row" style="padding-top:10px;background-color: white  ">
+<div class="row" style="padding-top:10px ">
     <div class="col-lg-8">
         <div class="walp" style="background: #F5F5F5">
             <div class="prew">
@@ -65,7 +65,7 @@ $this->keywords = $data->getPageKeywords();
         </div>
     </div>
 </div>
-<div class="row" style="background-color: white ">
+<div class="row">
     <div class="col-lg-12">
         <hr>
         <div class="description">
