@@ -7,7 +7,7 @@ $this->keywords = $data->getPageKeywords();
 
 ?>
 
-<div class="row" style="padding-top:10px ">
+<div class="row" style="padding-top:10px;background-color: white ">
     <div>
     <div class="col-lg-8">
         <h1 class="view__title"><?= $data->adres ?> </h1>
@@ -32,10 +32,10 @@ $this->keywords = $data->getPageKeywords();
     </div>
     </div>
 </div>
-<div class="row">
+<div class="row ">
     <div class="col-lg-12">
         <div class="description">
-            <div class="row">
+            <div class="row box-apartment" >
                 <?php
                 $criteria = new CDbCriteria();
                 $criteria->select = 't.*';

@@ -124,10 +124,22 @@ Yii::import("application.modules.realty.models.*");
     }
 
 </script>
+<script>
+    $(document).ready(
+        function () {
+            $(".button__show-mobile-filter").click(
+                function () {
+                    $(".find-form").toggle();
+                }
+            )
+        }
+    )
+</script>
 <div id="nav_js" class="navigation">
     <a href="/">
         <img class="image-logo" style="display:block; margin: 0 auto;max-width: 250px"
              src="<?=$this->mainAssets?>/images/site_logo.png" alt="logo"></a>
+    <button class="button__show-mobile-filter"> Поиск квартиры</button>
     <div class="find-form">
         <p align="center" style="margin:0px;font-size:20px;font-weight:bold;padding-top:10px">Подбор квартиры</p>
         <hr style="margin:5px 20px 10px 20px;">
