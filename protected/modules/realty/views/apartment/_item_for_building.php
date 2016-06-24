@@ -17,7 +17,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-6" style="padding: 0px 0 0 10px;text-align: left;font-weight: bold;font-size: 24px">
+            <div class="col-lg-6" style="text-align: left;font-weight: bold;font-size: 24px">
                 <div class="building_apartment_pr" style="margin-top: 10px; text-align: center">
                     <p style="margin: 0px"> <?=$data->getPriceAsString(); ?></p>
                     <p style="margin: 0px">

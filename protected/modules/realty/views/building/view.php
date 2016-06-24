@@ -25,15 +25,15 @@ $this->keywords = $data->getPageKeywords();
             <p class="view__small-info"> Район: <span class="main-info"> <a
                         href="<?= $data->district->getUrl() ?>"> <?= $data->district->name ?> </a> </span></p>
         <?php endif; ?>
+        <p class="view__small-info">
+            <?= $data->longDescription ?>
+        </p>
+
     </div>
 </div>
 <div class="row">
     <div class="col-lg-12">
-        <hr>
         <div class="description">
-            <p><b>ОПИСАНИЕ </b></p>
-            <?= $data->longDescription ?>
-            <hr>
             <div class="row">
                 <?php
                 $criteria = new CDbCriteria();
@@ -54,7 +54,7 @@ $this->keywords = $data->getPageKeywords();
                                         ],
                           */]
                 );
-                $this->renderPartial("/apartment/list", ["dataProvider" => $data, "itemPath" => "_item_for_building"]);
+                $this->renderPartial("/apartment/list", ["dataProvider" => $data, "itemPath" => "_item_for_building", "headerText" => "Квартиры в этом доме"]);
                 ?>
             </div>
         </div>

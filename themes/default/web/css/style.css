@@ -44,7 +44,7 @@ body {
 
     .next-apartment {
         display: block;
-        width: 100%;
+        width: 100% !important;
     }
 }
 
@@ -56,6 +56,20 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+    .content-page__main
+    {
+        margin-left: -15px !important;
+        margin-right: -15px !important;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .iteam-product
+    {
+
+    }
+    .content
+    {
+    }
     .map__map {
         height: 300px !important;
         padding: 30px 0 30px 0 !important;
@@ -218,6 +232,7 @@ body {
 }
 
 .nav__find {
+    font-size: 18px;
     padding: 10px;
     width: 100%;
     background: #4caf50;
@@ -427,9 +442,8 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .preview {
-    height: 360px;
     background: #E6E6E6;
-    padding: 15px 10px 15px 10px;
+    padding: 15px 10px 20px 10px;
 }
 
 .preview-gallery {
@@ -635,7 +649,6 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .description {
-    min-height: 300px;
 }
 
 .masonry {
@@ -996,7 +1009,8 @@ input[type=range]:focus::-ms-fill-upper {
     height: 200px;
     top: 0;
     background-color: white;
-    padding: 14px 5px 0px 5px;
+    padding: 5px 5px 0px 5px;
+    font-size: 14px;
 }
 
 .building-click:hover .description-building {
@@ -1076,13 +1090,12 @@ input[type=range]:focus::-ms-fill-upper {
 {
     background: #ffffff;
     border: 2px solid #eeeeee;
-    margin: 3px 25px;
-    min-height: 100px;
-    border-radius: 3px;
+    margin: 3px 30px 7px;
+    min-height: 132px;
 }
 .building__mini-cart_short-description
 {
-    max-height: 80px;
+    max-height: 95px;
     overflow: hidden;
 }
 .view__title
@@ -1209,17 +1222,26 @@ a.asc, a.desc
 .box-sorting-apartment {
     text-align: right;
     padding-right: 10px;
+    margin-top: 15px;
+    margin-bottom: -11px;
 }
 
 .menu-list-sorting-apartement {
-    display: inline;
+    display: inline-block;
+    position: relative;
+    top: -30px;
+    margin-bottom: -50px;
     list-style: none;
     border: 1px solid rgba(0, 0, 0, .1);
     padding: 10px 20px ;
     font-size: 16px;
     transition: .2s;
     background-color: white;
-
+    margin-right: 5px;
+}
+.list-view
+{
+    padding-top: 0px !important;
 }
 
 .menu-list-sorting-apartement__item {
@@ -1258,4 +1280,17 @@ a.asc, a.desc
 .grid hr
 {
     display: none;
+}
+.apartments-header
+{
+    text-transform: uppercase;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    /* display: block; */
+    /* float: left; */
+    margin: auto;
+    font-weight: bold;
+    display: block;
+    width: 300px;
 }

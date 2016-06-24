@@ -28,6 +28,9 @@ function getUrl($sortAttribute)
             <section>
                 <div class="grid">
                     <div class="box-sorting-apartment" style="text-align: right;margin-top: 15px">
+                        <span class="apartments-header">
+                            <?=$headerText; ?>
+                        </span>
                         <ul class="menu-list-sorting-apartement">
                             <li class="menu-list-sorting-apartement__item">Сортировать по :</li>
                             <li class="menu-list-sorting-apartement__item"><span id="js-name-select-sort-apartment-parameter"><?= (isset($_GET["Apartment_sort"])) ? $sortKeys[$_GET["Apartment_sort"]] : "Стоимости"?></span>

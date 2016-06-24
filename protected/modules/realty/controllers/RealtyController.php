@@ -105,7 +105,7 @@ class RealtyController extends \yupe\components\controllers\FrontController
                                 ],
                   */          ]
         );
-        $this->render("/apartment/list",["dataProvider" => $data]);
+        $this->render("/apartment/list",["dataProvider" => $data, "headerText" => "Результаты поиска"]);
     }
 
     public function actionViewBuilding($name)
