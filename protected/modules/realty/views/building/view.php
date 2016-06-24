@@ -8,6 +8,7 @@ $this->keywords = $data->getPageKeywords();
 ?>
 
 <div class="row" style="padding-top:10px ">
+    <div>
     <div class="col-lg-8">
         <h1 class="view__title"><?= $data->adres ?> </h1>
         <div class="preview" style="background-color: white">
@@ -28,7 +29,7 @@ $this->keywords = $data->getPageKeywords();
         <p class="view__small-info">
             <?= $data->longDescription ?>
         </p>
-
+    </div>
     </div>
 </div>
 <div class="row">
