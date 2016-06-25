@@ -11,7 +11,7 @@ $this->breadcrumbs = $this->getBreadCrumbs();
 $this->description = $model->description ?: Yii::app()->getModule('yupe')->siteDescription;
 $this->keywords = $model->keywords ?: Yii::app()->getModule('yupe')->siteKeyWords;
 ?>
-<div class="row">
+<div class="row" style="background-color: white;min-height: 900px">
     <div class="col-lg-10 col-lg-offset-1">
         <div class="row" style="padding-top: 50px">
 
@@ -80,19 +80,20 @@ $this->keywords = $model->keywords ?: Yii::app()->getModule('yupe')->siteKeyWord
     </div>
     <div class="row" style="margin-top: 80px">
         <div class="js-box-contacts-company">
-        <div class="col-lg-12">
-            <hr>
-            <div class="js-box-contacts-company__one">
-            <h2 style="text-align: center">Где мы находимся ?</h2>
-            <div style="text-align: center;font-size: 20px">Нащ адрес Барнаул ул Ленина 4654</div>
-            <hr>
+            <div class="col-lg-12">
+                <hr>
+                <div class="js-box-contacts-company__one">
+                    <h2 style="text-align: center">Где мы находимся ?</h2>
+                    <div style="text-align: center;font-size: 20px">Нащ адрес Барнаул ул Ленина 4654</div>
+                    <hr>
+                </div>
+                <div class="js-box-contacts-company__map">
+                    <div style="padding: 10px;margin:0 auto;max-width: 100%;overflow: hidden">
+                        <script type="text/javascript" charset="utf-8" async
+                                src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=HwWFWmIe0Tv_eGfqbE2rmeWh1rOUdkHA&width=1000&height=400&lang=ru_RU&sourceType=constructor&scroll=true"></script>
+                    </div>
+                </div>
             </div>
-            <div class="js-box-contacts-company__map">
-            <div style="padding: 10px;margin:0 auto;max-width: 100%;overflow: hidden">
-                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=HwWFWmIe0Tv_eGfqbE2rmeWh1rOUdkHA&width=1000&height=400&lang=ru_RU&sourceType=constructor&scroll=true"></script>
-            </div>
-            </div>
-        </div>
         </div>
     </div>
 </div>
