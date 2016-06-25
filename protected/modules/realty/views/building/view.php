@@ -42,6 +42,9 @@ $this->keywords = $data->getPageKeywords();
     <div class="col-lg-12">
         <div class="description">
             <div class="row box-apartment" >
+                  <span class="apartments-header">
+                            Квартиры в этом доме
+                        </span>
                 <?php
                 $criteria = new CDbCriteria();
                 $criteria->select = 't.*';
