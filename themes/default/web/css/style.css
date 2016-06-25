@@ -35,7 +35,6 @@ body {
         background-color: #212d53 !important;
     }
 
-
     .product {
         padding: 50px !important;
     }
@@ -68,6 +67,7 @@ body {
     }
 
 }
+
 /*mobile*/
 @media screen and (max-width: 768px) {
     .apartments-header {
@@ -75,7 +75,6 @@ body {
         text-align: center;
         color: white !important;
     }
-
 
     .building__mini-cart {
         margin: 3px 3px 7px !important;
@@ -1293,11 +1292,6 @@ a.asc, a.desc {
     font-size: 18px;
 }
 
-.menu-list-sorting-apartement:hover {
-    background-color: lightgrey;
-
-}
-
 .caret {
     transition: .3s;
     transform: rotate(270deg);
@@ -1322,7 +1316,7 @@ a.asc, a.desc {
     box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .4);
     margin-top: 8px;
     text-align: left;
-    min-width: 120px;
+    min-width: 140px;
     opacity: 1 !important;
 }
 
@@ -1353,6 +1347,10 @@ a.asc, a.desc {
 #js-name-select-sort-apartment-parameter {
     padding-bottom: 1px;
     border-bottom: 1px black dashed;
+}
+
+.menu-list-sorting-apartement__hover{
+    background-color: lightgrey;
 }
 
 .button__show-mobile-filter {

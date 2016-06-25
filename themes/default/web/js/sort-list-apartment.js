@@ -8,6 +8,17 @@ $(document).ready(
         );
 
 
+        $("#js-name-select-sort-apartment-parameter").hover(
+            function () {
+                $(".menu-list-sorting-apartement").addClass('menu-list-sorting-apartement__hover');
+            },
+            function () {
+                $(".menu-list-sorting-apartement").removeClass('menu-list-sorting-apartement__hover');
+            }
+        );
+
+
+
         $('.list-parameter-apartement__item').click(function()
         {
             var href = $(this).parent().attr('href');
