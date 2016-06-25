@@ -27,7 +27,7 @@ class Apartment extends yupe\models\YModel
 
     public function getPageDescription()
     {
-        return "";
+        return "На этой странице вы можете просмотреть информацию о квартире в доме, расположенной по адресу \"{$this->building->adres}\" на {$this->floor} этаже, стоимость составляет {$this->cost}";
     }
 
     public function getPageKeywords()
