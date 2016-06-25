@@ -37,6 +37,10 @@ class RealtyController extends \yupe\components\controllers\FrontController
                                 ],
                   */          ]
         );
+
+
+        $this->title = [Yii::app()->getModule('yupe')->siteName];
+        $this->description = "На нашем сайте вы можете ознакомиться с домами-новостройками, квартирами и ценами на них";
         $this->render("/building/index",["dataProvider" => $data]);
     }
 
@@ -105,6 +109,16 @@ class RealtyController extends \yupe\components\controllers\FrontController
                                 ],
                   */          ]
         );
+
+        $title = "Результаты поиска";
+        if ($_GET["page"] > 1)
+        {
+            $title.= ", страница ".$_GET["page"];
+        }
+        $this->title = [$title,Yii::app()->getModule('yupe')->siteName];
+        $this->description = "Результаты поиска квартир, страница".(isset($_GET["page"])? $_GET["page"] : "1");
+
+
         $this->render("/apartment/list",["dataProvider" => $data, "headerText" => "Результаты поиска"]);
     }
 

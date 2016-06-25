@@ -35,7 +35,7 @@ class Building extends yupe\models\YModel
 
     public function getPageDescription()
     {
-        return "";
+        return "На этой странице вы можете просмотреть информацию о доме, расположенном по адресу \"{$this->adres}\"";
     }
 
     public function getPageKeywords()

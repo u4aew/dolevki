@@ -1,7 +1,13 @@
 <?php
 /** @var Building $data */
 
-$this->title = $data->getPageTitle();
+$title = $data->adres;
+if ($_GET["page"] > 1)
+{
+    $title .=", страница ".$_GET["page"];
+}
+$this->title = [$title,Yii::app()->getModule('yupe')->siteName];
+
 $this->description = $data->getPageDescription();
 $this->keywords = $data->getPageKeywords();
 

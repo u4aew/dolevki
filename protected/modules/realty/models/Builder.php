@@ -19,7 +19,7 @@ class Builder extends \yupe\models\YModel
 
     public function getPageDescription()
     {
-        return "";
+        return "На этой странице вы можете просмотреть информацию о застройщике \"{$this->name}\"";
     }
 
     public function getPageKeywords()
