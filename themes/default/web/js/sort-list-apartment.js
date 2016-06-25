@@ -3,6 +3,7 @@ $(document).ready(
         $('#js-name-select-sort-apartment-parameter').click(
             function () {
                 $(".list-parameter-apartement").toggle()
+                $(".caret").toggleClass("caret__rotate");
             }
         );
 
@@ -22,6 +23,7 @@ $(document).ready(
             var SelectName = $(this).text();
             $('#js-name-select-sort-apartment-parameter').text(SelectName);
             $(".list-parameter-apartement").hide();
+            $(".caret").removeClass("caret__rotate");
             return false;
         });
 
