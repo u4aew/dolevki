@@ -146,4 +146,44 @@ class RealtyController extends \yupe\components\controllers\FrontController
         $this->render("/apartment/view",["data" => $model]);
     }
 
+    public function actionListBuilders()
+    {
+        $criteria = new CDbCriteria();
+        $data = new CActiveDataProvider(
+            'Builder',
+            [
+                'criteria' => $criteria,
+                'pagination' => [
+                    'pageSize' => (int)Yii::app()->getModule('realty')->itemsPerPage,
+                    'pageVar' => 'page',
+                ],
+                /*                'sort' => [
+                                    'sortVar' => 'sort',
+                                    'defaultOrder' => 't.position'
+                                ],
+                  */          ]
+        );
+        $this->render("/builder/list",["dataProvider" => $data]);
+    }
+
+    public function actionListDistricts()
+    {
+        $criteria = new CDbCriteria();
+        $data = new CActiveDataProvider(
+            'District',
+            [
+                'criteria' => $criteria,
+                'pagination' => [
+                    'pageSize' => (int)Yii::app()->getModule('realty')->itemsPerPage,
+                    'pageVar' => 'page',
+                ],
+                /*                'sort' => [
+                                    'sortVar' => 'sort',
+                                    'defaultOrder' => 't.position'
+                                ],
+                  */          ]
+        );
+        $this->render("/district/list",["dataProvider" => $data]);
+    }
+
 }

@@ -33,6 +33,12 @@ class District extends yupe\models\YModel
         return "";
     }
 
+    public function getCardTitle()
+    {
+        return $this->name;
+    }
+
+
 
     public function getMapInfo()
     {
@@ -64,7 +70,7 @@ class District extends yupe\models\YModel
 
     public function getUrl()
     {
-        return "/district/view/".$this->slug;
+        return "/district/".$this->slug;
     }
 
 
@@ -97,8 +103,8 @@ class District extends yupe\models\YModel
                 'uploadPath' => 'realty/districts/',
                 'resizeOnUpload' => true,
                 'resizeOptions' => [
-                    'maxWidth' => 200,
-                    'maxHeight' => 200,
+                    'maxWidth' => 700,
+                    'maxHeight' => 700,
                 ],
             ],
         ];

@@ -35,7 +35,7 @@ class Realty extends CApplicationComponent
         ];
         $criteria->limit = 1;
         $apartment = Apartment::model()->find($criteria);
-        return $apartment->cost;
+        return intval($apartment->cost);
     }
 
     public function getMaximumAvailableCost()
@@ -50,7 +50,7 @@ class Realty extends CApplicationComponent
         ];
         $criteria->limit = 1;
         $apartment = Apartment::model()->find($criteria);
-        return $apartment->cost;
+        return intval($apartment->cost);
     }
 
     public function getMinimumAvailableSize()
@@ -65,7 +65,7 @@ class Realty extends CApplicationComponent
         ];
         $criteria->limit = 1;
         $apartment = Apartment::model()->find($criteria);
-        return $apartment->size;
+        return intval($apartment->size);
     }
 
     public function getMaximumAvailableSize()
@@ -80,7 +80,7 @@ class Realty extends CApplicationComponent
         ];
         $criteria->limit = 1;
         $apartment = Apartment::model()->find($criteria);
-        return $apartment->size;
+        return intval($apartment->size);
     }
 
 }

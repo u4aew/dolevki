@@ -13,7 +13,7 @@
             <div class="col-lg-6" style="padding: 0px">
                 <div class="building_apartment_p" style="padding: 15px 0 10px 0">
                     <p style="margin: 0;font-weight: bold">  <?= $data->getRoomsAsString() ?>, <?= $data->size ?> м<sup>2</sup></p>
-                    <p style="margin: 0">Этаж: <?= $data->floor ?> </p>
+                    <p style="margin: 0">Этаж: <?= $data->getFloor(); ?> </p>
                 </div>
             </div>
 

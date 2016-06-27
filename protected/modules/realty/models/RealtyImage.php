@@ -47,8 +47,8 @@ class RealtyImage extends \yupe\models\YModel
                 'uploadPath' => 'realty/images/',
                 'resizeOnUpload' => true,
                 'resizeOptions' => [
-                    'maxWidth' => 200,
-                    'maxHeight' => 200,
+                    'maxWidth' => 700,
+                    'maxHeight' => 700,
                 ],
             ],
         ];

@@ -7,7 +7,7 @@
         </div>
         <div>
             <div class="description-building" style="text-align: center">
-                  <div class="building-heid" >  <?= $data->adres ?> </div>
+                <div class="building-heid" >  <?= $data->getCardTitle() ?> </div>
                 <hr style="margin: 10px auto 5px auto; width: 80%">
                 <div style="height: 83px;overflow: hidden">
                     <div style="margin: auto"><?= $data->shortDescription ?></div>

@@ -7,6 +7,7 @@
  * @property integer $id
  * @property string $name
  * @property string $slug
+ * @property string $image
  * @property string $shortDescription
  */
 class Builder extends \yupe\models\YModel
@@ -26,6 +27,13 @@ class Builder extends \yupe\models\YModel
     {
         return "";
     }
+
+    public function getCardTitle()
+    {
+        return $this->name;
+    }
+
+
 
     static public function getForDropdown()
     {
@@ -55,12 +63,29 @@ class Builder extends \yupe\models\YModel
 		// will receive user inputs.
 		return array(
 			array('name,slug', 'length', 'max'=>100),
+            array('image', 'length', 'max'=>250),
 			array('shortDescription', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id,slug, name, shortDescription', 'safe', 'on'=>'search'),
+			array('image, id,slug, name, shortDescription', 'safe', 'on'=>'search'),
 		);
 	}
+
+    public function behaviors()
+    {
+        return [
+            'imageUpload' => [
+                'class' => 'yupe\components\behaviors\ImageUploadBehavior',
+                'attributeName' => 'image',
+                'uploadPath' => 'realty/builders/',
+                'resizeOnUpload' => true,
+                'resizeOptions' => [
+                    'maxWidth' => 700,
+                    'maxHeight' => 700,
+                ],
+            ],
+        ];
+    }
 
 	/**
 	 * @return array relational rules.
@@ -82,12 +107,13 @@ class Builder extends \yupe\models\YModel
 			'id' => 'ID',
 			'name' => 'Название',
 			'shortDescription' => 'Описание',
+            'image' => 'Изображение'
 		);
 	}
 
     public function getUrl()
     {
-        return "/builder/view/".$this->slug;
+        return "/builder/".$this->slug;
     }
 
 

@@ -102,6 +102,19 @@
         </div>
         <div class="row">
             <div class="col-sm-7">
+                <?=  $form->textFieldGroup($model, 'maxFloor', [
+                    'widgetOptions' => [
+                        'htmlOptions' => [
+                            'class' => 'popover-help',
+                            'data-original-title' => $model->getAttributeLabel('maxFloor'),
+                            'data-content' => $model->getAttributeDescription('maxFloor')
+                        ]
+                    ]
+                ]); ?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-7">
                 <?=  $form->dropDownListGroup($model, 'rooms', [
                     'widgetOptions' => [
                         "data" => Apartment::getRoomsArray(),

@@ -43,6 +43,11 @@ class Building extends yupe\models\YModel
         return "";
     }
 
+    public function getCardTitle()
+    {
+        return $this->adres;
+    }
+
     public function getMapInfo()
     {
         $elem = array();
@@ -92,8 +97,8 @@ class Building extends yupe\models\YModel
                 'uploadPath' => 'realty/buildings/',
                 'resizeOnUpload' => true,
                 'resizeOptions' => [
-                    'maxWidth' => 200,
-                    'maxHeight' => 200,
+                    'maxWidth' => 700,
+                    'maxHeight' => 700,
                 ],
             ],
         ];
@@ -237,6 +242,6 @@ class Building extends yupe\models\YModel
 
     public function getUrl()
     {
-        return "/building/view/".$this->slug;
+        return "/building/".$this->slug;
     }
 }

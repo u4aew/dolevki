@@ -29,7 +29,7 @@
                 'id'                     => 'builder-form',
                 'enableAjaxValidation'   => false,
                 'enableClientValidation' => true,
-                'htmlOptions'            => ['class' => 'well'],
+                'htmlOptions' => ['enctype' => 'multipart/form-data', 'class' => 'well'],
             ]
         );
         ?>
@@ -62,6 +62,48 @@
             </div>
         </div>
 
+        <div class='row'>
+            <div class="col-sm-7">
+                <div class="preview-image-wrapper<?= !$model->getIsNewRecord() && $model->image ? '' : ' hidden' ?>">
+                    <div class="btn-group image-settings">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="collapse"
+                                data-target="#image-settings"><span class="fa fa-gear"></span></button>
+                    </div>
+                    <?=
+                    CHtml::image(
+                        !$model->getIsNewRecord() && $model->image? $model->getImageUrl(200, 200, true) : '#',
+                        $model->image,
+                        [
+                            'class' => 'preview-image img-thumbnail',
+                            'style' => !$model->getIsNewRecord() && $model->image ? '' : 'display:none',
+                        ]
+                    ); ?>
+                </div>
+
+                <?php if (!$model->getIsNewRecord() && $model->image): ?>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="delete-file"> <?= Yii::t(
+                                'YupeModule.yupe',
+                                'Delete the file'
+                            ) ?>
+                        </label>
+                    </div>
+                <?php endif; ?>
+
+                <?= $form->fileFieldGroup(
+                    $model,
+                    'image',
+                    [
+                        'widgetOptions' => [
+                            'htmlOptions' => [
+//                            'onchange' => 'readURL(this);',
+                            ],
+                        ],
+                    ]
+                ); ?>
+            </div>
+        </div>
 
         <div class="row">
             <div class="col-sm-12 <?= $model->hasErrors('shortDescription') ? 'has-error' : ''; ?>">

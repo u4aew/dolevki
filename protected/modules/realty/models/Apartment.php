@@ -7,6 +7,7 @@
  * @property integer $id
  * @property integer $idBuilding
  * @property integer $floor
+ * @property integer $maxFloor
  * @property integer $rooms
  * @property integer $size
  * @property integer $cost
@@ -66,8 +67,8 @@ class Apartment extends yupe\models\YModel
                 'uploadPath' => 'realty/apartments/',
                 'resizeOnUpload' => true,
                 'resizeOptions' => [
-                    'maxWidth' => 500,
-                    'maxHeight' => 500,
+                    'maxWidth' => 700,
+                    'maxHeight' => 700,
                 ],
             ],
         ];
@@ -94,12 +95,12 @@ class Apartment extends yupe\models\YModel
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('idBuilding, floor, rooms, size, cost', 'numerical', 'integerOnly'=>true),
+			array('idBuilding, maxFloor, floor, rooms, size, cost', 'numerical', 'integerOnly'=>true),
             array('image', 'length', 'max'=>200),
             array('shortDescription, longDescription', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('image, id, idBuilding, floor, rooms, size, cost, shortDescription, longDescription', 'safe', 'on'=>'search'),
+			array('image, maxFloor, id, idBuilding, floor, rooms, size, cost, shortDescription, longDescription', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -124,6 +125,7 @@ class Apartment extends yupe\models\YModel
 			'id' => 'ID',
 			'idBuilding' => 'Id Building',
 			'floor' => 'Этаж',
+            'maxFloor' => 'Конечный этаж',
 			'rooms' => 'Количество комнат',
 			'size' => 'Площадь',
 			'cost' => 'Стоимость',
@@ -178,7 +180,15 @@ class Apartment extends yupe\models\YModel
     
     public function getUrl()
     {
-        return "/apartment/view/".$this->id;
+        return "/building/".$this->building->slug."/".$this->id;
+    }
+
+    public function getFloor()
+    {
+        if ($this->maxFloor > 0)
+            return $this->floor."-".$this->maxFloor;
+        else
+            return $this->floor;
     }
     
     public function getImages()

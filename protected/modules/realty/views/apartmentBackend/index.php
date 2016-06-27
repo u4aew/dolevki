@@ -66,7 +66,10 @@ $this->menu = [
         'columns'      => [
             'id',
             'idBuilding',
-            'floor',
+            [
+                'name' => 'floor',
+                'value' => '$data->getFloor()',
+            ],
             'rooms',
             'size',
             'cost',

@@ -68,7 +68,7 @@ class ApartmentBackendController extends \yupe\components\controllers\BackContro
 
         if (Yii::app()->getRequest()->getPost('Apartment') !== null) {
             $model->setAttributes(Yii::app()->getRequest()->getPost('Apartment'));
-            $model->image = Yii::app()->getRequest()->getPost('Apartment')["image"];
+//            $model->image = Yii::app()->getRequest()->getPost('Apartment')["image"];
 
             if ($model->save()) {
                 Yii::app()->user->setFlash(

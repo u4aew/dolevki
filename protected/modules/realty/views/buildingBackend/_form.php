@@ -297,7 +297,10 @@
                             return CHtml::image($data->getImageUrl(40,40), $data->image, ["width" => 40, "height" => 40, "class" => "img-thumbnail"]);
                         },
                     ],
-                    'floor',
+                    [
+                        'name' => 'floor',
+                        'value' => '$data->getFloor()',
+                    ],
                     'size',
                     'cost',
                     [

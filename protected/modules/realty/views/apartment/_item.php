@@ -19,7 +19,7 @@
                                 </div> 
                                 <div class="row" style="padding:0px">
                                     <div class="col-lg-6 col-md-6 col-sm-6">
-                                        <p style="margin:0px"> Этаж <?=$data->floor?></p>
+                                        <p style="margin:0px"> Этаж <?=$data->getFloor();?></p>
                                         <p style="margin:0px"> <?=$data->getRoomsAsString()?> </p>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6">
