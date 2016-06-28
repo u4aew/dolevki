@@ -232,14 +232,19 @@ body {
 }
 
 .nav-iteam-list li a {
+    display: block;
     color: black;
-    font-size: 14px;
+    font-size: 18px;
     text-decoration: none;
     transition: .3s;
 }
 
 .nav-iteam-list li a:hover {
-    color: gray;
+    background-color: #212D53;
+    color: white;
+    margin-top:10px;
+    margin-bottom: 10px;
+    font-size: 24px;
 }
 
 .product-box {
@@ -754,7 +759,7 @@ input[type=range]:focus::-ms-fill-upper {
 ----------------------------------*/
 
 .ui-slider-horizontal {
-    height: 15px;
+    height: 10px;
 }
 
 .ui-slider-horizontal .ui-slider-handle {
@@ -765,6 +770,7 @@ input[type=range]:focus::-ms-fill-upper {
 .ui-slider-horizontal .ui-slider-range {
     top: 0;
     height: 100%;
+    border-radius: 0px !important;
     background-image: none;
     background-color: #212D53 !important;
 }
@@ -829,13 +835,10 @@ input[type=range]:focus::-ms-fill-upper {
 
 .ui-widget-content {
     margin-top: 10px;
-    border: 1px solid #c6c6c6;
+    border: 2px solid darkgray;
     background: #fff;
     color: #222222;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -o-border-radius: 4px;
-    border-radius: 4px;
+    border-radius: 0px;
 }
 
 .ui-widget-content a {
@@ -861,32 +864,38 @@ input[type=range]:focus::-ms-fill-upper {
 .ui-state-default,
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
+    background: url("../images/range-dragger.png");
+    border: 0px !important;
+    width: 31px;
     font-weight: normal;
     color: #555555;
-    border: 1px solid #ccc;
-    border-top: 1px solid #eee;
-    background: #ffffff;
-    /* Old browsers */
-    background: -moz-linear-gradient(top, #ffffff 0%, #f2f0f1 39%, #e8e8e8 100%);
-    /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(39%, #f2f0f1), color-stop(100%, #e8e8e8));
-    /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #ffffff 0%, #f2f0f1 39%, #e8e8e8 100%);
-    /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #ffffff 0%, #f2f0f1 39%, #e8e8e8 100%);
-    /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #ffffff 0%, #f2f0f1 39%, #e8e8e8 100%);
-    /* IE10+ */
-    background: linear-gradient(to bottom, #ffffff 0%, #f2f0f1 39%, #e8e8e8 100%);
-    /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e8e8e8', GradientType=0);
-    /* IE6-9 */
-    -webkit-box-shadow: 0 1px 0 #ccc, inset 0 1px 0 #fff;
-    -moz-box-shadow: 0 1px 0 #ccc, inset 0 1px 0 #fff;
-    -ms-box-shadow: 0 1px 0 #ccc, inset 0 1px 0 #fff;
-    -o-box-shadow: 0 1px 0 #ccc, inset 0 1px 0 #fff;
-    box-shadow: 0 1px 0 #ccc, inset 0 1px 0 #fff;
-}
+    margin-left: -16px;
+    margin-top: 9px;
+    box-shadow: none !important;
+    /*   border: 1px solid #ccc;
+       border-top: 1px solid #eee;
+       background: #ffffff;
+       *//* Old browsers *//*
+       background: -moz-linear-gradient(top, #ffffff 0%, #f2f0f1 39%, #e8e8e8 100%);
+       *//* FF3.6+ *//*
+       background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(39%, #f2f0f1), color-stop(100%, #e8e8e8));
+       *//* Chrome,Safari4+ *//*
+       background: -webkit-linear-gradient(top, #ffffff 0%, #f2f0f1 39%, #e8e8e8 100%);
+       *//* Chrome10+,Safari5.1+ *//*
+       background: -o-linear-gradient(top, #ffffff 0%, #f2f0f1 39%, #e8e8e8 100%);
+       *//* Opera 11.10+ *//*
+       background: -ms-linear-gradient(top, #ffffff 0%, #f2f0f1 39%, #e8e8e8 100%);
+       *//* IE10+ *//*
+       background: linear-gradient(to bottom, #ffffff 0%, #f2f0f1 39%, #e8e8e8 100%);
+       *//* W3C *//*
+       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e8e8e8', GradientType=0);
+       *//* IE6-9 *//*
+       -webkit-box-shadow: 0 1px 0 #ccc, inset 0 1px 0 #fff;
+       -moz-box-shadow: 0 1px 0 #ccc, inset 0 1px 0 #fff;
+       -ms-box-shadow: 0 1px 0 #ccc, inset 0 1px 0 #fff;
+       -o-box-shadow: 0 1px 0 #ccc, inset 0 1px 0 #fff;
+       box-shadow: 0 1px 0 #ccc, inset 0 1px 0 #fff;
+   */}
 
 .ui-state-default a,
 .ui-state-default a:link,
@@ -905,7 +914,6 @@ input[type=range]:focus::-ms-fill-upper {
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
     border: 1px solid #fff;
-    background: #ffffff;
     font-weight: normal;
     color: #212121;
 }

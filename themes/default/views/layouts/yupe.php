@@ -35,6 +35,7 @@ Yii::import("application.modules.realty.models.*");
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.fancybox.pack.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.sumoselect.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/leanding.js');
+    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.maskedinput.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/sort-list-apartment.js');
     ?>
     <script type="text/javascript">
@@ -140,6 +141,15 @@ Yii::import("application.modules.realty.models.*");
         <img class="image-logo" style="display:block; margin: 0 auto;max-width: 250px"
              src="<?=$this->mainAssets?>/images/site_logo.png" alt="logo"></a>
     <button class="button__show-mobile-filter"> Поиск квартиры</button>
+    <div class="nav-list">
+        <ul class="nav-iteam-list">
+            <li><a href="/pages/o-nas">О компании</a></li>
+            <li><a href="/districts">Кварталы</a></li>
+            <li><a href="/builders">Застройщики</a></li>
+            <li><a href="/">Дома</a></li>
+            <li><a href="#"> Пункт 5 </a></li>
+        </ul>
+    </div>
     <div class="find-form">
         <p align="center" style="margin:0px;font-size:20px;font-weight:bold;padding-top:10px">Подбор квартиры</p>
         <hr style="margin:5px 20px 10px 20px;">
@@ -164,7 +174,7 @@ Yii::import("application.modules.realty.models.*");
                 </div>
                 <hr style="margin:5px 20px 10px 20px;">
                 <div>
-                    <p align="center" style="font-size:18px;font-weigth:bold">Стоимость, РУБ </p>
+                    <p align="center" style="font-size:18px;font-weigth:bold">Стоимость, <span class="rubl"> руб.</span></p>
                     <div style="width:95%;margin:0px auto;">
                         <div style="margin:0px;float: left"><b>ОТ</b><input type="text" id="amount_two"
                                                                             class="amount_two"></div>
@@ -175,9 +185,9 @@ Yii::import("application.modules.realty.models.*");
                     </div>
                     <div style="clear:both"></div>
                     <div id="slider-range_two"></div>
-                    <hr style="margin:5px 20px 10px 20px;">
+                    <hr style="margin:25px 20px 10px 20px;"
                     <div>
-                        <p align="center" style="font-size:18px;font-weigth:bold">ПЛОЩАДЬ от, <sup>М 2</sup></p>
+                        <p align="center" style="font-size:18px;font-weigth:bold">Площадь, м<sup>2</sup></p>
                         <div style="width:95%;margin:0px auto;">
                             <div style="margin:0px;float: left"><b>ОТ</b> <input type="text" id="amount" class="amount">
                             </div>
@@ -188,7 +198,7 @@ Yii::import("application.modules.realty.models.*");
                         <div style="clear:both"></div>
                         <div id="slider-range"></div>
                     </div>
-                    <hr style="margin:5px 20px 10px 20px;"
+                    <hr style="margin:25px 20px 10px 20px;"
                 </div>
                 <div style="width: 90%;margin: 0 auto 20px auto" >
                     <p align="center" style="font-size:18px;font-weigth:bold">Тип жилья</p>
@@ -214,22 +224,13 @@ Yii::import("application.modules.realty.models.*");
         </form>
     </div>
 </div>
-<div class="nav-list">
-    <ul class="nav-iteam-list">
-        <li><a href="/pages/o-nas"> о компании </a></li>
-        <li><a href="#"> Пункт 2 </a></li>
-        <li><a href="#"> Пункт 3 </a></li>
-        <li><a href="#"> Пункт 4 </a></li>
-        <li><a href="#"> Пункт 5 </a></li>
-    </ul>
-</div>
 </div>
 <main class="main">
     <section class="container-fluid wrapper">
         <div class="row content">
             <div class="col-lg-10 col-lg-offset-1">
                 <header class="row header">
-                    <div style="color: white; text-align:center;font-size:30px;font-weight:bold;"> 8 800 5555 35 35</div>
+                    <a class="tel:+78005553535"><div style="color: white; text-align:right;font-size:24px;font-weight:bold;"><i class="fa fa-phone" aria-hidden="true"></i> 8 800 5555 35 35</div></a>
                 </header>
             </div>
             <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 content-page">
