@@ -154,7 +154,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-12 <?= $model->hasErrors('shortDescription') ? 'has-error' : ''; ?>">
+            <div style="width: 400px" class="col-sm-12 <?= $model->hasErrors('shortDescription') ? 'has-error' : ''; ?>">
                 <?= $form->labelEx($model, 'shortDescription'); ?>
                 <?php $this->widget(
                     $this->module->getVisualEditor(),
