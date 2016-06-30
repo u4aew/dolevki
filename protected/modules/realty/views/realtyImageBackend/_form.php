@@ -82,7 +82,7 @@ $form = $this->beginWidget(
 <?php
 $criteria = new CDbCriteria();
 $criteria->compare("idTable",$model->idTable);
-$criteria->compare("idRecord",$model->id);
+$criteria->compare("idRecord",$model->idRecord);
 $images = RealtyImage::model()->findAll($criteria);
 ?>
     <table class="table table-hover">

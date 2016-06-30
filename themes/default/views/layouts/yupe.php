@@ -31,14 +31,13 @@ Yii::import("application.modules.realty.models.*");
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/slide.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/sidebar.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/mobile-siderbar.js');
-    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.fancybox.js');
+//    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.fancybox.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.fancybox.pack.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.sumoselect.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/leanding.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.maskedinput.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/sort-list-apartment.js');
-    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.maskedinput.js');
-    
+
     ?>
     <script type="text/javascript">
         var yupeTokenName = '<?= Yii::app()->getRequest()->csrfTokenName;?>';
@@ -179,10 +178,10 @@ Yii::import("application.modules.realty.models.*");
                     <p align="center" style="font-size:18px;font-weigth:bold">Стоимость, <span class="rubl"> руб.</span></p>
                     <div style="width:95%;margin:0px auto;">
                         <div style="margin:0px;float: left"><b>ОТ</b><input type="text" id="amount_two"
-                                                                            class="amount_two"></div>
+                                                                            class="amount_two js-cost-textbox"></div>
 
                         <div style="margin:0px;float: right"><b>ДО</b><input type="text" id="amount_1_two"
-                                                                             class="amount1_two"></div>
+                                                                             class="amount1_two js-cost-textbox"></div>
                         <div class="clearfix"></div>
                     </div>
                     <div style="clear:both"></div>

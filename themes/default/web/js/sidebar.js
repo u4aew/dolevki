@@ -1,4 +1,11 @@
 $(document).ready(function () {
+    var onChange = function()
+    {
+        $(this).val($(this).val().replace(/[^\d]/g, "").split("").reverse().join("").replace(/\d{3}(?!$|(?:\s$))/g, "$& ").split("").reverse().join(""));
+    }
+
+    $(".js-cost-textbox").change(onChange).change();
+    $(".js-cost-textbox").keyup(onChange);
     if ($(window).width() < '1280') {
 
         $(".description-building").css('top', -150);

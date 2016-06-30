@@ -60,16 +60,16 @@ $(function () {
         , max: getParams().maximalAvailableCost
         , values: [getParams().currentMinCost, getParams().currentMaxCost]
         , slide: function (event, ui) {
-            $("#amount_two").val(ui.values[0]);
-            $("#amount_1_two").val(ui.values[1]);
+            $("#amount_two").val(ui.values[0]).change();
+            $("#amount_1_two").val(ui.values[1]).change();
         }
     });
     $("#amount_two").val($("#slider-range_two").slider("values", 0));
     $("#amount_1_two").val($("#slider-range_two").slider("values", 1));
 
-    $("input#amount_two").change(function () {
-        var value1 = $("input#amount_two").val();
-        var value2 = $("input#amount_1_two").val();
+    $("input#amount_two").keyup(function () {
+        var value1 = $("input#amount_two").val().replace(new RegExp('[ ]', 'g'),"");
+        var value2 = $("input#amount_1_two").val().replace(new RegExp('[ ]', 'g'),"");
         if (parseInt(value1) > parseInt(value2)) {
             value1 = value2;
             $("input#amount_two").val(value1);
@@ -78,9 +78,9 @@ $(function () {
     });
 
 
-    $("input#amount_1_two").change(function () {
-        var value1 = $("input#amount_two").val();
-        var value2 = $("input#amount_1_two").val();
+    $("input#amount_1_two").keyup(function () {
+        var value1 = $("input#amount_two").val().replace(new RegExp('[ ]', 'g'),"");
+        var value2 = $("input#amount_1_two").val().replace(new RegExp('[ ]', 'g'),"");
 
         if (parseInt(value1) > parseInt(value2)) {
             value2 = value1;
@@ -122,17 +122,6 @@ $(function () {
     });
     $("#amount_three").val($("#slider-range_three").slider("values", 0));
     $("#amount_1_three").val($("#slider-range_three").slider("values", 1));
-
-    $("input#amount_two").change(function () {
-        var value1 = $("input#amount_three").val();
-        var value2 = $("input#amount_1_three").val();
-        if (parseInt(value1) > parseInt(value2)) {
-            value1 = value2;
-            $("input#amount_three").val(value1);
-        }
-        $("#slider-range_three").slider("values", 0, value1);
-    });
-
 
     $("input#amount_1_three").change(function () {
         var value1 = $("input#amount_three").val();
