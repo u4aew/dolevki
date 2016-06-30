@@ -76,14 +76,20 @@ Yii::import("application.modules.realty.models.*");
         });
         var minimalCost = getParams().minimalAvailableCost;
         $(".amount_two").each(function () {
-            var currentVal = $(this).val();
+            var currentVal = parseInt($(this).val().replace(new RegExp('[ ]', 'g'),""));
             minimalCost = Math.max(minimalCost, currentVal);
         });
         var maximalCost = getParams().maximalAvailableCost;
         $(".amount1_two").each(function () {
-            var currentVal = $(this).val();
+            var currentVal = parseInt($(this).val().replace(new RegExp('[ ]', 'g'),""));
             maximalCost = Math.min(maximalCost, currentVal);
         });
+        if (minimalCost > maximalCost)
+        {
+            var t = maximalCost;
+            maximalCost = minimalCost;
+            minimalCost = t;
+        }
         var minimalSize = getParams().minimalAvailableSize;
         $(".amount").each(function () {
             var currentVal = $(this).val();

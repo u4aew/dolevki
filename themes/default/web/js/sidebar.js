@@ -6,9 +6,9 @@ $(document).ready(function () {
 
     $(".js-cost-textbox").change(onChange).change();
     $(".js-cost-textbox").keyup(onChange);
-    if ($(window).width() < '768') {
+    if ($(window).width() < '1280') {
 
-        $(".description-building").css('top', -180);
+        $(".description-building").css('top', -150);
     }
     else {
     }

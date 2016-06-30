@@ -24,7 +24,9 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6">
                                         <p style="margin:0px"> Площадь: <?=$data->size?> М<sup>2</sup> </p>
+                                        <?php if ($data->building != null): ?>
                                         <p style="margin:0px"> Срок сдачи: <p style="margin:0px;"> <?=$data->building->getReadyTimes()[$data->building->readyTime]?></p> </p>     
+                                        <?php endif; ?>
                                     </div>
 
                                 </div>
