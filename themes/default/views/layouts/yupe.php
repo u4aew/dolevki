@@ -37,6 +37,8 @@ Yii::import("application.modules.realty.models.*");
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/leanding.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.maskedinput.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/sort-list-apartment.js');
+    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.maskedinput.js');
+    
     ?>
     <script type="text/javascript">
         var yupeTokenName = '<?= Yii::app()->getRequest()->csrfTokenName;?>';
