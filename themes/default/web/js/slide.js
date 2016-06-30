@@ -60,34 +60,12 @@ $(function () {
         , max: getParams().maximalAvailableCost
         , values: [getParams().currentMinCost, getParams().currentMaxCost]
         , slide: function (event, ui) {
-            $("#amount_two").val(ui.values[0]).change();
-            $("#amount_1_two").val(ui.values[1]).change();
+            $("#amount_two").val(ui.values[0]).keyup();
+            $("#amount_1_two").val(ui.values[1]).keyup();
         }
     });
     $("#amount_two").val($("#slider-range_two").slider("values", 0));
     $("#amount_1_two").val($("#slider-range_two").slider("values", 1));
-
-    $("input#amount_two").keyup(function () {
-        var value1 = $("input#amount_two").val().replace(new RegExp('[ ]', 'g'),"");
-        var value2 = $("input#amount_1_two").val().replace(new RegExp('[ ]', 'g'),"");
-        if (parseInt(value1) > parseInt(value2)) {
-            value1 = value2;
-            $("input#amount_two").val(value1);
-        }
-        $("#slider-range_two").slider("values", 0, value1);
-    });
-
-
-    $("input#amount_1_two").keyup(function () {
-        var value1 = $("input#amount_two").val().replace(new RegExp('[ ]', 'g'),"");
-        var value2 = $("input#amount_1_two").val().replace(new RegExp('[ ]', 'g'),"");
-
-        if (parseInt(value1) > parseInt(value2)) {
-            value2 = value1;
-            $("input#amount_1_two").val(value2);
-        }
-        $("#slider-range_two").slider("values", 1, value2);
-    });
 
     // ���������� ����� � ����
     jQuery('#amount_two, #amount_1_two').keypress(function (event) {
