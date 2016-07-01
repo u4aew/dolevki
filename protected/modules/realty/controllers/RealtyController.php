@@ -44,11 +44,119 @@ class RealtyController extends \yupe\components\controllers\FrontController
         $this->render("/building/index",["dataProvider" => $data]);
     }
 
-    public function actionGetBuildingsForMap()
+    public function actionNonReady()
     {
-        $buildings = Building::model()->findAll();
-        $districts = District::model()->findAll();
+        $criteria = new CDbCriteria();
+        $criteria->select = 't.*';
+        $criteria->compare("isPublished",1);
+        $criteria->compare("status",STATUS_IN_PROGRESS);
+
+        $data = new CActiveDataProvider(
+            'Building',
+            [
+                'criteria' => $criteria,
+                'pagination' => [
+                    'pageSize' => (int)Yii::app()->getModule('realty')->itemsPerPage,
+                    'pageVar' => 'page',
+                ],
+                /*                'sort' => [
+                                    'sortVar' => 'sort',
+                                    'defaultOrder' => 't.position'
+                                ],
+                  */          ]
+        );
+
+
+        $this->title = ["Строящиеся дома",Yii::app()->getModule('yupe')->siteName];
+        $this->description = "На этой странице представлены дома, которые скоро будут сданы застройщиками в эксплуатацию";
+        $this->render("/building/list",["dataProvider" => $data, "title" => "Строящиеся дома", "map" => STATUS_IN_PROGRESS]);
+    }
+
+    public function actionReady()
+    {
+        $criteria = new CDbCriteria();
+        $criteria->select = 't.*';
+        $criteria->compare("isPublished",1);
+        $criteria->compare("status",STATUS_READY);
+
+        $data = new CActiveDataProvider(
+            'Building',
+            [
+                'criteria' => $criteria,
+                'pagination' => [
+                    'pageSize' => (int)Yii::app()->getModule('realty')->itemsPerPage,
+                    'pageVar' => 'page',
+                ],
+                /*                'sort' => [
+                                    'sortVar' => 'sort',
+                                    'defaultOrder' => 't.position'
+                                ],
+                  */          ]
+        );
+
+
+        $this->title = ["Готовые новостройки",Yii::app()->getModule('yupe')->siteName];
+        $this->description = "На этой странице представлены новостройки, которые недавно были сданы застройщиками";
+        $this->render("/building/list",["dataProvider" => $data, "title" => "Готовые новостройки", "map" => STATUS_READY]);
+    }
+
+    public function actionResell()
+    {
+        $criteria = new CDbCriteria();
+        $criteria->select = 't.*';
+        $criteria->compare("isPublished",1);
+        $criteria->compare("status",STATUS_RESELL);
+
+        $data = new CActiveDataProvider(
+            'Building',
+            [
+                'criteria' => $criteria,
+                'pagination' => [
+                    'pageSize' => (int)Yii::app()->getModule('realty')->itemsPerPage,
+                    'pageVar' => 'page',
+                ],
+                /*                'sort' => [
+                                    'sortVar' => 'sort',
+                                    'defaultOrder' => 't.position'
+                                ],
+                  */          ]
+        );
+
+
+        $this->title = ["Вторичная продажа",Yii::app()->getModule('yupe')->siteName];
+        $this->description = "На этой странице представлены жилье, которе продается другими собственниками";
+        $this->render("/building/list",["dataProvider" => $data, "title" => "Вторичная продажа", "map" => STATUS_RESELL]);
+    }
+
+
+    public function actionGetBuildingsForIndexMap()
+    {
+        $criteria = new CDbCriteria();
+        $criteria->compare("isShowedOnMap",1);
+        $buildings = Building::model()->findAll($criteria);
+
+        $criteria = new CDbCriteria();
+        $criteria->compare("isPublished",1);
+        $districts = District::model()->findAll($criteria);
         $result = array_merge($buildings,$districts);
+        echo Yii::app()->realty->getYandexMapJson($result);
+    }
+
+    public function actionGetObjectsForMap($map)
+    {
+        if ($map <= 3)
+        {
+            $criteria = new CDbCriteria();
+            $criteria->compare("isShowedOnMap",1);
+            $criteria->compare("status",$map);
+            $result = Building::model()->findAll($criteria);
+        }
+        if ($map == "district")
+        {
+            $criteria = new CDbCriteria();
+            $criteria->compare("isPublished",1);
+            $result = District::model()->findAll($criteria);
+        }
         echo Yii::app()->realty->getYandexMapJson($result);
     }
 
@@ -57,6 +165,7 @@ class RealtyController extends \yupe\components\controllers\FrontController
     {
         $criteria = new CDbCriteria();
         $criteria->select = 't.*';
+        $criteria->addCondition("idBuilding <> 0");
         $criteria->with = [
             "building"
         ];

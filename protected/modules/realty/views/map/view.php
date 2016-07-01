@@ -18,13 +18,13 @@
 
         var objectManager = new ymaps.ObjectManager({
             // Использовать кластеризацию.
-            clusterize: true
+            clusterize: false
         });
 //        objectManager.objects.options.set('preset', 'islands#greenDotIcon');
 //        objectManager.clusters.options.set('preset', 'islands#greenClusterIcons');
         window.myMap.geoObjects.add(objectManager);
 
-        jQuery.getJSON('<?= $url; ?>', function (json) {
+        jQuery.getJSON('<?= (!isset($map) ? "/realty/realty/getBuildingsForIndexMap": "/realty/realty/getObjectsForMap?map=".$map); ?>', function (json) {
             console.log(json);
             objectManager.add(json);
             isLoaded = true;

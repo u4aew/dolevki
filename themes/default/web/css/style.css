@@ -1395,3 +1395,8 @@ a.asc, a.desc {
     padding-right: 10px;
     padding-left: 10px;
 }
+.page_title
+{
+    color: white;
+    text-align: center;
+}

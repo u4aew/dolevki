@@ -190,6 +190,14 @@ class Apartment extends yupe\models\YModel
         else
             return $this->floor;
     }
+
+    public function getFloorAsString()
+    {
+        if ($this->maxFloor > 0)
+            return $this->getFloor()." этажах";
+        else
+            return $this->getFloor()." этаже";
+    }
     
     public function getImages()
     {
@@ -202,7 +210,7 @@ class Apartment extends yupe\models\YModel
 
     public function getTitle()
     {
-        return $this->getRoomsAsString()." на ".$this->floor." этаже по адресу ".$this->building->adres;
+        return $this->getRoomsAsString()." на ".$this->getFloorAsString()." по адресу ".$this->building->adres;
     }
 
 
