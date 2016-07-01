@@ -153,10 +153,10 @@ Yii::import("application.modules.realty.models.*");
             <li><a href="/pages/o-nas">О компании</a></li>
             <li><a href="/districts">Кварталы</a></li>
             <li><a href="/builders">Застройщики</a></li>
-            <li><a href="/nonReady">Строящиеся дома</a></li>
+<!--            <li><a href="/nonReady">Строящиеся дома</a></li>
             <li><a href="/ready">Готовые новостройки</a></li>
             <li><a href="/resell">Вторичная продажа</a></li>
-        </ul>
+-->        </ul>
     </div>
     <div class="find-form">
         <p align="center" style="margin:0px;font-size:20px;font-weight:bold;padding-top:10px">Подбор квартиры</p>
