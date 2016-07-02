@@ -1,6 +1,10 @@
-<?php
+<?php if (isset($title)): ?>
+    <h1 class="page_title"><?=$title; ?></h1>
+<?php endif; ?>
 
-?>
+<?php if (isset($map)): ?>
+    <?php $this->renderPartial("/map/view",["url" => "/realty/realty/getBuildingsForMap", "map" => $map]); ?>
+<?php endif; ?>
 
 <div class="row">
     <div class="col-lg-12">

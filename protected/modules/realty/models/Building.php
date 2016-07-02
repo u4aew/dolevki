@@ -58,7 +58,7 @@ class Building extends yupe\models\YModel
             "coordinates" => array($this->latitude,$this->longitude)
         );
         $elem["properties"] = array(
-            "balloonContent" => "asdasdasdasd",
+            "balloonContent" => $this->shortDescription,
 //                "clusterCaption"=> "ggh",
             "hintContent"=> $this->adres,
         );

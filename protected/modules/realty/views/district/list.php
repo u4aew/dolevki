@@ -1,6 +1,8 @@
-<?php
+<h1 class="page_title">
+    Кварталы
+</h1>
 
-?>
+<?php $this->renderPartial("/map/view",["url" => "/realty/realty/getBuildingsForMap", "map" => "district"]); ?>
 
 <div class="row">
     <div class="col-lg-12">

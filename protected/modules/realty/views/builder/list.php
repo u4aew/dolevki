@@ -1,6 +1,7 @@
-<?php
+<h1 class="page_title">
+    Застройщики
+</h1>
 
-?>
 
 <div class="row">
     <div class="col-lg-12">
