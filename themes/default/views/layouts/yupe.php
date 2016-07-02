@@ -34,8 +34,6 @@ Yii::import("application.modules.realty.models.*");
 //    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.fancybox.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.fancybox.pack.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.sumoselect.js');
-    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/leanding.js');
-    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.maskedinput.js');
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/sort-list-apartment.js');
 
     ?>

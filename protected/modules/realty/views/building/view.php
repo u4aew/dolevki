@@ -23,6 +23,9 @@ $this->keywords = $data->getPageKeywords();
         </div>
     </div>
     <div class="col-lg-4" style="padding-top: 50px">
+        <?php
+            $this->renderPartial("/map/linkOnBuilding",["building" => $data]);
+        ?>
         <?php if (!is_null($data->builder)): ?>
             <p class="view__small-info">Застройщик:<span class="main-info"><a
                         href="<?= $data->builder->getUrl() ?>"> <?= $data->builder->name ?> </a> </span>

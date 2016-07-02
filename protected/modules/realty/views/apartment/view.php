@@ -37,6 +37,9 @@ $this->keywords = $data->getPageKeywords();
     <div class="col-lg-4">
         <p class="view__small-info">Дом:<span class="main-info"> <a href="<?= $data->building->getUrl() ?>"> <?= $data->building->adres ?> </a></span>
         </p>
+        <?php
+        $this->renderPartial("/map/linkOnBuilding",["building" => $data->building]);
+        ?>
         <?php if ($data->building->idDistrict > 0): ?>
             <p class="view__small-info">Квартал:<span class="main-info"> <a href="<?= $data->building->district->getUrl() ?>"> <?= $data->building->district->name ?> </a></span>
             </p>
