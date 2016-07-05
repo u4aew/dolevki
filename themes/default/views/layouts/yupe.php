@@ -1,5 +1,8 @@
 <?php
 Yii::import("application.modules.realty.models.*");
+Yii::app()->getClientScript()->coreScriptPosition = CClientScript::POS_END;
+Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_END;
+
 ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::app()->language; ?>">
@@ -23,19 +26,23 @@ Yii::import("application.modules.realty.models.*");
     Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/lightslider.css');
     Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/jquery.fancybox.css');
     Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/sumoselect.css');
-    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/blog.js');
-    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/bootstrap-notify.js');
-    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.li-translit.js');
-    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery-ui-1.10.3.custom.min.js');
-    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/lightslider.js');
-    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/slide.js');
-    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/sidebar.js');
-    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/mobile-siderbar.js');
-//    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.fancybox.js');
-    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.fancybox.pack.js');
-    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.sumoselect.js');
-    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/sort-list-apartment.js');
+    Yii::app()->getClientScript()->registerCssFile('http://yandex.st/highlightjs/8.2/styles/github.min.css');
+    ?>
 
+    <?php
+//    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.li-translit.js');
+//    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery-ui-1.10.3.custom.min.js');
+//    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/lightslider.js');
+//    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/slide.js');
+//    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/sidebar.js');
+//    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/mobile-siderbar.js');
+    //    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.fancybox.js');
+//    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.fancybox.pack.js');
+//    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.sumoselect.js');
+//    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/sort-list-apartment.js');
+    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/build/production.min.js');
+    Yii::app()->getClientScript()->registerScriptFile('http://yastatic.net/highlightjs/8.2/highlight.min.js');
+    Yii::app()->getClientScript()->registerScriptFile('http://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js');
     ?>
     <script type="text/javascript">
         var yupeTokenName = '<?= Yii::app()->getRequest()->csrfTokenName;?>';
@@ -44,9 +51,6 @@ Yii::import("application.modules.realty.models.*");
     <!--[if IE]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link rel="stylesheet" href="http://yandex.st/highlightjs/8.2/styles/github.min.css">
-    <script src="http://yastatic.net/highlightjs/8.2/highlight.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
     <?php \yupe\components\TemplateEvent::fire(DefautThemeEvents::HEAD_END); ?>
 </head>
 <body>
@@ -130,17 +134,15 @@ Yii::import("application.modules.realty.models.*");
     }
 
 </script>
-<script>
-    $(document).ready(
-        function () {
+<?php
+Yii::app()->clientScript->registerScript("mobile-form",'
             $(".button__show-mobile-filter").click(
                 function () {
                     $(".find-form").toggle();
                 }
             )
-        }
-    )
-</script>
+    ');
+?>
 <div id="nav_js" class="navigation">
     <a href="/">
         <img class="image-logo" style="display:block; margin: 0 auto;max-width: 250px"
@@ -151,10 +153,10 @@ Yii::import("application.modules.realty.models.*");
             <li><a href="/pages/o-nas">О компании</a></li>
             <li><a href="/districts">Кварталы</a></li>
             <li><a href="/builders">Застройщики</a></li>
-<!--            <li><a href="/nonReady">Строящиеся дома</a></li>
-            <li><a href="/ready">Готовые новостройки</a></li>
-            <li><a href="/resell">Вторичная продажа</a></li>
--->        </ul>
+            <!--            <li><a href="/nonReady">Строящиеся дома</a></li>
+                        <li><a href="/ready">Готовые новостройки</a></li>
+                        <li><a href="/resell">Вторичная продажа</a></li>
+            -->        </ul>
     </div>
     <div class="find-form">
         <p align="center" style="margin:0px;font-size:20px;font-weight:bold;padding-top:10px">Подбор квартиры</p>
@@ -277,19 +279,18 @@ Yii::import("application.modules.realty.models.*");
             </div>
     </section>
 </main>
-<script>
-    $(document).ready(function() {
+<?php
+Yii::app()->clientScript->registerScript("launch-fancy-and-lightslider",'
         $(".fancybox").fancybox();
-        $('#lightSlider').lightSlider({
+        $("#lightSlider").lightSlider({
             gallery: true,
             item: 1,
             loop:true,
             slideMargin: 0,
             thumbItem: 9
         });
-    });
-</script>
-<div class='notifications top-right' id="notifications"></div>
+    ');
+?>
 
 </body>
 </html>
