@@ -106,6 +106,20 @@
         </div>
 
         <div class="row">
+            <div class="col-sm-7">
+                <?=  $form->textFieldGroup($model, 'link', [
+                    'widgetOptions' => [
+                        'htmlOptions' => [
+                            'class' => 'popover-help',
+                            'data-original-title' => $model->getAttributeLabel('link'),
+                            'data-content' => $model->getAttributeDescription('link')
+                        ]
+                    ]
+                ]); ?>
+            </div>
+        </div>
+
+        <div class="row">
             <div class="col-sm-12 <?= $model->hasErrors('shortDescription') ? 'has-error' : ''; ?>">
                 <?= $form->labelEx($model, 'shortDescription'); ?>
                 <?php $this->widget(

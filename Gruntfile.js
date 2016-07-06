@@ -27,12 +27,24 @@ module.exports = function(grunt) {
                 src: 'themes/default/web/js/build/production.js',
                 dest: 'themes/default/web/js/build/production.min.js'
             }
+        },
+        cssmin: {
+            options: {
+                shorthandCompacting: false,
+                roundingPrecision: -1
+            },
+            target: {
+                files: {
+                    'themes/default/web/css/build/production.min.css': ['themes/default/web/css/*.css']
+                }
+            }
         }
 
     });
 
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
 
     grunt.registerTask('default', ['concat', 'uglify']);
 

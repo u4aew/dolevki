@@ -3,7 +3,7 @@
 ?>
 <div class="col-lg-4 col-md-6 col-sm-6 building-click">
     <div class="building">
-        <div class="building-img" style="background-image: url('<?= $data->getImageUrl(500, 500, false); ?>');">
+        <div class="building-img" style="background-image: url('<?= $data->getImageUrl(300, 300, false); ?>');">
         </div>
         <div>
             <div class="description-building" style="text-align: center">
