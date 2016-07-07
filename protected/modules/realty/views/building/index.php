@@ -6,7 +6,10 @@ $this->renderPartial("/map/view",["url" => "/realty/realty/getBuildingsForMap"])
 
 ?>
 
-<?php if($this->beginCache($id)): ?>
+<?php
+$dataProvider->getData();
+?>
+<?php if($this->beginCache($id.$dataProvider->pagination->currentPage)): ?>
     <div class="content-page__main">
         <?php $this->renderPartial("/building/list",["dataProvider" => $dataProvider]); ?>
     </div>

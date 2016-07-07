@@ -20,6 +20,7 @@ return [
         ],
     ],
     'rules'     => [
+        '/' => '/realty/realty/index',
         '/realty' => 'realty/realty/index',
         '/search' => 'realty/realty/search',
         '/districts' => 'realty/realty/listDistricts',
@@ -31,7 +32,6 @@ return [
         '/building/<name>' => 'realty/realty/viewBuilding',
         '/district/<name>' => 'realty/realty/viewDistrict',
         '/builder/<name>' => 'realty/realty/viewBuilder',
-        '/' => '/realty/realty/index',
         '/<module:\w+>/<controller:\w+>/<action:\w+>' => '/<module>/<controller>/<action>',
     ],
 
