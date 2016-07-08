@@ -148,16 +148,16 @@ Yii::app()->clientScript->registerScript("mobile-form",'
         <img class="image-logo" style="display:block; margin: 0 auto;max-width: 250px"
              src="<?=$this->mainAssets?>/images/site_logo.png" alt="logo"></a>
     <button class="button__show-mobile-filter"> Поиск квартиры</button>
-    <div class="nav-list">
+    <nav class="nav-list" itemscope itemtype="http://schema.org/SiteNavigationElement">
         <ul class="nav-iteam-list">
-            <li><a href="/pages/o-nas">О компании</a></li>
-            <li><a href="/districts">Кварталы</a></li>
-            <li><a href="/builders">Застройщики</a></li>
-            <!--            <li><a href="/nonReady">Строящиеся дома</a></li>
-                        <li><a href="/ready">Готовые новостройки</a></li>
-                        <li><a href="/resell">Вторичная продажа</a></li>
-            -->        </ul>
-    </div>
+            <li><a itemprop = "url" href="/pages/o-nas">О компании</a></li>
+            <li><a itemprop = "url" href="/districts">Кварталы</a></li>
+            <li><a itemprop = "url" href="/builders">Застройщики</a></li>
+            <li><a itemprop = "url" href="/nonReady">Строящиеся дома</a></li>
+            <li><a itemprop = "url" href="/ready">Готовые новостройки</a></li>
+            <li><a itemprop = "url" href="/resell">Вторичная продажа</a></li>
+        </ul>
+    </nav>
     <div class="find-form">
         <p align="center" style="margin:0px;font-size:20px;font-weight:bold;padding-top:10px">Подбор квартиры</p>
         <hr style="margin:5px 20px 10px 20px;">
