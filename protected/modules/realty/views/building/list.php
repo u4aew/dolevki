@@ -7,6 +7,9 @@
 <?php endif; ?>
 
 
+<?php
+$dataProvider->getData();
+?>
 <?php if($this->beginCache(Yii::app()->controller->id.Yii::app()->controller->action->id.$dataProvider->pagination->currentPage)): ?>
 
 

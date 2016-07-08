@@ -4,6 +4,9 @@
 
 <?php $this->renderPartial("/map/view",["url" => "/realty/realty/getBuildingsForMap", "map" => "district"]); ?>
 
+<?php
+$dataProvider->getData();
+?>
 <?php if($this->beginCache(Yii::app()->controller->id.Yii::app()->controller->action->id.$dataProvider->pagination->currentPage)): ?>
 
 
