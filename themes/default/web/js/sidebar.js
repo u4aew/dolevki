@@ -52,10 +52,10 @@ $(document).ready(function () {
 
 $(window).scroll(function () {
 
-    if (window.scrollY > 370) {
-        $(".navigation").addClass("navigation-fixed").css('top', -370);
+    var scrollPos = window.scrollY + document.documentElement.clientHeight;
+    if (scrollPos > 1000) {
+        $(".navigation").addClass("navigation-fixed").css('bottom', 0);
     } else {
-        $(".navigation").removeClass("navigation-fixed").css('top', 0);
+        $(".navigation").removeClass("navigation-fixed").css('bottom', "");
     }
-    ;
 })

@@ -40,7 +40,7 @@ class RealtyController extends \yupe\components\controllers\FrontController
 
 
         $this->title = [Yii::app()->getModule('yupe')->siteName];
-        $this->description = "На нашем сайте вы можете ознакомиться с домами-новостройками, квартирами и ценами на них";
+        $this->description = "Все новостройки Барнаула, напрямую от застройщиков, без комиссии! Помощь в оформлении документов";
         $this->render("/building/index",["dataProvider" => $data]);
     }
 
@@ -49,7 +49,7 @@ class RealtyController extends \yupe\components\controllers\FrontController
         $criteria = new CDbCriteria();
         $criteria->select = 't.*';
         $criteria->compare("isPublished",1);
-        $criteria->compare("status",STATUS_IN_PROGRESS);
+        $criteria->compare("status",1);
 
         $data = new CActiveDataProvider(
             'Building',
@@ -68,7 +68,7 @@ class RealtyController extends \yupe\components\controllers\FrontController
 
 
         $this->title = ["Строящиеся дома",Yii::app()->getModule('yupe')->siteName];
-        $this->description = "На этой странице представлены дома, которые скоро будут сданы застройщиками в эксплуатацию";
+        $this->description = "Новостройки, которые скоро будут сданы застройщиками в эксплуатацию, приобретайте по сниженным ценам";
         $this->render("/building/list",["dataProvider" => $data, "title" => "Строящиеся дома", "map" => STATUS_IN_PROGRESS]);
     }
 
@@ -77,7 +77,7 @@ class RealtyController extends \yupe\components\controllers\FrontController
         $criteria = new CDbCriteria();
         $criteria->select = 't.*';
         $criteria->compare("isPublished",1);
-        $criteria->compare("status",STATUS_READY);
+        $criteria->compare("status",2);
 
         $data = new CActiveDataProvider(
             'Building',
@@ -105,7 +105,7 @@ class RealtyController extends \yupe\components\controllers\FrontController
         $criteria = new CDbCriteria();
         $criteria->select = 't.*';
         $criteria->compare("isPublished",1);
-        $criteria->compare("status",STATUS_RESELL);
+        $criteria->compare("status",3);
 
         $data = new CActiveDataProvider(
             'Building',

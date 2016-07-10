@@ -6,7 +6,7 @@ if ($model->layout) {
     $this->layout = "//layouts/{$model->layout}";
 }
 
-Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/leanding.js');
+Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/leanding.js',CClientScript::POS_END);
 
 $this->title = [$model->title, Yii::app()->getModule('yupe')->siteName];
 $this->breadcrumbs = $this->getBreadCrumbs();
