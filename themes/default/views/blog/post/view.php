@@ -22,23 +22,18 @@ $this->breadcrumbs = [
 ];
 ?>
 
-<div class="post">
-    <div class="row">
-        <div class="col-sm-12">
-            <h4><strong><?= CHtml::encode($post->title); ?></strong></h4>
 
+<?php
+/* @var $model Page */
+/* @var $this PageController */
 
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12" id="post">
-            <p>
-                <?php if ($post->image): ?>
-                    <?= CHtml::image($post->getImageUrl()); ?>
-                <?php endif; ?>
+if ($model->layout) {
+    $this->layout = "//layouts/{$model->layout}";
+}
 
-                <?= $post->content; ?>
-            </p>
-        </div>
-    </div>
+?>
+<div style="min-height: 960px;background-color: white;padding: 15px">
+    <h1><?= $post->title; ?></h1>
+    <hr>
+    <?= $model->content; ?>
 </div>

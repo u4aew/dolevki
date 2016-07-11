@@ -238,7 +238,7 @@ Yii::app()->clientScript->registerScript("mobile-form",'
         <div class="row content">
             <div class="col-lg-10 col-lg-offset-1">
                 <header class="row header">
-                    <a class="tel:+78005553535"><div style="color: white; text-align:right;font-size:24px;font-weight:bold;"><i class="fa fa-phone" aria-hidden="true"></i> 8 800 5555 35 35</div></a>
+                    <a class="tel:+79520074985"><div style="color: white; text-align:right;font-size:24px;font-weight:bold;"><i class="fa fa-phone" aria-hidden="true"></i> 8-952-007-49-85</div></a>
                 </header>
             </div>
             <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 content-page">
@@ -271,11 +271,10 @@ Yii::app()->clientScript->registerScript("mobile-form",'
     <section class="containet-fluid footer">
         <div class="row" style="margin:0px">
             <div class="col-lg-8 col-lg-offset-2" style="text-align:center">
-                <div class="col-lg-3 col-md-3 col-sm-3"> © Долёвки22, 2016</div>
-                <div class="col-lg-3 col-md-3 col-sm-3"><a href="http://vk.com/dolevki22"> Вконтакте</a></div>
-                <div class="col-lg-3 col-md-3 col-sm-3"><a href=""> О нас</a>  </div>
-                <div class="col-lg-3 col-md-3 col-sm-3" style="padding-bottom: 10px"> <a href=""> Ссылка 2</a> </div>
-
+                <div class="col-lg-3 col-md-3 col-sm-3"> © ООО «Гранит», <?=date("Y"); ?></div>
+                <div class="col-lg-3 col-md-3 col-sm-3"><a href="http://vk.com/dolevki22">ВКонтакте</a></div>
+                <div class="col-lg-3 col-md-3 col-sm-3" style="padding-bottom: 10px"> <a href="/pages/vazhnaya-informaciya">Важная информация</a> </div>
+                <div class="col-lg-3 col-md-3 col-sm-3" style="padding-bottom: 10px">Барнаул, ул. Антона Петрова, д 219а, 2 этаж, офис 208</div>
             </div>
     </section>
 </main>

@@ -162,7 +162,7 @@ body {
 }
 
 .content {
-    min-height: 1000px;
+    min-height: 1200px;
     background-color: #212d53;
     margin-right: 0;
     margin-left: 0;
@@ -183,6 +183,7 @@ body {
 .navigation {
     padding-top: 20px;
     text-align: center;
+    border-right: 2px solid #f1f1f1;
     background-color: #ffffff;
     width: 300px;
     position: absolute;
@@ -967,6 +968,26 @@ input[type=range]:focus::-ms-fill-upper {
 
     background-color: #2E7D32;
 }
+
+.map__view-link
+{
+    transition: .2s;
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+    color: white !important;
+    background-color: #4caf50;
+    cursor: pointer;
+    text-decoration: none !important;
+    padding: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.map__view-link:hover {
+    background: #2E7D32;
+}
+
 
 #slider-range_two {
     width: 80%;

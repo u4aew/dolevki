@@ -25,7 +25,7 @@ class District extends yupe\models\YModel
 
     public function getPageDescription()
     {
-        return "На этой странице вы можете просмотреть информацию о застраиваемом квартале \"{$this->name}\"";
+        return "\"{$this->name}\" - Вся информация о сроках сдачи, домах, ценах";
     }
 
     public function getPageKeywords()
