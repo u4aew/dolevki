@@ -17,7 +17,7 @@ function getUrl($sortAttribute)
     $requestString = http_build_query($getParams);
     $path = Yii::app()->request->pathInfo;
 
-    return "http://www.dolevki-22.ru/".$path."?".$requestString."&Apartment_sort=".$sortAttribute;
+    return "http://{$_SERVER['SERVER_NAME']}/".$path."?".$requestString."&Apartment_sort=".$sortAttribute;
 }
 
 ?>

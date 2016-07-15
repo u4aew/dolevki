@@ -270,11 +270,9 @@ Yii::app()->clientScript->registerScript("mobile-form",'
     </section>
     <section class="containet-fluid footer">
         <div class="row" style="margin:0px">
-            <div class="col-lg-8 col-lg-offset-2" style="text-align:center">
-                <div class="col-lg-3 col-md-3 col-sm-3"> © ООО «Гранит», <?=date("Y"); ?></div>
-                <div class="col-lg-3 col-md-3 col-sm-3"><a href="http://vk.com/dolevki22">ВКонтакте</a></div>
-                <div class="col-lg-3 col-md-3 col-sm-3" style="padding-bottom: 10px"> <a href="/pages/vazhnaya-informaciya">Важная информация</a> </div>
-                <div class="col-lg-3 col-md-3 col-sm-3" style="padding-bottom: 10px">Барнаул, ул. Антона Петрова, д 219а, 2 этаж, офис 208</div>
+            <div class="col-lg-10 col-lg-offset-1" >
+                <div class="col-lg-9 col-md-9 col-sm-9"> © ООО «Гранит», <?=date("Y"); ?><br>Барнаул, ул. Антона Петрова, д 219а, 2 этаж, офис 208</div>
+                <div class="col-lg-3 col-md-3 col-sm-3" style="text-align: right"><a href="http://vk.com/dolevki22">ВКонтакте</a><br><a href="/pages/vazhnaya-informaciya">Важная информация</a></div>
             </div>
     </section>
 </main>

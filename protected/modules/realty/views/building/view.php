@@ -61,6 +61,9 @@ $this->keywords = $data->getPageKeywords();
                             'pageSize' => (int)Yii::app()->getModule('realty')->itemsPerPage,
                             'pageVar' => 'page',
                         ],
+                        'sort'=>array(
+                            'defaultOrder'=>'cost DESC',
+                        )
                         /*                'sort' => [
                                             'sortVar' => 'sort',
                                             'defaultOrder' => 't.position'
@@ -69,9 +72,12 @@ $this->keywords = $data->getPageKeywords();
                 );
 
                 $data->getData();
+                $sortString = Yii::app()->request->getParam("Apartment_sort");
+                if (is_null($sortString))
+                    $sortString = "";
                 ?>
 
-                <?php if($this->beginCache(Yii::app()->controller->id.Yii::app()->controller->action->id.$data->pagination->currentPage)): ?>
+                <?php if($this->beginCache(Yii::app()->controller->id.Yii::app()->controller->action->id.$data->pagination->currentPage.$sortString)): ?>
                     <?php
                     $this->renderPartial("/apartment/list", ["dataProvider" => $data, "itemPath" => "_item_for_building", "headerText" => "Квартиры в этом доме"]);
                     ?>

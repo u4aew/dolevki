@@ -22,6 +22,7 @@ class RealtyController extends \yupe\components\controllers\FrontController
         $criteria = new CDbCriteria();
         $criteria->select = 't.*';
         $criteria->compare("isPublished",1);
+        $criteria->order = "adres ASC";
 
         $data = new CActiveDataProvider(
             'Building',
@@ -234,6 +235,8 @@ class RealtyController extends \yupe\components\controllers\FrontController
     public function actionViewBuilding($name)
     {
         $model = Building::model()->find("slug = :slug",[":slug" => $name]);
+//        var_dump($name);
+//        return;
         $this->render("/building/view",["data" => $model]);
     }
 

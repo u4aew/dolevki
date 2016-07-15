@@ -28,7 +28,7 @@ body {
     }
 
     .box-sorting-apartment {
-        text-align: center !important;
+        /*text-align: center !important;*/
     }
 
     .content-page__main {
@@ -183,7 +183,6 @@ body {
 .navigation {
     padding-top: 20px;
     text-align: center;
-    border-right: 2px solid #f1f1f1;
     background-color: #ffffff;
     width: 300px;
     position: absolute;
