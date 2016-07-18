@@ -13,22 +13,18 @@
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="row">
-                                    <div class="col-lg-12" style="text-align:center;padding-top:10px;font-weight:bold"> <?=$data->building->adres?>
+                                    <div class="col-lg-12" style="text-align:center;padding-top:10px;font-weight:bold; font-size: 20px"> <?=$data->building->adres?>
                                         <hr style="margin-top:5px;margin-bottom:10px">
                                     </div>
                                 </div> 
                                 <div class="row" style="padding:0px">
-                                    <div class="col-lg-6 col-md-6 col-sm-6">
-                                        <p style="margin:0px"> Этаж <?=$data->getFloor();?></p>
-                                        <p style="margin:0px"> <?=$data->getRoomsAsString()?> </p>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="col-lg-12 col-md-12 col-sm-12" style="font-size: 16px; text-align: center">
+                                        <p style="margin:0px"> <?=$data->getRoomsAsString()?> на <?=$data->getFloorAsString();?></p>
                                         <p style="margin:0px"> Площадь: <?=$data->size?> М<sup>2</sup> </p>
                                         <?php if ($data->building != null): ?>
-                                        <p style="margin:0px"> Срок сдачи: <p style="margin:0px;"> <?=$data->building->getReadyTimes()[$data->building->readyTime]?></p> </p>     
+                                            <p style="margin:0px"> <p style="margin:0px;"> <?=$data->building->getReadyTimes()[$data->building->readyTime]?></p> </p>
                                         <?php endif; ?>
                                     </div>
-
                                 </div>
                                 <div class="row" style="margin-top:20px">
                                     <div class="col-lg-12">
