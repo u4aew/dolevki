@@ -58,4 +58,4 @@ $(window).scroll(function () {
     } else {
         $(".navigation").removeClass("navigation-fixed").css('bottom', "");
     }
-})
+}).scroll();

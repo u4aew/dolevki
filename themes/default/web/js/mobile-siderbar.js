@@ -10,6 +10,11 @@ function windowSize() {
     }
 }
 
+$(document).on('click','.pagination a',
+    function(){
+        $(window).scrollTop(0)
+    }
+);
 
 $(document).ready(
     function () {
