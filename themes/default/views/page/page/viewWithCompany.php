@@ -72,8 +72,8 @@ $this->keywords = $model->keywords ?: Yii::app()->getModule('yupe')->siteKeyWord
                 <hr>
                 <h2 style="text-align: center">С чего начинается сотрудничество ?</h2>
                 <div class="col-lg-12">
-                    <div class="js-box-work__one" style="font-size: 25px">
-                        Ознакомьтесь с нашим <a href="/">каталогом</a> и позвоните нам по 8 800 555 35 35
+                    <div class="js-box-work__one" style="font-size: 20px;text-align:center">
+                        Ознакомьтесь с нашим <a href="/">каталогом</a> и позвоните нам по 8-952-007-49-85
                     </div>
                 </div>
             </div>
@@ -86,7 +86,7 @@ $this->keywords = $model->keywords ?: Yii::app()->getModule('yupe')->siteKeyWord
                 <hr>
                 <div class="js-box-contacts-company__one">
                     <h2 style="text-align: center">Где мы находимся ?</h2>
-                    <div style="text-align: center;font-size: 20px">Нащ адрес Барнаул ул Ленина 4654</div>
+                    <div style="text-align: center;font-size: 20px">Барнаул, ул. Антона Петрова, 219а, эт. 2, оф. 208</div>
                     <hr>
                 </div>
                 <div class="js-box-contacts-company__map">
