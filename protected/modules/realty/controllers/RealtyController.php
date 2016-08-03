@@ -275,6 +275,8 @@ class RealtyController extends \yupe\components\controllers\FrontController
                                 ],
                   */          ]
         );
+        $this->title = ["Застройщики",Yii::app()->getModule('yupe')->siteName];
+        $this->description = "Список застройщиков Барнаула с их предложениями";
         $this->render("/builder/list",["dataProvider" => $data]);
     }
 
@@ -295,6 +297,8 @@ class RealtyController extends \yupe\components\controllers\FrontController
                                 ],
                   */          ]
         );
+        $this->title = ["Кварталы",Yii::app()->getModule('yupe')->siteName];
+        $this->description = "Список строящихся кварталов Барнаула, сроки сдачи, цены";
         $this->render("/district/list",["dataProvider" => $data]);
     }
 

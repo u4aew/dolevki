@@ -175,7 +175,9 @@ Yii::app()->clientScript->registerScript("mobile-form",'
 <div id="nav_js" class="navigation">
     <a href="/">
         <img class="image-logo" style="display:block; margin: 0 auto;max-width: 250px"
-             src="<?=$this->mainAssets?>/images/site_logo.png" alt="logo"></a>
+             src="<?=$this->mainAssets?>/images/site_logo.png" alt="Долевки 22, новостройки Барнаула"></a>
+
+
     <button class="button__show-mobile-filter"> Поиск квартиры</button>
     <nav class="nav-list" itemscope itemtype="http://schema.org/SiteNavigationElement">
         <ul class="nav-iteam-list">

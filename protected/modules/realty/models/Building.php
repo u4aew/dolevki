@@ -58,7 +58,7 @@ class Building extends yupe\models\YModel
             "coordinates" => array($this->latitude,$this->longitude)
         );
         $elem["properties"] = array(
-            "balloonContent" => $this->shortDescription.Yii::app()->realty->getLinkOnMe($this),
+            "balloonContent" => "<div style = 'min-width: 300px'>".$this->shortDescription.Yii::app()->realty->getLinkOnMe($this)."</div>",
 //                "clusterCaption"=> "ggh",
             "hintContent"=> $this->adres,
         );

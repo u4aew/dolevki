@@ -26,25 +26,28 @@ function getUrl($sortAttribute)
         <div class="col-lg-12">
             <section>
                 <div class="grid">
-                    <div class="box-sorting-apartment">
 
-                        <ul class="menu-list-sorting-apartement">
-                            <li class="menu-list-sorting-apartement__item">Сортировать по :</li>
-                            <li class="menu-list-sorting-apartement__item"><span id="js-name-select-sort-apartment-parameter"><?= (isset($_GET["Apartment_sort"])) ? $sortKeys[$_GET["Apartment_sort"]] : "Стоимости"?>
+                    <noindex>
+                        <div class="box-sorting-apartment">
+
+                            <ul class="menu-list-sorting-apartement">
+                                <li class="menu-list-sorting-apartement__item">Сортировать по :</li>
+                                <li class="menu-list-sorting-apartement__item"><span id="js-name-select-sort-apartment-parameter"><?= (isset($_GET["Apartment_sort"])) ? $sortKeys[$_GET["Apartment_sort"]] : "Стоимости"?>
                                 </span> <span class="caret"> </span>
-                                <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
-                                <ul class="list-parameter-apartement">
-                                    <?php foreach ($sortKeys as $key => $item):?>
-                                        <a href = "<?=getUrl($key); ?>">
-                                            <li class="list-parameter-apartement__item">
-                                                <?=$item; ?>
-                                            </li>
-                                        </a>
-                                    <?php endforeach; ?>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
+                                    <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                                    <ul class="list-parameter-apartement">
+                                        <?php foreach ($sortKeys as $key => $item):?>
+                                            <a href = "<?=getUrl($key); ?>">
+                                                <li class="list-parameter-apartement__item">
+                                                    <?=$item; ?>
+                                                </li>
+                                            </a>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </noindex>
                     <?php
                     Yii::app()->getClientScript()->registerScript("addSorter","
 

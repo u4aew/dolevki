@@ -197,7 +197,7 @@ body {
 }
 
 .sales {
-    background-color: #ffffff;
+    background-color: #212d53;
     margin-left: 0;
     margin-right: 0;
 }
@@ -212,7 +212,12 @@ body {
 .footer {
     min-height: 100px;
     padding: 40px 0 0;
-    background-color: #fff;
+    background-color: #212d53;
+    color: white;
+}
+.footer a
+{
+    font-weight: bold;
 }
 
 .nav-list {
