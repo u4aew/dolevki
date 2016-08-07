@@ -1,6 +1,6 @@
 <div class="row building__mini-cart">
     <div class="col-lg-2">
-        <a href="<?= $data->getImageUrl(1000, 1000, false); ?>" class="fancybox"> <img class="mini-pic-apart"
+        <a href="<?= $data->getImageUrl(1000, 1000, false); ?>" class="fancybox"> <img class="mini-pic-apart" alt = "<?=$data->getTitle(); ?>"
                                                                                        src="<?= $data->getImageUrl(1000, 1000, false); ?>" style="margin:15px auto;display: block;width: 100%;max-width: 100px"> </a>
     </div>
     <div class="col-lg-5" style="padding-top: 15px">

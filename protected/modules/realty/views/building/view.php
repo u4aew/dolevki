@@ -53,7 +53,7 @@ $this->keywords = $data->getPageKeywords();
                 $criteria->select = 't.*';
                 $criteria->compare("idBuilding", $data->id);
 
-                $data = new CActiveDataProvider(
+                $dataProv = new CActiveDataProvider(
                     'Apartment',
                     [
                         'criteria' => $criteria,
@@ -71,18 +71,21 @@ $this->keywords = $data->getPageKeywords();
                           */]
                 );
 
-                $data->getData();
+                $dataProv->getData();
                 $sortString = Yii::app()->request->getParam("Apartment_sort");
                 if (is_null($sortString))
                     $sortString = "";
                 ?>
 
-                <?php if($this->beginCache(Yii::app()->controller->id.Yii::app()->controller->action->id.$data->pagination->currentPage.$sortString)): ?>
+                <?php if($this->beginCache(Yii::app()->request->url.$dataProv->pagination->currentPage.$sortString)): ?>
                     <?php
-                    $this->renderPartial("/apartment/list", ["dataProvider" => $data, "itemPath" => "_item_for_building", "headerText" => "Квартиры в этом доме"]);
+                    $this->renderPartial("/apartment/list", ["dataProvider" => $dataProv, "itemPath" => "_item_for_building", "headerText" => "Квартиры в этом доме"]);
                     ?>
                     <?php $this->endCache(); ?>
                 <?php endif; ?>
+                <span class = "project-info-link">
+                    С полной проектной декларацией вы можете ознакомиться на сайте застройщика <?= $data->builder->link; ?>
+                </span>
 
             </div>
         </div>

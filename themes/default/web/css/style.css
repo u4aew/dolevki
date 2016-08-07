@@ -1426,3 +1426,9 @@ a.asc, a.desc {
     color: white;
     text-align: center;
 }
+.project-info-link
+{
+    display: block;
+    padding: 15px;
+    margin-left: 15px;
+}

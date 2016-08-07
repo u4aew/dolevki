@@ -10,10 +10,9 @@
 <?php
 $dataProvider->getData();
 ?>
-<?php if($this->beginCache(Yii::app()->controller->id.Yii::app()->controller->action->id.$dataProvider->pagination->currentPage)): ?>
+<?php if($this->beginCache(Yii::app()->request->url.$dataProvider->pagination->currentPage)): ?>
 
-
-    <div class="row">
+   <div class="row">
         <div class="col-lg-12">
             <section>
                 <div class="grid">

@@ -22,12 +22,12 @@ $this->keywords = $data->getPageKeywords();
                 <ul id="lightSlider">
                     <li data-thumb="<?= $data->getImageUrl(100, 100, false); ?>">
                         <a class="fancybox" href="<?= $data->getImageUrl(1000, 1000, false); ?>"> <img
-                                src="<?= $data->getImageUrl(1000, 1000, false); ?>"/> </a>
+                                src="<?= $data->getImageUrl(1000, 1000, false); ?>" alt = "<?=$data->getTitle(); ?>"/> </a>
                     </li>
                     <?php foreach ($images as $item): ?>
                         <li data-thumb="<?= $item->getImageUrl(100, 100, false); ?>">
                             <a class="fancybox" href="<?= $item->getImageUrl(1000, 1000, false); ?>"> <img
-                                    src="<?= $item->getImageUrl(1000, 1000, false); ?>"> </a>
+                                    src="<?= $item->getImageUrl(1000, 1000, false); ?>" alt = ""> </a>
                         </li>
                     <?php endforeach; ?>
                 </ul>
@@ -79,4 +79,7 @@ $this->keywords = $data->getPageKeywords();
         </div>
 
     </div>
+<span class = "project-info-link">
+    С полной проектной декларацией вы можете ознакомиться на сайте застройщика <?= $data->building->builder->link; ?>
+</span>
 </div>
