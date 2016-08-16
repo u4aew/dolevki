@@ -60,7 +60,7 @@ $this->keywords = $data->getPageKeywords();
         <div class="price-page"><?= $data->getPriceAsString(); ?></div>
         <hr>
         <div class="b-text-price">
-            Обратите внимание мы продаём по ценам застройщика, без комиссий и переплат.
+            Обратите внимание: мы не берем никаких комиссий
         </div>
         <div>
             <?php $otherText = "assdsd"; ?>

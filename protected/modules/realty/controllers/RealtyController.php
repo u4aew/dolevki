@@ -69,7 +69,7 @@ class RealtyController extends \yupe\components\controllers\FrontController
 
 
         $this->title = ["Строящиеся дома",Yii::app()->getModule('yupe')->siteName];
-        $this->description = "Новостройки, которые скоро будут сданы застройщиками в эксплуатацию, приобретайте по сниженным ценам";
+        $this->description = "Новостройки, которые скоро будут сданы застройщиками в эксплуатацию, покупайте по ценам застройщиков без комиссий";
         $this->render("/building/list",["dataProvider" => $data, "title" => "Строящиеся дома", "map" => STATUS_IN_PROGRESS]);
     }
 
@@ -77,11 +77,13 @@ class RealtyController extends \yupe\components\controllers\FrontController
     {
         $criteria = new CDbCriteria();
         $criteria->select = 't.*';
-        $criteria->compare("isPublished",1);
-        $criteria->compare("status",2);
-
+        $criteria->with = [
+            'building' => [
+                'condition' => 'building.isPublished = 1 AND building.status = 2',
+            ]
+        ];
         $data = new CActiveDataProvider(
-            'Building',
+            'Apartment',
             [
                 'criteria' => $criteria,
                 'pagination' => [
@@ -96,20 +98,27 @@ class RealtyController extends \yupe\components\controllers\FrontController
         );
 
 
-        $this->title = ["Готовые новостройки",Yii::app()->getModule('yupe')->siteName];
+        $this->title = ["Квартиры в готовых новостройках",Yii::app()->getModule('yupe')->siteName];
         $this->description = "На этой странице представлены новостройки, которые недавно были сданы застройщиками";
-        $this->render("/building/list",["dataProvider" => $data, "title" => "Готовые новостройки", "map" => STATUS_READY]);
+        $this->render("/apartment/big-list", ["dataProvider" => $data, "itemPath" => "_item_for_building", "headerText" => "Квартиры в готовых новостройках"]);
     }
 
     public function actionResell()
     {
         $criteria = new CDbCriteria();
         $criteria->select = 't.*';
-        $criteria->compare("isPublished",1);
-        $criteria->compare("status",3);
+        $criteria->with = [
+            'building' => [
+                'condition' => 'building.isPublished = 1 AND building.status = 3',
+            ]
+        ];
+//        $criteria->compare("isPublished",1);
+//        $criteria->compare("status",3);
+
+        $apartments = Apartment::model()->findAll($criteria);
 
         $data = new CActiveDataProvider(
-            'Building',
+            'Apartment',
             [
                 'criteria' => $criteria,
                 'pagination' => [
@@ -125,8 +134,8 @@ class RealtyController extends \yupe\components\controllers\FrontController
 
 
         $this->title = ["Вторичная продажа",Yii::app()->getModule('yupe')->siteName];
-        $this->description = "На этой странице представлены жилье, которе продается другими собственниками";
-        $this->render("/building/list",["dataProvider" => $data, "title" => "Вторичная продажа", "map" => STATUS_RESELL]);
+        $this->description = "На этой странице вы можете купить вторичное жилье в Барнауле";
+        $this->render("/apartment/big-list", ["dataProvider" => $data, "itemPath" => "_item_for_building", "headerText" => "Вторичная продажа"]);
     }
 
 
