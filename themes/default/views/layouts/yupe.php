@@ -57,38 +57,31 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function (d, w, c) {
-        (w[c] = w[c] || []).push(function () {
+        (w[c] = w[c] || []).push(function() {
             try {
                 w.yaCounter38253635 = new Ya.Metrika({
-                    id: 38253635,
-                    clickmap: true,
-                    trackLinks: true,
-                    accurateTrackBounce: true,
-                    webvisor: true
+                    id:38253635,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true
                 });
-            } catch (e) {
-            }
+            } catch(e) { }
         });
 
         var n = d.getElementsByTagName("script")[0],
             s = d.createElement("script"),
-            f = function () {
-                n.parentNode.insertBefore(s, n);
-            };
+            f = function () { n.parentNode.insertBefore(s, n); };
         s.type = "text/javascript";
         s.async = true;
         s.src = "https://mc.yandex.ru/metrika/watch.js";
 
         if (w.opera == "[object Opera]") {
             d.addEventListener("DOMContentLoaded", f, false);
-        } else {
-            f();
-        }
+        } else { f(); }
     })(document, window, "yandex_metrika_callbacks");
 </script>
-<noscript>
-    <div><img src="https://mc.yandex.ru/watch/38253635" style="position:absolute; left:-9999px;" alt=""/></div>
-</noscript>
+<noscript><div><img src="https://mc.yandex.ru/watch/38253635" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 <script>
     window.params =
@@ -114,15 +107,16 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
         });
         var minimalCost = getParams().minimalAvailableCost;
         $(".amount_two").each(function () {
-            var currentVal = parseInt($(this).val().replace(new RegExp('[ ]', 'g'), ""));
+            var currentVal = parseInt($(this).val().replace(new RegExp('[ ]', 'g'),""));
             minimalCost = Math.max(minimalCost, currentVal);
         });
         var maximalCost = getParams().maximalAvailableCost;
         $(".amount1_two").each(function () {
-            var currentVal = parseInt($(this).val().replace(new RegExp('[ ]', 'g'), ""));
+            var currentVal = parseInt($(this).val().replace(new RegExp('[ ]', 'g'),""));
             maximalCost = Math.min(maximalCost, currentVal);
         });
-        if (minimalCost > maximalCost) {
+        if (minimalCost > maximalCost)
+        {
             var t = maximalCost;
             maximalCost = minimalCost;
             minimalCost = t;
@@ -138,14 +132,15 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
             maximalSize = Math.min(maximalSize, currentVal);
         });
         var url = "/search?";
-        $(".select-room-click-cheked").each(function () {
-            url += "rooms[]=" + $(this).data("val") + "&";
+        $(".select-room-click-cheked").each(function()
+        {
+            url += "rooms[]="+$(this).data("val")+"&";
         });
-        $("#status :selected").each(function () {
-            url += "status[]=" + $(this).val() + "&";
+        $("#status :selected").each(function(){
+            url+= "status[]="+$(this).val()+"&";
         });
-        $("#readyTime :selected").each(function () {
-            url += "time[]=" + $(this).val() + "&";
+        $("#readyTime :selected").each(function(){
+            url+= "time[]="+$(this).val()+"&";
         });
 
 
@@ -169,7 +164,7 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
 
 </script>
 <?php
-Yii::app()->clientScript->registerScript("mobile-form", '
+Yii::app()->clientScript->registerScript("mobile-form",'
             $(".button__show-mobile-filter").click(
                 function () {
                     $(".find-form").toggle();
@@ -180,16 +175,16 @@ Yii::app()->clientScript->registerScript("mobile-form", '
 <div id="nav_js" class="navigation">
     <a href="/">
         <img class="image-logo" style="display:block; margin: 0 auto;max-width: 250px"
-             src="<?= $this->mainAssets ?>/images/site_logo.png" alt="logo"></a>
+             src="<?=$this->mainAssets?>/images/site_logo.png" alt="logo"></a>
     <button class="button__show-mobile-filter"> Поиск квартиры</button>
     <nav class="nav-list" itemscope itemtype="http://schema.org/SiteNavigationElement">
         <ul class="nav-iteam-list">
-            <li><a itemprop="url" href="/pages/o-nas">О компании</a></li>
-            <li><a itemprop="url" href="/districts">Кварталы</a></li>
-            <li><a itemprop="url" href="/builders">Застройщики</a></li>
-            <li><a itemprop="url" href="/nonReady">Строящиеся дома</a></li>
-            <li><a itemprop="url" href="/ready">Готовые новостройки</a></li>
-            <li><a itemprop="url" href="/resell">Вторичная продажа</a></li>
+            <li><a itemprop = "url" href="/pages/o-nas">О компании</a></li>
+            <li><a itemprop = "url" href="/districts">Кварталы</a></li>
+            <li><a itemprop = "url" href="/builders">Застройщики</a></li>
+            <li><a itemprop = "url" href="/nonReady">Строящиеся дома</a></li>
+            <li><a itemprop = "url" href="/ready">Готовые новостройки</a></li>
+            <li><a itemprop = "url" href="/resell">Вторичная продажа</a></li>
         </ul>
     </nav>
     <div class="find-form">
@@ -204,21 +199,19 @@ Yii::app()->clientScript->registerScript("mobile-form", '
                         $_GET["rooms"] = [];
                     $rooms = [0 => "Студия", "1", "2", "3", "4+"];
                     ?>
-                    <?php foreach ($rooms as $key => $value): ?>
+                    <?php foreach ($rooms as $key => $value):?>
                         <?php
 
-                        $flag = array_search($key, $_GET["rooms"]);
+                        $flag = array_search($key,$_GET["rooms"]);
                         ?>
-                        <li class="select-room-click <?= ($flag !== false) ? "select-room-click-cheked" : "" ?>"
-                            data-val="<?= $key; ?>"><?= $value; ?></li>
+                        <li class="select-room-click <?= ($flag !== false) ? "select-room-click-cheked" : "" ?>" data-val = "<?=$key;?>"><?=$value; ?></li>
                     <?php endforeach; ?>
                 </ul>
                 <div style="clear:both">
                 </div>
                 <hr style="margin:5px 20px 10px 20px;">
                 <div>
-                    <p align="center" style="font-size:18px;font-weigth:bold">Стоимость, <span class="rubl"> руб.</span>
-                    </p>
+                    <p align="center" style="font-size:18px;font-weigth:bold">Стоимость, <span class="rubl"> руб.</span></p>
                     <div style="width:95%;margin:0px auto;">
                         <div style="margin:0px;float: left"><b>ОТ</b><input type="text" id="amount_two"
                                                                             class="amount_two js-cost-textbox"></div>
@@ -244,38 +237,27 @@ Yii::app()->clientScript->registerScript("mobile-form", '
                     </div>
                     <hr style="margin:25px 20px 10px 20px;"
                 </div>
-                <div style="width: 90%;margin: 0 auto 20px auto">
+                <div style="width: 90%;margin: 0 auto 20px auto" >
                     <p align="center" style="font-size:18px;font-weigth:bold">Тип жилья</p>
-                    <select multiple class="sumoSelect" name="" id="status" data-placeholder="Тип искомого жилья">
-                        <option id="inProgress"
-                                value="<?= STATUS_IN_PROGRESS ?>" <?php if (isset($_GET["status"]) && array_search(STATUS_IN_PROGRESS, $_GET["status"]) !== false) echo "selected" ?>>
-                            Строящееся жилье
-                        </option>
-                        <option
-                            value="<?= STATUS_READY ?>" <?php if (isset($_GET["status"]) && array_search(STATUS_READY, $_GET["status"]) !== false) echo "selected" ?> >
-                            Готовые новостройки
-                        </option>
-                        <option
-                            value="<?= STATUS_RESELL ?>" <?php if (isset($_GET["status"]) && array_search(STATUS_RESELL, $_GET["status"]) !== false) echo "selected" ?> >
-                            Вторичная продажа
-                        </option>
+                    <select multiple class="sumoSelect" name="" id="status" data-placeholder = "Тип искомого жилья">
+                        <option id = "inProgress" value="<?=STATUS_IN_PROGRESS?>"   <?php if (isset($_GET["status"]) && array_search(STATUS_IN_PROGRESS,$_GET["status"])!==false) echo "selected" ?>>Строящееся жилье</option>
+                        <option value="<?=STATUS_READY?>"  <?php if (isset($_GET["status"]) && array_search(STATUS_READY,$_GET["status"])!==false) echo "selected" ?> >Готовые новостройки</option>
+                        <option value="<?=STATUS_RESELL?>" <?php if (isset($_GET["status"]) && array_search(STATUS_RESELL,$_GET["status"])!==false) echo "selected" ?> >Вторичная продажа</option>
                     </select>
                 </div>
-                <div style="width: 90%;margin: 0 auto 20px auto" id="readyTime__container">
+                <div style="width: 90%;margin: 0 auto 20px auto" id = "readyTime__container">
                     <p align="center" style="font-size:18px;font-weigth:bold">Срок сдачи </p>
-                    <select multiple class="sumoSelect" name="" id="readyTime"
-                            data-placeholder="Интересующее время готовности жилья">
+                    <select multiple class="sumoSelect" name="" id="readyTime" data-placeholder = "Интересующее время готовности жилья">
                         <?php
                         $times = ReadyTime::model()->findAll();
                         ?>
-                        <?php foreach ($times as $item): ?>
-                            <option
-                                value="<?= $item->id; ?>" <?php if (isset($_GET["time"]) && array_search($item->id, $_GET["time"]) !== false) echo "selected" ?>><?= $item->text; ?></option>
+                        <?php foreach ($times as $item):?>
+                            <option value="<?=$item->id;?>"  <?php if (isset($_GET["time"]) && array_search($item->id,$_GET["time"])!==false) echo "selected" ?>><?=$item->text;?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
             </div>
-            <button type="submit" class="nav__find" onclick="sendFilter(); return false;"> Найти квартиры</button>
+            <button type="submit" class="nav__find" onclick="sendFilter();return false; yaCounter4512622.reachGoal('filter'); return true;"> Найти квартиры</button>
         </form>
     </div>
 </div>
@@ -284,12 +266,8 @@ Yii::app()->clientScript->registerScript("mobile-form", '
     <section class="container-fluid wrapper">
         <div class="row content">
             <div class="col-lg-10 col-lg-offset-1">
-                <header class="row header"
-                    <a class="tel:+79520074985">
-                        <div style="color: white; text-align:right;font-size:24px;font-weight:bold;"><i
-                                class="fa fa-phone" aria-hidden="true"></i> 8-952-007-49-85
-                        </div>
-                    </a>
+                <header class="row header">
+                    <a class="tel:+79520074985"><div style="color: white; text-align:right;font-size:24px;font-weight:bold;"><i class="fa fa-phone" aria-hidden="true"></i> 8-952-007-49-85</div></a>
                 </header>
             </div>
             <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 content-page">
@@ -301,17 +279,17 @@ Yii::app()->clientScript->registerScript("mobile-form", '
         <div class="row sales">
             <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 sale" style="margin-top: 10px">
                 <div class="row">
-                    <h1 style="color: black;font-size: 20px;text-align:center">Купить квартиру в Барнауле недвижимость от застройщика</h1>
-                    <h2 style="text-align:center"> Акции и предложения </h2>
-                    <hr>
-                    <div class="widget last-posts-widget">
-                        <!--               <?php /*if($this->beginCache('application.modules.blog.widgets.LastPostsWidget', ['duration' => $this->yupe->coreCacheTime])):*/ ?>
-         --> <?php $this->widget(
-                            'application.modules.blog.widgets.LastPostsWidget',
-                            ["view" => "lastposts", 'cacheTime' => $this->yupe->coreCacheTime, "limit" => 2]
-                        ); ?>
-                        <!--               <?php /*$this->endCache();*/ ?>
-                        <?php /*endif;*/ ?>
+                    <h1 style="color: black;font-size: 20px;text-align:center">Купить квартиру в Барнауле. Новостройки от застройщика</h1>
+                    <h3 style="text-align:center"> Акции и предложения </h2>
+                        <hr>
+                        <div class="widget last-posts-widget">
+                            <!--               <?php /*if($this->beginCache('application.modules.blog.widgets.LastPostsWidget', ['duration' => $this->yupe->coreCacheTime])):*/?>
+         -->                   <?php $this->widget(
+                                'application.modules.blog.widgets.LastPostsWidget',
+                                ["view" => "lastposts", 'cacheTime' => $this->yupe->coreCacheTime, "limit" => 2]
+                            ); ?>
+                            <!--               <?php /*$this->endCache();*/?>
+                        <?php /*endif;*/?>
              -->       </div>
                 </div>
                 <hr>
@@ -322,17 +300,14 @@ Yii::app()->clientScript->registerScript("mobile-form", '
     </section>
     <section class="containet-fluid footer">
         <div class="row" style="margin:0px">
-            <div class="col-lg-10 col-lg-offset-1">
-                <div class="col-lg-9 col-md-9 col-sm-9"> © ООО «Гранит», <?= date("Y"); ?><br>Барнаул, ул. Антона
-                    Петрова, д 219а, 2 этаж, офис 208
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3" style="text-align: right"><a href="http://vk.com/dolevki22">ВКонтакте</a><br><a
-                        href="/pages/vazhnaya-informaciya">Важная информация</a></div>
+            <div class="col-lg-10 col-lg-offset-1" >
+                <div class="col-lg-9 col-md-9 col-sm-9"> © ООО «Гранит», <?=date("Y"); ?><br>Барнаул, ул. Антона Петрова, д 219а, 2 этаж, офис 208</div>
+                <div class="col-lg-3 col-md-3 col-sm-3" style="text-align: right"><a href="http://vk.com/dolevki22">ВКонтакте</a><br><a href="/pages/vazhnaya-informaciya">Важная информация</a></div>
             </div>
     </section>
 </main>
 <?php
-Yii::app()->clientScript->registerScript("launch-fancy-and-lightslider", '
+Yii::app()->clientScript->registerScript("launch-fancy-and-lightslider",'
         $(".fancybox").fancybox();
         $("#lightSlider").lightSlider({
             gallery: true,
@@ -343,6 +318,11 @@ Yii::app()->clientScript->registerScript("launch-fancy-and-lightslider", '
         });
     ');
 ?>
-
+<!-- BEGIN JIVOSITE CODE {literal} -->
+<script type='text/javascript'>
+    (function(){ var widget_id = 'u3GchnIKqA';var d=document;var w=window;function l(){
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+<!-- {/literal} END JIVOSITE CODE -->
+</script>
 </body>
 </html>

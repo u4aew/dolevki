@@ -59,6 +59,9 @@ $this->keywords = $data->getPageKeywords();
         <hr>
         <div class="price-page"><?= $data->getPriceAsString(); ?></div>
         <hr>
+        <div class="b-text-price">
+            Обратите внимание мы продаём по ценам застройщика, без комиссий и переплат.
+        </div>
         <div>
             <?php $otherText = "assdsd"; ?>
             <?php $this->widget('application.modules.callback.widgets.CallbackWidget',["otherText" => $data->getTitle()]); ?>
