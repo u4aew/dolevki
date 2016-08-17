@@ -68,7 +68,7 @@ function getUrl($sortAttribute)
                                 'template'=>'{summary} {items} <hr> {pager}',
 
                                 'dataProvider' => $dataProvider,
-                                'itemView' => isset($itemPath) ? '/apartment/'.$itemPath : '/apartment/_item',
+                                'itemView' => '/apartment/_item_for_biglist',
                                 'summaryText' => '',
                                 'enableHistory' => true,
                                 'cssFile' => false,

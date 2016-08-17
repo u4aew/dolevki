@@ -22,6 +22,7 @@ class RealtyController extends \yupe\components\controllers\FrontController
         $criteria = new CDbCriteria();
         $criteria->select = 't.*';
         $criteria->compare("isPublished",1);
+        $criteria->compare("status",1);
         $criteria->order = "adres ASC";
 
         $data = new CActiveDataProvider(
