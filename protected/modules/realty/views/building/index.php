@@ -2,7 +2,7 @@
 
 $mainAssets = Yii::app()->getTheme()->getAssetsUrl();
 
-$this->renderPartial("/map/view",["url" => "/realty/realty/getBuildingsForMap"]);
+$this->renderPartial("/map/view",["url" => "/realty/realty/getBuildingsForIndexMap"]);
 
 ?>
 

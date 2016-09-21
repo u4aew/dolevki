@@ -22,7 +22,7 @@ class RealtyController extends \yupe\components\controllers\FrontController
         $criteria = new CDbCriteria();
         $criteria->select = 't.*';
         $criteria->compare("isPublished",1);
-        $criteria->compare("status",1);
+        $criteria->addCondition("status <> 3");
         $criteria->order = "adres ASC";
 
         $data = new CActiveDataProvider(
@@ -101,7 +101,7 @@ class RealtyController extends \yupe\components\controllers\FrontController
 
         $this->title = ["Квартиры в готовых новостройках",Yii::app()->getModule('yupe')->siteName];
         $this->description = "На этой странице представлены новостройки, которые недавно были сданы застройщиками";
-        $this->render("/apartment/big-list", ["dataProvider" => $data, "itemPath" => "_item_for_building", "headerText" => "Квартиры в готовых новостройках"]);
+        $this->render("/apartment/big-list", ["dataProvider" => $data, "itemPath" => "_item_for_building", "headerText" => "Квартиры в готовых новостройках", "map" => 2]);
     }
 
     public function actionResell()
@@ -136,7 +136,7 @@ class RealtyController extends \yupe\components\controllers\FrontController
 
         $this->title = ["Вторичная продажа",Yii::app()->getModule('yupe')->siteName];
         $this->description = "На этой странице вы можете купить вторичное жилье в Барнауле";
-        $this->render("/apartment/big-list", ["dataProvider" => $data, "itemPath" => "_item_for_building", "headerText" => "Вторичная продажа"]);
+        $this->render("/apartment/big-list", ["dataProvider" => $data, "itemPath" => "_item_for_building", "headerText" => "Вторичная продажа", "map" => 3]);
     }
 
 
@@ -144,6 +144,7 @@ class RealtyController extends \yupe\components\controllers\FrontController
     {
         $criteria = new CDbCriteria();
         $criteria->compare("isShowedOnMap",1);
+        $criteria->addCondition("status <> 3");
         $buildings = Building::model()->findAll($criteria);
 
         $criteria = new CDbCriteria();
@@ -245,26 +246,33 @@ class RealtyController extends \yupe\components\controllers\FrontController
     public function actionViewBuilding($name)
     {
         $model = Building::model()->find("slug = :slug",[":slug" => $name]);
-//        var_dump($name);
-//        return;
+        if ($model == null)
+            throw new CHttpException(404, 'К сожалению, данные об этом доме были удалены с сайта. Но у нас есть много других отличных предложений');
+
         $this->render("/building/view",["data" => $model]);
     }
 
     public function actionViewDistrict($name)
     {
         $model = District::model()->find("slug = :slug",[":slug" => $name]);
+        if ($model == null)
+            throw new CHttpException(404, 'К сожалению, данные об этом квартале были удалены с сайта. Но у нас есть много других отличных предложений');
         $this->render("/district/view",["data" => $model]);
     }
 
     public function actionViewBuilder($name)
     {
         $model = Builder::model()->find("slug = :slug",[":slug" => $name]);
+        if ($model == null)
+            throw new CHttpException(404, 'К сожалению, данные об этом застройщике были удалены с сайта. Но у нас есть много других отличных предложений');
         $this->render("/builder/view",["data" => $model]);
     }
 
     public function actionViewApartment($id)
     {
         $model = Apartment::model()->findByPk($id);
+        if ($model == null)
+            throw new CHttpException(404, 'К сожалению, данные об этой квартире были удалены с сайта. Но у нас есть много других отличных предложений');
         $this->render("/apartment/view",["data" => $model]);
     }
 

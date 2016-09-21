@@ -1,6 +1,6 @@
 <?php $this->title = [Yii::t('default', 'Error') . ' ' . $error['code'], Yii::app()->getModule('yupe')->siteName]; ?>
 
-<h2><?= Yii::t('default', 'Error') . ' ' . $error['code']; ?>!</h2>
+<h2 style="color:white"><?= Yii::t('default', 'Error') . ' ' . $error['code']; ?>!</h2>
 
 <?php
 switch ($error['code']) {
@@ -11,7 +11,7 @@ switch ($error['code']) {
             [
                 '{link}' => CHtml::link(
                     Yii::t('default', 'go to home page'),
-                    $this->createUrl("/" . Yii::app()->defaultController . '/index'),
+                    "/",
                     [
                         'title' => Yii::t('default', 'go to home page'),
                         'alt'   => Yii::t('default', 'go to home page'),

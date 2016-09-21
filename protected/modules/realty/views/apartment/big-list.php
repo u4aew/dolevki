@@ -24,6 +24,10 @@ function getUrl($sortAttribute)
 <h1 style="color: white; text-align: center">
     <?=$headerText ?>
 </h1>
+<?php
+$this->renderPartial("/map/view",["map" => $map]);
+?>
+
 <div class="content-page__main">
     <div class="row">
         <div class="col-lg-12">
@@ -60,6 +64,8 @@ function getUrl($sortAttribute)
                     <?php
                     $dataProvider->getData();
                     ?>
+
+
                     <?php if($this->beginCache(Yii::app()->request->url.$dataProvider->pagination->currentPage)): ?>
 
                         <?php $this->widget(

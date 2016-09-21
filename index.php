@@ -28,11 +28,4 @@ $base = require __DIR__ . '/protected/config/main.php';
 $confManager = new yupe\components\ConfigManager();
 $confManager->sentEnv(\yupe\components\ConfigManager::ENV_WEB);
 require __DIR__ . '/vendor/autoload.php';
-try
-{
 Yii::createWebApplication($confManager->merge($base))->run();
-}
- catch (Exception $e)
- {
-     var_dump($e);
- }
