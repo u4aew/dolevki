@@ -54,6 +54,68 @@ class SitemapBackendController extends BackController
             throw new CHttpException(404);
         }
 
+
+
+        $criteria = new CDbCriteria();
+        $criteria->select = 't.*';
+        $criteria->with = [
+            'building' => [
+                'condition' => 'building.isPublished = 1',
+            ]
+        ];
+
+        Yii::import("application.modules.realty.models.*");
+
+        $apartments = new CActiveDataProvider(Apartment,["criteria" => $criteria]);
+        foreach (new CDataProviderIterator($apartments) as $item)
+        {
+            $page = new SitemapPage();
+            $page->changefreq = "monthly";
+            $page->url = Yii::app()->getBaseUrl(true).$item->getUrl();
+            $page->priority = "0.1";
+            $page->status = SitemapPage::STATUS_ACTIVE;
+            $page->save();
+        }
+
+        $criteria = new CDbCriteria();
+        $criteria->compare("isPublished",1);
+
+
+        $buildings = new CActiveDataProvider(Building,["criteria" => $criteria]);
+        foreach (new CDataProviderIterator($buildings) as $item)
+        {
+            $page = new SitemapPage();
+            $page->changefreq = "monthly";
+            $page->url = Yii::app()->getBaseUrl(true).$item->getUrl();
+            $page->priority = "0.1";
+            $page->status = SitemapPage::STATUS_ACTIVE;
+            $page->save();
+        }
+
+        $criteria = new CDbCriteria();
+        $districts = new CActiveDataProvider(District,["criteria" => $criteria]);
+        foreach (new CDataProviderIterator($districts) as $item)
+        {
+            $page = new SitemapPage();
+            $page->changefreq = "monthly";
+            $page->url = Yii::app()->getBaseUrl(true).$item->getUrl();
+            $page->priority = "0.1";
+            $page->status = SitemapPage::STATUS_ACTIVE;
+            $page->save();
+        }
+
+        $criteria = new CDbCriteria();
+        $builders = new CActiveDataProvider(Builder,["criteria" => $criteria]);
+        foreach (new CDataProviderIterator($builders) as $item)
+        {
+            $page = new SitemapPage();
+            $page->changefreq = "monthly";
+            $page->url = Yii::app()->getBaseUrl(true).$item->getUrl();
+            $page->priority = "0.1";
+            $page->status = SitemapPage::STATUS_ACTIVE;
+            $page->save();
+        }
+
         if(\yupe\helpers\YFile::rmIfExists($this->getModule()->getSiteMapPath())){
             Yii::app()->getUser()->setFlash(YFlashMessages::SUCCESS_MESSAGE, Yii::t('SitemapModule.sitemap', 'Sitemap is deleted!'));
             Yii::app()->ajax->success();
