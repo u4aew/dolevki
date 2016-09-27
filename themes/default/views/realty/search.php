@@ -1,6 +1,0 @@
-<?php 
-
-?>
-
-
-adasdas dasdas das 
