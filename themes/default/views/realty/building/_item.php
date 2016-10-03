@@ -1,7 +1,7 @@
 <?php
 /** @var Building $data */
 ?>
-<div class="col-lg-4 col-md-6 col-sm-6 building-click">
+<div class="col-lg-3 col-md-4 col-sm-6 building-click">
     <div class="building">
         <div class="building-img" style="background-image: url('<?= $data->getImageUrl(300, 300, false); ?>');">
         </div>

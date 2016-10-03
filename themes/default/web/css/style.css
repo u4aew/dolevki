@@ -32,7 +32,7 @@ body {
     }
 
     .content-page__main {
-        background-color: #212d53 !important;
+        background-color: #0095B6 !important;
     }
 
     .product {
@@ -146,7 +146,7 @@ body {
 }
 
 .main {
-    margin: 0 0 0 300px;
+    margin: 0 0 0 0;
 }
 
 .header {
@@ -163,15 +163,13 @@ body {
 
 .content {
     min-height: 1200px;
-    background-color: #212d53;
+    background-color: #0095B6;
     margin-right: 0;
     margin-left: 0;
 }
 
 .content-page {
-    position: relative;
-    background-color: #212d53;
-    top: -40px;
+    background-color: #0095B6;
 }
 
 .content-page__main {
@@ -197,7 +195,7 @@ body {
 }
 
 .sales {
-    background-color: #212d53;
+    background-color: #0095B6;
     margin-left: 0;
     margin-right: 0;
 }
@@ -212,11 +210,11 @@ body {
 .footer {
     min-height: 100px;
     padding: 40px 0 0;
-    background-color: #212d53;
+    background-color: #0095B6;
     color: white;
 }
-.footer a
-{
+
+.footer a {
     font-weight: bold;
 }
 
@@ -245,9 +243,9 @@ body {
 }
 
 .nav-iteam-list li a:hover {
-    background-color: #212D53;
+    background-color: #0095B6;
     color: white;
-    margin-top:10px;
+    margin-top: 10px;
     margin-bottom: 10px;
     font-size: 24px;
 }
@@ -300,7 +298,7 @@ body {
     font-size: 18px;
     padding: 10px;
     width: 100%;
-    background: #4caf50;
+    background: #006A85;
     height: 60px;
     border: none;
     color: white;
@@ -549,7 +547,7 @@ input[type=range]:focus::-ms-fill-upper {
     display: block;
     width: 70%;
     margin: 0 auto;
-    background: #4caf50;
+    background: #006A85;
     color: white !important;
     height: 38px;
     padding-top: 10px;
@@ -621,7 +619,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .hover-title:hover {
     height: 250px;
-    background-color: #4caf50;
+    background-color: #006A85;
     opacity: 0.95;
 }
 
@@ -777,7 +775,7 @@ input[type=range]:focus::-ms-fill-upper {
     height: 100%;
     border-radius: 0px !important;
     background-image: none;
-    background-color: #212D53 !important;
+    background-color: #0095B6 !important;
 }
 
 .ui-slider-horizontal .ui-slider-range-min {
@@ -900,7 +898,8 @@ input[type=range]:focus::-ms-fill-upper {
        -ms-box-shadow: 0 1px 0 #ccc, inset 0 1px 0 #fff;
        -o-box-shadow: 0 1px 0 #ccc, inset 0 1px 0 #fff;
        box-shadow: 0 1px 0 #ccc, inset 0 1px 0 #fff;
-   */}
+   */
+}
 
 .ui-state-default a,
 .ui-state-default a:link,
@@ -961,7 +960,7 @@ input[type=range]:focus::-ms-fill-upper {
     text-transform: uppercase;
     font-size: 25px;
     cursor: pointer;
-    background-color: #4caf50;
+    background-color: #006A85;
     color: white;
     font-weight: bold;
     transition: .1s;
@@ -973,14 +972,13 @@ input[type=range]:focus::-ms-fill-upper {
     background-color: #2E7D32;
 }
 
-.map__view-link
-{
+.map__view-link {
     transition: .2s;
     display: block;
     width: 60%;
     margin: 0 auto;
     color: white !important;
-    background-color: #4caf50;
+    background-color: #006A85;
     cursor: pointer;
     text-decoration: none !important;
     padding: 5px;
@@ -991,7 +989,6 @@ input[type=range]:focus::-ms-fill-upper {
 .map__view-link:hover {
     background: #2E7D32;
 }
-
 
 #slider-range_two {
     width: 80%;
@@ -1066,7 +1063,7 @@ input[type=range]:focus::-ms-fill-upper {
     width: 60%;
     margin: 0 auto;
     color: white !important;
-    background-color: #4caf50;
+    background-color: #006A85;
     cursor: pointer;
     text-decoration: none !important;
     padding: 5px;
@@ -1138,7 +1135,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .select-room-click-cheked {
     color: white;
-    background-color: #212D53;
+    background-color: #0095B6;
 }
 
 .callback {
@@ -1147,7 +1144,7 @@ input[type=range]:focus::-ms-fill-upper {
     width: 90%;
     min-height: 50px;
     border: none;
-    background-color: #4CAF50;
+    background-color: #006A85;
     transition: .2s;
     font-weight: bold;
     color: white;
@@ -1201,7 +1198,7 @@ input[type=range]:focus::-ms-fill-upper {
 .notifications > div {
     position: relative;
     z-index: 9999;
-    background-color: #212d53;
+    background-color: #0095B6;
     color: #fff;
     padding: 10px 15px;
     border-top-left-radius: 4px;
@@ -1269,7 +1266,7 @@ a.asc, a.desc {
 }
 
 .sorter li a {
-    color: #212d53;
+    color: #0095B6;
 }
 
 .asc:after {
@@ -1296,11 +1293,11 @@ a.asc, a.desc {
 }
 
 .pagination li a {
-    color: #4caf50;
+    color: #006A85;
 }
 
 .active a {
-    background-color: #4caf50 !important;
+    background-color: #006A85 !important;
     color: white;
 }
 
@@ -1366,7 +1363,7 @@ a.asc, a.desc {
 }
 
 .list-parameter-apartement__item:hover {
-    background-color: #4caf50;
+    background-color: #006A85;
     color: white;
 }
 
@@ -1383,7 +1380,7 @@ a.asc, a.desc {
     border-bottom: 1px black dashed;
 }
 
-.menu-list-sorting-apartement__hover{
+.menu-list-sorting-apartement__hover {
     background-color: lightgrey;
 }
 
@@ -1393,7 +1390,7 @@ a.asc, a.desc {
     padding: 10px;
     display: none;
     margin: 20px auto;
-    background-color: #4caf50;
+    background-color: #006A85;
     color: white;
     font-size: 20px;
     font-weight: bold;
@@ -1421,21 +1418,59 @@ a.asc, a.desc {
     padding-right: 10px;
     padding-left: 10px;
 }
-.page_title
-{
+
+.page_title {
     color: white;
     text-align: center;
 }
-.project-info-link
-{
+
+.project-info-link {
     display: block;
     padding: 15px;
     margin-left: 15px;
 }
+
 .b-text-price {
     padding: 10px;
     margin-bottom: 15px;
     color: #2E7D32;
     background-color: rgba(76, 175, 80, 0.16);
     text-align: center;
+}
+
+.list-menu-header {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    color: white;
+    padding: 0 10px;
+}
+
+.list-menu-header li {
+    border-right: 4px solid white;
+    padding-right: 10px;
+}
+
+.list-menu-header li a {
+    font-size: 24px;
+    color: white;
+}
+
+.b-logo {
+    min-height: 150px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-right: 2px solid white;
+    cursor: pointer;
+
+}
+
+@media screen and (max-width: 768px) {
+    .list-menu-header {
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
 }

@@ -6,7 +6,7 @@ function windowSize() {
 
     } else {
         $("#nav_js").addClass("navigation");
-        $(".main").css('margin-left', 300);
+        $(".main").css();
     }
 }
 
