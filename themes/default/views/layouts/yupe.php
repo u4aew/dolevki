@@ -290,6 +290,5 @@ Yii::app()->clientScript->registerScript("launch-fancy-and-lightslider", '
     })();</script>
 <!-- {/literal} END JIVOSITE CODE -->
 </script>
-</
-body >
-< / html >
+</body >
+</html >
