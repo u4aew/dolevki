@@ -12,9 +12,23 @@
     font-weight: 700
 }
 
+@font-face {
+    font-family: Candara;
+    src: url(../fonts/candara.ttf);
+}
+
 html {
     overflow-y: scroll;
     overflow-x: auto;
+}
+
+a {
+    color: white;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: white;
 }
 
 body {
@@ -58,6 +72,9 @@ body {
     .next-apartment {
         display: block;
         width: 100% !important;
+        background-color: #006A85;
+        color: white;
+        text-decoration: none !important;
     }
 }
 
@@ -307,7 +324,8 @@ body {
 }
 
 .nav__find:hover {
-    background: #2E7D32
+    background: #0d4d5d
+
 }
 
 .infoblock {
@@ -503,7 +521,6 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .preview {
-    background: #E6E6E6;
     padding: 15px 10px 20px 10px;
 }
 
@@ -555,10 +572,11 @@ input[type=range]:focus::-ms-fill-upper {
     transition: .3s;
     font-weight: bold;
     text-decoration: none;
+
 }
 
 .link-next-product:hover {
-    background-color: #2E7D32;
+    background-color: #0d4d5d;
 }
 
 .next-list-iteam {
@@ -597,7 +615,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .product-image-iteam {
-    outline: 2px solid gray;
+    outline: 2px solid white;
     height: 340px;
 
     background: white no-repeat;
@@ -969,7 +987,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .map__button:hover {
 
-    background-color: #2E7D32;
+    background-color: #0d4d5d;
 }
 
 .map__view-link {
@@ -987,7 +1005,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .map__view-link:hover {
-    background: #2E7D32;
+    background: #0d4d5d;
 }
 
 #slider-range_two {
@@ -1072,7 +1090,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .next-building:hover {
-    background: #2E7D32;
+    background: #0d4d5d;
 }
 
 .building-click {
@@ -1100,11 +1118,14 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .view__small-info {
+    color: white;
     text-align: center;
 }
 
 .view__small-info .main-info {
     font-weight: bold;
+    font-size: 18px;
+    color: white;
 }
 
 .rubl {
@@ -1165,8 +1186,15 @@ input[type=range]:focus::-ms-fill-upper {
     margin-top: 5px;
     margin-bottom: 5px;
     width: 150px;
+    background-color: #006A85;
+    color: white !important;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none !important;
 }
-
+.next-apartment {
+    background-color: #0d4d5d;
+}
 .building__mini-cart {
     background: #FAFAFA;
     border: 2px solid #eeeeee;
@@ -1180,6 +1208,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .view__title {
+    color: white;
     font-size: 20px;
     font-weight: bold;
     text-transform: uppercase;
@@ -1261,7 +1290,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 a.asc, a.desc {
-    color: #2E7D32 !important;
+    color: #0d4d5d !important;
     font-weight: bolder;
 }
 
@@ -1403,7 +1432,7 @@ a.asc, a.desc {
 .apartments-header {
     text-transform: uppercase;
     font-size: 20px;
-    color: black;
+    color: white;
     text-align: center;
     margin: auto;
     font-weight: bold;
@@ -1414,7 +1443,6 @@ a.asc, a.desc {
 }
 
 .box-apartment {
-    background-color: white;
     padding-right: 10px;
     padding-left: 10px;
 }
@@ -1425,6 +1453,7 @@ a.asc, a.desc {
 }
 
 .project-info-link {
+    color: white;
     display: block;
     padding: 15px;
     margin-left: 15px;
@@ -1433,7 +1462,7 @@ a.asc, a.desc {
 .b-text-price {
     padding: 10px;
     margin-bottom: 15px;
-    color: #2E7D32;
+    color: #0d4d5d;
     background-color: rgba(76, 175, 80, 0.16);
     text-align: center;
 }
@@ -1443,18 +1472,21 @@ a.asc, a.desc {
     display: flex;
     justify-content: space-between;
     margin-bottom: 25px;
+    align-items: flex-start;
+    vertical-align: top;
     color: white;
     padding: 0 10px;
 }
 
 .list-menu-header li {
-    border-right: 4px solid white;
     padding-right: 10px;
+    text-align: left;
 }
 
 .list-menu-header li a {
-    font-size: 24px;
+    font-size: 18px;
     color: white;
+    text-decoration: none;
 }
 
 .b-logo {
@@ -1467,10 +1499,133 @@ a.asc, a.desc {
 
 }
 
+.b-number-phone {
+    color: white;
+    text-align: right;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px
+}
+
+.b-number-phone a {
+    text-decoration: none;
+}
+
 @media screen and (max-width: 768px) {
     .list-menu-header {
         flex-direction: column !important;
         justify-content: center !important;
         align-items: center !important;
     }
+
+    .b-number-phone {
+        text-align: center;
+    }
+}
+
+.candara-font {
+    font-family: Candara !important;
+    color: white;
+    text-align: left !important;
+}
+
+.b-card-apartment {
+    background-color: white;
+    margin: 10px;
+    height: 90px;
+    min-height: 400px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 9px -3px rgba(9, 9, 9, 0.61);
+}
+
+.row .items {
+    margin: 0 !important;
+}
+
+.b-card-apartment__pic {
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    min-height: 200px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-bottom: 5px solid rgba(9, 9, 9, 0.6);
+}
+
+.b-card-apartment__pic-mark {
+    display: inline-block;
+    margin-top: 15px;
+    margin-left: 15px;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    background-color: rgba(9, 9, 9, 0.6);
+}
+
+.b-card-apartment__price {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.b-card-apartment__description {
+    text-align: center;
+    padding: 10px;
+}
+
+.b-card-apartment__btn {
+    text-align: center;
+}
+
+.b-card-apartment__info {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    padding: 5px;
+}
+
+.b-card-building {
+    background-color: white;
+    margin: 10px;
+    height: 90px;
+    min-height: 370px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 9px -3px rgba(9, 9, 9, 0.61);
+}
+
+.b-card-building__pic {
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    min-height: 200px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-bottom: 5px solid rgba(9, 9, 9, 0.6);
+}
+
+.b-card-building__pic-mark {
+    display: inline-block;
+    margin-top: 15px;
+    margin-left: 15px;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    background-color: rgba(9, 9, 9, 0.6);
+}
+
+.b-card-building__description {
+    text-align: center;
+    padding: 10px;
+}
+
+.b-card-building__btn {
+    text-align: center;
+}
+
+.b-card-building__info {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    padding: 5px;
 }
