@@ -1192,9 +1192,11 @@ input[type=range]:focus::-ms-fill-upper {
     margin-right: auto;
     text-decoration: none !important;
 }
+
 .next-apartment {
     background-color: #0d4d5d;
 }
+
 .building__mini-cart {
     background: #FAFAFA;
     border: 2px solid #eeeeee;
@@ -1469,11 +1471,6 @@ a.asc, a.desc {
 
 .list-menu-header {
     list-style: none;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 25px;
-    align-items: flex-start;
-    vertical-align: top;
     color: white;
     padding: 0 10px;
 }
@@ -1481,12 +1478,18 @@ a.asc, a.desc {
 .list-menu-header li {
     padding-right: 10px;
     text-align: left;
+    display: inline-block;
+    padding-bottom: 2px;
 }
 
 .list-menu-header li a {
     font-size: 18px;
     color: white;
     text-decoration: none;
+}
+
+.list-menu-header li a:hover {
+    border-bottom: 2px solid white;
 }
 
 .b-logo {
@@ -1512,10 +1515,9 @@ a.asc, a.desc {
 }
 
 @media screen and (max-width: 768px) {
-    .list-menu-header {
-        flex-direction: column !important;
-        justify-content: center !important;
-        align-items: center !important;
+    .list-menu-header li {
+        display: block;
+        text-align: center;
     }
 
     .b-number-phone {
