@@ -712,6 +712,7 @@ input[type=range]:focus::-ms-fill-upper {
     font-size: 30px;
     font-weight: bold;
     text-align: center;
+    color: white;
 }
 
 .ticket {
@@ -1119,7 +1120,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .view__small-info {
     color: white;
-    text-align: center;
+    text-align: left;
 }
 
 .view__small-info .main-info {
@@ -1465,7 +1466,7 @@ a.asc, a.desc {
     padding: 10px;
     margin-bottom: 15px;
     color: #0d4d5d;
-    background-color: rgba(76, 175, 80, 0.16);
+    background-color: white;
     text-align: center;
 }
 
@@ -1630,4 +1631,10 @@ a.asc, a.desc {
     justify-content: space-around;
     align-items: baseline;
     padding: 5px;
+}
+
+.b-description__text {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: left !important;
 }

@@ -6,18 +6,20 @@ $this->description = $data->getPageDescription();
 $this->keywords = $data->getPageKeywords();
 
 ?>
-<div class="row" style="background-color: white">
+<div class="row">
     <div class="col-lg-12">
-        <h1 class="view__title"><?=$data->name?> </h1>
+        <h1 class="view__title"><?= $data->name ?> </h1>
         <hr>
         <div class="description">
-            <?=$data->longDescription?>
+            <div class="b-description__text candara-font">
+                <?= $data->longDescription ?>
+            </div>
             <hr>
             <?php
             $criteria = new CDbCriteria();
             $criteria->select = 't.*';
-            $criteria->compare("isPublished",1);
-            $criteria->compare("idDistrict",$data->id);
+            $criteria->compare("isPublished", 1);
+            $criteria->compare("idDistrict", $data->id);
 
             $data = new CActiveDataProvider(
                 'Building',
@@ -31,9 +33,9 @@ $this->keywords = $data->getPageKeywords();
                                         'sortVar' => 'sort',
                                         'defaultOrder' => 't.position'
                                     ],
-                      */          ]
+                      */]
             );
-            $this->renderPartial("/building/list",["dataProvider" => $data]);
+            $this->renderPartial("/building/list", ["dataProvider" => $data]);
             ?>
 
         </div>
