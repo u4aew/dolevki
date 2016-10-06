@@ -7,6 +7,8 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
 <!DOCTYPE html>
 <html lang="<?= Yii::app()->language; ?>">
 <head>
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <?php \yupe\components\TemplateEvent::fire(DefautThemeEvents::HEAD_START); ?>
     <?php Yii::app()->getController()->widget(
         'vendor.chemezov.yii-seo.widgets.SeoHead',
@@ -182,28 +184,32 @@ Yii::app()->clientScript->registerScript("mobile-form", '
         <div class="row content">
             <div class="col-lg-10 col-lg-offset-1">
                 <div class="row" style="padding: 10px">
-                    <div class="col-lg-3">
-                        <div onclick="window.location.href='/'" class="b-logo" style="background-image: url('/themes/shop/web/images/site_logo.png')">
+                    <div class="col-lg-2">
+                        <div onclick="window.location.href='/'" class="b-logo"
+                             style="background-image: url('/themes/shop/web/images/site_logo.png')">
 
                         </div>
                     </div>
-                    <div class="col-lg-9">
+                    <div class="col-lg-10">
                         <header class="row header">
                             <div>
                                 <a class="tel:+79520074985">
-                                    <div style="color: white; text-align:center;font-size:24px;font-weight:bold;margin-bottom: 10px"><i
+                                    <div class="b-number-phone">
+                                        <i
                                             class="fa fa-phone" aria-hidden="true"></i> 8-952-007-49-85
                                     </div>
                                 </a>
                             </div>
                             <div>
-                                <ul class="list-menu-header">
-                                    <li><a href="">Квартал</a></li>
-                                    <li><a href="">Квартал</a></li>
-                                    <li><a href="">Квартал</a></li>
-                                    <li><a href="">Квартал</a></li>
-                                    <li><a href="">Квартал</a></li>
-                                    <li><a href="">Квартал</a></li>
+                                <ul class="list-menu-header" itemscope
+                                    itemtype="http://schema.org/SiteNavigationElement">
+                                    <li><a itemprop="url" href="/pages/o-nas">О компании</a></li>
+                                    <li><a itemprop="url" href="/districts">Кварталы</a></li>
+                                    <li><a itemprop="url" href="/builders">Застройщики</a></li>
+                                    <li><a itemprop="url" href="/nonReady">Строящиеся дома</a></li>
+                                    <li><a itemprop="url" href="/ready">Готовые новостройки</a></li>
+                                    <li><a itemprop="url" href="/resell">Вторичная продажа</a></li>
+                                    <li><a itemprop="url" href="/resell">Акции</a></li>
                                 </ul>
                             </div>
                         </header>
@@ -215,29 +221,6 @@ Yii::app()->clientScript->registerScript("mobile-form", '
             </div>
 
         </div>
-
-        <div class="row sales">
-            <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 sale" style="margin-top: 10px">
-                <div class="row">
-                    <h1 style="color: black;font-size: 20px;text-align:center">Купить квартиру в Барнауле. Новостройки
-                        от застройщика</h1>
-                    <h3 style="text-align:center"> Акции и предложения </h2>
-                        <hr>
-                        <div class="widget last-posts-widget">
-                            <!--               <?php /*if($this->beginCache('application.modules.blog.widgets.LastPostsWidget', ['duration' => $this->yupe->coreCacheTime])):*/ ?>
-         --> <?php $this->widget(
-                                'application.modules.blog.widgets.LastPostsWidget',
-                                ["view" => "lastposts", 'cacheTime' => $this->yupe->coreCacheTime, "limit" => 2]
-                            ); ?>
-                            <!--               <?php /*$this->endCache();*/ ?>
-                        <?php /*endif;*/ ?>
-             -->       </div>
-                </div>
-                <hr>
-            </div>
-
-        </div>
-
     </section>
     <section class="containet-fluid footer">
         <div class="row" style="margin:0px">
@@ -262,34 +245,25 @@ Yii::app()->clientScript->registerScript("launch-fancy-and-lightslider", '
         });
     ');
 ?>
-<!-- BEGIN JIVOSITE CODE {literal} -->
-<script type='text/javascript'>
-    (function () {
-        var widget_id = 'u3GchnIKqA';
-        var d = document;
-        var w = window;
+<script>
+    $(document).ready(function () {
 
-        function l() {
-            var s = document.createElement('script');
-            s.type = 'text/javascript';
-            s.async = true;
-            s.src = '//code.jivosite.com/script/widget/' + widget_id;
-            var ss = document.getElementsByTagName('script')[0];
-            ss.parentNode.insertBefore(s, ss);
-        }
+        var text = $(".b-card-apartment__description").text();
+        var str = text.slice(0, 100);
+        var a = str.split(' ');
+        a.splice(a.length - 1, 1);
+        str = a.join(' ');
+        $(".b-card-apartment__description").text(str + ' ...');
 
-        if (d.readyState == 'complete') {
-            l();
-        } else {
-            if (w.attachEvent) {
-                w.attachEvent('onload', l);
-            } else {
-                w.addEventListener('load', l, false);
-            }
-        }
-    })();</script>
-<!-- {/literal} END JIVOSITE CODE -->
+
+        var text = $(".b-card-building__description").text();
+        var str = text.slice(0, 100);
+        var a = str.split(' ');
+        a.splice(a.length - 1, 1);
+        str = a.join(' ');
+        $(".b-card-building__description").text(str + ' ...');
+
+    })
 </script>
-</
-body >
-< / html >
+</body>
+</html>
