@@ -12,7 +12,7 @@ $this->keywords = $data->getPageKeywords();
     <div>
         <div class="col-lg-8">
             <h1 class="view__title"><?= $data->adres ?> </h1>
-            <div class="walp">
+            <div class="walp" style="background: #F5F5F5">
                 <div class="prew">
                     <ul id="lightSlider">
                         <li data-thumb="<?= $data->getImageUrl(100, 100, false); ?>">
