@@ -187,7 +187,6 @@ Yii::app()->clientScript->registerScript("mobile-form", '
                     <div class="col-lg-2">
                         <div onclick="window.location.href='/'" class="b-logo"
                              style="background-image: url('/themes/shop/web/images/site_logo.png')">
-
                         </div>
                     </div>
                     <div class="col-lg-10">
@@ -219,17 +218,23 @@ Yii::app()->clientScript->registerScript("mobile-form", '
             <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 content-page">
                 <?= $content; ?>
             </div>
-
         </div>
     </section>
     <section class="containet-fluid footer">
         <div class="row" style="margin:0px">
             <div class="col-lg-10 col-lg-offset-1">
-                <div class="col-lg-9 col-md-9 col-sm-9"> © ООО «Гранит», <?= date("Y"); ?><br>Барнаул, ул. Антона
-                    Петрова, д 219а, 2 этаж, офис 208
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4"> © ООО «Гранит», <?= date("Y"); ?><br>Барнаул, ул. Антона
+                        Петрова, д 219а, 2 этаж, офис 208
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4" style="text-align: right">
+                        <a href="http://vk.com/dolevki22">ВКонтакте</a>
+                        <br>
+                        <a href="/pages/vazhnaya-informaciya">Важная информация</a></div>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-3" style="text-align: right"><a href="http://vk.com/dolevki22">ВКонтакте</a><br><a
-                        href="/pages/vazhnaya-informaciya">Важная информация</a></div>
             </div>
     </section>
 </main>
