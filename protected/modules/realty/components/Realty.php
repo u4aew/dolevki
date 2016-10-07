@@ -1,10 +1,9 @@
 <?php
 
-/**
- * Class Money - заглушка для конвертора валют
- */
+
 class Realty extends CApplicationComponent
 {
+
 
     public function getLinkOnMe($obj)
     {

@@ -92,93 +92,7 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
     <div><img src="https://mc.yandex.ru/watch/38253635" style="position:absolute; left:-9999px;" alt=""/></div>
 </noscript>
 <!-- /Yandex.Metrika counter -->
-<script>
-    window.params =
-    {
-        currentMinCost: <?=Yii::app()->request->getParam("minimalCost", Yii::app()->realty->getMinimumAvailableCost()); ?>,
-        currentMaxCost: <?=Yii::app()->request->getParam("maximalCost", Yii::app()->realty->getMaximumAvailableCost()); ?>,
-        currentMinSize: <?=Yii::app()->request->getParam("minimalSize", Yii::app()->realty->getMinimumAvailableSize()); ?>,
-        currentMaxSize: <?=Yii::app()->request->getParam("maximalSize", Yii::app()->realty->getMaximumAvailableSize()); ?>,
-        minimalAvailableCost: <?=Yii::app()->realty->getMinimumAvailableCost(); ?>,
-        maximalAvailableCost: <?=Yii::app()->realty->getMaximumAvailableCost(); ?>,
-        minimalAvailableSize: <?=Yii::app()->realty->getMinimumAvailableSize(); ?>,
-        maximalAvailableSize: <?=Yii::app()->realty->getMaximumAvailableSize(); ?>,
-    }
-    function getParams() {
-        return window.params;
-    }
-    function sendFilter() {
-        var rooms = "";
-        $("input[name=rooms]:checked").each(function () {
-            if (rooms != "")
-                rooms += ","
-            rooms += $(this).val();
-        });
-        var minimalCost = getParams().minimalAvailableCost;
-        $(".amount_two").each(function () {
-            var currentVal = parseInt($(this).val().replace(new RegExp('[ ]', 'g'), ""));
-            minimalCost = Math.max(minimalCost, currentVal);
-        });
-        var maximalCost = getParams().maximalAvailableCost;
-        $(".amount1_two").each(function () {
-            var currentVal = parseInt($(this).val().replace(new RegExp('[ ]', 'g'), ""));
-            maximalCost = Math.min(maximalCost, currentVal);
-        });
-        if (minimalCost > maximalCost) {
-            var t = maximalCost;
-            maximalCost = minimalCost;
-            minimalCost = t;
-        }
-        var minimalSize = getParams().minimalAvailableSize;
-        $(".amount").each(function () {
-            var currentVal = $(this).val();
-            minimalSize = Math.max(minimalSize, currentVal);
-        });
-        var maximalSize = getParams().maximalAvailableSize;
-        $(".amount1").each(function () {
-            var currentVal = $(this).val();
-            maximalSize = Math.min(maximalSize, currentVal);
-        });
-        var url = "/search?";
-        $(".select-room-click-cheked").each(function () {
-            url += "rooms[]=" + $(this).data("val") + "&";
-        });
-        $("#status :selected").each(function () {
-            url += "status[]=" + $(this).val() + "&";
-        });
-        $("#readyTime :selected").each(function () {
-            url += "time[]=" + $(this).val() + "&";
-        });
 
-
-        if (rooms != "")
-            url += "rooms=" + rooms + "&";
-        if (minimalCost > getParams().minimalAvailableCost)
-            url += "minimalCost=" + minimalCost + "&";
-        if (maximalCost < getParams().maximalAvailableCost)
-            url += "maximalCost=" + maximalCost + "&";
-        if (minimalSize > getParams().minimalAvailableSize)
-            url += "minimalSize=" + minimalSize + "&";
-        if (maximalSize < getParams().maximalAvailableSize)
-            url += "maximalSize=" + maximalSize + "&";
-        if (url.substr(url.length - 1, 1) == "&")
-            url = url.substr(0, url.length - 1);
-        if (url.substr(url.length - 1, 1) == "?")
-            url = url.substr(0, url.length - 1);
-        window.location = url;
-        return false;
-    }
-
-</script>
-<?php
-Yii::app()->clientScript->registerScript("mobile-form", '
-            $(".button__show-mobile-filter").click(
-                function () {
-                    $(".find-form").toggle();
-                }
-            )
-    ');
-?>
 <main class="main">
     <section class="container-fluid wrapper">
         <div class="row content">
@@ -193,10 +107,10 @@ Yii::app()->clientScript->registerScript("mobile-form", '
                     <div class="col-lg-10">
                         <header class="row header">
                             <div>
-                                <a class="tel:+79520074985">
+                                <a class="tel:<?= Yii::app()->getModule("realty")->getPhoneForLink(); ?>">
                                     <div class="b-number-phone">
                                         <i
-                                            class="fa fa-phone" aria-hidden="true"></i> 8-952-007-49-85
+                                            class="fa fa-phone" aria-hidden="true"></i> <?= Yii::app()->getModule("realty")->phone; ?>
                                     </div>
                                 </a>
                             </div>
@@ -204,11 +118,11 @@ Yii::app()->clientScript->registerScript("mobile-form", '
                                 <ul class="list-menu-header" itemscope
                                     itemtype="http://schema.org/SiteNavigationElement">
                                     <li><a itemprop="url" href="/pages/o-nas">О компании</a></li>
-                                    <li><a itemprop="url" href="/districts">Кварталы</a></li>
+                                    <li><a itemprop="url" href="/districts">Жилые комплексы</a></li>
                                     <li><a itemprop="url" href="/builders">Застройщики</a></li>
                                     <li><a itemprop="url" href="/nonReady">Строящиеся дома</a></li>
                                     <li><a itemprop="url" href="/ready">Готовые новостройки</a></li>
-                                    <li><a itemprop="url" href="/resell">Вторичная продажа</a></li>
+                                    <li><a itemprop="url" href="/resell">Вторичный рынок</a></li>
                                     <li><a itemprop="url" href="/resell">Акции</a></li>
                                 </ul>
                             </div>
@@ -225,12 +139,19 @@ Yii::app()->clientScript->registerScript("mobile-form", '
     <section class="containet-fluid footer">
         <div class="row" style="margin:0px">
             <div class="col-lg-10 col-lg-offset-1">
-                <div class="col-lg-9 col-md-9 col-sm-9"> © ООО «Гранит», <?= date("Y"); ?><br>Барнаул, ул. Антона
-                    Петрова, д 219а, 2 этаж, офис 208
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    © ООО «Гранит», <?= date("Y"); ?><br>
+                    <?=Yii::app()->getModule("realty")->adres; ?>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-3" style="text-align: right"><a href="http://vk.com/dolevki22">ВКонтакте</a><br><a
-                        href="/pages/vazhnaya-informaciya">Важная информация</a></div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <a href="http://vk.com/dolevki22">ВКонтакте</a><br><a
+                        href="/pages/vazhnaya-informaciya">Важная информация</a>
+                </div>
             </div>
+        </div>
     </section>
 </main>
 <?php

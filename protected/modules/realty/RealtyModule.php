@@ -14,6 +14,30 @@ class RealtyModule  extends yupe\components\WebModule
     const VERSION = '0.9.8';
 
 
+
+
+    /**
+     * @var string
+     */
+    public $phone;
+
+    public function getPhoneForLink()
+    {
+        $result = str_replace("-","",$this->phone);
+        $result = str_replace(" ","",$result);
+        if ($result[0] == "8")
+        {
+            $result = "+7".substr($result,1);
+        }
+        return $result;
+    }
+
+    /**
+     * @var string
+     */
+    public $adres;
+
+
     /**
      * @var string
      */
@@ -75,7 +99,15 @@ class RealtyModule  extends yupe\components\WebModule
      */
     public function getParamsLabels()
     {
-        return ["itemsPerPage" => "Кол-во элементов на странице"];
+        return [
+            "itemsPerPage" => "Кол-во элементов на странице",
+            "phone" => "Номер телефона",
+            "adres" => "Адрес",
+            "itemsPerPage" => "Элементов на странице",
+            "uploadPath" => "Путь для загрузки изображений",
+            "editor" => "Используемый визуальный редактор"
+
+        ];
     }
 
     /**
@@ -86,6 +118,8 @@ class RealtyModule  extends yupe\components\WebModule
     public function getEditableParams()
     {
         return [
+            'phone',
+            'adres',
             'itemsPerPage',
             'uploadPath',
             'editor' => Yii::app()->getModule('yupe')->editors,

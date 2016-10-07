@@ -33,6 +33,12 @@ class Building extends yupe\models\YModel
         return [$this->adres, Yii::app()->getModule('yupe')->siteName];
     }
 
+    public function getTitle()
+    {
+        return $this->adres;
+    }
+
+
     public function getPageDescription()
     {
         return "На этой странице вы можете просмотреть информацию о доме, расположенном по адресу \"{$this->adres}\"";
@@ -159,7 +165,6 @@ class Building extends yupe\models\YModel
 
     public function getImages()
     {
-
         $criteria = new CDbCriteria();
         $criteria->compare("idRecord",$this->id);
         $criteria->compare("idTable",RealtyImage::$TABLE_BUILDING);
