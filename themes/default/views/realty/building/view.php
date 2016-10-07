@@ -44,7 +44,7 @@ $this->keywords = $data->getPageKeywords();
                             href="<?= $data->district->getUrl() ?>"> <?= $data->district->name ?> </a> </span></p>
             <?php endif; ?>
             <p class="view__small-info">
-            <div class="candara-font">
+            <div class="candara-font" style="font-size: 18px;text-align: right">
                 <?= $data->longDescription ?>
             </div>
             </p>
