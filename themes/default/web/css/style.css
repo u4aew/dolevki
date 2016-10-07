@@ -226,8 +226,8 @@ body {
 
 .footer {
     min-height: 100px;
-    padding: 40px 0 0;
-    background-color: #0095B6;
+    padding: 20px 0 0;
+    background-color: #006A85;
     color: white;
 }
 
@@ -1637,4 +1637,16 @@ a.asc, a.desc {
     font-size: 16px;
     line-height: 1.5;
     text-align: left !important;
+}
+
+.footer__title
+{
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.footer__item
+{
+    margin-bottom: 5px;
+
 }

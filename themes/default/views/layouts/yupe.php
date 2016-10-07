@@ -224,17 +224,55 @@ Yii::app()->clientScript->registerScript("mobile-form", '
         <div class="row" style="margin:0px">
             <div class="col-lg-10 col-lg-offset-1">
                 <div class="col-lg-4 col-md-4 col-sm-4">
-                    © ООО «Гранит», <?= date("Y"); ?><br>
-                    <?=Yii::app()->getModule("realty")->adres; ?>
+                    <div class="footer__title">
+                        О нас
+                    </div>
+                    <div class="footer__item">
+                        <a href="/pages/vazhnaya-informaciya">Бренд</a>
+                    </div>
+                    <div class="footer__item">
+                        <a href="/pages/vazhnaya-informaciya">Наши цели</a>
+                    </div>
+                    <div class="footer__item">
+                        <a href="/pages/vazhnaya-informaciya">Партнерам</a>
+                    </div>
+                    <div class="footer__item">
+                        <a href="/pages/vazhnaya-informaciya">Сотрудники</a>
+                    </div>
+                    <div class="footer__item">
+                        <a href="/pages/vazhnaya-informaciya">Контакты</a>
+                    </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4">
-
+                    <div class="footer__title">
+                        Мы в соц. сетях
+                    </div>
+                    <div class="footer__item">
+                        <a href="http://vk.com/dolevki22">ВКонтакте</a><br>
+                    </div>
+                    <div class="footer__item">
+                        <a href="http://vk.com/dolevki22">Одноклассники</a><br>
+                    </div>
+                    <div class="footer__item">
+                        <a href="http://vk.com/dolevki22">Facebook</a><br>
+                    </div>
+                    <div class="footer__item">
+                        <a href="http://vk.com/dolevki22">Instagram</a><br>
+                    </div>
+                    <div class="footer__item">
+                        <a href="http://vk.com/dolevki22">Youtube</a><br>
+                    </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4">
-                    <a href="http://vk.com/dolevki22">ВКонтакте</a><br><a
-                        href="/pages/vazhnaya-informaciya">Важная информация</a>
                 </div>
             </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1">
+                © ООО «Гранит», <?= date("Y"); ?>
+                <?=Yii::app()->getModule("realty")->adres; ?>
+            </div>
+
         </div>
     </section>
 </main>
