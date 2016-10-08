@@ -705,7 +705,7 @@ input[type=range]:focus::-ms-fill-upper {
     font-size: 30px;
     font-weight: bold;
     text-align: center;
-    color: white;
+    color: black;
 }
 
 .ticket {
@@ -1646,6 +1646,7 @@ a.asc, a.desc {
 .btnColor {
     background-color: #006A85;
 }
+
 .footerColor {
     background-color: #006A85;
 }
