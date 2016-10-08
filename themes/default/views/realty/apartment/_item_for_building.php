@@ -26,7 +26,7 @@
         </div>
         <hr style="display: block;margin: 0 10px 0 0;">
         <div class="b-card-apartment__btn">
-            <a class="btn next-apartment" href="<?= $data->getUrl(); ?>"> Подробнее</a> </p>
+            <a class="btn next-apartment btnColor" href="<?= $data->getUrl(); ?>"> Подробнее</a> </p>
         </div>
     </div>
 </div>

@@ -33,7 +33,7 @@
 
                                 </div>
                                 <div class="row" style="margin-top:10px">
-                                    <div class="col-lg-12"> <a class="link-next-product" href="<?=$data->getUrl(); ?>"> ПОДРОБНЕЕ </a> </div>
+                                    <div class="col-lg-12"> <a class="btnColor link-next-product" href="<?=$data->getUrl(); ?>"> ПОДРОБНЕЕ </a> </div>
 
                                 </div>
 

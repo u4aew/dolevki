@@ -181,7 +181,7 @@ Yii::app()->clientScript->registerScript("mobile-form", '
 ?>
 <main class="main">
     <section class="container-fluid wrapper">
-        <div class="row content">
+        <div class="row content wrapperColor">
             <div class="col-lg-10 col-lg-offset-1">
                 <div class="row" style="padding: 10px">
                     <div class="col-lg-2">
