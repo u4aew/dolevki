@@ -46,7 +46,7 @@ Yii::app()->clientScript->registerScriptFile("https://api-maps.yandex.ru/2.1/?la
 <div class="row map__container">
     <div id="map" class="map__map" style="height: 600px; width: 100%; display: none">
     </div>
-    <div class="map__button" onclick="showMap();">
+    <div class="map__button btnColor" onclick="showMap();">
         Показать объекты на карте
     </div>
 </div>

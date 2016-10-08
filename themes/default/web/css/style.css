@@ -310,7 +310,6 @@ body {
     font-size: 18px;
     padding: 10px;
     width: 100%;
-    background: #006A85;
     height: 60px;
     border: none;
     color: white;
@@ -972,16 +971,10 @@ input[type=range]:focus::-ms-fill-upper {
     text-transform: uppercase;
     font-size: 25px;
     cursor: pointer;
-    background-color: #006A85;
     color: white;
     font-weight: bold;
     transition: .1s;
     transition-timing-function: ease-in-out;
-}
-
-.map__button:hover {
-
-    background-color: #0d4d5d;
 }
 
 .map__view-link {

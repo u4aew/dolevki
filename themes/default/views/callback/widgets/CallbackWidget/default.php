@@ -7,7 +7,7 @@
 ?>
 <div class="row">
     <div class="col-sm-12">
-        <button class="nav__find" data-toggle="modal" data-target="#callbackModal">
+        <button class="nav__find btnColor" data-toggle="modal" data-target="#callbackModal">
             <i class="fa fa-fw fa-phone"></i>
             <?= Yii::t('CallbackModule.callback', 'Заказать звонок') ?>
         </button>
@@ -42,7 +42,8 @@
                 <div class="row">
                     <div class="col-lg-2"></div>
                     <div class="col-lg-8">
-                    Укажите свое имя, номер телефона, время, когда вам будет удобно принять наш звонок, и наш консультант сам вам перезвонит
+                        Укажите свое имя, номер телефона, время, когда вам будет удобно принять наш звонок, и наш
+                        консультант сам вам перезвонит
                     </div>
                     <div class="col-lg-2"></div>
                 </div>
@@ -59,7 +60,7 @@
                         </div>
 
                         <?php $model->comment = $otherText; ?>
-                        <?= $form->hiddenField($model,"comment"); ?>
+                        <?= $form->hiddenField($model, "comment"); ?>
 
                         <div class="row">
                             <div class="col-lg-8">
