@@ -316,11 +316,6 @@ body {
     transition: .2s;
 }
 
-.nav__find:hover {
-    background: #0d4d5d
-
-}
-
 .infoblock {
     margin: 0 !important;
     min-height: 450px;
@@ -945,16 +940,14 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .amount1_two {
-    color: black !important;
-    width: 90px;
-    margin-left: 5px;
+    color: #0a6aa1 !important;
+    width: 100%;
     padding-left: 3px;
 }
 
 .amount_two {
-    color: black !important;
-    width: 90px;
-    margin-left: 5px;
+    color: #0a6aa1 !important;
+    width: 100%;
     padding-left: 3px;
 
 }
@@ -1122,6 +1115,8 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .select-room-click {
+    background-color: white;
+    color: #0095B6;
     display: inline-block;
     border: 2px solid rgba(0, 0, 0, 0.11);
     padding: 4px;
@@ -1631,6 +1626,7 @@ a.asc, a.desc {
     margin: 0;
 }
 
+/*Color*/
 .wrapperColor {
     background-color: #87cefa;
 }
@@ -1641,4 +1637,80 @@ a.asc, a.desc {
 
 .footerColor {
     background-color: #006A85;
+}
+
+.b-find-Color {
+    background-color: #0095B6;
+}
+
+/*Color*/
+.b-card-apartment-search {
+    min-height: 450px;
+}
+
+.b-card-apartment__info__street {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.b-find-wrap {
+    width: 80%;
+    margin: 10px auto;
+}
+
+.b-find {
+    color: white;
+    border-top: 1px solid transparent;
+    min-height: 650px;
+    border-radius: 5px;
+}
+
+.b-find hr {
+    margin: 5px 20px 10px 20px;
+}
+
+.b-find__title {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.b-find__param-name {
+    font-size: 18px;
+    font-weigth: bold;
+    text-align: center;
+}
+
+.CaptionCont, .SelectBox, .options {
+    color: #006A85;
+}
+
+#readyTime__container {
+    margin: 0 auto 20px auto;
+}
+
+.view__small-info__map {
+    text-transform: uppercase;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none !important;
+}
+
+.view__small-info__name {
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.view__small-info .main-info {
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.view__small-info {
+    font-size: 15px;
+}
+
+.price-apartment {
+    color: white;
 }

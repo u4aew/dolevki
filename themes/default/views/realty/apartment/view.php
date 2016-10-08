@@ -36,32 +36,32 @@ $this->keywords = $data->getPageKeywords();
         </div>
     </div>
     <div class="col-lg-4">
-
-
-            <p class="view__small-info">Дом:<span class="main-info"> <a
-                        href="<?= $data->building->getUrl() ?>"> <?= $data->building->adres ?> </a></span>
-            </p>
-            <?php
-            $this->renderPartial("/map/linkOnBuilding", ["building" => $data->building]);
-            ?>
-            <?php if ($data->building->idDistrict > 0): ?>
-                <p class="view__small-info">Квартал:<span class="main-info"> <a
-                            href="<?= $data->building->district->getUrl() ?>"> <?= $data->building->district->name ?> </a></span>
-                </p>
-            <?php endif; ?>
-            <?php if ($data->building->idBuilder > 0): ?>
-                <p class="view__small-info">Застройщик:<span class="main-info"><a
-                            href="<?= $data->building->builder->getUrl() ?>"> <?= $data->building->builder->name ?> </a> </span>
-                </p>
-            <?php endif; ?>
-            <p class="view__small-info">Площадь:<span class="main-info"><?= $data->size ?> м<sup>2</sup></span></p>
-            <p class="view__small-info"><?= $data->building->getStatusAsString(); ?></span></p>
-            <?php if ($data->building->status == STATUS_IN_PROGRESS): ?>
-                <p class="view__small-info">Срок сдачи:<span
-                        class="main-info"><?= $data->building->getReadyTimes()[$data->building->readyTime] ?></sup></span>
-                </p>
-            <?php endif; ?>
-        <div class="price-page"><?= $data->getPriceAsString(); ?></div>
+        <?php
+        $this->renderPartial("/map/linkOnBuilding", ["building" => $data->building]);
+        ?>
+        <div class="view__small-info"><span class="view__small-info__name">Дом: </span><span class="main-info"> <a
+                    href="<?= $data->building->getUrl() ?>"> <?= $data->building->adres ?> </a></span>
+        </div>
+        <?php if ($data->building->idDistrict > 0): ?>
+            <div class="view__small-info"><span class="view__small-info__name"> Квартал:</span><span class="main-info"> <a
+                        href="<?= $data->building->district->getUrl() ?>"> <?= $data->building->district->name ?> </a></span>
+            </div>
+        <?php endif; ?>
+        <?php if ($data->building->idBuilder > 0): ?>
+            <div class="view__small-info"><span class="view__small-info__name">Застройщик:</span><span
+                    class="main-info"><a
+                        href="<?= $data->building->builder->getUrl() ?>"> <?= $data->building->builder->name ?> </a> </span>
+            </div>
+        <?php endif; ?>
+        <div class="view__small-info"><span class="view__small-info__name"> Площадь:</span><span
+                class="main-info"><?= $data->size ?> м<sup>2</sup></span></div>
+        <div class="view__small-info"><?= $data->building->getStatusAsString(); ?></span></div>
+        <?php if ($data->building->status == STATUS_IN_PROGRESS): ?>
+            <div class="view__small-info"><span class="view__small-info__name"> Срок сдачи:</span><span
+                    class="main-info "><?= $data->building->getReadyTimes()[$data->building->readyTime] ?></sup></span>
+            </div>
+        <?php endif; ?>
+        <div class="price-page price-apartment"><?= $data->getPriceAsString(); ?></div>
         <div class="b-text-price">
             Обратите внимание: мы не берем никаких комиссий
         </div>

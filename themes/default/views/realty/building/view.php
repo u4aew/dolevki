@@ -17,7 +17,8 @@ $this->keywords = $data->getPageKeywords();
                     <ul id="lightSlider">
                         <li data-thumb="<?= $data->getImageUrl(100, 100, false); ?>">
                             <a class="fancybox" href="<?= $data->getImageUrl(1000, 1000, false); ?>"> <img
-                                    src="<?= $data->getImageUrl(1000, 1000, false); ?>" alt="<?= $data->getTitle(); ?>"/>
+                                    src="<?= $data->getImageUrl(1000, 1000, false); ?>"
+                                    alt="<?= $data->getTitle(); ?>"/>
                             </a>
                         </li>
                         <?php foreach ($data->getImages() as $item): ?>
@@ -35,16 +36,17 @@ $this->keywords = $data->getPageKeywords();
             $this->renderPartial("/map/linkOnBuilding", ["building" => $data]);
             ?>
             <?php if (!is_null($data->builder)): ?>
-                <p class="view__small-info">Застройщик:<span class="main-info"><a
+                <div class="view__small-info"><span class="view__small-info__name"> Застройщик:</span> <span
+                        class="main-info"><a
                             href="<?= $data->builder->getUrl() ?>"> <?= $data->builder->name ?> </a> </span>
-                </p>
+                </div>
             <?php endif; ?>
             <?php if (!is_null($data->district)): ?>
-                <p class="view__small-info"> Район: <span class="main-info"> <a
+                <p class="view__small-info"><span class="view__small-info__name"> Район: </span><span class="main-info"> <a
                             href="<?= $data->district->getUrl() ?>"> <?= $data->district->name ?> </a> </span></p>
             <?php endif; ?>
             <p class="view__small-info">
-            <div class="candara-font" style="font-size: 18px;text-align: right">
+            <div class="candara-font">
                 <?= $data->longDescription ?>
             </div>
             </p>
@@ -89,7 +91,7 @@ $this->keywords = $data->getPageKeywords();
                 <div class="b-apartment">
                     <?php if ($this->beginCache(Yii::app()->request->url . $dataProv->pagination->currentPage . $sortString)): ?>
                         <?php
-                        $this->renderPartial("/apartment/list", ["dataProvider" => $dataProv, "itemPath" => "_item_for_building", "headerText" => "Квартиры в этом доме"]);
+                        $this->renderPartial("/apartment/building-list", ["dataProvider" => $dataProv, "itemPath" => "_item_for_building", "headerText" => "Квартиры в этом доме"]);
                         ?>
                         <?php $this->endCache(); ?>
                     <?php endif; ?>
