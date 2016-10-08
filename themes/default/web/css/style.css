@@ -223,7 +223,6 @@ body {
 .footer {
     min-height: 100px;
     padding: 20px 0 0;
-    background-color: #006A85;
     color: white;
 }
 
@@ -1645,5 +1644,8 @@ a.asc, a.desc {
 }
 
 .btnColor {
+    background-color: #006A85;
+}
+.footerColor {
     background-color: #006A85;
 }

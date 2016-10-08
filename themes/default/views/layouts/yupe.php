@@ -195,7 +195,8 @@ Yii::app()->clientScript->registerScript("mobile-form", '
                                 <a class="tel:<?= Yii::app()->getModule("realty")->getPhoneForLink(); ?>">
                                     <div class="b-number-phone">
                                         <i
-                                            class="fa fa-phone" aria-hidden="true"></i> <?= Yii::app()->getModule("realty")->phone; ?>
+                                            class="fa fa-phone"
+                                            aria-hidden="true"></i> <?= Yii::app()->getModule("realty")->phone; ?>
                                     </div>
                                 </a>
                             </div>
@@ -220,7 +221,7 @@ Yii::app()->clientScript->registerScript("mobile-form", '
             </div>
         </div>
     </section>
-    <section class="containet-fluid footer">
+    <section class="containet-fluid footer footerColor">
         <div class="row" style="margin:0px">
             <div class="col-lg-10 col-lg-offset-1">
                 <div class="col-lg-4 col-md-4 col-sm-4">
@@ -270,7 +271,7 @@ Yii::app()->clientScript->registerScript("mobile-form", '
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1">
                 © ООО «Гранит», <?= date("Y"); ?>
-                <?=Yii::app()->getModule("realty")->adres; ?>
+                <?= Yii::app()->getModule("realty")->adres; ?>
             </div>
 
         </div>
