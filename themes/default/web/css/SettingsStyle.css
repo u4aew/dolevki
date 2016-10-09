@@ -1,0 +1,39 @@
+.wrapperColor {
+    background-color: #87cefa;
+}
+
+.btnColor {
+    background-color: #006A85;
+}
+
+.footerColor {
+    background-color: #006A85;
+}
+
+.b-find-Color {
+    background-color: #0095B6;
+}
+
+.font-description {
+    font-family: Candara;
+    color: white;
+}
+
+.font-description__card {
+    font-family: Candara;
+    color: white;
+}
+
+.font-title {
+    font-family: Candara;
+    color: white;
+}
+
+.list-parameter-apartement__item:hover {
+    background-color: #0095B6;
+}
+
+.pagination > .active > a {
+    background-color: #0095B6 !important;
+    border-color: #0095B6 !important;;
+}

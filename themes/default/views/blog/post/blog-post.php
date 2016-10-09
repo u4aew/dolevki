@@ -15,13 +15,6 @@ $this->breadcrumbs = [
     Yii::t('BlogModule.blog', 'Records'),
 ];
 ?>
-
-<p><?= Yii::t(
-        'BlogModule.blog',
-        'Posts of "{blog}" blog',
-        ['{blog}' => CHtml::encode($target->name)]
-    ); ?></p>
-
 <?php $this->widget(
     'bootstrap.widgets.TbListView',
     [

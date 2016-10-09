@@ -1,4 +1,4 @@
-<h1 class="page_title">
+<h1 class="page_title font-title">
     Застройщики
 </h1>
 
@@ -6,7 +6,7 @@
 $dataProvider->getData();
 ?>
 
-<?php if($this->beginCache(Yii::app()->controller->id.Yii::app()->controller->action->id.$dataProvider->pagination->currentPage)): ?>
+<?php if ($this->beginCache(Yii::app()->controller->id . Yii::app()->controller->action->id . $dataProvider->pagination->currentPage)): ?>
 
     <div class="row">
         <div class="col-lg-12">
@@ -16,7 +16,7 @@ $dataProvider->getData();
                         'bootstrap.widgets.TbListView',
                         [
                             'dataProvider' => $dataProvider,
-                            'itemView' => '/building/_item',
+                            'itemView' => '/builder/_itemBuild',
                             'summaryText' => '',
                             'enableHistory' => true,
                             'cssFile' => false,

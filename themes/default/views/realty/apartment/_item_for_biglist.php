@@ -1,6 +1,6 @@
 <div class="col-lg-4 col-md-6 col-sm-6">
-    <div class="b-card-apartment b-card-apartment-search">
-        <div class="b-card-apartment__pic"
+    <div class="b-card-apartment b-card-apartment-search font-description__card">
+        <div class="b-card-background__pic"
              style="background-image: url('<?= $data->getImageUrl(); ?>')">
             <div class="b-card-apartment__pic-mark">
                 <?php if ($data->building != null): ?>

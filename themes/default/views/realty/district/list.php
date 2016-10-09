@@ -1,4 +1,4 @@
-<h1 class="page_title">
+<h1 class="page_title font-title">
     Кварталы
 </h1>
 

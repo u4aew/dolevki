@@ -11,7 +11,7 @@ $this->keywords = $data->getPageKeywords();
 <div class="row">
     <div>
         <div class="col-lg-8">
-            <h1 class="view__title"><?= $data->adres ?> </h1>
+            <h1 class="view__title font-title"><?= $data->adres ?> </h1>
             <div class="walp" style="background: #F5F5F5">
                 <div class="prew">
                     <ul id="lightSlider">
@@ -32,24 +32,25 @@ $this->keywords = $data->getPageKeywords();
             </div>
         </div>
         <div class="col-lg-4">
-            <?php
-            $this->renderPartial("/map/linkOnBuilding", ["building" => $data]);
-            ?>
-            <?php if (!is_null($data->builder)): ?>
-                <div class="view__small-info"><span class="view__small-info__name"> Застройщик:</span> <span
-                        class="main-info"><a
-                            href="<?= $data->builder->getUrl() ?>"> <?= $data->builder->name ?> </a> </span>
-                </div>
-            <?php endif; ?>
-            <?php if (!is_null($data->district)): ?>
-                <p class="view__small-info"><span class="view__small-info__name"> Район: </span><span class="main-info"> <a
-                            href="<?= $data->district->getUrl() ?>"> <?= $data->district->name ?> </a> </span></p>
-            <?php endif; ?>
-            <p class="view__small-info">
-            <div class="candara-font">
-                <?= $data->longDescription ?>
+            <div class="font-description">
+                <?php
+                $this->renderPartial("/map/linkOnBuilding", ["building" => $data]);
+                ?>
+                <?php if (!is_null($data->builder)): ?>
+                    <div class="view__small-info"><span class="view__small-info__name"> Застройщик:</span> <span
+                            class="main-info"><a
+                                href="<?= $data->builder->getUrl() ?>"> <?= $data->builder->name ?> </a> </span>
+                    </div>
+                <?php endif; ?>
+                <?php if (!is_null($data->district)): ?>
+                    <p class="view__small-info"><span class="view__small-info__name"> Район: </span><span
+                            class="main-info"> <a
+                                href="<?= $data->district->getUrl() ?>"> <?= $data->district->name ?> </a> </span></p>
+                <?php endif; ?>
+                <p class="view__small-info">
+                    <?= $data->longDescription ?>
+                </p>
             </div>
-            </p>
         </div>
     </div>
 </div>
@@ -57,7 +58,7 @@ $this->keywords = $data->getPageKeywords();
     <div class="col-lg-12">
         <div class="description">
             <div class="row box-apartment">
-                  <span class="apartments-header">
+                  <span class="apartments-header font-title">
                             Квартиры в этом доме
                         </span>
                 <?php
@@ -96,7 +97,7 @@ $this->keywords = $data->getPageKeywords();
                         <?php $this->endCache(); ?>
                     <?php endif; ?>
                 </div>
-                <span class="project-info-link">
+                <span class="project-info-link font-description">
                     С полной проектной декларацией вы можете ознакомиться на сайте застройщика <?= $data->builder->link; ?>
                 </span>
 

@@ -1,5 +1,5 @@
 <?php if (isset($title)): ?>
-    <h1 class="page_title"><?=$title; ?></h1>
+    <h1 class="page_title font-title"><?=$title; ?></h1>
 <?php endif; ?>
 
 <?php if (isset($map)): ?>

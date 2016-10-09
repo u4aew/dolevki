@@ -25,6 +25,7 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
     ); ?>
     <?php
     Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/style.css');
+    Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/SettingsStyle.css');
     Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/lightslider.css');
     Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/jquery.fancybox.css');
     Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/sumoselect.css');
@@ -201,7 +202,7 @@ Yii::app()->clientScript->registerScript("mobile-form", '
                                 </a>
                             </div>
                             <div>
-                                <ul class="list-menu-header" itemscope
+                                <ul class="list-menu-header font-menu" itemscope
                                     itemtype="http://schema.org/SiteNavigationElement">
                                     <li><a itemprop="url" href="/pages/o-nas">О компании</a></li>
                                     <li><a itemprop="url" href="/districts">Жилые комплексы</a></li>
@@ -209,7 +210,7 @@ Yii::app()->clientScript->registerScript("mobile-form", '
                                     <li><a itemprop="url" href="/nonReady">Строящиеся дома</a></li>
                                     <li><a itemprop="url" href="/ready">Готовые новостройки</a></li>
                                     <li><a itemprop="url" href="/resell">Вторичный рынок</a></li>
-                                    <li><a itemprop="url" href="/resell">Акции</a></li>
+                                    <li><a itemprop="url" href="/posts/akcii">Акции</a></li>
                                     <li><a itemprop="url" href="/search">Поиск</a></li>
                                 </ul>
                             </div>
@@ -222,7 +223,7 @@ Yii::app()->clientScript->registerScript("mobile-form", '
             </div>
         </div>
     </section>
-    <section class="containet-fluid footer footerColor">
+    <section class="containet-fluid footer footerColor font-footer">
         <div class="row" style="margin:0px">
             <div class="col-lg-10 col-lg-offset-1">
                 <div class="col-lg-4 col-md-4 col-sm-4">

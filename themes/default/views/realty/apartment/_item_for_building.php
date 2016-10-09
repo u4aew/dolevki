@@ -1,6 +1,6 @@
 <div class="col-lg-4 col-md-6 col-sm-6">
-    <div class="b-card-apartment">
-        <div class="b-card-apartment__pic"
+    <div class="b-card-apartment font-description__card">
+        <div class="b-card-background__pic"
              style="background-image: url('<?= $data->getImageUrl(); ?>')">
             <div class="b-card-apartment__pic-mark">
                 Информация
@@ -26,7 +26,7 @@
         </div>
         <hr style="display: block;margin: 0 10px 0 0;">
         <div class="b-card-apartment__btn">
-            <a class="btn next-apartment btnColor" href="<?= $data->getUrl(); ?>"> Подробнее</a> </p>
+            <a class="btnColor btn next-apartment" href="<?= $data->getUrl(); ?>"> Подробнее</a> </p>
         </div>
     </div>
 </div>

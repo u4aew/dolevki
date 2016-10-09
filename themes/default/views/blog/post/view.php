@@ -17,7 +17,7 @@ Yii::app()->clientScript->registerScript(
 
 $this->breadcrumbs = [
     Yii::t('BlogModule.blog', 'Blogs') => ['/blog/blog/index/'],
-    CHtml::encode($post->blog->name)   => $post->blog->getUrl(),
+    CHtml::encode($post->blog->name) => $post->blog->getUrl(),
     $post->title,
 ];
 ?>
@@ -32,8 +32,10 @@ if ($model->layout) {
 }
 
 ?>
-<div style="min-height: 960px;background-color: white;padding: 15px">
-    <h1><?= $post->title; ?></h1>
-    <hr>
-    <?= $model->content; ?>
+<div class="font-description">
+    <div style="min-height: 960px;padding: 15px">
+        <h1><?= $post->title; ?></h1>
+        <hr>
+        <?= $model->content; ?>
+    </div>
 </div>

@@ -3,7 +3,7 @@
 ?>
 <div class="col-lg-4 col-md-6 col-sm-6">
     <div class="b-card-building font-description__card">
-        <div class="b-card-building__pic"
+        <div class="b-card-background__pic"
              style="background-image: url('<?= $data->getImageUrl(300, 300, false); ?>');">
             <div class="b-card-building__pic-mark">
                 Информация

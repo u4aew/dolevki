@@ -1148,6 +1148,10 @@ input[type=range]:focus::-ms-fill-upper {
     font-size: 20px;
 }
 
+.posts-list-block-meta {
+    color: white;
+}
+
 .building-heid {
     font-size: 20px;
     font-weight: bold;
@@ -1528,6 +1532,17 @@ a.asc, a.desc {
     border-bottom: 5px solid rgba(9, 9, 9, 0.6);
 }
 
+.b-card-background__pic {
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    min-height: 200px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-bottom: 5px solid rgba(9, 9, 9, 0.6);
+    background-clip: padding-box;
+}
+
 .b-card-apartment__pic-mark {
     display: inline-block;
     margin-top: 15px;
@@ -1626,24 +1641,6 @@ a.asc, a.desc {
     margin: 0;
 }
 
-/*Color*/
-.wrapperColor {
-    background-color: #87cefa;
-}
-
-.btnColor {
-    background-color: #006A85;
-}
-
-.footerColor {
-    background-color: #006A85;
-}
-
-.b-find-Color {
-    background-color: #0095B6;
-}
-
-/*Color*/
 .b-card-apartment-search {
     min-height: 450px;
 }
@@ -1713,4 +1710,12 @@ a.asc, a.desc {
 
 .price-apartment {
     color: white;
+}
+
+.b-sale__title {
+    font-size: 18px;
+}
+
+.b-sale__title {
+    font-size: 32px;
 }

@@ -6,7 +6,7 @@ if ($model->layout) {
     $this->layout = "//layouts/{$model->layout}";
 }
 
-Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/leanding.js',CClientScript::POS_END);
+Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/leanding.js', CClientScript::POS_END);
 
 $this->title = [$model->title, Yii::app()->getModule('yupe')->siteName];
 $this->breadcrumbs = $this->getBreadCrumbs();
@@ -73,7 +73,8 @@ $this->keywords = $model->keywords ?: Yii::app()->getModule('yupe')->siteKeyWord
                 <h2 style="text-align: center">С чего начинается сотрудничество ?</h2>
                 <div class="col-lg-12">
                     <div class="js-box-work__one" style="font-size: 20px;text-align:center">
-                        Ознакомьтесь с нашим <a href="/">каталогом</a> и позвоните нам по 8-952-007-49-85
+                        Ознакомьтесь с нашим <a href="/" style="color: black">каталогом</a> и позвоните нам по
+                        8-952-007-49-85
                     </div>
                 </div>
             </div>
@@ -86,13 +87,14 @@ $this->keywords = $model->keywords ?: Yii::app()->getModule('yupe')->siteKeyWord
                 <hr>
                 <div class="js-box-contacts-company__one">
                     <h2 style="text-align: center">Где мы находимся ?</h2>
-                    <div style="text-align: center;font-size: 20px">Барнаул, ул. Антона Петрова, 219а, эт. 2, оф. 208</div>
+                    <div style="text-align: center;font-size: 20px">Барнаул, ул. Антона Петрова, 219а, эт. 2, оф. 208
+                    </div>
                     <hr>
                 </div>
                 <div class="js-box-contacts-company__map">
                     <div style="padding: 10px;margin:0 auto;max-width: 100%;overflow: hidden">
                         <script type="text/javascript" charset="utf-8" async
-                                src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=HwWFWmIe0Tv_eGfqbE2rmeWh1rOUdkHA&width=1000&height=400&lang=ru_RU&sourceType=constructor&scroll=true"></script>
+                                src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=HwWFWmIe0Tv_eGfqbE2rmeWh1rOUdkHA&height=400&lang=ru_RU&sourceType=constructor&scroll=true"></script>
                     </div>
                 </div>
             </div>
