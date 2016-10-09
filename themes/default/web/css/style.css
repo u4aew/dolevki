@@ -1107,6 +1107,16 @@ input[type=range]:focus::-ms-fill-upper {
     text-transform: lowercase
 }
 
+@media screen and (max-width: 1655px) {
+    .select-room {
+        text-align: left;
+    }
+
+    .select-room-click:last-child {
+        margin-top: 5px;
+    }
+}
+
 .select-room {
     list-style: none;
     padding: 0;
