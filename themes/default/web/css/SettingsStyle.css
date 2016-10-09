@@ -21,14 +21,19 @@
 
 .font-description__card {
     font-family: Candara;
-    color: white;
+    color: black;
 }
 
 .font-title {
     font-family: Candara;
     color: white;
 }
+.font-menu {
 
+}
+.font-footer {
+
+}
 .list-parameter-apartement__item:hover {
     background-color: #0095B6;
 }
