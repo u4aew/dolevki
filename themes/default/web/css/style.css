@@ -46,7 +46,6 @@ body {
     }
 
     .content-page__main {
-        background-color: #0095B6 !important;
     }
 
     .product {
@@ -71,8 +70,6 @@ body {
 
     .next-apartment {
         display: block;
-        width: 100% !important;
-        background-color: #006A85;
         color: white;
         text-decoration: none !important;
     }
@@ -180,13 +177,11 @@ body {
 
 .content {
     min-height: 1200px;
-    background-color: #0095B6;
     margin-right: 0;
     margin-left: 0;
 }
 
 .content-page {
-    background-color: #0095B6;
 }
 
 .content-page__main {
@@ -226,8 +221,7 @@ body {
 
 .footer {
     min-height: 100px;
-    padding: 40px 0 0;
-    background-color: #0095B6;
+    padding: 20px 0 0;
     color: white;
 }
 
@@ -315,17 +309,11 @@ body {
     font-size: 18px;
     padding: 10px;
     width: 100%;
-    background: #006A85;
     height: 60px;
     border: none;
     color: white;
     font-weight: bold;
     transition: .2s;
-}
-
-.nav__find:hover {
-    background: #0d4d5d
-
 }
 
 .infoblock {
@@ -564,7 +552,6 @@ input[type=range]:focus::-ms-fill-upper {
     display: block;
     width: 70%;
     margin: 0 auto;
-    background: #006A85;
     color: white !important;
     height: 38px;
     padding-top: 10px;
@@ -576,7 +563,6 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .link-next-product:hover {
-    background-color: #0d4d5d;
 }
 
 .next-list-iteam {
@@ -712,7 +698,7 @@ input[type=range]:focus::-ms-fill-upper {
     font-size: 30px;
     font-weight: bold;
     text-align: center;
-    color: white;
+    color: black;
 }
 
 .ticket {
@@ -954,16 +940,14 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .amount1_two {
-    color: black !important;
-    width: 90px;
-    margin-left: 5px;
+    color: #0a6aa1 !important;
+    width: 100%;
     padding-left: 3px;
 }
 
 .amount_two {
-    color: black !important;
-    width: 90px;
-    margin-left: 5px;
+    color: #0a6aa1 !important;
+    width: 100%;
     padding-left: 3px;
 
 }
@@ -979,16 +963,10 @@ input[type=range]:focus::-ms-fill-upper {
     text-transform: uppercase;
     font-size: 25px;
     cursor: pointer;
-    background-color: #006A85;
     color: white;
     font-weight: bold;
     transition: .1s;
     transition-timing-function: ease-in-out;
-}
-
-.map__button:hover {
-
-    background-color: #0d4d5d;
 }
 
 .map__view-link {
@@ -1082,16 +1060,11 @@ input[type=range]:focus::-ms-fill-upper {
     width: 60%;
     margin: 0 auto;
     color: white !important;
-    background-color: #006A85;
     cursor: pointer;
     text-decoration: none !important;
     padding: 5px;
     font-weight: bold;
     text-align: center;
-}
-
-.next-building:hover {
-    background: #0d4d5d;
 }
 
 .building-click {
@@ -1134,6 +1107,16 @@ input[type=range]:focus::-ms-fill-upper {
     text-transform: lowercase
 }
 
+@media screen and (max-width: 1655px) {
+    .select-room {
+        text-align: left;
+    }
+
+    .select-room-click:last-child {
+        margin-top: 5px;
+    }
+}
+
 .select-room {
     list-style: none;
     padding: 0;
@@ -1142,6 +1125,8 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .select-room-click {
+    background-color: white;
+    color: #0095B6;
     display: inline-block;
     border: 2px solid rgba(0, 0, 0, 0.11);
     padding: 4px;
@@ -1173,6 +1158,10 @@ input[type=range]:focus::-ms-fill-upper {
     font-size: 20px;
 }
 
+.posts-list-block-meta {
+    color: white;
+}
+
 .building-heid {
     font-size: 20px;
     font-weight: bold;
@@ -1187,7 +1176,6 @@ input[type=range]:focus::-ms-fill-upper {
     margin-top: 5px;
     margin-bottom: 5px;
     width: 150px;
-    background-color: #006A85;
     color: white !important;
     margin-left: auto;
     margin-right: auto;
@@ -1195,7 +1183,6 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .next-apartment {
-    background-color: #0d4d5d;
 }
 
 .building__mini-cart {
@@ -1555,6 +1542,17 @@ a.asc, a.desc {
     border-bottom: 5px solid rgba(9, 9, 9, 0.6);
 }
 
+.b-card-background__pic {
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    min-height: 200px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-bottom: 5px solid rgba(9, 9, 9, 0.6);
+    background-clip: padding-box;
+}
+
 .b-card-apartment__pic-mark {
     display: inline-block;
     margin-top: 15px;
@@ -1639,9 +1637,99 @@ a.asc, a.desc {
     text-align: left !important;
 }
 
-.b-logo__pic {
-    display: block;
+.footer__title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.footer__item {
+    margin-bottom: 5px;
+
+}
+
+.row {
+    margin: 0;
+}
+
+.b-card-apartment-search {
+    min-height: 450px;
+}
+
+.b-card-apartment__info__street {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.b-find-wrap {
+    width: 80%;
     margin: 10px auto;
-    max-width: 150px;
+}
+
+.b-find {
+    color: white;
+    border-top: 1px solid transparent;
+    min-height: 650px;
+    border-radius: 5px;
+}
+
+.b-find hr {
+    margin: 5px 20px 10px 20px;
+}
+
+.b-find__title {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.b-find__param-name {
+    font-size: 18px;
+    font-weigth: bold;
+    text-align: center;
+}
+
+.CaptionCont, .SelectBox, .options {
+    color: #006A85;
+}
+
+#readyTime__container {
+    margin: 0 auto 20px auto;
+}
+
+.view__small-info__map {
+    text-transform: uppercase;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none !important;
+}
+
+.view__small-info__name {
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.view__small-info .main-info {
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.view__small-info {
+    font-size: 15px;
+}
+
+.price-apartment {
+    color: white;
+}
+
+.b-sale__title {
+    font-size: 18px;
+}
+
+.b-sale__title {
+    font-size: 32px;
+}
+.b-logo__pic {
+    max-width: 300px;
     width: 100%;
 }
