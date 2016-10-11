@@ -186,8 +186,10 @@ Yii::app()->clientScript->registerScript("mobile-form", '
             <div class="col-lg-10 col-lg-offset-1">
                 <div class="row" style="padding: 10px">
                     <div class="col-lg-2">
-                        <div onclick="window.location.href='/'" class="b-logo"
-                             style="background-image: url('/themes/shop/web/images/site_logo.png')">
+                        <div class="b-logo">
+                            <a href="/">
+                                <img class="b-logo__pic" src="/themes/shop/web/images/site_logo.png" alt="Логотип">
+                            </a>
                         </div>
                     </div>
                     <div class="col-lg-10">
