@@ -1484,7 +1484,7 @@ a.asc, a.desc {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    border-right: 2px solid white;
+    border-right: 2px solid black;
     cursor: pointer;
 
 }
@@ -1757,4 +1757,11 @@ hr {
     background-size: 40%;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.b-logo__pic {
+    display: block;
+    margin: 0 auto;
+    max-width: 150px;
+    width: 100%;
 }

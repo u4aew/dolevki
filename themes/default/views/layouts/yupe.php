@@ -188,7 +188,7 @@ Yii::app()->clientScript->registerScript("mobile-form", '
                     <div class="col-lg-2">
                         <div class="b-logo">
                             <a href="/">
-                                <img class="b-logo__pic" src="/themes/shop/web/images/site_logo.png" alt="Логотип">
+                                <img class="b-logo__pic" src="/themes/default/web/images/logo_black.png" alt="Логотип">
                             </a>
                         </div>
                     </div>
