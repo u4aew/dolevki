@@ -22,7 +22,7 @@ function getUrl($sortAttribute)
 ?>
 <div class="content-page__main">
     <div class="row">
-        <div class="col-lg-3">
+        <div class="col-lg-4">
             <div class="b-find b-find-Color ">
                 <div class="b-find-wrap">
                     <div class="b-find__title">Параметры Поиска</div>
@@ -51,22 +51,23 @@ function getUrl($sortAttribute)
                                 <div class="b-find__param-name">Стоимость, <span class="rubl"> руб.</span>
                                 </div>
                                 <div>
-                                    <div><b>ОТ</b>
-                                        <br>
+                                    <div style="float:left">
+                                        <b>ОТ</b>
                                         <input type="text" id="amount_two"
-                                               class="amount_two js-cost-textbox">
+                                               class="amount_two js-cost-textbox" style="width: 80px">
                                     </div>
 
-                                    <div><b>ДО</b>
-                                        <br>
+                                    <div style="float: right">
+                                        <b>ДО</b>
                                         <input type="text" id="amount_1_two"
-                                               class="amount1_two js-cost-textbox">
+                                               class="amount1_two js-cost-textbox" style="width: 80px">
                                     </div>
 
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="clearfix"></div>
                                 <div>
+                                    <hr>
                                     <div id="slider-range"></div>
                                     <div class="b-find__param-name">Площадь, м<sup>2</sup></div>
                                     <div>
@@ -122,7 +123,7 @@ function getUrl($sortAttribute)
                 </div>
             </div>
         </div>
-        <div class="col-lg-9">
+        <div class="col-lg-8">
             <section>
                 <div class="grid">
 

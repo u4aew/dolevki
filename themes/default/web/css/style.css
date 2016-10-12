@@ -767,7 +767,7 @@ input[type=range]:focus::-ms-fill-upper {
 ----------------------------------*/
 
 .ui-slider-horizontal {
-    height: 10px;
+    height: 16px;
 }
 
 .ui-slider-horizontal .ui-slider-handle {
@@ -780,7 +780,7 @@ input[type=range]:focus::-ms-fill-upper {
     height: 100%;
     border-radius: 0px !important;
     background-image: none;
-    background-color: #0095B6 !important;
+    background: repeating-linear-gradient( 45deg, #0095B6, #0095B6 10px, #006a85 10px, #006a85 20px );
 }
 
 .ui-slider-horizontal .ui-slider-range-min {
@@ -843,7 +843,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .ui-widget-content {
     margin-top: 10px;
-    border: 2px solid darkgray;
+    border: 2px solid white;
     background: #fff;
     color: #222222;
     border-radius: 0px;
@@ -878,7 +878,7 @@ input[type=range]:focus::-ms-fill-upper {
     font-weight: normal;
     color: #555555;
     margin-left: -16px;
-    margin-top: 9px;
+    margin-top: 12px;
     box-shadow: none !important;
     /*   border: 1px solid #ccc;
        border-top: 1px solid #eee;
@@ -1127,7 +1127,7 @@ input[type=range]:focus::-ms-fill-upper {
     background-color: white;
     color: #0095B6;
     display: inline-block;
-    border: 2px solid rgba(0, 0, 0, 0.11);
+    border: 2px solid #006A85;
     padding: 4px;
     min-width: 30px;
     cursor: pointer;
@@ -1141,7 +1141,8 @@ input[type=range]:focus::-ms-fill-upper {
 
 .select-room-click-cheked {
     color: white;
-    background-color: #0095B6;
+    background-color: #006A85;
+    border: 2px solid white;
 }
 
 .callback {
@@ -1681,6 +1682,7 @@ a.asc, a.desc {
 }
 
 .b-find__title {
+    text-align: center;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 20px;
@@ -1689,6 +1691,7 @@ a.asc, a.desc {
 
 .b-find__param-name {
     font-size: 18px;
+    text-align: center;
     font-weigth: bold;
     text-align: center;
 }
