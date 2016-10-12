@@ -2,9 +2,7 @@
     <div class="b-card-apartment font-description__card">
         <div class="b-card-background__pic"
              style="background-image: url('<?= $data->getImageUrl(); ?>')">
-            <div class="b-card-apartment__pic-mark">
-                Информация
-            </div>
+            <a class="fancybox b-card-background__link" href="<?= $data->getImageUrl(); ?>"> </a>
         </div>
         <div class="b-card-apartment__info">
             <div class="b-card-apartment__info__rooms">

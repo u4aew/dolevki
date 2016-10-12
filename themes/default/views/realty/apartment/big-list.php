@@ -1,14 +1,13 @@
 <?php
 
 $mainAssets = Yii::app()->getTheme()->getAssetsUrl();
-$sortKeys = ["cost" => "Стоимости","rooms" => "Кол-ву комнат", "floor" => "Этажу"];
+$sortKeys = ["cost" => "Стоимости", "rooms" => "Кол-ву комнат", "floor" => "Этажу"];
 
 
 function getUrl($sortAttribute)
 {
     $getParams = $_GET;
-    foreach ($getParams as $key => $value)
-    {
+    foreach ($getParams as $key => $value) {
         if ($key == "Apartment_sort")
             unset($getParams[$key]);
         if ($key == "name")
@@ -17,15 +16,15 @@ function getUrl($sortAttribute)
     $requestString = http_build_query($getParams);
     $path = Yii::app()->request->pathInfo;
 
-    return "http://{$_SERVER['SERVER_NAME']}/".$path."?".$requestString."&Apartment_sort=".$sortAttribute;
+    return "http://{$_SERVER['SERVER_NAME']}/" . $path . "?" . $requestString . "&Apartment_sort=" . $sortAttribute;
 }
 
 ?>
-<h1 style="color: white; text-align: center">
-    <?=$headerText ?>
+<h1 class="font-title" style="text-align: center">
+    <?= $headerText ?>
 </h1>
 <?php
-$this->renderPartial("/map/view",["map" => $map]);
+$this->renderPartial("/map/view", ["map" => $map]);
 ?>
 
 <div class="content-page__main">
@@ -39,14 +38,15 @@ $this->renderPartial("/map/view",["map" => $map]);
 
                             <ul class="menu-list-sorting-apartement">
                                 <li class="menu-list-sorting-apartement__item">Сортировать по :</li>
-                                <li class="menu-list-sorting-apartement__item"><span id="js-name-select-sort-apartment-parameter"><?= (isset($_GET["Apartment_sort"])) ? $sortKeys[$_GET["Apartment_sort"]] : "Стоимости"?>
+                                <li class="menu-list-sorting-apartement__item"><span
+                                        id="js-name-select-sort-apartment-parameter"><?= (isset($_GET["Apartment_sort"])) ? $sortKeys[$_GET["Apartment_sort"]] : "Стоимости" ?>
                                 </span> <span class="caret"> </span>
                                     <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
                                     <ul class="list-parameter-apartement">
-                                        <?php foreach ($sortKeys as $key => $item):?>
-                                            <a href = "<?=getUrl($key); ?>">
+                                        <?php foreach ($sortKeys as $key => $item): ?>
+                                            <a href="<?= getUrl($key); ?>">
                                                 <li class="list-parameter-apartement__item">
-                                                    <?=$item; ?>
+                                                    <?= $item; ?>
                                                 </li>
                                             </a>
                                         <?php endforeach; ?>
@@ -56,7 +56,7 @@ $this->renderPartial("/map/view",["map" => $map]);
                         </div>
                     </noindex>
                     <?php
-                    Yii::app()->getClientScript()->registerScript("addSorter","
+                    Yii::app()->getClientScript()->registerScript("addSorter", "
 
                     ");
                     ?>
@@ -66,12 +66,12 @@ $this->renderPartial("/map/view",["map" => $map]);
                     ?>
 
 
-                    <?php if($this->beginCache(Yii::app()->request->url.$dataProvider->pagination->currentPage)): ?>
+                    <?php if ($this->beginCache(Yii::app()->request->url . $dataProvider->pagination->currentPage)): ?>
 
                         <?php $this->widget(
                             'bootstrap.widgets.TbListView',
                             [
-                                'template'=>'{summary} {items} <hr> {pager}',
+                                'template' => '{summary} {items} <hr> {pager}',
 
                                 'dataProvider' => $dataProvider,
                                 'itemView' => '/apartment/_item_for_biglist',

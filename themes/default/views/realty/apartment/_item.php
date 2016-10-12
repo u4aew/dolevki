@@ -2,11 +2,13 @@
     <div class="b-card-apartment b-card-apartment-search font-description__card">
         <div class="b-card-background__pic"
              style="background-image: url('<?= $data->getImageUrl(); ?>')">
-            <div class="b-card-apartment__pic-mark">
-                <?php if ($data->building != null): ?>
-                    <?= $data->building->getReadyTimes()[$data->building->readyTime] ?>
-                <?php endif; ?>
-            </div>
+            <a class="fancybox b-card-background__link" href="<?= $data->getImageUrl(); ?>">
+                <div class="b-card-apartment__pic-mark">
+                    <?php if ($data->building != null): ?>
+                        <?= $data->building->getReadyTimes()[$data->building->readyTime] ?>
+                    <?php endif; ?>
+                </div>
+            </a>
         </div>
         <div class="b-card-apartment__info">
             <div class="b-card-apartment__info__rooms">
