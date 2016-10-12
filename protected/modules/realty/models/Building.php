@@ -73,7 +73,7 @@ class Building extends yupe\models\YModel
 
     public static function getStatuses()
     {
-        return [0 => "-------",STATUS_IN_PROGRESS => "Ведется строительство", STATUS_READY => "Сдано в эксплуатацию", STATUS_RESELL => "Вторичное жилье"];
+        return [0 => "-------",STATUS_IN_PROGRESS => "Ведется строительство", STATUS_READY => "", STATUS_RESELL => "Вторичное жилье"];
     }
 
     public function getStatusAsString()

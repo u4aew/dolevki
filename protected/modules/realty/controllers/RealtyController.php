@@ -179,7 +179,9 @@ class RealtyController extends \yupe\components\controllers\FrontController
         $criteria->select = 't.*';
         $criteria->addCondition("idBuilding <> 0");
         $criteria->with = [
-            "building"
+            "building" => [
+                "condition" => "building.isPublished = 1",
+            ]
         ];
         if (Yii::app()->request->getParam("rooms") != null)
         {
