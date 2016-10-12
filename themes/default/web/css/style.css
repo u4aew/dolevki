@@ -1487,6 +1487,7 @@ a.asc, a.desc {
     background-repeat: no-repeat;
     border-right: 2px solid white;
     cursor: pointer;
+    text-align: center;
 
 }
 
@@ -1728,4 +1729,11 @@ a.asc, a.desc {
 
 .b-sale__title {
     font-size: 32px;
+}
+
+.b-logo__pic {
+    display: block;
+    max-width: 150px;
+    width: 100%;
+    margin: 10px auto;
 }
