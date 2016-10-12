@@ -954,7 +954,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 #slider-range {
     width: 80%;
-    margin: 10px auto;
+    margin: 10px auto 20px auto;
 }
 
 .map__button {
@@ -989,7 +989,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 #slider-range_two {
     width: 80%;
-    margin: 10px auto;
+    margin: 10px auto 20px auto;
 }
 
 .prew {

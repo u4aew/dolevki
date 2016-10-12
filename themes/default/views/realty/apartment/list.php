@@ -47,8 +47,8 @@ function getUrl($sortAttribute)
                             </div>
                             <hr>
                             <div>
-                                <div id="slider-range_two"></div>
                                 <div class="b-find__param-name">Стоимость, <span class="rubl"> руб.</span>
+                                    <div id="slider-range_two"></div>
                                 </div>
                                 <div>
                                     <div style="float:left">
@@ -66,10 +66,10 @@ function getUrl($sortAttribute)
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="clearfix"></div>
+                                <hr>
                                 <div>
-                                    <hr>
-                                    <div id="slider-range"></div>
                                     <div class="b-find__param-name">Площадь, м<sup>2</sup></div>
+                                    <div id="slider-range"></div>
                                     <div>
                                         <div style="margin:0;float: left"><b>ОТ</b> <input type="text" id="amount"
                                                                                            class="amount">
