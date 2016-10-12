@@ -12,28 +12,41 @@
 
 .b-find-Color {
     background-color: #0095B6;
+    color: white;
+}
+
+.b-find-Color hr {
+    border-color: white !important;
 }
 
 .font-description {
     font-family: Candara;
-    color: white;
+    color: black;
 }
 
 .font-description__card {
     font-family: Candara;
     color: black;
+    font-size: 18px;
 }
 
 .font-title {
     font-family: Candara;
+    color: black;
+}
+
+.font-menu {
+    color: black;
+}
+
+.font-footer {
     color: white;
 }
-.font-menu {
 
+.font-footer a {
+    color: white;
 }
-.font-footer {
 
-}
 .list-parameter-apartement__item:hover {
     background-color: #0095B6;
 }
@@ -41,4 +54,13 @@
 .pagination > .active > a {
     background-color: #0095B6 !important;
     border-color: #0095B6 !important;;
+}
+
+a {
+    color: black;
+}
+
+.b-card-building__info {
+    font-size: 20px;
+    font-weight: bold;
 }

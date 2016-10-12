@@ -1092,14 +1092,13 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .view__small-info {
-    color: white;
+    color: black;
     text-align: left;
 }
 
 .view__small-info .main-info {
     font-weight: bold;
     font-size: 18px;
-    color: white;
 }
 
 .rubl {
@@ -1487,7 +1486,6 @@ a.asc, a.desc {
     background-repeat: no-repeat;
     border-right: 2px solid white;
     cursor: pointer;
-    text-align: center;
 
 }
 
@@ -1524,7 +1522,7 @@ a.asc, a.desc {
     background-color: white;
     margin: 10px;
     height: 90px;
-    min-height: 400px;
+    min-height: 440px;
     border-radius: 5px;
     box-shadow: 3px 3px 9px -3px rgba(9, 9, 9, 0.61);
 }
@@ -1619,6 +1617,7 @@ a.asc, a.desc {
 .b-card-building__description {
     text-align: center;
     padding: 10px;
+    padding-top: 0;
 }
 
 .b-card-building__btn {
@@ -1653,12 +1652,16 @@ a.asc, a.desc {
 }
 
 .b-card-apartment-search {
-    min-height: 450px;
+    min-height: 470px;
 }
 
 .b-card-apartment__info__street {
     font-weight: bold;
     font-size: 18px;
+}
+
+.b-card-apartment hr {
+    border-color: white !important;
 }
 
 .b-find-wrap {
@@ -1720,7 +1723,6 @@ a.asc, a.desc {
 }
 
 .price-apartment {
-    color: white;
 }
 
 .b-sale__title {
@@ -1731,9 +1733,28 @@ a.asc, a.desc {
     font-size: 32px;
 }
 
-.b-logo__pic {
+.glyphicon-map-marker {
+    color: black;
+}
+
+hr {
+    border-color: black !important;
+}
+
+.b-card-background__link {
     display: block;
-    max-width: 150px;
+    min-height: 200px;
     width: 100%;
-    margin: 10px auto;
+    transition: .3s;
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.b-card-background__link:hover {
+    background-color: rgba(9, 9, 9, 0.4);
+    background-image: url('../images/plus.png');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
