@@ -17,6 +17,11 @@
     src: url(../fonts/candara.ttf);
 }
 
+@font-face {
+    font-family: CyrillicOld;
+    src: url(../fonts/cyrillic_old.woff) format('woff');
+}
+
 html {
     overflow-y: scroll;
     overflow-x: auto;
@@ -1460,6 +1465,7 @@ a.asc, a.desc {
     list-style: none;
     color: white;
     padding: 0 10px;
+    text-align: left;
 }
 
 .list-menu-header li {
@@ -1470,13 +1476,16 @@ a.asc, a.desc {
 }
 
 .list-menu-header li a {
-    font-size: 18px;
-    color: white;
+    font-family: CyrillicOld;
     text-decoration: none;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .list-menu-header li a:hover {
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid black;
+    color: black !important;
 }
 
 .b-logo {
@@ -1764,4 +1773,30 @@ hr {
     margin: 0 auto;
     max-width: 150px;
     width: 100%;
+}
+
+.caret-menu {
+    transform: scale(2) rotate(270deg);
+    margin-bottom: 5px;
+}
+
+.list-menu-header__bottom {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: white;
+    padding: 5px;
+    z-index: 10;
+    transition: .2s;
+    visibility: hidden;
+    transform: translateY(0);
+}
+
+.js-list-menu-header__bottom {
+    visibility: visible;
+    transform: translateY(10px);
+}
+
+.js-caret-menu {
+    transform: scale(2) rotate(360deg);
 }

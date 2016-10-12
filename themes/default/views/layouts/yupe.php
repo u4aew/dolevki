@@ -197,9 +197,9 @@ Yii::app()->clientScript->registerScript("mobile-form", '
                             <div>
                                 <a class="tel:<?= Yii::app()->getModule("realty")->getPhoneForLink(); ?>">
                                     <div class="b-number-phone">
-                                        <i
-                                            class="fa fa-phone"
-                                            aria-hidden="true"></i> <?= Yii::app()->getModule("realty")->phone; ?>
+                                        <i style="color: black"
+                                           class="fa fa-phone"
+                                           aria-hidden="true"></i> <?= Yii::app()->getModule("realty")->phone; ?>
                                     </div>
                                 </a>
                             </div>
@@ -207,11 +207,16 @@ Yii::app()->clientScript->registerScript("mobile-form", '
                                 <ul class="list-menu-header font-menu" itemscope
                                     itemtype="http://schema.org/SiteNavigationElement">
                                     <li><a itemprop="url" href="/pages/o-nas">О компании</a></li>
-                                    <li><a itemprop="url" href="/districts">Жилые комплексы</a></li>
-                                    <li><a itemprop="url" href="/builders">Застройщики</a></li>
-                                    <li><a itemprop="url" href="/nonReady">Строящиеся дома</a></li>
-                                    <li><a itemprop="url" href="/ready">Готовые новостройки</a></li>
-                                    <li><a itemprop="url" href="/resell">Вторичный рынок</a></li>
+                                    <li><a href="#" id="catalog">Каталог <span class="caret caret-menu"
+                                                                               style="color: black"></span></a>
+                                        <ul class="list-menu-header__bottom">
+                                            <li><a itemprop="url" href="/districts">Жилые комплексы</a></li>
+                                            <li><a itemprop="url" href="/builders">Застройщики</a></li>
+                                            <li><a itemprop="url" href="/nonReady">Строящиеся дома</a></li>
+                                            <li><a itemprop="url" href="/ready">Готовые новостройки</a></li>
+                                            <li><a itemprop="url" href="/resell">Вторичный рынок</a></li>
+                                        </ul>
+                                    </li>
                                     <li><a itemprop="url" href="/posts/akcii">Акции</a></li>
                                     <li><a itemprop="url" href="/search">Поиск</a></li>
                                 </ul>
@@ -311,6 +316,15 @@ Yii::app()->clientScript->registerScript("launch-fancy-and-lightslider", '
         str = a.join(' ');
         $(".b-card-building__description").text(str + ' ...');
 
+    })
+</script>
+
+<script>
+    $(document).ready(function () {
+        $("#catalog").on('click', function () {
+            $(".list-menu-header__bottom").toggleClass('js-list-menu-header__bottom');
+            $(".caret-menu").toggleClass('js-caret-menu');
+        });
     })
 </script>
 </body>
