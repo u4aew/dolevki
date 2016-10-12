@@ -41,7 +41,6 @@ body {
 }
 
 @media screen and (max-width: 1400px) {
-
     .apartments-header {
         margin-bottom: 15px !important;
     }
@@ -78,6 +77,21 @@ body {
         color: white;
         text-decoration: none !important;
     }
+
+    .b-card-apartment__description {
+        max-height: 76px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .b-card-building__description {
+        max-height: 76px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
 }
 
 @media screen and (max-width: 980px) {
@@ -772,7 +786,7 @@ input[type=range]:focus::-ms-fill-upper {
 ----------------------------------*/
 
 .ui-slider-horizontal {
-    height: 16px;
+    height: 10px;
 }
 
 .ui-slider-horizontal .ui-slider-handle {
@@ -785,7 +799,7 @@ input[type=range]:focus::-ms-fill-upper {
     height: 100%;
     border-radius: 0px !important;
     background-image: none;
-    background: repeating-linear-gradient( 45deg, #0095B6, #0095B6 10px, #006a85 10px, #006a85 20px );
+    background-color: #0095B6 !important;
 }
 
 .ui-slider-horizontal .ui-slider-range-min {
@@ -848,7 +862,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .ui-widget-content {
     margin-top: 10px;
-    border: 2px solid white;
+    border: 2px solid darkgray;
     background: #fff;
     color: #222222;
     border-radius: 0px;
@@ -883,7 +897,7 @@ input[type=range]:focus::-ms-fill-upper {
     font-weight: normal;
     color: #555555;
     margin-left: -16px;
-    margin-top: 12px;
+    margin-top: 9px;
     box-shadow: none !important;
     /*   border: 1px solid #ccc;
        border-top: 1px solid #eee;
@@ -959,7 +973,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 #slider-range {
     width: 80%;
-    margin: 10px auto 20px auto;
+    margin: 10px auto;
 }
 
 .map__button {
@@ -994,7 +1008,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 #slider-range_two {
     width: 80%;
-    margin: 10px auto 20px auto;
+    margin: 10px auto;
 }
 
 .prew {
@@ -1132,7 +1146,7 @@ input[type=range]:focus::-ms-fill-upper {
     background-color: white;
     color: #0095B6;
     display: inline-block;
-    border: 2px solid #006A85;
+    border: 2px solid rgba(0, 0, 0, 0.11);
     padding: 4px;
     min-width: 30px;
     cursor: pointer;
@@ -1146,8 +1160,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .select-room-click-cheked {
     color: white;
-    background-color: #006A85;
-    border: 2px solid white;
+    background-color: #0095B6;
 }
 
 .callback {
@@ -1479,7 +1492,7 @@ a.asc, a.desc {
 .list-menu-header li a {
     font-family: CyrillicOld;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 24px;
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -1691,7 +1704,6 @@ a.asc, a.desc {
 }
 
 .b-find__title {
-    text-align: center;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 20px;
@@ -1700,7 +1712,6 @@ a.asc, a.desc {
 
 .b-find__param-name {
     font-size: 18px;
-    text-align: center;
     font-weigth: bold;
     text-align: center;
 }
@@ -1788,7 +1799,7 @@ hr {
     flex-direction: column;
     position: absolute;
     background-color: white;
-    padding: 5px;
+    padding: 5px 5px 10px 10px;
     z-index: 10;
     transition: .2s;
     visibility: hidden;

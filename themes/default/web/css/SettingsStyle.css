@@ -6,6 +6,10 @@
     background-color: #006A85;
 }
 
+.btnColor:hover {
+    background-color: rgba(18, 107, 133, 0.81);
+}
+
 .footerColor {
     background-color: #006A85;
 }
@@ -31,20 +35,24 @@
 }
 
 .font-title {
-    font-family: Candara;
+    font-family: CyrillicOld;
     color: black;
+    font-weight: bold;
 }
 
 .font-menu {
     color: black;
+    font-family: CyrillicOld;
 }
 
 .font-footer {
     color: white;
+    font-family: CyrillicOld;
 }
 
 .font-footer a {
     color: white;
+    font-family: Candara;
 }
 
 .list-parameter-apartement__item:hover {

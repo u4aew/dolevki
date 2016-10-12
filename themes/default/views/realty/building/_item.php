@@ -14,10 +14,13 @@
         <div class="b-card-building__description">
             <?= $data->shortDescription ?>
         </div>
+        <div class="clearfix"></div>
         <div class="b-card-building__btn">
             <a class="btnColor btn next-building" href="<?= $data->getUrl(); ?>"> Подробнее</a> </p>
         </div>
+        <div class="clearfix"></div>
     </div>
+    <div class="clearfix"></div>
 </div>
 
 
