@@ -41,6 +41,7 @@ body {
 }
 
 @media screen and (max-width: 1400px) {
+
     .apartments-header {
         margin-bottom: 15px !important;
     }
@@ -92,6 +93,14 @@ body {
         white-space: nowrap;
     }
 
+    .header {
+        border-bottom: none;
+    }
+
+    .content-page {
+        position: static;
+        top: 0;
+    }
 }
 
 @media screen and (max-width: 980px) {
@@ -187,6 +196,7 @@ body {
     margin-bottom: 20px;
     background-color: transparent;
     min-height: 80px;
+    border-bottom: 2px solid black;
 }
 
 .wrapper {
@@ -1483,6 +1493,7 @@ a.asc, a.desc {
     color: white;
     padding: 0 10px;
     text-align: left;
+    margin-bottom: 20px;
 }
 
 .list-menu-header li {
@@ -1510,7 +1521,6 @@ a.asc, a.desc {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    border-right: 2px solid black;
     cursor: pointer;
 
 }
@@ -1535,6 +1545,11 @@ a.asc, a.desc {
 
     .b-number-phone {
         text-align: center;
+    }
+
+    .list-menu-header {
+        flex-direction: column;
+
     }
 }
 
@@ -1790,8 +1805,9 @@ hr {
 .b-logo__pic {
     display: block;
     margin: 0 auto;
-    max-width: 150px;
+    max-width: 140px;
     width: 100%;
+    transform: rotate(450deg);
 }
 
 .caret-menu {

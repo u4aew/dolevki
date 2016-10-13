@@ -218,7 +218,7 @@ Yii::app()->clientScript->registerScript("mobile-form", '
                                         </ul>
                                     </li>
                                     <li><a itemprop="url" href="/posts/akcii">Акции</a></li>
-                                    <li><a itemprop="url" href="/search">Поиск</a></li>
+                                    <li><a itemprop="url" href="/search" class="">Поиск</a></li>
                                 </ul>
                             </div>
                         </header>
