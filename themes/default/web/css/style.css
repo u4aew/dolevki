@@ -973,7 +973,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 #slider-range {
     width: 80%;
-    margin: 10px auto;
+    margin: 10px auto 20px auto;
 }
 
 .map__button {
@@ -1008,7 +1008,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 #slider-range_two {
     width: 80%;
-    margin: 10px auto;
+    margin: 10px auto 20px auto;
 }
 
 .prew {
@@ -1477,6 +1477,8 @@ a.asc, a.desc {
 }
 
 .list-menu-header {
+    display: flex;
+    justify-content: space-around;
     list-style: none;
     color: white;
     padding: 0 10px;
@@ -1705,6 +1707,7 @@ a.asc, a.desc {
 }
 
 .b-find__title {
+    margin-top: 20px;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 20px;

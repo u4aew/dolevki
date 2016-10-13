@@ -23,6 +23,15 @@
     border-color: white !important;
 }
 
+.b-find__title {
+    font-family: CyrillicOld;
+}
+
+.b-find {
+    font-family: Candara;
+    font-size: 18px;
+}
+
 .font-description {
     font-family: Candara;
     color: black;

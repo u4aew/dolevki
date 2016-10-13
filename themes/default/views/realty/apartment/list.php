@@ -54,13 +54,13 @@ function getUrl($sortAttribute)
                                     <div style="float:left">
                                         <b>ОТ</b>
                                         <input type="text" id="amount_two"
-                                               class="amount_two js-cost-textbox" style="width: 80px">
+                                               class="amount_two js-cost-textbox" style="width: 85px">
                                     </div>
 
                                     <div style="float: right">
                                         <b>ДО</b>
                                         <input type="text" id="amount_1_two"
-                                               class="amount1_two js-cost-textbox" style="width: 80px">
+                                               class="amount1_two js-cost-textbox" style="width: 85px">
                                     </div>
 
                                     <div class="clearfix"></div>
@@ -84,12 +84,12 @@ function getUrl($sortAttribute)
                                 <hr>
                             </div>
                             <div>
-                                <div class="b-find__param-name">Тип жилья</div>
+                                <div class="b-find__param-name">Статус готовности</div>
                                 <select multiple class="sumoSelect" name="" id="status"
                                         data-placeholder="Тип искомого жилья">
                                     <option id="inProgress"
                                             value="<?= STATUS_IN_PROGRESS ?>" <?php if (isset($_GET["status"]) && array_search(STATUS_IN_PROGRESS, $_GET["status"]) !== false) echo "selected" ?>>
-                                        Строящееся жилье
+                                        Строящееся дома
                                     </option>
                                     <option
                                         value="<?= STATUS_READY ?>" <?php if (isset($_GET["status"]) && array_search(STATUS_READY, $_GET["status"]) !== false) echo "selected" ?> >
@@ -97,7 +97,7 @@ function getUrl($sortAttribute)
                                     </option>
                                     <option
                                         value="<?= STATUS_RESELL ?>" <?php if (isset($_GET["status"]) && array_search(STATUS_RESELL, $_GET["status"]) !== false) echo "selected" ?> >
-                                        Вторичная продажа
+                                        Вторичный рынок
                                     </option>
                                 </select>
                             </div>
