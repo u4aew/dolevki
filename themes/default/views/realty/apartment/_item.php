@@ -39,7 +39,7 @@
         <div class="b-card-apartment__price">
             <?= $data->getPriceAsString(); ?>
         </div>
-        <div class="b-card-apartment__description">
+        <div class="b-card-apartment__description dotdotdot">
             <?= $data->shortDescription ?>
         </div>
         <hr style="display: block;margin: 0 10px 0 0;">

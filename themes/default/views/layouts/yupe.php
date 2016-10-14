@@ -46,6 +46,7 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
     Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/build/production.min.js');
     Yii::app()->getClientScript()->registerScriptFile('http://yastatic.net/highlightjs/8.2/highlight.min.js');
     Yii::app()->getClientScript()->registerScriptFile('http://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js');
+    Yii::app()->getClientScript()->registerScriptFile('https://cdnjs.cloudflare.com/ajax/libs/jQuery.dotdotdot/1.7.4/jquery.dotdotdot.min.js');
     ?>
     <script type="text/javascript">
         var yupeTokenName = '<?= Yii::app()->getRequest()->csrfTokenName;?>';
@@ -94,6 +95,12 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
 </noscript>
 <!-- /Yandex.Metrika counter -->
 <script>
+    function addDotdotdot()
+    {
+        $(".dotdotdot").dotdotdot({
+            height		: 76,
+        });
+    }
     window.params =
     {
         currentMinCost: <?=Yii::app()->request->getParam("minimalCost", Yii::app()->realty->getMinimumAvailableCost()); ?>,
@@ -300,21 +307,7 @@ Yii::app()->clientScript->registerScript("launch-fancy-and-lightslider", '
 ?>
 <script>
     $(document).ready(function () {
-
-        var text = $(".b-card-apartment__description").text();
-        var str = text.slice(0, 100);
-        var a = str.split(' ');
-        a.splice(a.length - 1, 1);
-        str = a.join(' ');
-        $(".b-card-apartment__description").text(str + ' ...');
-
-
-        var text = $(".b-card-building__description").text();
-        var str = text.slice(0, 100);
-        var a = str.split(' ');
-        a.splice(a.length - 1, 1);
-        str = a.join(' ');
-        $(".b-card-building__description").text(str + ' ...');
+        addDotdotdot();
 
     })
 </script>

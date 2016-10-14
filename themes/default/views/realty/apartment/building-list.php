@@ -62,6 +62,7 @@ function getUrl($sortAttribute)
                             'itemView' => isset($itemPath) ? '/apartment/' . $itemPath : '/apartment/_item',
                             'summaryText' => '',
                             'enableHistory' => true,
+                            'afterAjaxUpdate' => 'function(id) { addDotdotdot(); }',
                             'cssFile' => false,
                             'itemsCssClass' => 'row items',
                             /*   'sortableAttributes' => [

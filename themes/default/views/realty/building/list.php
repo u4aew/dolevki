@@ -24,6 +24,7 @@ $dataProvider->getData();
                             'summaryText' => '',
                             'enableHistory' => true,
                             'cssFile' => false,
+                            'afterAjaxUpdate' => 'function(id) { addDotdotdot(); }',
                             'itemsCssClass' => 'row items',
                             /*   'sortableAttributes' => [
                                    'sku',

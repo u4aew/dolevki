@@ -162,6 +162,7 @@ function getUrl($sortAttribute)
                             'dataProvider' => $dataProvider,
                             'itemView' => isset($itemPath) ? '/apartment/' . $itemPath : '/apartment/_item',
                             'summaryText' => '',
+                            'afterAjaxUpdate' => 'function(id) { addDotdotdot(); }',
                             'enableHistory' => true,
                             'cssFile' => false,
                             'itemsCssClass' => 'row items',

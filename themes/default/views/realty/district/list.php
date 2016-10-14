@@ -21,6 +21,7 @@ $dataProvider->getData();
                             'itemView' => '/building/_item',
                             'summaryText' => '',
                             'enableHistory' => true,
+                            'afterAjaxUpdate' => 'function(id) { addDotdotdot(); }',
                             'cssFile' => false,
                             'itemsCssClass' => 'row items',
                             /*   'sortableAttributes' => [

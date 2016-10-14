@@ -87,10 +87,9 @@ body {
     }
 
     .b-card-building__description {
-        max-height: 76px;
+        height: 76px;
         overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+        max-height: 76px;
     }
 
     .header {

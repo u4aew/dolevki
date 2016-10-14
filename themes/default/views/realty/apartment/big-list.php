@@ -77,6 +77,7 @@ $this->renderPartial("/map/view", ["map" => $map]);
                                 'itemView' => '/apartment/_item_for_biglist',
                                 'summaryText' => '',
                                 'enableHistory' => true,
+                                'afterAjaxUpdate' => 'function(id) { addDotdotdot(); }',
                                 'cssFile' => false,
                                 'itemsCssClass' => 'row items',
                                 /*   'sortableAttributes' => [

@@ -11,7 +11,7 @@
             <?= $data->getCardTitle() ?>
         </div>
         <hr>
-        <div class="b-card-building__description">
+        <div class="b-card-building__description dotdotdot">
             <?= $data->shortDescription ?>
         </div>
         <div class="b-card-building__btn">
