@@ -64,7 +64,7 @@ class Building extends yupe\models\YModel
             "coordinates" => array($this->latitude,$this->longitude)
         );
         $elem["properties"] = array(
-            "balloonContent" => "<div style = 'min-width: 300px'>".$this->shortDescription.Yii::app()->realty->getLinkOnMe($this)."</div>",
+            "balloonContent" => Yii::app()->getController()->renderPartial("/building/map-card",["model" => $this],true),
 //                "clusterCaption"=> "ggh",
             "hintContent"=> $this->adres,
         );
@@ -73,7 +73,7 @@ class Building extends yupe\models\YModel
 
     public static function getStatuses()
     {
-        return [0 => "-------",STATUS_IN_PROGRESS => "Ведется строительство", STATUS_READY => "", STATUS_RESELL => "Вторичное жилье"];
+        return [0 => "-------",STATUS_IN_PROGRESS => "Ведется строительство", STATUS_READY => "Готовая новостройка", STATUS_RESELL => "Вторичное жилье"];
     }
 
     public function getStatusAsString()
