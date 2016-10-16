@@ -1805,7 +1805,6 @@ hr {
     margin: 0 auto;
     max-width: 140px;
     width: 100%;
-    transform: rotate(450deg);
 }
 
 .caret-menu {
@@ -1832,4 +1831,11 @@ hr {
 
 .js-caret-menu {
     transform: scale(2) rotate(360deg);
+}
+
+.slider__main {
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 20px;
 }

@@ -29,6 +29,7 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
     Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/lightslider.css');
     Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/jquery.fancybox.css');
     Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/sumoselect.css');
+    Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/camera.css');
     Yii::app()->getClientScript()->registerCssFile('http://yandex.st/highlightjs/8.2/styles/github.min.css');
     ?>
 
@@ -95,10 +96,9 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
 </noscript>
 <!-- /Yandex.Metrika counter -->
 <script>
-    function addDotdotdot()
-    {
+    function addDotdotdot() {
         $(".dotdotdot").dotdotdot({
-            height		: 76,
+            height: 76,
         });
     }
 
@@ -141,7 +141,7 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
                                             <li><a itemprop="url" href="/resell">Вторичный рынок</a></li>
                                         </ul>
                                     </li>
-                                    <li><a itemprop="url" href="/posts/akcii">Акции</a></li>
+                                    <li><a itemprop="url" href="#">Контакты</a></li>
                                     <li><a itemprop="url" href="/search" class="">Поиск</a></li>
                                 </ul>
                             </div>
@@ -225,16 +225,33 @@ Yii::app()->clientScript->registerScript("launch-fancy-and-lightslider", '
 <script>
     $(document).ready(function () {
         addDotdotdot();
-
     })
 </script>
-
 <script>
     $(document).ready(function () {
         $("#catalog").on('click', function () {
             $(".list-menu-header__bottom").toggleClass('js-list-menu-header__bottom');
             $(".caret-menu").toggleClass('js-caret-menu');
         });
+    })
+</script>
+<script>
+    $(document).ready(function () {
+        $('.camera_wrap').camera(
+            {
+                height: '30%',
+                pagination: false
+            }
+        );
+    })
+</script>
+
+<script>
+    $(document).ready(function () {
+        var i = 0;
+        $(".ApartmentPic").each(function () {
+            $(this).children().attr("rel", ++i)
+        })
     })
 </script>
 </body>

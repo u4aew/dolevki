@@ -1,8 +1,11 @@
 <div class="col-lg-4 col-md-6 col-sm-6">
     <div class="b-card-apartment font-description__card">
-        <div class="b-card-background__pic"
+        <div class="b-card-background__pic ApartmentPic"
              style="background-image: url('<?= $data->getImageUrl(); ?>')">
-            <a class="fancybox b-card-background__link" href="<?= $data->getImageUrl(); ?>"> </a>
+            <a rel="group" class="fancybox b-card-background__link" href="<?= $data->getImageUrl(); ?>"> </a>
+            <?php foreach ($data->getImages() as $item): ?>
+                <a rel="group" class="fancybox" href="<?= $item->getImageUrl(); ?>"></a>
+            <?php endforeach; ?>
         </div>
         <div class="b-card-apartment__info">
             <div class="b-card-apartment__info__rooms">
