@@ -21,7 +21,8 @@ function getUrl($sortAttribute)
 
 
     Yii::app()->getClientScript()->registerScript("sticky",'
-        $(".b-find").sticky({topSpacing:10});
+        var height = $(".footer").height();
+        $(".b-find").sticky({topSpacing:10, bottomSpacing: height+30});
 
     ');
 ?>
