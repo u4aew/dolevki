@@ -13,6 +13,12 @@
  * @property string $shortDescription
  * @property string $longDescription
  * @property integer $isPublished
+ *
+ *
+ * @property string $seo_title
+ * @property string $seo_description
+ * @property string $seo_keywords
+
  */
 define("MAP_ICON_SIZE", 21);
 class District extends yupe\models\YModel
@@ -124,6 +130,9 @@ class District extends yupe\models\YModel
             array('icon', 'length', 'max'=>255),
             array('longitude, latitude', 'length', 'max'=>14),
             array('shortDescription, longDescription', 'safe'),
+            array('seo_title', 'length', 'max'=>100),
+            array('seo_description, seo_keywords', 'length', 'max'=>300),
+            array('seo_title, seo_description, seo_keywords','safe'),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
             array('id,slug, name, icon, longitude, latitude, shortDescription, longDescription, isPublished', 'safe', 'on'=>'search'),
@@ -154,6 +163,9 @@ class District extends yupe\models\YModel
             'latitude' => 'Широта',
             'shortDescription' => 'Короткое описание',
             'longDescription' => 'Длинное описание',
+            'seo_title' => 'Title страницы',
+            'seo_description' => 'Description',
+            'seo_keywords' => 'Keywords',
             'isPublished' => 'Публиковать на сайте',
         );
     }

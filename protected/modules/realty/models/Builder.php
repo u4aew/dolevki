@@ -10,6 +10,12 @@
  * @property string $image
  * @property string $link
  * @property string $shortDescription
+ *
+ *
+ * @property string $seo_title
+ * @property string $seo_description
+ * @property string $seo_keywords
+
  */
 class Builder extends \yupe\models\YModel
 {
@@ -66,7 +72,10 @@ class Builder extends \yupe\models\YModel
 			array('name,slug', 'length', 'max'=>100),
             array('image,link', 'length', 'max'=>250),
 			array('shortDescription', 'safe'),
-			// The following rule is used by search().
+            array('seo_title', 'length', 'max'=>100),
+            array('seo_description, seo_keywords', 'length', 'max'=>300),
+            array('seo_title, seo_description, seo_keywords','safe'),
+            // The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('image,link, id,slug, name, shortDescription', 'safe', 'on'=>'search'),
 		);
@@ -109,6 +118,9 @@ class Builder extends \yupe\models\YModel
 			'name' => 'Название',
             'link' => 'Ссылка на сайт',
 			'shortDescription' => 'Описание',
+            'seo_title' => 'Title страницы',
+            'seo_description' => 'Description',
+            'seo_keywords' => 'Keywords',
             'image' => 'Изображение'
 		);
 	}

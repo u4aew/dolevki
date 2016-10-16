@@ -7,8 +7,7 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
 <!DOCTYPE html>
 <html lang="<?= Yii::app()->language; ?>">
 <head>
-    <script src="http://code.jquery.com/jquery-3.1.1.min.js"
-            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <?php \yupe\components\TemplateEvent::fire(DefautThemeEvents::HEAD_START); ?>
     <?php \yupe\components\TemplateEvent::fire(DefautThemeEvents::HEAD_START); ?>
     <?php Yii::app()->getController()->widget(
         'vendor.chemezov.yii-seo.widgets.SeoHead',
@@ -221,39 +220,25 @@ Yii::app()->clientScript->registerScript("launch-fancy-and-lightslider", '
             slideMargin: 0,
             thumbItem: 9
         });
-    ');
-?>
-<script>
-    $(document).ready(function () {
         addDotdotdot();
-    })
-</script>
-<script>
-    $(document).ready(function () {
-        $("#catalog").on('click', function () {
-            $(".list-menu-header__bottom").toggleClass('js-list-menu-header__bottom');
-            $(".caret-menu").toggleClass('js-caret-menu');
+        $("#catalog").on("click", function () {
+            $(".list-menu-header__bottom").toggleClass("js-list-menu-header__bottom");
+            $(".caret-menu").toggleClass("js-caret-menu");
         });
-    })
-</script>
-<script>
-    $(document).ready(function () {
-        $('.camera_wrap').camera(
-            {
-                height: '30%',
-                pagination: false
-            }
-        );
-    })
-</script>
-
-<script>
-    $(document).ready(function () {
+        if ($(".camera_wrap").length)
+        {
+            $(".camera_wrap").camera(
+                {
+                    height: "30%",
+                    pagination: false
+                }
+            );
+        }
         var i = 0;
         $(".ApartmentPic").each(function () {
             $(this).children().attr("rel", ++i)
         })
-    })
-</script>
+    ');
+?>
 </body>
 </html>

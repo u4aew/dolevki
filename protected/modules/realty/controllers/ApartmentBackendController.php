@@ -10,6 +10,8 @@
 **/
 class ApartmentBackendController extends \yupe\components\controllers\BackController
 {
+
+
     /**
     * Отображает Квартиру по указанному идентификатору
     *

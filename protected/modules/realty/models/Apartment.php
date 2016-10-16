@@ -15,6 +15,11 @@
  * @property string $shortDescription
  * @property string $longDescription
 
+
+ * @property string $seo_title
+ * @property string $seo_description
+ * @property string $seo_keywords
+
  * @property Building $building
 
  */
@@ -97,6 +102,9 @@ class Apartment extends yupe\models\YModel
 		return array(
 			array('idBuilding, maxFloor, floor, rooms, size, cost', 'numerical', 'integerOnly'=>true),
             array('image', 'length', 'max'=>200),
+            array('seo_title', 'length', 'max'=>100),
+            array('seo_description, seo_keywords', 'length', 'max'=>300),
+            array('seo_title, seo_description, seo_keywords','safe'),
             array('shortDescription, longDescription', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -132,6 +140,9 @@ class Apartment extends yupe\models\YModel
 			'shortDescription' => 'Короткое описание',
 			'longDescription' => 'Длинное описание',
             'image' => 'Изображение',
+            'seo_title' => 'Title страницы',
+            'seo_description' => 'Description',
+            'seo_keywords' => 'Keywords',
 		);
 	}
 
