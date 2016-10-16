@@ -19,7 +19,14 @@ function getUrl($sortAttribute)
     return "http://{$_SERVER['SERVER_NAME']}/" . $path . "?" . $requestString . "&Apartment_sort=" . $sortAttribute;
 }
 
+
+    Yii::app()->getClientScript()->registerScript("sticky",'
+        var height = $(".footer").height();
+        $(".b-find").sticky({topSpacing:10, bottomSpacing: height+30});
+
+    ');
 ?>
+
 <script>
     window.params =
     {

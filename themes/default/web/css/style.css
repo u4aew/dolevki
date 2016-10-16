@@ -80,7 +80,7 @@ body {
     }
 
     .b-card-apartment__description {
-        max-height: 76px;
+        height: 76px;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -1606,7 +1606,7 @@ a.asc, a.desc {
     font-size: 26px;
     font-weight: bold;
     text-align: center;
-    padding-top: 5px;
+    padding-bottom: 10px;
 }
 
 .b-card-apartment__description {
