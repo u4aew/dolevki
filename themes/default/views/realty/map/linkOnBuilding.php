@@ -3,7 +3,9 @@
  * @var Buidling $building
  */
 ?>
-<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+<?php
+Yii::app()->clientScript->registerScriptFile("https://api-maps.yandex.ru/2.1/?lang=ru_RU");
+?>
 <script type="text/javascript">
     ymaps.ready(function () {
 
