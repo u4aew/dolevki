@@ -3,18 +3,21 @@
 ?>
 <div class="col-lg-6 col-md-6 col-sm-6">
     <div class="b-card-apartment b-card-apartment-search font-description__card">
-        <div class="b-card-background__pic"
+        <div class="b-card-background__pic ApartmentPic"
              style="background-image: url('<?= $data->getImageUrl(); ?>')">
             <a class="fancybox b-card-background__link" href="<?= $data->getImageUrl(); ?>">
                 <div class="b-card-apartment__pic-mark">
                     <?php if ($data->building != null): ?>
-                        <?php if ($data->building->status == STATUS_IN_PROGRESS) :?>
+                        <?php if ($data->building->status == STATUS_IN_PROGRESS) : ?>
                             <?= $data->building->getReadyTimes()[$data->building->readyTime] ?>
                         <?php else: ?>
                             <?= $data->building->getStatusAsString(); ?>
                         <?php endif; ?>
                     <?php endif; ?>
                 </div>
+                <?php foreach ($data->getImages() as $item): ?>
+                    <a rel="group" class="fancybox" href="<?= $item->getImageUrl(); ?>"></a>
+                <?php endforeach; ?>
             </a>
         </div>
         <div class="b-card-apartment__info">

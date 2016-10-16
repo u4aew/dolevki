@@ -1,13 +1,17 @@
 <div class="col-lg-4 col-md-6 col-sm-6">
     <div class="b-card-apartment b-card-apartment-search font-description__card">
-        <div class="b-card-background__pic"
+        <div class="b-card-background__pic ApartmentPic"
              style="background-image: url('<?= $data->getImageUrl(); ?>')">
             <a class="fancybox b-card-background__link" href="<?= $data->getImageUrl(); ?>">
+
                 <div class="b-card-apartment__pic-mark">
                     <?php if ($data->building != null): ?>
                         <?= $data->building->getReadyTimes()[$data->building->readyTime] ?>
                     <?php endif; ?>
                 </div>
+                <?php foreach ($data->getImages() as $item): ?>
+                    <a rel="group" class="fancybox" href="<?= $item->getImageUrl(); ?>"></a>
+                <?php endforeach; ?>
             </a>
         </div>
         <div class="b-card-apartment__info">

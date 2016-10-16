@@ -3,7 +3,7 @@
 ?>
 <div class="col-lg-4 col-md-6 col-sm-6">
     <div class="b-card-building font-description__card">
-        <div class="b-card-building__pic"
+        <div class="b-card-building__pic ApartmentPic"
              style="background-image: url('<?= $data->getImageUrl(300, 300, false); ?>');">
             <a class="fancybox b-card-background__link" href="<?= $data->getImageUrl(); ?>">
                 <div class="b-card-apartment__pic-mark">
@@ -13,6 +13,9 @@
                         <?= $data->getStatusAsString(); ?>
                     <?php endif; ?>
                 </div>
+                <?php foreach ($data->getImages() as $item): ?>
+                    <a rel="group" class="fancybox" href="<?= $item->getImageUrl(); ?>"></a>
+                <?php endforeach; ?>
             </a>
         </div>
         <div class="b-card-building__info">

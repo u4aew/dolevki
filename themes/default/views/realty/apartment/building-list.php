@@ -2,8 +2,6 @@
 
 $mainAssets = Yii::app()->getTheme()->getAssetsUrl();
 $sortKeys = ["cost" => "Стоимости", "rooms" => "Кол-ву комнат", "floor" => "Этажу"];
-
-
 function getUrl($sortAttribute)
 {
     $getParams = $_GET;
