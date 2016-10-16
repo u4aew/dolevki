@@ -48,7 +48,6 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
     Yii::app()->getClientScript()->registerScriptFile('http://yastatic.net/highlightjs/8.2/highlight.min.js');
     Yii::app()->getClientScript()->registerScriptFile('http://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js');
     Yii::app()->getClientScript()->registerScriptFile('https://cdnjs.cloudflare.com/ajax/libs/jQuery.dotdotdot/1.7.4/jquery.dotdotdot.min.js');
-    Yii::app()->getClientScript()->registerScriptFile("https://cdnjs.cloudflare.com/ajax/libs/jquery.sticky/1.0.3/jquery.sticky.js");
     ?>
     <script type="text/javascript">
         var yupeTokenName = '<?= Yii::app()->getRequest()->csrfTokenName;?>';
@@ -213,7 +212,6 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
 </main>
 <?php
 Yii::app()->clientScript->registerScript("launch-fancy-and-lightslider", '
-        $(".fancybox").fancybox();
         $("#lightSlider").lightSlider({
             gallery: true,
             item: 1,
@@ -226,6 +224,7 @@ Yii::app()->clientScript->registerScript("launch-fancy-and-lightslider", '
 <script>
     $(document).ready(function () {
         addDotdotdot();
+        $(".fancybox").fancybox();
     })
 </script>
 <script>
@@ -242,6 +241,7 @@ Yii::app()->clientScript->registerScript("launch-fancy-and-lightslider", '
             {
                 height: '30%',
                 pagination: false
+
             }
         );
     })
