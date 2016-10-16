@@ -21,6 +21,12 @@ define("STATUS_RESELL",3);
  * @property string $longDescription
  * @property integer $status
  * @property string $readyTime
+ *
+ *
+ * @property string $seo_title
+ * @property string $seo_description
+ * @property string $seo_keywords
+
 
  * @property Apartment[] $apartments
 
@@ -142,7 +148,10 @@ class Building extends yupe\models\YModel
 			array('longitude, latitude', 'length', 'max'=>14),
 			array('readyTime', 'length', 'max'=>45),
 			array('shortDescription, longDescription', 'safe'),
-			// The following rule is used by search().
+            array('seo_title', 'length', 'max'=>100),
+            array('seo_description, seo_keywords', 'length', 'max'=>300),
+            array('seo_title, seo_description, seo_keywords','safe'),
+            // The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('slug, id, image, adres, longitude, latitude, idDistrict, idBuilder, isPublished, isShowedOnMap, shortDescription, longDescription, status, readyTime', 'safe', 'on'=>'search'),
 		);
@@ -190,7 +199,10 @@ class Building extends yupe\models\YModel
 			'isShowedOnMap' => 'Показывать на карте',
 			'shortDescription' => 'Краткое описание',
 			'longDescription' => 'Длинное описание',
-			'status' => 'Статус',
+            'seo_title' => 'Title страницы',
+            'seo_description' => 'Description',
+            'seo_keywords' => 'Keywords',
+            'status' => 'Статус',
 			'readyTime' => 'Время готовности',
 		);
 	}

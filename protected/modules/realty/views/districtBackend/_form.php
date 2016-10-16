@@ -174,6 +174,50 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-sm-7">
+            <?=  $form->textFieldGroup($model, 'seo_title', [
+                'widgetOptions' => [
+                    'htmlOptions' => [
+                        'class' => 'popover-help',
+                        'data-original-title' => $model->getAttributeLabel('seo_title'),
+                        'data-content' => $model->getAttributeDescription('seo_title')
+                    ]
+                ]
+            ]); ?>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-7">
+            <?=  $form->textFieldGroup($model, 'seo_description', [
+                'widgetOptions' => [
+                    'htmlOptions' => [
+                        'class' => 'popover-help',
+                        'data-original-title' => $model->getAttributeLabel('seo_description'),
+                        'data-content' => $model->getAttributeDescription('seo_description')
+                    ]
+                ]
+            ]); ?>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-7">
+            <?=  $form->textFieldGroup($model, 'seo_keywords', [
+                'widgetOptions' => [
+                    'htmlOptions' => [
+                        'class' => 'popover-help',
+                        'data-original-title' => $model->getAttributeLabel('seo_keywords'),
+                        'data-content' => $model->getAttributeDescription('seo_keywords')
+                    ]
+                ]
+            ]); ?>
+        </div>
+    </div>
+
+
+
     <?php $this->widget(
         'bootstrap.widgets.TbButton', [
             'buttonType' => 'submit',
