@@ -21,13 +21,13 @@ $this->keywords = $data->seo_keywords;
             <div class="prew">
                 <ul id="lightSlider">
                     <li data-thumb="<?= $data->getImageUrl(100, 100, false); ?>">
-                        <a class="fancybox" href="<?= $data->getImageUrl(1000, 1000, false); ?>"> <img
+                        <a rel="group" class="fancybox" href="<?= $data->getImageUrl(1000, 1000, false); ?>"> <img
                                 src="<?= $data->getImageUrl(1000, 1000, false); ?>" alt="<?= $data->getTitle(); ?>"/>
                         </a>
                     </li>
                     <?php foreach ($images as $item): ?>
                         <li data-thumb="<?= $item->getImageUrl(100, 100, false); ?>">
-                            <a class="fancybox" href="<?= $item->getImageUrl(1000, 1000, false); ?>"> <img
+                            <a rel="group" class="fancybox" href="<?= $item->getImageUrl(1000, 1000, false); ?>"> <img
                                     src="<?= $item->getImageUrl(1000, 1000, false); ?>" alt=""> </a>
                         </li>
                     <?php endforeach; ?>
@@ -63,6 +63,14 @@ $this->keywords = $data->seo_keywords;
                         class="main-info "><?= $data->building->getReadyTimes()[$data->building->readyTime] ?></sup></span>
                 </div>
             <?php endif; ?>
+            <div data-background-alpha="0.0" data-buttons-color="#FFFFFF" data-counter-background-color="#ffffff"
+                 data-share-counter-size="12" data-top-button="false" data-share-counter-type="disable"
+                 data-share-style="1" data-mode="share" data-like-text-enable="false" data-mobile-view="true"
+                 data-icon-color="#ffffff" data-orientation="horizontal" data-text-color="#000000"
+                 data-share-shape="round-rectangle" data-sn-ids="fb.vk.tw.ok." data-share-size="30"
+                 data-background-color="#ffffff" data-preview-mobile="false" data-mobile-sn-ids="fb.vk.tw.wh.ok.vb."
+                 data-pid="1582984" data-counter-background-alpha="1.0" data-following-enable="false"
+                 data-exclude-show-more="false" data-selection-enable="true" class="uptolike-buttons"></div>
             <div class="price-page price-apartment"><?= $data->getPriceAsString(); ?></div>
             <div class="b-text-price">
                 Обратите внимание: мы не берем никаких комиссий

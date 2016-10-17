@@ -176,7 +176,7 @@
     display: block;
     top: 50%;
     height: 36px;
-    background-image: url('/uploads/image/controls.png');
+    background-images: url('../../uploads/images/controls.png');
     cursor: pointer;
     position: absolute;
     z-index: 99;

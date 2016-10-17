@@ -49,13 +49,3 @@ $(document).ready(function () {
         .change();
 
 })
-
-$(window).scroll(function () {
-
-    var scrollPos = window.scrollY + document.documentElement.clientHeight;
-    if (scrollPos > 1000) {
-        $(".navigation").addClass("navigation-fixed").css('bottom', 0);
-    } else {
-        $(".navigation").removeClass("navigation-fixed").css('bottom', "");
-    }
-}).scroll();

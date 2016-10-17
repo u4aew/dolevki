@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
     // 1. Вся настройка находится здесь
     grunt.initConfig({
@@ -7,18 +7,18 @@ module.exports = function(grunt) {
         concat: {
             dist: {
                 src: [
-                        'themes/default/web/js/jquery-ui-1.10.3.custom.min.js',
-                        'themes/default/web/js/jquery.li-translit.js',
-                        'themes/default/web/js/lightslider.js',
-                        'themes/default/web/js/jquery.fancybox.js',
-                        'themes/default/web/js/jquery.fancybox.pack.js',
-                        'themes/default/web/js/jquery.sumoselect.js',
-                        'themes/default/web/js/sort-list-apartment.js',
-                        'themes/default/web/js/slide.js',
-                        'themes/default/web/js/sidebar.js',
-                        'themes/default/web/js/mobile-siderbar.js',
-                        'themes/default/web/js/jquery.easing.1.3.js',
-                        'themes/default/web/js/camera.min.js'
+                    'themes/default/web/js/jquery-ui-1.10.3.custom.min.js',
+                    'themes/default/web/js/jquery.li-translit.js',
+                    'themes/default/web/js/lightslider.js',
+                    'themes/default/web/js/jquery.fancybox.js',
+                    'themes/default/web/js/jquery.fancybox.pack.js',
+                    'themes/default/web/js/jquery.sumoselect.js',
+                    'themes/default/web/js/sort-list-apartment.js',
+                    'themes/default/web/js/slide.js',
+                    'themes/default/web/js/sidebar.js',
+                    'themes/default/web/js/mobile-siderbar.js',
+                    'themes/default/web/js/jquery.easing.1.3.js',
+                    'themes/default/web/js/camera.min.js'
 //                    'themes/default/web/js/*.js', // Все JS в папке libs
                 ],
                 dest: 'themes/default/web/js/build/production.js',
@@ -37,7 +37,13 @@ module.exports = function(grunt) {
             },
             target: {
                 files: {
-                    'themes/default/web/css/build/production.min.css': ['themes/default/web/css/*.css']
+                    'themes/default/web/css/build/production.min.css': ['themes/default/web/css/jquery.fancybox.css',
+                        'themes/default/web/css/camera.css',
+                        'themes/default/web/css/lightslider.css',
+                        'themes/default/web/css/sumoselect.css',
+                        'themes/default/web/css/style.css',
+                        'themes/default/web/css/SettingsStyle.css'
+                    ]
                 }
             }
         }

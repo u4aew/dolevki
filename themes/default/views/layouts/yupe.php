@@ -23,12 +23,12 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
         ]
     ); ?>
     <?php
-    Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/style.css');
+    /*Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/style.css');
     Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/SettingsStyle.css');
     Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/lightslider.css');
     Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/jquery.fancybox.css');
-    Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/sumoselect.css');
-    Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/camera.css');
+    Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/sumoselect.css');*/
+    Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/build/production.min.css');
     Yii::app()->getClientScript()->registerCssFile('http://yandex.st/highlightjs/8.2/styles/github.min.css');
     ?>
 
@@ -220,6 +220,15 @@ Yii::app()->clientScript->registerScript("launch-fancy-and-lightslider", '
             slideMargin: 0,
             thumbItem: 9
         });
+        (function(w,doc) {
+if (!w.__utlWdgt ) {
+w.__utlWdgt = true;
+var d = doc, s = d.createElement(\'script\'), g = \'getElementsByTagName\';
+s.type = \'text/javascript\'; s.charset=\'UTF-8\'; s.async = true;
+s.src = (\'https:\' == w.location.protocol ? \'https\' : \'http\') + \'://w.uptolike.com/widgets/v1/uptolike.js\';
+var h=d[g](\'body\')[0];
+h.appendChild(s);
+}})(window,document);
         addDotdotdot();
         $("#catalog").on("click", function () {
             $(".list-menu-header__bottom").toggleClass("js-list-menu-header__bottom");

@@ -1,25 +1,25 @@
 @font-face {
     font-family: 'PT Sans Ruble';
-    src: url(../fonts/pt-sans-ruble-400.woff) format('woff');
+    src: url(../../fonts/pt-sans-ruble-400.woff) format('woff');
     font-style: normal;
     font-weight: 400
 }
 
 @font-face {
     font-family: 'PT Sans Ruble';
-    src: url(../fonts/pt-sans-ruble-700.woff) format('woff');
+    src: url(../../fonts/pt-sans-ruble-700.woff) format('woff');
     font-style: normal;
     font-weight: 700
 }
 
 @font-face {
     font-family: Candara;
-    src: url(../fonts/candara.ttf);
+    src: url(../../fonts/candara.ttf);
 }
 
 @font-face {
     font-family: CyrillicOld;
-    src: url(../fonts/cyrillic_old.woff) format('woff');
+    src: url(../../fonts/cyrillic_old.woff) format('woff');
 }
 
 html {
@@ -900,7 +900,7 @@ input[type=range]:focus::-ms-fill-upper {
 .ui-state-default,
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
-    background: url("../images/range-dragger.png");
+    background: url("../../images/range-dragger.png");
     border: 0px !important;
     width: 31px;
     font-weight: normal;
@@ -1794,7 +1794,7 @@ hr {
 
 .b-card-background__link:hover {
     background-color: rgba(9, 9, 9, 0.4);
-    background-image: url('../images/plus.png');
+    background-image: url("../../images/plus.png");
     background-size: 40%;
     background-repeat: no-repeat;
     background-position: center;
