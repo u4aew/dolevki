@@ -29,6 +29,32 @@ class RealtyBackendController extends \yupe\components\controllers\BackControlle
         }
 
     }
+
+
+    public function actionClearDescriptions()
+    {
+        $classes = ["Apartment","Building","Builder","District"];
+        foreach ($classes as $className)
+        {
+            $models = $className::model()->findAll();
+            foreach ($models as $model)
+            {
+                $model->shortDescription = strip_tags($model->shortDescription);
+                $model->save();
+            }
+        }
+        $classes = ["Apartment","Building","District"];
+        foreach ($classes as $className)
+        {
+            $models = $className::model()->findAll();
+            foreach ($models as $model)
+            {
+                $model->longDescription = strip_tags($model->longDescription);
+                $model->save();
+            }
+        }
+
+    }
     /**
      * Действие "по умолчанию"
      *
