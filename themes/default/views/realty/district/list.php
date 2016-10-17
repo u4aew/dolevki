@@ -2,12 +2,12 @@
     Кварталы
 </h1>
 
-<?php $this->renderPartial("/map/view",["url" => "/realty/realty/getBuildingsForMap", "map" => "district"]); ?>
+<?php $this->renderPartial("/map/view", ["url" => "/realty/realty/getBuildingsForMap", "map" => "district"]); ?>
 
 <?php
 $dataProvider->getData();
 ?>
-<?php if($this->beginCache(Yii::app()->controller->id.Yii::app()->controller->action->id.$dataProvider->pagination->currentPage)): ?>
+<?php if ($this->beginCache(Yii::app()->controller->id . Yii::app()->controller->action->id . $dataProvider->pagination->currentPage)): ?>
 
 
     <div class="row">
@@ -18,7 +18,7 @@ $dataProvider->getData();
                         'bootstrap.widgets.TbListView',
                         [
                             'dataProvider' => $dataProvider,
-                            'itemView' => '/building/_item',
+                            'itemView' => '/district/_item',
                             'summaryText' => '',
                             'enableHistory' => true,
                             'afterAjaxUpdate' => 'function(id) { addDotdotdot(); }',

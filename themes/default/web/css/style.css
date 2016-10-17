@@ -1668,6 +1668,7 @@ a.asc, a.desc {
     justify-content: space-around;
     align-items: baseline;
     padding: 5px;
+    text-align: center;
 }
 
 .b-description__text {
@@ -1838,4 +1839,54 @@ hr {
     padding-left: 15px;
     padding-right: 15px;
     margin-bottom: 20px;
+}
+
+.b-card-district {
+    background-color: white;
+    margin: 10px;
+    height: 90px;
+    min-height: 340px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 9px -3px rgba(9, 9, 9, 0.61);
+}
+
+.b-card-district__pic {
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    min-height: 200px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-bottom: 5px solid rgba(9, 9, 9, 0.6);
+}
+
+.b-card-district__pic-mark {
+    display: inline-block;
+    margin-top: 15px;
+    margin-left: 15px;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    background-color: rgba(9, 9, 9, 0.6);
+}
+
+.b-card-district__description {
+    text-align: center;
+    padding: 10px;
+    padding-top: 0;
+}
+
+.b-card-district__btn {
+    text-align: center;
+}
+
+.b-card-district__info {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    padding-top: 5px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    min-height: 6px;
 }
