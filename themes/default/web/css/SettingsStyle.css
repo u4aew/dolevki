@@ -23,6 +23,15 @@
     border-color: white !important;
 }
 
+body {
+    font-family: Candara;
+}
+
+.map__button {
+    font-family: CyrillicOld;
+}
+
+
 .b-find__title {
     font-family: CyrillicOld;
 }
