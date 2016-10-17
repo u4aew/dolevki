@@ -31,7 +31,6 @@ body {
     font-family: CyrillicOld;
 }
 
-
 .b-find__title {
     font-family: CyrillicOld;
 }
@@ -44,6 +43,7 @@ body {
 .font-description {
     font-family: Candara;
     color: black;
+    font-size: 18px;
 }
 
 .font-description__card {

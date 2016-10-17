@@ -20,13 +20,22 @@ function getUrl($sortAttribute)
 }
 
 
-    Yii::app()->getClientScript()->registerScript("sticky",'
-        var height = $(".footer").height();
-        $(".b-find").sticky({topSpacing:10, bottomSpacing: height+30});
-
+Yii::app()->getClientScript()->registerScript("sticky", '
+   FixedFind();
+   $(window).resize(function() {
+   FixedFind();
+   });
+    function FixedFind() {
+    if ($(window).width() > 768) {
+       var height = $(".footer").height();
+    $(".b-find").sticky({topSpacing: 10, bottomSpacing: height + 30});
+      }
+      else {
+      $(".b-find").unstick();
+      };
+    };     
     ');
 ?>
-
 <script>
     window.params =
     {
