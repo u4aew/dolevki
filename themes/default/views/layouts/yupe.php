@@ -5,8 +5,10 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
 
 ?>
 <!DOCTYPE html>
-<html lang="<?= Yii::app()->language; ?>">
+<html lang="<?= Yii::app()->language; ?>" itemscope itemtype="http://schema.org/Webpage">
 <head>
+
+
     <?php \yupe\components\TemplateEvent::fire(DefautThemeEvents::HEAD_START); ?>
     <?php \yupe\components\TemplateEvent::fire(DefautThemeEvents::HEAD_START); ?>
     <?php Yii::app()->getController()->widget(

@@ -8,6 +8,15 @@ $this->title = [$data->seo_title, Yii::app()->getModule('yupe')->siteName];
 $this->description = $data->seo_description;
 $this->keywords = $data->seo_keywords;
 
+Yii::app()->getModule("realty")->addCardTags($data);
+
+
+//Yii::app()->clientScript->registerMetaTag($data->getImageUrl(100, 100, false), null, null, array('property' => "og:image"));
+//Yii::app()->clientScript->registerMetaTag("фывфывфыв", null, null, array('property' => "og:title"));
+//Yii::app()->clientScript->registerMetaTag("", null, array('property' => "og:url"));
+//Yii::app()->clientScript->registerMetaTag("", null, null, array('property' => "og:site_name"));
+//Yii::app()->clientScript->registerMetaTag("", null, null, array('property' => "og:type"));
+
 
 ?>
 <div class="row">
