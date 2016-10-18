@@ -5,6 +5,8 @@ $this->title = [$data->seo_title, Yii::app()->getModule('yupe')->siteName];
 $this->description = $data->seo_description;
 $this->keywords = $data->seo_keywords;
 
+Yii::app()->getModule("realty")->addCardTags($data);
+
 ?>
 <div class="row">
     <div class="col-lg-12">

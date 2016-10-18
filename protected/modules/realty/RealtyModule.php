@@ -15,6 +15,27 @@ class RealtyModule  extends yupe\components\WebModule
 
 
 
+    public function addCardTags($model)
+    {
+        Yii::app()->clientScript->registerMetaTag($model->seo_title,null,null,["itemprop" => "name"]);
+        Yii::app()->clientScript->registerMetaTag($model->seo_description,null,null,["itemprop" => "description"]);
+        Yii::app()->clientScript->registerMetaTag($model->getImageUrl(200,200,false),null,null,["itemprop" => "image"]);
+
+
+        Yii::app()->clientScript->registerMetaTag($model->seo_title,null,null,["property" => "og:title"]);
+        Yii::app()->clientScript->registerMetaTag("article",null,null,["property" => "og:type"]);
+        Yii::app()->clientScript->registerMetaTag("Ладом",null,null,["property" => "og:site_name"]);
+        Yii::app()->clientScript->registerMetaTag($model->seo_description,null,null,["property" => "og:description"]);
+        Yii::app()->clientScript->registerMetaTag($model->getImageUrl(200,200,false),null,null,["property" => "og:image"]);
+
+        Yii::app()->clientScript->registerMetaTag("summary_large_image",null,null,["property" => "twitter:card"]);
+        Yii::app()->clientScript->registerMetaTag("Ладом",null,null,["property" => "twitter:site"]);
+        Yii::app()->clientScript->registerMetaTag($model->seo_title,null,null,["property" => "twitter:title"]);
+        Yii::app()->clientScript->registerMetaTag($model->getImageUrl(200,200,false),null,null,["property" => "twitter:image"]);
+        Yii::app()->clientScript->registerMetaTag("",null,null,["property" => "twitter:image:alt"]);
+
+    }
+
 
     /**
      * @var string
