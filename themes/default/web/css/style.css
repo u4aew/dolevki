@@ -1900,3 +1900,7 @@ hr {
 .modal-title {
     font-family: CyrillicOld;
 }
+
+.tel {
+    text-decoration: none !important;
+}

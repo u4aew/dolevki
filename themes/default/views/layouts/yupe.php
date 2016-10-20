@@ -121,7 +121,7 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
                     <div class="col-lg-10">
                         <header class="row header">
                             <div>
-                                <a class="tel:<?= Yii::app()->getModule("realty")->getPhoneForLink(); ?>">
+                                <a class="tel">
                                     <div class="b-number-phone">
                                         <i style="color: black"
                                            class="fa fa-phone"
