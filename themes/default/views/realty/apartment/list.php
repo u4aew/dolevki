@@ -20,13 +20,22 @@ function getUrl($sortAttribute)
 }
 
 
-    Yii::app()->getClientScript()->registerScript("sticky",'
-        var height = $(".footer").height();
-        $(".b-find").sticky({topSpacing:10, bottomSpacing: height+30});
-
+Yii::app()->getClientScript()->registerScript("sticky", '
+   FixedFind();
+   $(window).resize(function() {
+   FixedFind();
+   });
+    function FixedFind() {
+    if ($(window).width() > 768) {
+       var height = $(".footer").height();
+    $(".b-find").sticky({topSpacing: 10, bottomSpacing: height + 30});
+      }
+      else {
+      $(".b-find").unstick();
+      };
+    };     
     ');
 ?>
-
 <script>
     window.params =
     {
@@ -132,6 +141,37 @@ function getUrl($sortAttribute)
                             </div>
                             <hr>
                             <div>
+                                <div class="b-find__param-name">Статус готовности</div>
+                                <select multiple class="sumoSelect" name="" id="status"
+                                        data-placeholder="Тип искомого жилья">
+                                    <option id="inProgress"
+                                            value="<?= STATUS_IN_PROGRESS ?>" <?php if (isset($_GET["status"]) && array_search(STATUS_IN_PROGRESS, $_GET["status"]) !== false) echo "selected" ?>>
+                                        Строящееся дома
+                                    </option>
+                                    <option
+                                        value="<?= STATUS_READY ?>" <?php if (isset($_GET["status"]) && array_search(STATUS_READY, $_GET["status"]) !== false) echo "selected" ?> >
+                                        Готовые новостройки
+                                    </option>
+                                    <option
+                                        value="<?= STATUS_RESELL ?>" <?php if (isset($_GET["status"]) && array_search(STATUS_RESELL, $_GET["status"]) !== false) echo "selected" ?> >
+                                        Вторичный рынок
+                                    </option>
+                                </select>
+                            </div>
+                            <div id="readyTime__container">
+                                <div class="b-find__param-name">Срок сдачи</div>
+                                <select multiple class="sumoSelect" name="" id="readyTime"
+                                        data-placeholder="Интересующее время готовности жилья">
+                                    <?php
+                                    $times = ReadyTime::model()->findAll();
+                                    ?>
+                                    <?php foreach ($times as $item): ?>
+                                        <option
+                                            value="<?= $item->id; ?>" <?php if (isset($_GET["time"]) && array_search($item->id, $_GET["time"]) !== false) echo "selected" ?>><?= $item->text; ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                            <div>
                                 <div class="b-find__param-name">Стоимость, <span class="rubl"> руб.</span>
                                     <div id="slider-range_two"></div>
                                 </div>
@@ -167,37 +207,6 @@ function getUrl($sortAttribute)
 
                                 </div>
                                 <hr>
-                            </div>
-                            <div>
-                                <div class="b-find__param-name">Статус готовности</div>
-                                <select multiple class="sumoSelect" name="" id="status"
-                                        data-placeholder="Тип искомого жилья">
-                                    <option id="inProgress"
-                                            value="<?= STATUS_IN_PROGRESS ?>" <?php if (isset($_GET["status"]) && array_search(STATUS_IN_PROGRESS, $_GET["status"]) !== false) echo "selected" ?>>
-                                        Строящееся дома
-                                    </option>
-                                    <option
-                                        value="<?= STATUS_READY ?>" <?php if (isset($_GET["status"]) && array_search(STATUS_READY, $_GET["status"]) !== false) echo "selected" ?> >
-                                        Готовые новостройки
-                                    </option>
-                                    <option
-                                        value="<?= STATUS_RESELL ?>" <?php if (isset($_GET["status"]) && array_search(STATUS_RESELL, $_GET["status"]) !== false) echo "selected" ?> >
-                                        Вторичный рынок
-                                    </option>
-                                </select>
-                            </div>
-                            <div id="readyTime__container">
-                                <div class="b-find__param-name">Срок сдачи</div>
-                                <select multiple class="sumoSelect" name="" id="readyTime"
-                                        data-placeholder="Интересующее время готовности жилья">
-                                    <?php
-                                    $times = ReadyTime::model()->findAll();
-                                    ?>
-                                    <?php foreach ($times as $item): ?>
-                                        <option
-                                            value="<?= $item->id; ?>" <?php if (isset($_GET["time"]) && array_search($item->id, $_GET["time"]) !== false) echo "selected" ?>><?= $item->text; ?></option>
-                                    <?php endforeach; ?>
-                                </select>
                             </div>
                         </div>
                         <button type="submit" class="nav__find btnColor"

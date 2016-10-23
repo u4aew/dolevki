@@ -80,6 +80,7 @@ Yii::app()->getModule("realty")->addCardTags($data);
                  data-background-color="#ffffff" data-preview-mobile="false" data-mobile-sn-ids="fb.vk.tw.wh.ok.vb."
                  data-pid="1582984" data-counter-background-alpha="1.0" data-following-enable="false"
                  data-exclude-show-more="false" data-selection-enable="true" class="uptolike-buttons"></div>
+         
             <div class="price-page price-apartment"><?= $data->getPriceAsString(); ?></div>
             <div class="b-text-price">
                 Обратите внимание: мы не берем никаких комиссий

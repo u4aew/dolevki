@@ -16,7 +16,7 @@
 
 <div id="callbackModal" class="modal fade" role="dialog">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content b-modal">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"
                         aria-label="<?= Yii::t('CallbackModule.callback', 'Close') ?>">
@@ -38,7 +38,7 @@
                 ]
             ); ?>
 
-            <div class="modal-body">
+            <div class="modal-body b-modal">
                 <div class="row">
                     <div class="col-lg-2"></div>
                     <div class="col-lg-8">
@@ -71,7 +71,7 @@
                                 ]); ?>
                             </div>
 
-                            <div class="col-lg-4">
+                            <div class="col-lg-4" style="padding: 0;">
                                 <?= $form->maskedTextFieldGroup($model, 'time', [
                                     'widgetOptions' => [
                                         'mask' => 'H9:M9',

@@ -1891,3 +1891,16 @@ hr {
     min-height: 6px;
     height: 76px;
 }
+
+.b-modal {
+    background-color: #006a85;
+    color: white;
+}
+
+.modal-title {
+    font-family: CyrillicOld;
+}
+
+.tel {
+    text-decoration: none !important;
+}
