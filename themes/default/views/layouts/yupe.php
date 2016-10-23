@@ -184,16 +184,16 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
                         Мы в соц. сетях
                     </div>
                     <div class="footer__item">
-                        <a href="http://vk.com/dolevki22">ВКонтакте</a><br>
+                        <a href="http://vk.com/ladom_novostroiki">ВКонтакте</a><br>
                     </div>
                     <div class="footer__item">
                         <a href="http://vk.com/dolevki22">Одноклассники</a><br>
                     </div>
                     <div class="footer__item">
-                        <a href="http://vk.com/dolevki22">Facebook</a><br>
+                        <a href="https://www.facebook.com/groups/ladomdom/">Facebook</a><br>
                     </div>
                     <div class="footer__item">
-                        <a href="http://vk.com/dolevki22">Instagram</a><br>
+                        <a href="https://www.instagram.com/ladomnovostroiki/">Instagram</a><br>
                     </div>
                     <div class="footer__item">
                         <a href="http://vk.com/dolevki22">Youtube</a><br>

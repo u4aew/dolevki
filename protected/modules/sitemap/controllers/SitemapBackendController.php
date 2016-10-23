@@ -48,6 +48,11 @@ class SitemapBackendController extends BackController
         $this->redirect(['settings']);
     }
 
+    public function actionClear()
+    {
+        SitemapPage::model()->deleteAll();
+    }
+
     public function actionRegenerate()
     {
         if(!Yii::app()->getRequest()->getIsPostRequest() || !Yii::app()->getRequest()->getPost('do')) {
@@ -71,7 +76,7 @@ class SitemapBackendController extends BackController
         {
             $page = new SitemapPage();
             $page->changefreq = "monthly";
-            $page->url = Yii::app()->getBaseUrl(true).$item->getUrl();
+            $page->url = $item->getUrl();
             $page->priority = "0.1";
             $page->status = SitemapPage::STATUS_ACTIVE;
             $page->save();
@@ -86,7 +91,7 @@ class SitemapBackendController extends BackController
         {
             $page = new SitemapPage();
             $page->changefreq = "monthly";
-            $page->url = Yii::app()->getBaseUrl(true).$item->getUrl();
+            $page->url = $item->getUrl();
             $page->priority = "0.1";
             $page->status = SitemapPage::STATUS_ACTIVE;
             $page->save();
@@ -98,7 +103,7 @@ class SitemapBackendController extends BackController
         {
             $page = new SitemapPage();
             $page->changefreq = "monthly";
-            $page->url = Yii::app()->getBaseUrl(true).$item->getUrl();
+            $page->url = $item->getUrl();
             $page->priority = "0.1";
             $page->status = SitemapPage::STATUS_ACTIVE;
             $page->save();
@@ -110,7 +115,7 @@ class SitemapBackendController extends BackController
         {
             $page = new SitemapPage();
             $page->changefreq = "monthly";
-            $page->url = Yii::app()->getBaseUrl(true).$item->getUrl();
+            $page->url = $item->getUrl();
             $page->priority = "0.1";
             $page->status = SitemapPage::STATUS_ACTIVE;
             $page->save();

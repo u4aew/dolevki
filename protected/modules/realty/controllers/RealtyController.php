@@ -248,7 +248,7 @@ class RealtyController extends \yupe\components\controllers\FrontController
     public function actionViewBuilding($name)
     {
         $model = Building::model()->find("slug = :slug",[":slug" => $name]);
-        if ($model == null)
+        if ($model == null || !$model->isPublished)
             throw new CHttpException(404, 'К сожалению, данные об этом доме были удалены с сайта. Но у нас есть много других отличных предложений');
 
         $this->render("/building/view",["data" => $model]);
@@ -273,7 +273,7 @@ class RealtyController extends \yupe\components\controllers\FrontController
     public function actionViewApartment($id)
     {
         $model = Apartment::model()->findByPk($id);
-        if ($model == null)
+        if ($model == null || $model->building == null || !$model->building->isPublished)
             throw new CHttpException(404, 'К сожалению, данные об этой квартире были удалены с сайта. Но у нас есть много других отличных предложений');
         $this->render("/apartment/view",["data" => $model]);
     }
@@ -317,8 +317,8 @@ class RealtyController extends \yupe\components\controllers\FrontController
                                 ],
                   */          ]
         );
-        $this->title = ["Кварталы",Yii::app()->getModule('yupe')->siteName];
-        $this->description = "Список строящихся кварталов Барнаула, сроки сдачи, цены";
+        $this->title = ["Жилые комплексы",Yii::app()->getModule('yupe')->siteName];
+        $this->description = "Список строящихся жилых комплексов Барнаула, сроки сдачи, цены";
         $this->render("/district/list",["dataProvider" => $data]);
     }
 
