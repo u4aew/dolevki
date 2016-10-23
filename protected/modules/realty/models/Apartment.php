@@ -191,8 +191,14 @@ class Apartment extends yupe\models\YModel
     
     public function getUrl()
     {
+        return "/dom/".$this->building->slug."/".$this->id;
+    }
+
+    public function getOldUrl()
+    {
         return "/building/".$this->building->slug."/".$this->id;
     }
+
 
     public function getFloor()
     {

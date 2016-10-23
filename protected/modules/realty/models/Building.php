@@ -259,6 +259,12 @@ class Building extends yupe\models\YModel
 
     public function getUrl()
     {
+        return "/dom/".$this->slug;
+    }
+
+    public function getOldUrl()
+    {
         return "/building/".$this->slug;
     }
+
 }

@@ -1,5 +1,5 @@
 <h1 class="page_title font-title">
-    Кварталы
+    Жилые комплексы
 </h1>
 
 <?php $this->renderPartial("/map/view", ["url" => "/realty/realty/getBuildingsForMap", "map" => "district"]); ?>

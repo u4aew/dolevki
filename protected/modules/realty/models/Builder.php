@@ -127,11 +127,17 @@ class Builder extends \yupe\models\YModel
 
     public function getUrl()
     {
+        return "/zastroyschik/".$this->slug;
+    }
+
+    public function getOldUrl()
+    {
         return "/builder/".$this->slug;
     }
 
 
-	/**
+
+    /**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 *
 	 * Typical usecase:

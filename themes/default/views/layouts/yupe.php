@@ -136,15 +136,15 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
                                     <li><a href="#" id="catalog">Каталог <span class="caret caret-menu"
                                                                                style="color: black"></span></a>
                                         <ul class="list-menu-header__bottom">
-                                            <li><a itemprop="url" href="/districts">Жилые комплексы</a></li>
-                                            <li><a itemprop="url" href="/builders">Застройщики</a></li>
-                                            <li><a itemprop="url" href="/nonReady">Строящиеся дома</a></li>
-                                            <li><a itemprop="url" href="/ready">Готовые новостройки</a></li>
-                                            <li><a itemprop="url" href="/resell">Вторичный рынок</a></li>
+                                            <li><a itemprop="url" href="/zhilie-kompleksy">Жилые комплексы</a></li>
+                                            <li><a itemprop="url" href="/zastroyschiki">Застройщики</a></li>
+                                            <li><a itemprop="url" href="/stroyaschiesya-doma">Строящиеся дома</a></li>
+                                            <li><a itemprop="url" href="/novostoyki">Готовые новостройки</a></li>
+                                            <li><a itemprop="url" href="/vtorichniy-rinok">Вторичный рынок</a></li>
                                         </ul>
                                     </li>
                                     <li><a itemprop="url" href="#">Контакты</a></li>
-                                    <li><a itemprop="url" href="/search" class="">Поиск</a></li>
+                                    <li><a itemprop="url" href="/poisk" class="">Поиск</a></li>
                                 </ul>
                             </div>
                         </header>

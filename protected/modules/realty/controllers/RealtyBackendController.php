@@ -30,6 +30,23 @@ class RealtyBackendController extends \yupe\components\controllers\BackControlle
 
     }
 
+    public function actionGetRedirectList()
+    {
+        $classes = ["Apartment","Building","Builder","District"];
+        foreach ($classes as $className)
+        {
+            $models = $className::model()->findAll();
+            foreach ($models as $model)
+            {
+                echo "Redirect 301 ";
+                echo $model->getOldUrl();
+                echo " http://{url-dlya-avtozameny}";
+                echo $model->getUrl();
+                echo "<br>";
+            }
+        }
+    }
+
 
     public function actionClearDescriptions()
     {

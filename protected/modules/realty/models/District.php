@@ -76,9 +76,14 @@ class District extends yupe\models\YModel
 
     public function getUrl()
     {
-        return "/district/".$this->slug;
+        return "/zhiloy-kompleks/".$this->slug;
     }
 
+
+    public function getOldUrl()
+    {
+        return "/district/".$this->slug;
+    }
 
     /**
      * @return string the associated database table name

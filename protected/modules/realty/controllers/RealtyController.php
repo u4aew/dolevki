@@ -134,9 +134,9 @@ class RealtyController extends \yupe\components\controllers\FrontController
         );
 
 
-        $this->title = ["Вторичная продажа",Yii::app()->getModule('yupe')->siteName];
+        $this->title = ["Вторичный рынок",Yii::app()->getModule('yupe')->siteName];
         $this->description = "На этой странице вы можете купить вторичное жилье в Барнауле";
-        $this->render("/apartment/big-list", ["dataProvider" => $data, "itemPath" => "_item_for_building", "headerText" => "Вторичная продажа", "map" => 3]);
+        $this->render("/apartment/big-list", ["dataProvider" => $data, "itemPath" => "_item_for_building", "headerText" => "Вторичный рынок", "map" => 3]);
     }
 
 
