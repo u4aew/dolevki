@@ -20,9 +20,14 @@ function getUrl($sortAttribute)
 }
 
 ?>
-<h1 class="font-title" style="text-align: center">
-    <?= $headerText ?>
+<h1 class="page_title font-title">
+    <?=$page->h1; ?>
 </h1>
+
+<div class="top-text">
+    <?= $page->upper_text; ?>
+</div>
+
 <?php
 $this->renderPartial("/map/view", ["map" => $map]);
 ?>
@@ -96,4 +101,8 @@ $this->renderPartial("/map/view", ["map" => $map]);
         </div>
     </div>
 
+</div>
+
+<div class="down-text">
+    <?= $page->down_text; ?>
 </div>

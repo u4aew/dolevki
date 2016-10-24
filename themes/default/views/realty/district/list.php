@@ -1,12 +1,17 @@
 <h1 class="page_title font-title">
-    Жилые комплексы
+    <?=$page->h1; ?>
 </h1>
-
-<?php $this->renderPartial("/map/view", ["url" => "/realty/realty/getBuildingsForMap", "map" => "district"]); ?>
 
 <?php
 $dataProvider->getData();
 ?>
+
+<div class="top-text">
+    <?= $page->upper_text; ?>
+</div>
+
+<?php $this->renderPartial("/map/view", ["url" => "/realty/realty/getBuildingsForMap", "map" => "district"]); ?>
+
 <?php if ($this->beginCache(Yii::app()->controller->id . Yii::app()->controller->action->id . $dataProvider->pagination->currentPage)): ?>
 
 
@@ -40,3 +45,7 @@ $dataProvider->getData();
 
     <?php $this->endCache(); ?>
 <?php endif; ?>
+
+<div class="down-text">
+    <?= $page->down_text; ?>
+</div>

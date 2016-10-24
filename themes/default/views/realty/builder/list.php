@@ -1,10 +1,14 @@
 <h1 class="page_title font-title">
-    Застройщики
+    <?=$page->h1; ?>
 </h1>
 
 <?php
 $dataProvider->getData();
 ?>
+
+<div class="top-text">
+    <?= $page->upper_text; ?>
+</div>
 
 <?php if ($this->beginCache(Yii::app()->controller->id . Yii::app()->controller->action->id . $dataProvider->pagination->currentPage)): ?>
 
@@ -37,3 +41,7 @@ $dataProvider->getData();
 
     <?php $this->endCache(); ?>
 <?php endif; ?>
+
+<div class="down-text">
+    <?= $page->down_text; ?>
+</div>

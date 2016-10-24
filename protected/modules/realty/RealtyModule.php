@@ -232,6 +232,11 @@ class RealtyModule  extends yupe\components\WebModule
                 ],
             ],
             [
+                'icon' => 'fa fa-fw fa-page',
+                'label' => Yii::t('RealtyModule.realty', 'Страницы'),
+                'url' => ['/backend/realty/realtyPage/index'],
+            ],
+            [
                 'icon' => 'fa fa-fw fa-home',
                 'label' => Yii::t('RealtyModule.realty', 'Buildings'),
                 'url' => ['/backend/realty/building/index'],

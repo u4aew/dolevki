@@ -1,5 +1,11 @@
-<?php if (isset($title)): ?>
-    <h1 class="page_title font-title"><?=$title; ?></h1>
+<?php if (isset($page)): ?>
+    <h1 class="page_title font-title">
+        <?=$page->h1; ?>
+    </h1>
+
+    <div class="top-text">
+        <?= $page->upper_text; ?>
+    </div>
 <?php endif; ?>
 
 <?php if (isset($map)): ?>
@@ -41,4 +47,9 @@ $dataProvider->getData();
 
 
     <?php $this->endCache(); ?>
+<?php endif; ?>
+<?php if (isset($page)): ?>
+    <div class="down-text">
+        <?= $page->down_text; ?>
+    </div>
 <?php endif; ?>

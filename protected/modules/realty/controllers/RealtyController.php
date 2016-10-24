@@ -69,9 +69,10 @@ class RealtyController extends \yupe\components\controllers\FrontController
         );
 
 
-        $this->title = ["Строящиеся дома",Yii::app()->getModule('yupe')->siteName];
-        $this->description = "Новостройки, которые скоро будут сданы застройщиками в эксплуатацию, покупайте по ценам застройщиков без комиссий";
-        $this->render("/building/list",["dataProvider" => $data, "title" => "Строящиеся дома", "map" => STATUS_IN_PROGRESS]);
+        $page = RealtyPage::model()->find("type = ".REALTY_PAGE_NON_READY);
+        $this->title = [$page->seo_title,Yii::app()->getModule('yupe')->siteName];
+        $this->description = $page->seo_description;
+        $this->render("/building/list",["dataProvider" => $data, "map" => STATUS_IN_PROGRESS, "page" => $page]);
     }
 
     public function actionReady()
@@ -99,9 +100,10 @@ class RealtyController extends \yupe\components\controllers\FrontController
         );
 
 
-        $this->title = ["Квартиры в готовых новостройках",Yii::app()->getModule('yupe')->siteName];
-        $this->description = "На этой странице представлены новостройки, которые недавно были сданы застройщиками";
-        $this->render("/apartment/big-list", ["dataProvider" => $data, "itemPath" => "_item_for_building", "headerText" => "Квартиры в готовых новостройках", "map" => 2]);
+        $page = RealtyPage::model()->find("type = ".REALTY_PAGE_READY);
+        $this->title = [$page->seo_title,Yii::app()->getModule('yupe')->siteName];
+        $this->description = $page->seo_description;
+        $this->render("/apartment/big-list", ["dataProvider" => $data, "itemPath" => "_item_for_building", "map" => STATUS_READY, "page" => $page]);
     }
 
     public function actionResell()
@@ -134,9 +136,10 @@ class RealtyController extends \yupe\components\controllers\FrontController
         );
 
 
-        $this->title = ["Вторичный рынок",Yii::app()->getModule('yupe')->siteName];
-        $this->description = "На этой странице вы можете купить вторичное жилье в Барнауле";
-        $this->render("/apartment/big-list", ["dataProvider" => $data, "itemPath" => "_item_for_building", "headerText" => "Вторичный рынок", "map" => 3]);
+        $page = RealtyPage::model()->find("type = ".REALTY_PAGE_RESELL);
+        $this->title = [$page->seo_title,Yii::app()->getModule('yupe')->siteName];
+        $this->description = $page->seo_description;
+        $this->render("/apartment/big-list", ["dataProvider" => $data, "itemPath" => "_item_for_building", "map" => 3, "page" => $page]);
     }
 
 
@@ -295,9 +298,11 @@ class RealtyController extends \yupe\components\controllers\FrontController
                                 ],
                   */          ]
         );
-        $this->title = ["Застройщики",Yii::app()->getModule('yupe')->siteName];
-        $this->description = "Список застройщиков Барнаула с их предложениями";
-        $this->render("/builder/list",["dataProvider" => $data]);
+
+        $page = RealtyPage::model()->find("type = ".REALTY_PAGE_BUILDERS);
+        $this->title = [$page->seo_title,Yii::app()->getModule('yupe')->siteName];
+        $this->description = $page->seo_description;
+        $this->render("/builder/list",["dataProvider" => $data, "page" => $page]);
     }
 
     public function actionListDistricts()
@@ -317,9 +322,10 @@ class RealtyController extends \yupe\components\controllers\FrontController
                                 ],
                   */          ]
         );
-        $this->title = ["Жилые комплексы",Yii::app()->getModule('yupe')->siteName];
-        $this->description = "Список строящихся жилых комплексов Барнаула, сроки сдачи, цены";
-        $this->render("/district/list",["dataProvider" => $data]);
+        $page = RealtyPage::model()->find("type = ".REALTY_PAGE_DISTRICTS);
+        $this->title = [$page->seo_title,Yii::app()->getModule('yupe')->siteName];
+        $this->description = $page->seo_description;
+        $this->render("/district/list",["dataProvider" => $data, "page" => $page]);
     }
 
 }
