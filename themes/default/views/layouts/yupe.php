@@ -121,18 +121,23 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
                     <div class="col-lg-10">
                         <header class="row header">
                             <div>
-                                <a class="tel">
-                                    <div class="b-number-phone">
-                                        <i style="color: black"
-                                           class="fa fa-phone"
-                                           aria-hidden="true"></i> <?= Yii::app()->getModule("realty")->phone; ?>
-                                    </div>
-                                </a>
+                               <div class="row">
+                                   <div class="col-md-12" style="padding: 0">
+                                       <div class="tel">
+                                           <div class="b-number-phone">
+                                               <i style="color: black"
+                                                  class="fa fa-phone"
+                                                  aria-hidden="true"></i> <?= Yii::app()->getModule("realty")->phone; ?>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+
                             </div>
                             <div>
                                 <ul class="list-menu-header font-menu" itemscope
                                     itemtype="http://schema.org/SiteNavigationElement">
-                                    <li><a itemprop="url" href="/pages/o-nas">О компании</a></li>
+                                    <li><a itemprop="url" href="/pages/o-kompanii">О компании</a></li>
                                     <li><a href="#" id="catalog">Каталог <span class="caret caret-menu"
                                                                                style="color: black"></span></a>
                                         <ul class="list-menu-header__bottom">
@@ -143,7 +148,7 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
                                             <li><a itemprop="url" href="/vtorichniy-rinok">Вторичный рынок</a></li>
                                         </ul>
                                     </li>
-                                    <li><a itemprop="url" href="#">Контакты</a></li>
+                                    <li><a itemprop="url" href="/pages/kontakty">Контакты</a></li>
                                     <li><a itemprop="url" href="/poisk" class="">Поиск</a></li>
                                 </ul>
                             </div>
@@ -164,19 +169,22 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
                         О нас
                     </div>
                     <div class="footer__item">
-                        <a href="/pages/vazhnaya-informaciya">Бренд</a>
+                        <a href="/pages/brend">Бренд</a>
                     </div>
                     <div class="footer__item">
-                        <a href="/pages/vazhnaya-informaciya">Наши цели</a>
+                        <a href="/pages/nashi-celi">Наши цели</a>
                     </div>
                     <div class="footer__item">
-                        <a href="/pages/vazhnaya-informaciya">Партнерам</a>
+                        <a href="/pages/partneram">Партнерам</a>
                     </div>
                     <div class="footer__item">
-                        <a href="/pages/vazhnaya-informaciya">Сотрудники</a>
+                        <a href="#">Сотрудники</a>
                     </div>
                     <div class="footer__item">
-                        <a href="/pages/vazhnaya-informaciya">Контакты</a>
+                        <a href="/pages/kontakty">Контакты</a>
+                    </div>
+                    <div class="footer__item">
+                        <a href="/pages/vazhnaya-informaciya">Важная информация</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4">

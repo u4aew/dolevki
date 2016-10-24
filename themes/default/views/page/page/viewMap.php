@@ -19,8 +19,7 @@ $this->keywords = $model->keywords ?: Yii::app()->getModule('yupe')->siteKeyWord
     </div>
     <div>
         <div style="padding: 10px 0;margin:0 auto;max-width: 100%;overflow: hidden">
-            <script type="text/javascript" charset="utf-8" async
-                    src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=HwWFWmIe0Tv_eGfqbE2rmeWh1rOUdkHA&height=400&lang=ru_RU&sourceType=constructor&scroll=true"></script>
+            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=3wadJF4ajj_gwBTNltqSeKb6xwwM4elS&amp;width=100%&amp;height=500&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
         </div>
     </div>
 </div>
