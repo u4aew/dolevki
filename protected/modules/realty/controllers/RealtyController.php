@@ -41,9 +41,7 @@ class RealtyController extends \yupe\components\controllers\FrontController
         );
 
 
-        $this->title = [Yii::app()->getModule('yupe')->siteName];
-        $this->description = "Все новостройки Барнаула, напрямую от застройщиков, без комиссии! Помощь в оформлении документов";
-        $this->render("/building/index",["dataProvider" => $data]);
+       $this->render("/building/index",["dataProvider" => $data]);
     }
 
     public function actionNonReady()
