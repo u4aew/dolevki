@@ -1,3 +1,12 @@
+<?php if (isset($page)): ?>
+    <h1 class="page_title font-title">
+        <?=$page->h1; ?>
+    </h1>
+
+    <div class="top-text">
+        <?= $page->upper_text; ?>
+    </div>
+<?php endif; ?>
 <?php
 
 $mainAssets = Yii::app()->getTheme()->getAssetsUrl();
@@ -20,4 +29,9 @@ $dataProvider->getData();
         <?php $this->renderPartial("/building/list", ["dataProvider" => $dataProvider]); ?>
     </div>
     <?php $this->endCache(); ?>
+<?php endif; ?>
+<?php if (isset($page)): ?>
+    <div class="down-text">
+        <?= $page->down_text; ?>
+    </div>
 <?php endif; ?>
