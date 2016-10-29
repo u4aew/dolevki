@@ -71,6 +71,7 @@ class RealtyController extends \yupe\components\controllers\FrontController
 
         $page = RealtyPage::model()->find("type = ".REALTY_PAGE_NON_READY);
         $this->title = [$page->seo_title,Yii::app()->getModule('yupe')->siteName];
+        $this->keywords = $page->seo_keywords;
         $this->description = $page->seo_description;
         $this->render("/building/list",["dataProvider" => $data, "map" => STATUS_IN_PROGRESS, "page" => $page]);
     }
@@ -102,6 +103,7 @@ class RealtyController extends \yupe\components\controllers\FrontController
 
         $page = RealtyPage::model()->find("type = ".REALTY_PAGE_READY);
         $this->title = [$page->seo_title,Yii::app()->getModule('yupe')->siteName];
+        $this->keywords = $page->seo_keywords;
         $this->description = $page->seo_description;
         $this->render("/apartment/big-list", ["dataProvider" => $data, "itemPath" => "_item_for_building", "map" => STATUS_READY, "page" => $page]);
     }
@@ -138,6 +140,7 @@ class RealtyController extends \yupe\components\controllers\FrontController
 
         $page = RealtyPage::model()->find("type = ".REALTY_PAGE_RESELL);
         $this->title = [$page->seo_title,Yii::app()->getModule('yupe')->siteName];
+        $this->keywords = $page->seo_keywords;
         $this->description = $page->seo_description;
         $this->render("/apartment/big-list", ["dataProvider" => $data, "itemPath" => "_item_for_building", "map" => 3, "page" => $page]);
     }
@@ -243,6 +246,7 @@ class RealtyController extends \yupe\components\controllers\FrontController
         }
         $this->title = [$title,Yii::app()->getModule('yupe')->siteName];
         $this->description = "Результаты поиска квартир, страница".(isset($_GET["page"])? $_GET["page"] : "1");
+        $this->keywords = $page->seo_keywords;
 
 
         $this->render("/apartment/list",["dataProvider" => $data, "headerText" => "Результаты поиска"]);
@@ -302,6 +306,7 @@ class RealtyController extends \yupe\components\controllers\FrontController
         $page = RealtyPage::model()->find("type = ".REALTY_PAGE_BUILDERS);
         $this->title = [$page->seo_title,Yii::app()->getModule('yupe')->siteName];
         $this->description = $page->seo_description;
+        $this->keywords = $page->seo_keywords;
         $this->render("/builder/list",["dataProvider" => $data, "page" => $page]);
     }
 
@@ -325,6 +330,7 @@ class RealtyController extends \yupe\components\controllers\FrontController
         $page = RealtyPage::model()->find("type = ".REALTY_PAGE_DISTRICTS);
         $this->title = [$page->seo_title,Yii::app()->getModule('yupe')->siteName];
         $this->description = $page->seo_description;
+        $this->keywords = $page->seo_keywords;
         $this->render("/district/list",["dataProvider" => $data, "page" => $page]);
     }
 
