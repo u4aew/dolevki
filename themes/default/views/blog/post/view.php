@@ -36,6 +36,6 @@ if ($model->layout) {
     <div style="min-height: 960px;padding: 15px">
         <h1><?= $post->title; ?></h1>
         <hr>
-        <?= $model->content; ?>
+        <?= $post->content; ?>
     </div>
 </div>

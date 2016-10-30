@@ -1905,3 +1905,33 @@ hr {
 .tel {
     text-decoration: none !important;
 }
+.post__img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 150px;
+}
+.b-post {
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid black;
+}
+.b-post-header {
+    font-size: 28px;
+    color: black !important;
+}
+
+.b-post-header a {
+    color: black !important;
+    text-decoration: none;
+}
+.b-post-header a:hover {
+    text-decoration: underline;
+}
+.b-post-text__next-read {
+    text-align: right;
+}
+.b-post-text__next-read a {
+    color: black;
+    text-decoration: underline;
+}
