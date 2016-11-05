@@ -1935,3 +1935,46 @@ hr {
     color: black;
     text-decoration: underline;
 }
+
+.btn-order {
+    color: white !important;
+    position: relative;
+    display: inline-block;
+    font-family: Arial,Helvetica,FreeSans,"Liberation Sans","Nimbus Sans L",sans-serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: rgb(245,245,245);
+    text-shadow: 0 -1px rgba(0,0,0,.1);
+    text-decoration: none;
+    user-select: none;
+    padding: .3em 1em;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    transition: .4s;
+    background: #0c9c0d linear-gradient(#82d18d, #0c9c0d);
+    box-shadow: inset #72de26 0 -1px 1px, inset 0 1px 1px #98ff98, #3caa3c 0 0 0 1px, rgba(0,0,0,.3) 0 2px 5px;
+}
+.btn-order:hover {
+    cursor: pointer;
+    color:white;
+    background: #0c9c0d linear-gradient(#0c9c0d,#82d18d);
+
+}
+.btn-order:active {
+    top: 1px;
+    color: #fff;
+    text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff;
+    box-shadow: 0 -1px 3px rgba(0,0,0,.3), 0 1px 1px #fff, inset 0 1px 2px rgba(0,0,0,.8), inset 0 -1px 0 rgba(0,0,0,.05);
+}
+.btn-order:visited {
+    color: white;
+}
+.alert-danger {
+    background-color: white;
+    color: black;
+    font-size: 12px;
+}
+.control-label, .help-block {
+    color: white !important;
+}

@@ -1,7 +1,7 @@
 AddDefaultCharset utf-8
 <IfModule mod_rewrite.c>
     RewriteEngine on
-    
+
     # Универсальный редирект с домена С www. на домен БEЗ www
     # при необходимости - раскомментировать:
     #
