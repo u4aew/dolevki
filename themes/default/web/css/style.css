@@ -111,7 +111,11 @@ body {
 
 /*mobile*/
 @media screen and (max-width: 768px) {
-    .apartments-header {
+    .callback-phone-main .nav__find {
+        text-align: center !important;
+    }
+
+     .apartments-header {
         margin-bottom: 5px !important;
         text-align: center;
         color: white !important;
@@ -1977,4 +1981,39 @@ hr {
 }
 .control-label, .help-block {
     color: white !important;
+}
+.callback-phone-main .nav__find {
+    background-color: #87cefa !important;
+    color: black !important;
+    font-size: 24px;
+    text-decoration: underline !important;
+    text-decoration-style: dashed; !important;
+    text-align: center  !important;
+}
+.camera__desc {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.camera__desc div:first-of-type {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.next-reader-slider {
+    display: block !important;
+    padding: 5px;
+    color: white !important;
+    font-size: 21px!important;
+    text-decoration: underline !important;
+}
+
+.b-next-reader {
+    width: 200px;
+    text-align: right;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
 }
