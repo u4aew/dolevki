@@ -89,10 +89,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">
-                    <?= Yii::t('CallbackModule.callback', 'Close') ?>
-                </button>
-                <button type="submit" class="btn btn-success" id="callback-send">
+                <button type="submit" class="btn btn-order" id="callback-send">
                     <?= Yii::t('CallbackModule.callback', 'Send request') ?>
                 </button>
             </div>

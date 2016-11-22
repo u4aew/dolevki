@@ -128,7 +128,8 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
                                                <i style="color: black"
                                                   class="fa fa-phone"
                                                   aria-hidden="true"></i> <?= Yii::app()->getModule("realty")->phone; ?>
-                                           </div>
+
+                                             </div>
                                        </div>
                                    </div>
                                </div>
