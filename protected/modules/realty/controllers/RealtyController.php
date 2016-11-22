@@ -156,6 +156,46 @@ class RealtyController extends \yupe\components\controllers\FrontController
     }
 
 
+    public function actionCommercial()
+    {
+        $criteria = new CDbCriteria();
+        $criteria->select = 't.*';
+        $criteria->with = [
+            'building' => [
+                'condition' => 'building.isPublished = 1 AND building.status = 4',
+            ]
+        ];
+//        $criteria->compare("isPublished",1);
+//        $criteria->compare("status",3);
+
+        $apartments = Apartment::model()->findAll($criteria);
+
+        $data = new CActiveDataProvider(
+            'Apartment',
+            [
+                'criteria' => $criteria,
+                'pagination' => [
+                    'pageSize' => (int)Yii::app()->getModule('realty')->itemsPerPage,
+                    'pageVar' => 'page',
+                ],
+                /*                'sort' => [
+                                    'sortVar' => 'sort',
+                                    'defaultOrder' => 't.position'
+                                ],
+                  */          ]
+        );
+
+
+        $page = RealtyPage::model()->find("type = ".REALTY_PAGE_COMMERCIAL);
+        $this->title = [$page->seo_title];
+        if (Yii::app()->getModule('yupe')->siteName != "")
+            $this->title[] = Yii::app()->getModule('yupe')->siteName;
+        $this->keywords = $page->seo_keywords;
+        $this->description = $page->seo_description;
+        $this->render("/apartment/big-list", ["dataProvider" => $data, "itemPath" => "_item_for_building", "map" => 4, "page" => $page]);
+    }
+
+
     public function actionGetBuildingsForIndexMap()
     {
         $criteria = new CDbCriteria();

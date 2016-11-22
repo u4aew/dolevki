@@ -2,6 +2,7 @@
 define("STATUS_IN_PROGRESS",1);
 define("STATUS_READY",2);
 define("STATUS_RESELL",3);
+define("STATUS_COMMERCIAL",4);
 
 /**
  * This is the model class for table "buildings".
@@ -79,7 +80,7 @@ class Building extends yupe\models\YModel
 
     public static function getStatuses()
     {
-        return [0 => "-------",STATUS_IN_PROGRESS => "Ведется строительство", STATUS_READY => "Готовая новостройка", STATUS_RESELL => "Вторичное жилье"];
+        return [0 => "-------",STATUS_IN_PROGRESS => "Ведется строительство", STATUS_READY => "Готовая новостройка", STATUS_RESELL => "Вторичное жилье", STATUS_COMMERCIAL => "Коммерческая застройка"];
     }
 
     public function getStatusAsString()

@@ -146,10 +146,11 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
                                             <li><a itemprop="url" href="/stroyaschiesya-doma">Строящиеся дома</a></li>
                                             <li><a itemprop="url" href="/novostoyki">Готовые новостройки</a></li>
                                             <li><a itemprop="url" href="/vtorichniy-rinok">Вторичный рынок</a></li>
+                                            <li><a itemprop="url" href="/kommercheskaya-nedvigimost">Коммерческая недвижимость</a></li>
                                         </ul>
                                     </li>
-                                    <li><a itemprop="url" href="/pages/kontakty">Контакты</a></li>
                                     <li><a itemprop="url" href="/poisk" class="">Поиск</a></li>
+                                    <li><a itemprop="url" href="/pages/kontakty">Контакты</a></li>
                                 </ul>
                             </div>
                         </header>

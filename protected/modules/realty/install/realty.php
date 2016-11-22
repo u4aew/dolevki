@@ -26,6 +26,7 @@ return [
         '/zhilie-kompleksy' => 'realty/realty/listDistricts',
         '/zastroyschiki' => 'realty/realty/listBuilders',
         '/stroyaschiesya-doma' => 'realty/realty/nonReady',
+        '/kommercheskaya-nedvigimost' => 'realty/realty/commercial',
         '/novostoyki' => 'realty/realty/ready',
         '/vtorichniy-rinok' => 'realty/realty/resell',
         '/dom/<name>/<id>' => 'realty/realty/viewApartment',

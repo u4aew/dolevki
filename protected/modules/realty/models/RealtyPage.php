@@ -20,13 +20,14 @@ define("REALTY_PAGE_READY",3);
 define("REALTY_PAGE_NON_READY",4);
 define("REALTY_PAGE_RESELL",5);
 define("REALTY_PAGE_MAIN",6);
+define("REALTY_PAGE_COMMERCIAL",7);
 
 class RealtyPage extends \yupe\models\YModel
 {
 
     public function getTypes()
     {
-        return [REALTY_PAGE_BUILDERS => "Застройщики", REALTY_PAGE_DISTRICTS => "Жилые кварталы", REALTY_PAGE_NON_READY => "Строящиеся", REALTY_PAGE_READY => "Готовые", REALTY_PAGE_RESELL => "Вторичка", REALTY_PAGE_MAIN => "Главная"];
+        return [REALTY_PAGE_BUILDERS => "Застройщики", REALTY_PAGE_DISTRICTS => "Жилые кварталы", REALTY_PAGE_NON_READY => "Строящиеся", REALTY_PAGE_READY => "Готовые", REALTY_PAGE_RESELL => "Вторичка", REALTY_PAGE_MAIN => "Главная", REALTY_PAGE_COMMERCIAL => "Коммерческое"];
     }
 
     public function getTypeAsString()
