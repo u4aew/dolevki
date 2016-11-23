@@ -46,7 +46,8 @@ class SlideWidget extends yupe\widgets\YWidget
 				'image' => $slide->getImageUrl($module->maxWidth, $module->maxHeight),
                 'label' => $slide->name,
                 'caption' => $slide->description,
-					);
+                'url' => $slide->url,
+			);
 		}
 
         $this->render(
