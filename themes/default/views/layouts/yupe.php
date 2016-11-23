@@ -122,7 +122,7 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
                         <header class="row header">
                             <div>
                                <div class="row">
-                                   <div class="col-md-8" style="padding: 0">
+                                   <div class="col-md-7" style="padding: 0">
                                        <div class="tel">
                                            <div class="b-number-phone">
                                                <i style="color: black"
@@ -131,7 +131,7 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
                                              </div>
                                        </div>
                                        </div>
-                                   <div class="col-md-4">
+                                   <div class="col-md-5">
                                        <div class="callback-phone-main">
                                            <?php $this->widget('application.modules.callback.widgets.CallbackWidget'); ?>
                                        </div>
@@ -213,8 +213,7 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
                         <a href="http://vk.com/dolevki22">Youtube</a><br>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                </div>
+
             </div>
         </div>
         <div class="row">

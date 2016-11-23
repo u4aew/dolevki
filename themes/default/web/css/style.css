@@ -2017,3 +2017,7 @@ hr {
     flex-direction: column;
     justify-content: center;
 }
+
+.partner_logo {
+    width: 100%;
+}

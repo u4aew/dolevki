@@ -6,14 +6,13 @@ if ($model->layout) {
     $this->layout = "//layouts/{$model->layout}";
 }
 
-$this->title = [$model->title, Yii::app()->getModule('yupe')->siteName];
+$this->title = [$model->title];
 $this->breadcrumbs = $this->getBreadCrumbs();
 $this->description = $model->description ?: Yii::app()->getModule('yupe')->siteDescription;
 $this->keywords = $model->keywords ?: Yii::app()->getModule('yupe')->siteKeyWords;
 ?>
 <div style="min-height: 960px;padding: 15px">
-    <h1><span class="font-title"><?= $model->title; ?></span></h1>
-    <hr>
+    <h1 style="text-align: center"><span class="font-title"><?= $model->title; ?></span></h1>
     <div class="font-description">
         <?= $model->body; ?>
     </div>

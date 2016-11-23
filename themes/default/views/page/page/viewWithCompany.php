@@ -8,7 +8,7 @@ if ($model->layout) {
 
 Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/leanding.js', CClientScript::POS_END);
 
-$this->title = [$model->title, Yii::app()->getModule('yupe')->siteName];
+$this->title = [$model->title];
 $this->breadcrumbs = $this->getBreadCrumbs();
 $this->description = $model->description ?: Yii::app()->getModule('yupe')->siteDescription;
 $this->keywords = $model->keywords ?: Yii::app()->getModule('yupe')->siteKeyWords;
