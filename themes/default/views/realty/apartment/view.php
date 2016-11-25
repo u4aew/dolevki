@@ -104,6 +104,6 @@ Yii::app()->getModule("realty")->addCardTags($data);
 
     </div>
 <span class="project-info-link font-description">
-    С полной проектной декларацией вы можете ознакомиться на сайте застройщика <?= $data->building->builder->link; ?>
+    С полной проектной декларацией вы можете ознакомиться на сайте <?= $data->building->builder->link; ?>
 </span>
 </div>

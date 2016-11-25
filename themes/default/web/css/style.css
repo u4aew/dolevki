@@ -2021,3 +2021,12 @@ hr {
 .partner_logo {
     width: 100%;
 }
+.top-text h2, .down-text h2
+{
+    text-align: center;
+}
+
+.top-text p, .down-text p
+{
+    text-align: justify;
+}

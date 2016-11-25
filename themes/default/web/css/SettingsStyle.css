@@ -52,7 +52,7 @@ body {
     font-size: 18px;
 }
 
-.font-title {
+.font-title, .top-text h2, .down-text h2 {
     font-family: CyrillicOld;
     color: black;
     font-weight: bold;

@@ -183,10 +183,7 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
                     <div class="footer__item">
                         <a href="/pages/partneram">Партнерам</a>
                     </div>
-                    <div class="footer__item">
-                        <a href="#">Сотрудники</a>
-                    </div>
-                    <div class="footer__item">
+                   <div class="footer__item">
                         <a href="/pages/kontakty">Контакты</a>
                     </div>
                     <div class="footer__item">
@@ -201,7 +198,7 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
                         <a href="http://vk.com/ladom_novostroiki">ВКонтакте</a><br>
                     </div>
                     <div class="footer__item">
-                        <a href="http://vk.com/dolevki22">Одноклассники</a><br>
+                        <a href="https://ok.ru/group/53341514891438">Одноклассники</a><br>
                     </div>
                     <div class="footer__item">
                         <a href="https://www.facebook.com/groups/ladomdom/">Facebook</a><br>
@@ -210,7 +207,7 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
                         <a href="https://www.instagram.com/ladomnovostroiki/">Instagram</a><br>
                     </div>
                     <div class="footer__item">
-                        <a href="http://vk.com/dolevki22">Youtube</a><br>
+                        <a href="https://www.youtube.com/channel/UCWpvlOpEaLERfW0S6KWKNtA">Youtube</a><br>
                     </div>
                 </div>
 
