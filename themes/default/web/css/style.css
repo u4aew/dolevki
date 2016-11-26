@@ -1679,7 +1679,7 @@ a.asc, a.desc {
 .b-description__text {
     font-size: 16px;
     line-height: 1.5;
-    text-align: left !important;
+    text-align: justify !important;
 }
 
 .footer__title {
@@ -2022,7 +2022,7 @@ hr {
     width: 100%;
 }
 .top-text h2, .down-text h2
-{
+{b-desc
     text-align: center;
 }
 
