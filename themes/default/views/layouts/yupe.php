@@ -59,43 +59,38 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <?php \yupe\components\TemplateEvent::fire(DefautThemeEvents::HEAD_END); ?>
+    <meta name="yandex-verification" content="bda8a7fd3344436b" />
+    <meta name="google-site-verification" content="u3gGXl1TEPgioKt5X68OKZzthepnVEK1aHu54Tjvels" />
 </head>
 <body>
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function (d, w, c) {
-        (w[c] = w[c] || []).push(function () {
+        (w[c] = w[c] || []).push(function() {
             try {
-                w.yaCounter38253635 = new Ya.Metrika({
-                    id: 38253635,
-                    clickmap: true,
-                    trackLinks: true,
-                    accurateTrackBounce: true,
-                    webvisor: true
+                w.yaCounter41171564 = new Ya.Metrika({
+                    id:41171564,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true
                 });
-            } catch (e) {
-            }
+            } catch(e) { }
         });
 
         var n = d.getElementsByTagName("script")[0],
             s = d.createElement("script"),
-            f = function () {
-                n.parentNode.insertBefore(s, n);
-            };
+            f = function () { n.parentNode.insertBefore(s, n); };
         s.type = "text/javascript";
         s.async = true;
         s.src = "https://mc.yandex.ru/metrika/watch.js";
 
         if (w.opera == "[object Opera]") {
             d.addEventListener("DOMContentLoaded", f, false);
-        } else {
-            f();
-        }
+        } else { f(); }
     })(document, window, "yandex_metrika_callbacks");
 </script>
-<noscript>
-    <div><img src="https://mc.yandex.ru/watch/38253635" style="position:absolute; left:-9999px;" alt=""/></div>
-</noscript>
+<noscript><div><img src="https://mc.yandex.ru/watch/41171564" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 <script>
     function addDotdotdot() {
@@ -121,22 +116,22 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
                     <div class="col-lg-10">
                         <header class="row header">
                             <div>
-                               <div class="row">
-                                   <div class="col-md-7" style="padding: 0">
-                                       <div class="tel">
-                                           <div class="b-number-phone">
-                                               <i style="color: black"
-                                                  class="fa fa-phone"
-                                                  aria-hidden="true"></i> <?= Yii::app()->getModule("realty")->phone; ?>
-                                             </div>
-                                       </div>
-                                       </div>
-                                   <div class="col-md-5">
-                                       <div class="callback-phone-main">
-                                           <?php $this->widget('application.modules.callback.widgets.CallbackWidget'); ?>
-                                       </div>
-                                   </div>
-                               </div>
+                                <div class="row">
+                                    <div class="col-md-7" style="padding: 0">
+                                        <div class="tel">
+                                            <div class="b-number-phone">
+                                                <i style="color: black"
+                                                   class="fa fa-phone"
+                                                   aria-hidden="true"></i> <?= Yii::app()->getModule("realty")->phone; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="callback-phone-main">
+                                            <?php $this->widget('application.modules.callback.widgets.CallbackWidget'); ?>
+                                        </div>
+                                    </div>
+                                </div>
 
                             </div>
                             <div>
@@ -151,7 +146,6 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
                                             <li><a itemprop="url" href="/stroyaschiesya-doma">Строящиеся дома</a></li>
                                             <li><a itemprop="url" href="/novostoyki">Готовые новостройки</a></li>
                                             <li><a itemprop="url" href="/vtorichniy-rinok">Вторичный рынок</a></li>
-                                            <li><a itemprop="url" href="/kommercheskaya-nedvigimost">Коммерческая недвижимость</a></li>
                                         </ul>
                                     </li>
                                     <li><a itemprop="url" href="/poisk" class="">Поиск</a></li>
@@ -183,7 +177,7 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
                     <div class="footer__item">
                         <a href="/pages/partneram">Партнерам</a>
                     </div>
-                   <div class="footer__item">
+                    <div class="footer__item">
                         <a href="/pages/kontakty">Контакты</a>
                     </div>
                     <div class="footer__item">
@@ -215,7 +209,7 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
         </div>
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1">
-                © ООО «Гранит», <?= date("Y"); ?>
+                © ООО «ЛаДом», <?= date("Y"); ?>
                 <?= Yii::app()->getModule("realty")->adres; ?>
             </div>
 
@@ -261,5 +255,10 @@ h.appendChild(s);
         })
     ');
 ?>
+<!-- BEGIN JIVOSITE CODE {literal} -->
+<script type='text/javascript'>
+    (function(){ var widget_id = 'J5EZBNJEPZ';var d=document;var w=window;function l(){
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+<!-- {/literal} END JIVOSITE CODE -->
 </body>
 </html>
