@@ -18,13 +18,11 @@ $(document).ready(
         );
 
 
-
-        $('.list-parameter-apartement__item').click(function()
-        {
+        $('.list-parameter-apartement__item').click(function () {
             var href = $(this).parent().attr('href');
-            if(href){
+            if (href) {
                 var url = href.split('?'),
-                    params = $.deparam.querystring('?'+ (url[1] || ''));
+                    params = $.deparam.querystring('?' + (url[1] || ''));
 
 
                 var updateUrl = $.param.querystring(url[0], params);
@@ -39,4 +37,16 @@ $(document).ready(
         });
 
     }
-)
+);
+$(function () {
+    setTimeout(normalizeImage(), 5000);
+    $('.pagination li a').click(function () {
+        setTimeout(normalizeImage(), 1000);
+    });
+    function normalizeImage() {
+        var i = 0;
+        $(".ApartmentPic").each(function () {
+            $(this).children().attr("rel", ++i)
+        });
+    }
+})
