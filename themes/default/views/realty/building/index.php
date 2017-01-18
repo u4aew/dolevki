@@ -1,6 +1,6 @@
 <?php if (isset($page)): ?>
     <h1 class="page_title font-title">
-        <?=$page->h1; ?>
+        <?= $page->h1; ?>
     </h1>
 
     <div class="top-text">

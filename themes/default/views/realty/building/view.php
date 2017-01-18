@@ -17,14 +17,16 @@ Yii::app()->getModule("realty")->addCardTags($data);
                 <div class="prew">
                     <ul id="lightSlider">
                         <li data-thumb="<?= $data->getImageUrl(100, 100, false); ?>">
-                            <a class="fancybox" href="<?= $data->getImageUrl(1000, 1000, false); ?>"> <img
+                            <a rel="group-building" class="fancybox"
+                               href="<?= $data->getImageUrl(1000, 1000, false); ?>"> <img
                                     src="<?= $data->getImageUrl(1000, 1000, false); ?>"
                                     alt="<?= $data->getTitle(); ?>"/>
                             </a>
                         </li>
                         <?php foreach ($data->getImages() as $item): ?>
                             <li data-thumb="<?= $item->getImageUrl(100, 100, false); ?>">
-                                <a class="fancybox" href="<?= $item->getImageUrl(1000, 1000, false); ?>"> <img
+                                <a rel="group-building" class="fancybox"
+                                   href="<?= $item->getImageUrl(1000, 1000, false); ?>"> <img
                                         src="<?= $item->getImageUrl(1000, 1000, false); ?>" alt=""> </a>
                             </li>
                         <?php endforeach; ?>

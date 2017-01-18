@@ -5,7 +5,7 @@
     <div class="b-card-building font-description__card">
         <div class="b-card-building__pic ApartmentPic"
              style="background-image: url('<?= $data->getImageUrl(300, 300, false); ?>');">
-            <a class="fancybox b-card-background__link" href="<?= $data->getImageUrl(); ?>">
+            <a rel="group" class="fancybox b-card-background__link" href="<?= $data->getImageUrl(); ?>">
                 <div class="b-card-apartment__pic-mark">
                     <?php if ($data->status == STATUS_IN_PROGRESS) :?>
                         <?= $data->getReadyTimes()[$data->readyTime] ?>
