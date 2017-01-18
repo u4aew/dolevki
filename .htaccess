@@ -14,11 +14,11 @@ AddDefaultCharset utf-8
 
 
     # редирект c www на без www
-    RewriteCond %{HTTP_HOST} ^www.new-dolevki.p-host.in$ [NC]
-    RewriteRule ^(.*)$ http://new-dolevki.p-host.in/$1 [R=301,L]
+    RewriteCond %{HTTP_HOST} ^www.novostroiki-ladom.ru$ [NC]
+    RewriteRule ^(.*)$ http://novostroiki-ladom.ru/$1 [R=301,L]
     # редирект с index.php на главную
     RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP
-    RewriteRule ^index\.php$ http://new-dolevki.p-host.in/ [R=301,L]
+    RewriteRule ^index\.php$ http://novostroiki-ladom.ru/ [R=301,L]
 
     # if a directory or a file exists, use it directly
     RewriteCond %{REQUEST_FILENAME} !-f

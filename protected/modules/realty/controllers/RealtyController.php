@@ -23,6 +23,8 @@ class RealtyController extends \yupe\components\controllers\FrontController
         $criteria->select = 't.*';
         $criteria->compare("isPublished",1);
         $criteria->addCondition("status <> 3");
+        $criteria->addCondition("status <> 4");
+        $criteria->addCondition("status > 0");
         $criteria->order = "adres ASC";
 
         $data = new CActiveDataProvider(

@@ -83,7 +83,7 @@ Yii::app()->getClientScript()->registerScript("sticky", '
             var currentVal = $(this).val();
             maximalSize = Math.min(maximalSize, currentVal);
         });
-        var url = "/search?";
+        var url = "/poisk?";
         $(".select-room-click-cheked").each(function () {
             url += "rooms[]=" + $(this).data("val") + "&";
         });
@@ -120,7 +120,7 @@ Yii::app()->getClientScript()->registerScript("sticky", '
             <div class="b-find b-find-Color ">
                 <div class="b-find-wrap">
                     <div class="b-find__title">Параметры Поиска</div>
-                    <form id="searchForm" action="/search" method="get">
+                    <form id="searchForm" action="/poisk" method="get">
                         <div>
                             <div class="b-find__param-name"> Количество комнат</div>
                             <ul class="select-room">

@@ -34,6 +34,17 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
     Yii::app()->getClientScript()->registerCssFile('http://yandex.st/highlightjs/8.2/styles/github.min.css');
     ?>
 
+    <?php 
+	$absolutePath = Yii::app()->createAbsoluteUrl(Yii::app()->request->url);
+        $pos = strpos($absolutePath,"?");
+        $path = $absolutePath;
+        if ($pos !== false)
+    	   $path = substr($path,0,$pos);
+        if (substr($path,-1) == "/")
+    	   $path = substr($path,0,strlen($path) - 1);
+     ?>
+	<link rel="canonical" href="<?=$path; ?>" />
+
     <?php
     //    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.li-translit.js');
     //    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery-ui-1.10.3.custom.min.js');
