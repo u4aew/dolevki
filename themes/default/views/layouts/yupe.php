@@ -29,21 +29,21 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
     Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/SettingsStyle.css');
     Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/lightslider.css');
     Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/jquery.fancybox.css');
-    Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/sumoselect.css');*/
-    Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/build/production.min.css');
+    Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/sumoselect.css');
+    Yii::app()->getClientScript()->registerCssFile($this->mainAssets . '/css/build/production.min.css');*/
     Yii::app()->getClientScript()->registerCssFile('http://yandex.st/highlightjs/8.2/styles/github.min.css');
     ?>
-
-    <?php 
-	$absolutePath = Yii::app()->createAbsoluteUrl(Yii::app()->request->url);
-        $pos = strpos($absolutePath,"?");
-        $path = $absolutePath;
-        if ($pos !== false)
-    	   $path = substr($path,0,$pos);
-        if (substr($path,-1) == "/")
-    	   $path = substr($path,0,strlen($path) - 1);
-     ?>
-	<link rel="canonical" href="<?=$path; ?>" />
+    <link rel="stylesheet" href="/themes/default/web/css/build/production.min.css">
+    <?php
+    $absolutePath = Yii::app()->createAbsoluteUrl(Yii::app()->request->url);
+    $pos = strpos($absolutePath, "?");
+    $path = $absolutePath;
+    if ($pos !== false)
+        $path = substr($path, 0, $pos);
+    if (substr($path, -1) == "/")
+        $path = substr($path, 0, strlen($path) - 1);
+    ?>
+    <link rel="canonical" href="<?= $path; ?>"/>
 
     <?php
     //    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.li-translit.js');
@@ -56,7 +56,7 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
     //    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.fancybox.pack.js');
     //    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/jquery.sumoselect.js');
     //    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/sort-list-apartment.js');
-    Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/build/production.min.js');
+    /*Yii::app()->getClientScript()->registerScriptFile($this->mainAssets . '/js/build/production.min.js');*/
     Yii::app()->getClientScript()->registerScriptFile('http://yastatic.net/highlightjs/8.2/highlight.min.js');
     Yii::app()->getClientScript()->registerScriptFile('http://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js');
     Yii::app()->getClientScript()->registerScriptFile('https://cdnjs.cloudflare.com/ajax/libs/jQuery.dotdotdot/1.7.4/jquery.dotdotdot.min.js');
@@ -70,38 +70,45 @@ Yii::app()->getClientScript()->defaultScriptFilePosition = CClientScript::POS_EN
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <?php \yupe\components\TemplateEvent::fire(DefautThemeEvents::HEAD_END); ?>
-    <meta name="yandex-verification" content="bda8a7fd3344436b" />
-    <meta name="google-site-verification" content="u3gGXl1TEPgioKt5X68OKZzthepnVEK1aHu54Tjvels" />
+    <meta name="yandex-verification" content="bda8a7fd3344436b"/>
+    <meta name="google-site-verification" content="u3gGXl1TEPgioKt5X68OKZzthepnVEK1aHu54Tjvels"/>
 </head>
 <body>
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function (d, w, c) {
-        (w[c] = w[c] || []).push(function() {
+        (w[c] = w[c] || []).push(function () {
             try {
                 w.yaCounter41171564 = new Ya.Metrika({
-                    id:41171564,
-                    clickmap:true,
-                    trackLinks:true,
-                    accurateTrackBounce:true,
-                    webvisor:true
+                    id: 41171564,
+                    clickmap: true,
+                    trackLinks: true,
+                    accurateTrackBounce: true,
+                    webvisor: true
                 });
-            } catch(e) { }
+            } catch (e) {
+            }
         });
 
         var n = d.getElementsByTagName("script")[0],
             s = d.createElement("script"),
-            f = function () { n.parentNode.insertBefore(s, n); };
+            f = function () {
+                n.parentNode.insertBefore(s, n);
+            };
         s.type = "text/javascript";
         s.async = true;
         s.src = "https://mc.yandex.ru/metrika/watch.js";
 
         if (w.opera == "[object Opera]") {
             d.addEventListener("DOMContentLoaded", f, false);
-        } else { f(); }
+        } else {
+            f();
+        }
     })(document, window, "yandex_metrika_callbacks");
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/41171564" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<noscript>
+    <div><img src="https://mc.yandex.ru/watch/41171564" style="position:absolute; left:-9999px;" alt=""/></div>
+</noscript>
 <!-- /Yandex.Metrika counter -->
 <script>
     function addDotdotdot() {
@@ -264,11 +271,40 @@ h.appendChild(s);
 ?>
 <!-- BEGIN JIVOSITE CODE {literal} -->
 <script>
-   
+
 </script>
 <script type='text/javascript'>
-    (function(){ var widget_id = 'J5EZBNJEPZ';var d=document;var w=window;function l(){
-        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+    (function () {
+        var widget_id = 'J5EZBNJEPZ';
+        var d = document;
+        var w = window;
+
+        function l() {
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = '//code.jivosite.com/script/widget/' + widget_id;
+            var ss = document.getElementsByTagName('script')[0];
+            ss.parentNode.insertBefore(s, ss);
+        }
+
+        if (d.readyState == 'complete') {
+            l();
+        } else {
+            if (w.attachEvent) {
+                w.attachEvent('onload', l);
+            } else {
+                w.addEventListener('load', l, false);
+            }
+        }
+    })();</script>
 <!-- {/literal} END JIVOSITE CODE -->
+
 </body>
+<script src="/themes/default/web/js/build/production.min.js"></script>
+<style>
+    .js-is-in-view-false {
+        display: none;
+    }
+</style>
 </html>

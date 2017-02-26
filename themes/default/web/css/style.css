@@ -115,7 +115,7 @@ body {
         text-align: center !important;
     }
 
-     .apartments-header {
+    .apartments-header {
         margin-bottom: 5px !important;
         text-align: center;
         color: white !important;
@@ -1636,6 +1636,8 @@ a.asc, a.desc {
     min-height: 370px;
     border-radius: 5px;
     box-shadow: 3px 3px 9px -3px rgba(9, 9, 9, 0.61);
+    transition: 5s;
+    transition-delay: 2s;
 }
 
 .b-card-building__pic {
@@ -1909,17 +1911,20 @@ hr {
 .tel {
     text-decoration: none !important;
 }
+
 .post__img {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     height: 150px;
 }
+
 .b-post {
     margin-bottom: 15px;
     padding-bottom: 5px;
     border-bottom: 1px solid black;
 }
+
 .b-post-header {
     font-size: 28px;
     color: black !important;
@@ -1929,12 +1934,15 @@ hr {
     color: black !important;
     text-decoration: none;
 }
+
 .b-post-header a:hover {
     text-decoration: underline;
 }
+
 .b-post-text__next-read {
     text-align: right;
 }
+
 .b-post-text__next-read a {
     color: black;
     text-decoration: underline;
@@ -1944,11 +1952,11 @@ hr {
     color: white !important;
     position: relative;
     display: inline-block;
-    font-family: Arial,Helvetica,FreeSans,"Liberation Sans","Nimbus Sans L",sans-serif;
+    font-family: Arial, Helvetica, FreeSans, "Liberation Sans", "Nimbus Sans L", sans-serif;
     font-size: 1.5em;
     font-weight: 700;
-    color: rgb(245,245,245);
-    text-shadow: 0 -1px rgba(0,0,0,.1);
+    color: rgb(245, 245, 245);
+    text-shadow: 0 -1px rgba(0, 0, 0, .1);
     text-decoration: none;
     user-select: none;
     padding: .3em 1em;
@@ -1957,39 +1965,47 @@ hr {
     border-radius: 3px;
     transition: .4s;
     background: #0c9c0d linear-gradient(#82d18d, #0c9c0d);
-    box-shadow: inset #72de26 0 -1px 1px, inset 0 1px 1px #98ff98, #3caa3c 0 0 0 1px, rgba(0,0,0,.3) 0 2px 5px;
+    box-shadow: inset #72de26 0 -1px 1px, inset 0 1px 1px #98ff98, #3caa3c 0 0 0 1px, rgba(0, 0, 0, .3) 0 2px 5px;
 }
+
 .btn-order:hover {
     cursor: pointer;
-    color:white;
-    background: #0c9c0d linear-gradient(#0c9c0d,#82d18d);
+    color: white;
+    background: #0c9c0d linear-gradient(#0c9c0d, #82d18d);
 
 }
+
 .btn-order:active {
     top: 1px;
     color: #fff;
-    text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff;
-    box-shadow: 0 -1px 3px rgba(0,0,0,.3), 0 1px 1px #fff, inset 0 1px 2px rgba(0,0,0,.8), inset 0 -1px 0 rgba(0,0,0,.05);
+    text-shadow: 0 -1px rgba(0, 0, 0, .3), 0 0 5px #ffd, 0 0 8px #fff;
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, .3), 0 1px 1px #fff, inset 0 1px 2px rgba(0, 0, 0, .8), inset 0 -1px 0 rgba(0, 0, 0, .05);
 }
+
 .btn-order:visited {
     color: white;
 }
+
 .alert-danger {
     background-color: white;
     color: black;
     font-size: 12px;
 }
+
 .control-label, .help-block {
     color: white !important;
 }
+
 .callback-phone-main .nav__find {
     background-color: #87cefa !important;
     color: black !important;
     font-size: 24px;
     text-decoration: underline !important;
-    text-decoration-style: dashed; !important;
-    text-align: center  !important;
+    text-decoration-style: dashed;
+!important;
+    text-align: center !important;
 }
+
 .camera__desc {
     display: flex;
     width: 100%;
@@ -2006,7 +2022,7 @@ hr {
     display: block !important;
     padding: 5px;
     color: white !important;
-    font-size: 21px!important;
+    font-size: 21px !important;
     text-decoration: underline !important;
 }
 
@@ -2021,12 +2037,42 @@ hr {
 .partner_logo {
     width: 100%;
 }
-.top-text h2, .down-text h2
-{b-desc
+
+.top-text h2, .down-text h2 {
     text-align: center;
 }
 
-.top-text p, .down-text p
-{
+.top-text p, .down-text p {
     text-align: justify;
+}
+
+@media screen and (max-width: 450px) {
+    .callback__wrapper {
+        margin: 0 -50px;
+    }
+
+    .b-card-building {
+        margin: 20px -40px;
+    }
+
+    .b-card-apartment {
+        margin: 20px -40px;
+        min-height: 500px;
+    }
+
+    .apartments-header {
+        width: 200px;
+    }
+
+    .callback-main .callback__wrapper {
+        margin: 0 !important;
+    }
+}
+
+.js-view-false-hidden {
+    opacity: 0;
+}
+
+.js-view-false-visible {
+    opacity: 1;
 }

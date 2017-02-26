@@ -6,7 +6,7 @@
  */
 ?>
 <div class="row">
-    <div class="col-sm-12">
+    <div class="callback__wrapper col-sm-12">
         <button class="nav__find btnColor" data-toggle="modal" data-target="#callbackModal">
             <i class="fa fa-fw fa-phone"></i>
             <?= Yii::t('CallbackModule.callback', 'Заказать звонок') ?>

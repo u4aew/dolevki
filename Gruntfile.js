@@ -16,6 +16,8 @@ module.exports = function (grunt) {
                     'themes/default/web/js/sort-list-apartment.js',
                     'themes/default/web/js/slide.js',
                     'themes/default/web/js/sidebar.js',
+                    'themes/default/web/js/jquery.isinview.js',
+                    'themes/default/web/js/isinview-card.js',
                     'themes/default/web/js/mobile-siderbar.js',
                     'themes/default/web/js/jquery.easing.1.3.js',
                     'themes/default/web/js/camera.min.js'

@@ -19,6 +19,13 @@ Yii::app()->getModule("realty")->addCardTags($data);
 
 
 ?>
+<style>
+    @media screen and (max-width: 450px) {
+        .callback-main .callback__wrapper {
+            margin: 0
+        }
+    }
+</style>
 <div class="row">
     <div class="col-lg-12">
         <h1 class="view__title font-title"><?= $data->getTitle() ?> </h1>
@@ -85,7 +92,7 @@ Yii::app()->getModule("realty")->addCardTags($data);
             <div class="b-text-price">
                 Обратите внимание: мы не берем никаких комиссий
             </div>
-            <div>
+            <div class="callback-main">
                 <?php $otherText = "assdsd"; ?>
                 <?php $this->widget('application.modules.callback.widgets.CallbackWidget', ["otherText" => $data->getTitle()]); ?>
             </div>
